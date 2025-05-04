@@ -38,4 +38,5 @@ eval "$(zoxide init zsh)"
 alias lock='pmset displaysleepnow'
 
 # ----- fzf + bat + nvim ----- #
-alias fzf='fzf --preview "bat --style=numbers,changes --color=always {}" --preview-window=right:60% | xargs -r nvim'
+alias nzf='fzf --preview "bat --style=numbers,changes --color=always --theme=Dracula {}" --preview-window=right:60% | xargs -r nvim'
+alias fzf='fzf --preview "bat --style=numbers,changes --color=always --theme=Dracula {}" --preview-window=right:60%'
