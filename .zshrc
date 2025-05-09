@@ -37,6 +37,8 @@ eval "$(zoxide init zsh)"
 
 alias lock='pmset displaysleepnow'
 
+alias wallpaper1='osascript -e '\''tell application "System Events" to set picture of every desktop to "/Users/moritz/mac_setup/wallpaper/wallpaper1.jpg"'\'
+alias wallpaper2='osascript -e '\''tell application "System Events" to set picture of every desktop to "/Users/moritz/mac_setup/wallpaper/wallpaper2.jpg"'\'
 # ----- fzf + bat + nvim ----- #
 alias nzf='fzf --preview "bat --style=numbers,changes --color=always --theme=Dracula {}" --preview-window=right:60% | xargs -r nvim'
 alias fzf='fzf --preview "bat --style=numbers,changes --color=always --theme=Dracula {}" --preview-window=right:60%'

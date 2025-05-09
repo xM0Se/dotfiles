@@ -5,12 +5,14 @@ after-login-command = []
 start-at-login = true
 
 exec-on-workspace-change = [
-  '/bin/bash', '-c',
-  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+  '/bin/bash',
+  '-c',
+  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
 ]
 
 on-focus-changed = [
-  'exec-and-forget sketchybar --trigger aerospace_focus_change'
+  'exec-and-forget sketchybar --trigger aerospace_focus_change',
+  'move-mouse monitor-lazy-center',
 ]
 
 enable-normalization-flatten-containers = true
@@ -36,7 +38,7 @@ inner.vertical = 10
 # WINDOWS NEXT TO DISPLAY
 outer.left = 10
 outer.bottom = 10
-outer.top = 60 # ADDED 30 PADDING FOR SKETCHYBAR
+outer.top = 60    # ADDED 30 PADDING FOR SKETCHYBAR
 outer.right = 10
 
 [mode.main.binding]
@@ -60,9 +62,10 @@ alt-shift-l = 'move right'
 alt-minus = 'resize smart -50'
 alt-equal = 'resize smart +50'
 
+alt-b = 'workspace B' #browser
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
-alt-3 = 'workspace 3'# 3d Printing
+alt-3 = 'workspace 3' # 3d Printing
 alt-4 = 'workspace 4'
 alt-5 = 'workspace 5'
 # alt-6 = 'workspace 6'
@@ -70,57 +73,56 @@ alt-5 = 'workspace 5'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
 alt-a = 'workspace A' #Anki
-alt-b = 'workspace B'#browser
-alt-c = 'workspace C'#ChatGPT
-alt-d = 'workspace D'#Discord
-alt-e = 'workspace E'#video Editing
-alt-f = 'workspace F'#finder
-alt-g = 'workspace G'#ghostty
+alt-c = 'workspace C' #ChatGPT
+alt-d = 'workspace D' #Discord
+alt-e = 'workspace E' #video Editing
+alt-f = 'workspace F' #finder
+alt-g = 'workspace G' #ghostty
 #alt-i = 'workspace I'
-alt-m = 'workspace M'#microsoft
-alt-n = 'workspace N'#Notes
+alt-m = 'workspace M' #microsoft
+alt-n = 'workspace N' #Notes
 alt-o = 'workspace O'
-alt-p = 'workspace P'#Privacy
+alt-p = 'workspace P' #Privacy
 #alt-r = 'workspace R'
-alt-s = 'workspace S'#scheduling
-alt-t = 'workspace T'#Main Terminal
+alt-s = 'workspace S' #scheduling
+alt-t = 'workspace T' #Main Terminal
 #alt-u = 'workspace U'
-alt-v = 'workspace V'#VSCode
-alt-w = 'workspace W'#warp terminal
+alt-v = 'workspace V' #VSCode
+alt-w = 'workspace W' #warp terminal
 #alt-x = 'workspace X'
 #alt-y = 'workspace Y'
-alt-z = 'workspace Z'#Home
+alt-z = 'workspace Z' #Home
 
+alt-shift-b = 'move-node-to-workspace B' #browser
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
-alt-shift-3 = 'move-node-to-workspace 3'#3dprinting
+alt-shift-3 = 'move-node-to-workspace 3' #3dprinting
 alt-shift-4 = 'move-node-to-workspace 4'
 alt-shift-5 = 'move-node-to-workspace 5'
 # alt-shift-6 = 'move-node-to-workspace 6'
 # alt-shift-7 = 'move-node-to-workspace 7'
 alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
-alt-shift-a = 'move-node-to-workspace A'#Anki
-alt-shift-b = 'move-node-to-workspace B'#browser
-alt-shift-c = 'move-node-to-workspace C'#ChatGPT
-alt-shift-d = 'move-node-to-workspace D'#Discord
-alt-shift-e = 'move-node-to-workspace E'#video Editing
-alt-shift-f = 'move-node-to-workspace F'#finder
-alt-shift-g = 'move-node-to-workspace G'#ghostty
+alt-shift-a = 'move-node-to-workspace A' #Anki
+alt-shift-c = 'move-node-to-workspace C' #ChatGPT
+alt-shift-d = 'move-node-to-workspace D' #Discord
+alt-shift-e = 'move-node-to-workspace E' #video Editing
+alt-shift-f = 'move-node-to-workspace F' #finder
+alt-shift-g = 'move-node-to-workspace G' #ghostty
 #alt-shift-i = 'move-node-to-workspace I'
-alt-shift-m = 'move-node-to-workspace M'#microsoft
-alt-shift-n = 'move-node-to-workspace N'#Notes
+alt-shift-m = 'move-node-to-workspace M' #microsoft
+alt-shift-n = 'move-node-to-workspace N' #Notes
 alt-shift-o = 'move-node-to-workspace O'
-alt-shift-p = 'move-node-to-workspace P'#Privacy
+alt-shift-p = 'move-node-to-workspace P' #Privacy
 #alt-shift-r = 'move-node-to-workspace R'
-alt-shift-s = 'move-node-to-workspace S'#scheduling
-alt-shift-t = 'move-node-to-workspace T'#Main Terminal
+alt-shift-s = 'move-node-to-workspace S' #scheduling
+alt-shift-t = 'move-node-to-workspace T' #Main Terminal
 #alt-shift-u = 'move-node-to-workspace U'
-alt-shift-v = 'move-node-to-workspace V'#VSCode
+alt-shift-v = 'move-node-to-workspace V' #VSCode
 alt-shift-w = 'move-node-to-workspace W' # warp terminal
 #alt-shift-x = 'move-node-to-workspace X'
 #alt-shift-y = 'move-node-to-workspace Y'
-alt-shift-z = 'move-node-to-workspace Z'#Home
+alt-shift-z = 'move-node-to-workspace Z' #Home
 
 alt-tab = 'workspace-back-and-forth'
 

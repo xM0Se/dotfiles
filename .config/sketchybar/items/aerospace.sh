@@ -1,14 +1,13 @@
 #!/bin/bash
 
-sketchybar --add item aerospace_mode left \
-  --subscribe aerospace_mode aerospace_mode_change \
-  --set aerospace_mode icon="" \
-  script="$CONFIG_DIR/plugins/aerospace_mode.sh" \
-  icon.color="$ACCENT_COLOR" \
-  icon.padding_left=4 \
-  drawing=off
+# Sort workspaces: first "b", then "n", and the rest
+sorted_workspaces=$(aerospace list-workspaces --all | awk '
+  $1 == "b" { print $0; next }
+  $1 == "n" { print $0; next }
+  { print $0 }
+' | sort -s -k1)
 
-for sid in $(aerospace list-workspaces --all); do
+for sid in $sorted_workspaces; do
   monitor=$(aerospace list-windows --workspace "$sid" --format "%{monitor-appkit-nsscreen-screens-id}")
 
   if [ -z "$monitor" ]; then
