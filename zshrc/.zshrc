@@ -27,7 +27,7 @@ eval "$(atuin init zsh)"
 set -o vi
 
 # ----------- eza better ls -----------
-alias ls="eza --color=always --long --no-time --git --icons=always --no-user --no-permissions --hyperlink --color-scale-mode=gradient --grid --all --group-directories-first"
+alias ls="eza --color=always --long --no-time --git --icons=always --no-user --no-permissions --color-scale-mode=gradient --grid --all --group-directories-first"
 # ----------- the fuck -----------
 eval $(thefuck --alias)
 eval $(thefuck --alias f)
