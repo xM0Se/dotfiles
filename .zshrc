@@ -23,6 +23,8 @@ eval "$(atuin init zsh)"
 
 . "$HOME/.atuin/bin/env"
 
+# ----- vimliketerminal ----- #
+set -o vi
 
 # ----------- eza better ls -----------
 alias ls="eza --color=always --long --no-time --git --icons=always --no-user --no-permissions --hyperlink --color-scale-mode=gradient --grid --all --group-directories-first"
