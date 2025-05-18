@@ -19,13 +19,16 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # ----------- neofetch on shell startup -----------
 neofetch
 
+alias bye='sudo shutdown -h now'
 eval "$(atuin init zsh)"
 
 . "$HOME/.atuin/bin/env"
 
 # ----- vimliketerminal ----- #
 set -o vi
-
+#--------random stuff
+export EDITOR="nvim"
+export PAGER=bat
 # ----------- eza better ls -----------
 alias ls="eza --color=always --long --no-time --git --icons=always --no-user --no-permissions --color-scale-mode=gradient --grid --all --group-directories-first"
 # ----------- the fuck -----------

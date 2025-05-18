@@ -269,3 +269,13 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.bitwarden.desktop'
 run = 'layout floating'
+
+
+[[on-window-detected]]
+if.app-id = 'com.apple.coreservices.uiagent'
+run = 'layout floating'
+
+
+[[on-window-detected]]
+if.app-id = 'com.devuap.beautyshotapp'
+run = 'layout floating'
