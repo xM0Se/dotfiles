@@ -29,6 +29,8 @@ source $ITEM_DIR/calendar.sh
 source $ITEM_DIR/brew.sh
 source $ITEM_DIR/cpu.sh
 
+source $ITEM_DIR/ONE_THING.sh
+
 source $ITEM_DIR/apple.sh
 source $ITEM_DIR/aerospace.sh
 source $ITEM_DIR/front_app.sh

@@ -42,6 +42,7 @@ outer.top = 60    # ADDED 30 PADDING FOR SKETCHYBAR
 outer.right = 10
 
 [mode.main.binding]
+alt-x = 'exec-and-forget /Users/moritz/.config/sketchybar/items/SketchybarLabel.sh'
 
 alt-7 = 'layout tiles horizontal vertical'
 alt-6 = 'layout accordion horizontal vertical'
@@ -63,7 +64,7 @@ alt-minus = 'resize smart -50'
 alt-equal = 'resize smart +50'
 
 alt-b = 'workspace B' #browser
-alt-1 = 'workspace 1'
+#alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3' # 3d Printing
 alt-4 = 'workspace 4'
@@ -264,6 +265,10 @@ run = "move-node-to-workspace T"
 # password Floting window
 [[on-window-detected]]
 if.app-id = 'com.apple.Passwords'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.SFSymbols'
 run = 'layout floating'
 
 [[on-window-detected]]

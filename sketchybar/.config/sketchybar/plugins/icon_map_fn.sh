@@ -75,6 +75,9 @@ function icon_map() {
   "1Password")
     icon_result=":one_password:"
     ;;
+  "Passwords")
+    icon_result=":one_password:"
+    ;;
   "Caprine")
     icon_result=":caprine:"
     ;;
