@@ -32,7 +32,7 @@ automatically-unhide-macos-hidden-apps = false
 preset = 'qwerty'
 
 [gaps]
-# WINDOS NEXT TO EACH OTHER
+# WINDOWS NEXT TO EACH OTHER
 inner.horizontal = 10
 inner.vertical = 10
 # WINDOWS NEXT TO DISPLAY
@@ -49,49 +49,49 @@ alt-6 = 'layout accordion horizontal vertical'
 
 
 # ----- WINDOW NAVIGATING ----- #
-alt-h = 'focus left'
-alt-j = 'focus down'
-alt-k = 'focus up'
-alt-l = 'focus right'
+alt-n = 'focus left'
+alt-e = 'focus down'
+alt-i = 'focus up'
+alt-o = 'focus right'
 
 
-alt-shift-h = 'move left'
-alt-shift-j = 'move down'
-alt-shift-k = 'move up'
-alt-shift-l = 'move right'
+alt-shift-n = 'move left'
+alt-shift-e = 'move down'
+alt-shift-i = 'move up'
+alt-shift-o = 'move right'
 
-alt-minus = 'resize smart -50'
-alt-equal = 'resize smart +50'
+alt-shift-0 = 'resize smart -50'
+alt-0 = 'resize smart +50'
 
 alt-b = 'workspace B' #browser
-#alt-1 = 'workspace 1'
+alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3' # 3d Printing
 alt-4 = 'workspace 4'
 alt-5 = 'workspace 5'
-# alt-6 = 'workspace 6'
-# alt-7 = 'workspace 7'
+#alt-6 = 'workspace 6'
+#alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
 alt-a = 'workspace A' #Anki
 alt-c = 'workspace C' #ChatGPT
 alt-d = 'workspace D' #Discord
-alt-e = 'workspace E' #video Editing
+#alt-e = 'workspace E' #video Editing
 alt-f = 'workspace F' #finder
 alt-g = 'workspace G' #ghostty
 #alt-i = 'workspace I'
 alt-m = 'workspace M' #microsoft
-alt-n = 'workspace N' #Notes
-alt-o = 'workspace O'
+#alt-n = 'workspace N' #Notes
+#alt-o = 'workspace O'
 alt-p = 'workspace P' #Privacy
-#alt-r = 'workspace R'
+alt-r = 'workspace R'
 alt-s = 'workspace S' #scheduling
 alt-t = 'workspace T' #Main Terminal
-#alt-u = 'workspace U'
+alt-u = 'workspace U'
 alt-v = 'workspace V' #VSCode
 alt-w = 'workspace W' #warp terminal
 #alt-x = 'workspace X'
-#alt-y = 'workspace Y'
+alt-y = 'workspace Y'
 alt-z = 'workspace Z' #Home
 
 alt-shift-b = 'move-node-to-workspace B' #browser
@@ -107,22 +107,22 @@ alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-a = 'move-node-to-workspace A' #Anki
 alt-shift-c = 'move-node-to-workspace C' #ChatGPT
 alt-shift-d = 'move-node-to-workspace D' #Discord
-alt-shift-e = 'move-node-to-workspace E' #video Editing
+#alt-shift-e = 'move-node-to-workspace E' #video Editing
 alt-shift-f = 'move-node-to-workspace F' #finder
 alt-shift-g = 'move-node-to-workspace G' #ghostty
 #alt-shift-i = 'move-node-to-workspace I'
 alt-shift-m = 'move-node-to-workspace M' #microsoft
-alt-shift-n = 'move-node-to-workspace N' #Notes
-alt-shift-o = 'move-node-to-workspace O'
+#alt-shift-n = 'move-node-to-workspace N' #Notes
+#alt-shift-o = 'move-node-to-workspace O'
 alt-shift-p = 'move-node-to-workspace P' #Privacy
-#alt-shift-r = 'move-node-to-workspace R'
+alt-shift-r = 'move-node-to-workspace R'
 alt-shift-s = 'move-node-to-workspace S' #scheduling
 alt-shift-t = 'move-node-to-workspace T' #Main Terminal
-#alt-shift-u = 'move-node-to-workspace U'
+alt-shift-u = 'move-node-to-workspace U'
 alt-shift-v = 'move-node-to-workspace V' #VSCode
 alt-shift-w = 'move-node-to-workspace W' # warp terminal
-#alt-shift-x = 'move-node-to-workspace X'
-#alt-shift-y = 'move-node-to-workspace Y'
+alt-shift-x = 'move-node-to-workspace X'
+alt-shift-y = 'move-node-to-workspace Y'
 alt-shift-z = 'move-node-to-workspace Z' #Home
 
 alt-tab = 'workspace-back-and-forth'
@@ -151,7 +151,7 @@ shift-down = ['volume set 0', 'mode main']
 
 # ----- move apps to work spaces ----- #?
 
-# Workapace B (Browser)
+# Workspace B (Browser)
 [[on-window-detected]]
 if.app-id = 'app.zen-browser.zen'
 run = "move-node-to-workspace B"
@@ -165,7 +165,7 @@ run = "move-node-to-workspace B"
 if.app-id = 'com.microsoft.VSCode'
 run = "move-node-to-workspace V"
 
-#Workapace P (Privacy)
+#Workspace P (Privacy)
 [[on-window-detected]]
 if.app-id = 'org.torproject.torbrowser'
 run = "move-node-to-workspace P"
@@ -175,7 +175,7 @@ run = "move-node-to-workspace P"
 if.app-id = 'net.ankiweb.dtop'
 run = "move-node-to-workspace A"
 
-# Workspace G (Gohsty)
+# Workspace G (Ghostty)
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
 run = "move-node-to-workspace G"
@@ -191,14 +191,14 @@ if.app-id = 'com.apple.Home'
 run = "move-node-to-workspace Z"
 
 
-# Workapace N (Notes)
+# Workspace N (Notes)
 
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = "move-node-to-workspace N"
 
 
-# Workapace S (scheduling)
+# Workspace S (scheduling)
 
 [[on-window-detected]]
 if.app-id = 'com.apple.iCal'
@@ -208,25 +208,25 @@ run = "move-node-to-workspace S"
 if.app-id = 'com.apple.reminders'
 run = "move-node-to-workspace S"
 
-# Workapace C (ChatGPT)
+# Workspace C (ChatGPT)
 
 [[on-window-detected]]
 if.app-id = 'com.openai.chat'
 run = "move-node-to-workspace C"
 
-# Workapace D (Discord)
+# Workspace D (Discord)
 
 [[on-window-detected]]
 if.app-id = 'com.hnc.Discord'
 run = "move-node-to-workspace D"
 
-# Workapace E (Editing)
+# Workspace E (Editing)
 
 [[on-window-detected]]
 if.app-id = 'com.blackmagic-design.DaVinciResolveLite'
 run = "move-node-to-workspace E"
 
-# Workapace 3 (3D Printing)
+# Workspace 3 (3D Printing)
 
 [[on-window-detected]]
 if.app-id = 'com.softfever3d.orca-slicer'
@@ -262,7 +262,7 @@ run = "move-node-to-workspace T"
 
 # ----- floating windows ----- #
 
-# password Floting window
+# password Floating window
 [[on-window-detected]]
 if.app-id = 'com.apple.Passwords'
 run = 'layout floating'
