@@ -18,9 +18,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include QMK_KEYBOARD_H
 
+
 enum {
+    TD_SPACE_ENTER,
     TD_BSPC_ALT_BSPC,
 };
+
+void dance_space_enter_finished(tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+        tap_code(KC_SPC);     // Send Space on single tap
+    } else if (state->count == 2) {
+        tap_code(KC_ENT);     // Send Enter on double tap
+    }
+}
 
 void dance_backspace_finished(tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
@@ -32,9 +42,13 @@ void dance_backspace_finished(tap_dance_state_t *state, void *user_data) {
     }
 }
 
+
 tap_dance_action_t tap_dance_actions[] = {
+    [TD_SPACE_ENTER] = ACTION_TAP_DANCE_FN(dance_space_enter_finished),
     [TD_BSPC_ALT_BSPC] = ACTION_TAP_DANCE_FN(dance_backspace_finished),
 };
+
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_split_3x6_3(
@@ -43,9 +57,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|-------------------+-------------------+-------------------+-------------------+-------------------+-------------------|                    |-------------------+------------------------+-------------------+-------------------+-------------------+-------------------|
       MEH(KC_A),          LCTL_T(KC_A),       LGUI_T(KC_R),       LSFT_T(KC_S),       LALT_T(KC_T),       KC_G,                                     KC_M,               RALT_T(KC_N),            RSFT_T(KC_E),       RGUI_T(KC_I),       RCTL_T(KC_O),       MEH(KC_P),
   //|-------------------+-------------------+-------------------+-------------------+-------------------+-------------------|                    |-------------------+------------------------+-------------------+-------------------+-------------------+-------------------|
-      MEH(KC_Z),          KC_Z,               KC_X,               KC_C,               KC_D,               KC_V,                                     KC_K,               TD(TD_BSPC_ALT_BSPC),    KC_H,               KC_DOT,             KC_COMM,            MEH(KC_X),
+      MEH(KC_Z),          KC_Z,               KC_X,               KC_C,               KC_D,               KC_V,                                     KC_K,               KC_H,                    KC_DOT,             KC_COMM,            MEH(KC_X),          MEH(KC_H),
   //|-------------------+-------------------+-------------------+-------------------+-------------------+-------------------|                    |-------------------+------------------------+-------------------+-------------------+-------------------+-------------------|
-                                                                                                            KC_NO,   KC_SPC,   TT(1),     KC_ENT,   KC_ESC,   TT(2)
+                                                                                                            KC_NO,   TD(TD_SPACE_ENTER),   TT(1),     TD(TD_BSPC_ALT_BSPC),   KC_ESC,   TT(2)
                                                                                                         //`--------------------------'  `--------------------------'
 
   ),
@@ -56,22 +70,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|-------------------+-------------------+-------------------+-------------------+-------------------+-------------------|                    |-------------------+------------------------+-------------------+-------------------+-------------------+-------------------|
       HYPR(KC_Q),         LCTL_T(KC_1),       LGUI_T(KC_2),       LSFT_T(KC_3),       LALT_T(KC_4),       KC_5,                                     KC_6,               RALT_T(KC_7),            RSFT_T(KC_8),       RGUI_T(KC_9),       RCTL_T(KC_0),       HYPR(KC_0),
   //|-------------------+-------------------+-------------------+-------------------+-------------------+-------------------|                    |-------------------+------------------------+-------------------+-------------------+-------------------+-------------------|
-      HYPR(KC_W),         HYPR(KC_F),         HYPR(KC_P),         HYPR(KC_B),         HYPR(KC_J),         HYPR(KC_L),                               HYPR(KC_U),         TD(TD_BSPC_ALT_BSPC),    HYPR(KC_A),         HYPR(KC_R),         HYPR(KC_S),         HYPR(KC_T),
+      HYPR(KC_W),         HYPR(KC_F),         HYPR(KC_P),         HYPR(KC_B),         HYPR(KC_J),         HYPR(KC_L),                               HYPR(KC_U),         HYPR(KC_A),              HYPR(KC_R),         HYPR(KC_S),         HYPR(KC_T),         HYPR(KC_E),
   //|-------------------+-------------------+-------------------+-------------------+-------------------+-------------------|                    |-------------------+------------------------+-------------------+-------------------+-------------------+-------------------|
-                                                                                                            TO(0),   KC_SPC,   TT(2),     KC_ENT,   KC_ESC,   TT(3)
+                                                                                                            TO(0),   TD(TD_SPACE_ENTER),   TT(2),     TD(TD_BSPC_ALT_BSPC),   KC_ESC,   TT(3)
                                                                                                         //`--------------------------'  `--------------------------'
 
   ),
 
     [2] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------------------------------------------------------------------------.                    ,----------------------------------------------------------------------------------------------------------------------------.
-      MEH(KC_B),          KC_LBRC,            KC_PERC,            KC_PIPE,            KC_PPLS,            KC_AT,                                    KC_AMPR,            KC_LT,                   KC_GT,              KC_DQUO,            KC_TILD,            KC_UNDS,
+      MEH(KC_B),          KC_LBRC,            KC_PERC,            KC_PIPE,            KC_PPLS,            KC_AT,                                    KC_AMPR,            KC_LT,                   KC_GT,              KC_DQUO,            KC_TILD,            MEH(KC_J),
   //|-------------------+-------------------+-------------------+-------------------+-------------------+-------------------|                    |-------------------+------------------------+-------------------+-------------------+-------------------+-------------------|
-      MEH(KC_G),          LCTL_T(KC_RBRC),    LGUI_T(KC_PEQL),    LSFT_T(KC_PMNS),    LALT_T(KC_PAST),    KC_DLR,                                   KC_EXLM,            RALT_T(KC_SLSH),         RSFT_T(KC_BSLS),    RGUI_T(KC_DOT),     RCTL_T(KC_SCLN),    KC_NO,
+      MEH(KC_G),          LCTL_T(KC_RBRC),    LGUI_T(KC_PEQL),    LSFT_T(KC_PMNS),    LALT_T(KC_PAST),    KC_DLR,                                   KC_EXLM,            RALT_T(KC_SLSH),         RSFT_T(KC_BSLS),    RGUI_T(KC_DOT),     RCTL_T(KC_SCLN),    MEH(KC_M),
   //|-------------------+-------------------+-------------------+-------------------+-------------------+-------------------|                    |-------------------+------------------------+-------------------+-------------------+-------------------+-------------------|
-      MEH(KC_V),          KC_GRV,             KC_LPRN,            KC_RPRN,            KC_QUES,            KC_CIRC,                                  KC_LCBR,            TD(TD_BSPC_ALT_BSPC),    KC_RCBR,            KC_HASH,            KC_COLN,            KC_NO,
+      MEH(KC_V),          KC_GRV,             KC_LPRN,            KC_RPRN,            KC_QUES,            KC_CIRC,                                  KC_LCBR,            KC_UNDS,                 KC_RCBR,            KC_HASH,            KC_COLN,            MEH(KC_K),
   //|-------------------+-------------------+-------------------+-------------------+-------------------+-------------------|                    |-------------------+------------------------+-------------------+-------------------+-------------------+-------------------|
-                                                                                                            TO(0),   KC_SPC,   TT(3),     KC_ENT,   KC_ESC,   KC_NO
+                                                                                                            TO(0),   TD(TD_SPACE_ENTER),   TT(3),     TD(TD_BSPC_ALT_BSPC),   KC_ESC,   KC_NO
                                                                                                         //`--------------------------'  `--------------------------'
 
   ),
