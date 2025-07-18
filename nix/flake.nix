@@ -23,6 +23,7 @@
       environment.systemPackages =
         [
           #cli tools
+          pkgs.oh-my-posh
           pkgs.eza
           pkgs.atuin
           pkgs.zoxide
@@ -58,7 +59,6 @@
 
 	  #fonts
 	  pkgs.jetbrains-mono
-	  pkgs.sketchybar-app-font
         ];
 
       homebrew = {
@@ -79,6 +79,7 @@
 			 "nikitabobko/tap/aerospace"
 			 "minecraft"
 			 #fonts
+			 "font-sketchybar-app-font"
 			 "sf-symbols"
 			 "font-hack-nerd-font"
             		 ];
@@ -150,7 +151,6 @@
       system.defaults.NSGlobalDomain._HIHideMenuBar = true;
     
       users.users.xm0se.home = "/Users/xm0se";
-
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
