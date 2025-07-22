@@ -26,7 +26,6 @@ sketchybar --add event aerospace_mode_change
 sketchybar --add event display_volume_change
 
 source $ITEM_DIR/calendar.sh
-source $ITEM_DIR/brew.sh
 source $ITEM_DIR/cpu.sh
 
 source $ITEM_DIR/ONE_THING.sh

@@ -24,8 +24,8 @@ if [ "$SENDER" == "mouse.exited" ]; then
   fi
   sketchybar --set "$NAME" \
     background.drawing=off \
-    label.color="$WHITE" \
-    icon.color="$WHITE" \
+    label.color="$BAR_COLOR" \
+    icon.color="$BAR_COLOR" \
     background.color="$ITEM_BG_COLOR"
 
   exit 0
@@ -89,8 +89,8 @@ else
       drawing=on \
       label="$icons" \
       background.drawing=off \
-      label.color="$WHITE" \
-      icon.color="$WHITE" \
+      label.color="$BAR_COLOR" \
+      icon.color="$BAR_COLOR" \
       background.color="$ITEM_BG_COLOR"
 
   fi

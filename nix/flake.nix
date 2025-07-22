@@ -50,7 +50,6 @@
           pkgs.anki-bin
           pkgs.bitwarden
           pkgs.wezterm
-	  pkgs.sketchybar
           pkgs.alacritty
 	  pkgs.ghostty-bin
 	  pkgs.vscode
@@ -65,8 +64,12 @@
 		 enable = true;
 		 onActivation.cleanup = "zap";
 		 taps =  [
+			  "FelixKratz/formulae"
+			  "nikitabobko/tap"
+
 	 		 ];
 		 brews = [
+			 "sketchybar"
             		 ];
 
 		 casks = [
@@ -76,7 +79,7 @@
 			 "signal"
 			 "mullvad-vpn"
 			 "orcaslicer"
-			 "nikitabobko/tap/aerospace"
+			 "aerospace"
 			 "minecraft"
 			 #fonts
 			 "font-sketchybar-app-font"
@@ -138,7 +141,6 @@
       system.defaults.NSGlobalDomain.NSAutomaticWindowAnimationsEnabled = false;
       system.defaults.WindowManager.EnableTilingByEdgeDrag = false;
 
-      services.sketchybar.enable = true;
       #jankyborders
       services.jankyborders = {
 				enable = true;
