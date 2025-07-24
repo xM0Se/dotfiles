@@ -42,8 +42,6 @@
 	  pkgs.yazi
 	  pkgs.zsh-autosuggestions
 	  pkgs.zsh-syntax-highlighting
-          pkgs.libfido2
-	  pkgs.gnupg
           #Gui Apps
           pkgs.jankyborders
 	  pkgs.raycast
@@ -52,12 +50,16 @@
           pkgs.wezterm
           pkgs.alacritty
 	  pkgs.ghostty-bin
-	  pkgs.vscode
           pkgs.obsidian
 	  pkgs.keycastr
 
+
 	  #fonts
 	  pkgs.jetbrains-mono
+
+	  #VS-Code exetensions
+	  pkgs.vscode-extensions.dracula-theme.theme-dracula
+   	  pkgs.vscode-extensions.vscodevim.vim
         ];
 
       homebrew = {
@@ -69,7 +71,7 @@
 
 	 		 ];
 		 brews = [
-			 "sketchybar"
+    			 { name = "sketchybar"; start_service = true; }
             		 ];
 
 		 casks = [
@@ -81,6 +83,7 @@
 			 "orcaslicer"
 			 "aerospace"
 			 "minecraft"
+			 "logi-options+"
 			 #fonts
 			 "font-sketchybar-app-font"
 			 "sf-symbols"
@@ -151,7 +154,8 @@
       				width = 6.0;
        			      };
       system.defaults.NSGlobalDomain._HIHideMenuBar = true;
-    
+
+
       users.users.xm0se.home = "/Users/xm0se";
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
@@ -192,6 +196,7 @@
                 }
                 ];
     };
+
   };
 }
 
