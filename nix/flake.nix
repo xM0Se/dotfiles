@@ -52,6 +52,7 @@
 	  pkgs.ghostty-bin
           pkgs.obsidian
 	  pkgs.keycastr
+	  pkgs.vscode
 
 
 	  #fonts
@@ -139,8 +140,6 @@
       	 		      wvous-bl-corner = 1;
                              };
       #other
-      system.defaults.loginwindow.SHOWFULLNAME = true;
-      system.defaults.loginwindow.GuestEnabled = false;
       system.defaults.NSGlobalDomain.NSAutomaticWindowAnimationsEnabled = false;
       system.defaults.WindowManager.EnableTilingByEdgeDrag = false;
 
@@ -154,6 +153,15 @@
       				width = 6.0;
        			      };
       system.defaults.NSGlobalDomain._HIHideMenuBar = true;
+
+      #Security stuff
+      system.defaults.loginwindow.SHOWFULLNAME = true;
+      system.defaults.loginwindow.GuestEnabled = false;
+      networking.applicationFirewall.enable = true;
+      system.defaults.SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
+      networking.applicationFirewall.enableStealthMode = true;
+      system.defaults.screensaver.askForPassword = true;
+      system.defaults.screensaver.askForPasswordDelay = 0;
 
 
       users.users.xm0se.home = "/Users/xm0se";

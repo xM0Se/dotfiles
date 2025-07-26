@@ -8,13 +8,18 @@
 
   programs.vscode = {
                      enable = true;
-    		     profiles.default.extensions = with pkgs.vscode-extensions; [
-                        							 dracula-theme.theme-dracula
-   										 vscodevim.vim
-    										 yzhang.markdown-all-in-one
-  										];
-		    };
+    		     profiles.default = {
+					 userSettings = {
+							   "workbench.colorTheme" = "Dracula Theme";
+		      					};
+					 extensions = with pkgs.vscode-extensions; [
+                        		             				    dracula-theme.theme-dracula
+   										    vscodevim.vim
+    										    yzhang.markdown-all-in-one
+  										   ];
+					};
 
+		    };
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
