@@ -29,12 +29,12 @@
           pkgs.zoxide
           pkgs.neofetch
           pkgs.vim
-	  pkgs.neovim
+				  pkgs.neovim
           pkgs.tmux
           pkgs.fzf
-	  pkgs.btop
-	  pkgs.bat
-	  pkgs.cmatrix
+				  pkgs.btop
+				  pkgs.bat
+				  pkgs.cmatrix
 	  pkgs.git
 	  pkgs.nmap
 	  pkgs.pay-respects
