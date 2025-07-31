@@ -19,6 +19,8 @@ alias c='clear'
 eval "$(zoxide init zsh)"
 # ----------- lock screen shortcut
 
+eval "$(pay-respects zsh --alias)"
+
 alias lock='pmset displaysleepnow'
 
 
