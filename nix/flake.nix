@@ -35,13 +35,13 @@
 				  pkgs.btop
 				  pkgs.bat
 				  pkgs.cmatrix
-	  pkgs.git
-	  pkgs.nmap
-	  pkgs.pay-respects
-	  pkgs.tldr
-	  pkgs.yazi
-	  pkgs.zsh-autosuggestions
-	  pkgs.zsh-syntax-highlighting
+				  pkgs.git
+				  pkgs.nmap
+				  pkgs.pay-respects
+				  pkgs.tldr
+				  pkgs.yazi
+				  pkgs.zsh-autosuggestions
+				  pkgs.zsh-syntax-highlighting
           #Gui Apps
           pkgs.jankyborders
 	  pkgs.raycast
