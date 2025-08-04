@@ -6,8 +6,6 @@ neofetch
 alias bye='sudo shutdown -h now'
 eval "$(atuin init zsh)"
 
-# ----- vimliketerminal ----- #
-set -o vi
 #--------random stuff
 export EDITOR="nvim"
 export PAGER=bat
