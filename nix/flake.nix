@@ -54,7 +54,8 @@
 	  pkgs.keycastr
 	  pkgs.vscode
 
-
+	  #nvim 
+	  pkgs.vimPlugins.LazyVim
 	  #fonts
 	  pkgs.jetbrains-mono
 
