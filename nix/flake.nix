@@ -190,9 +190,9 @@
      pkgs.cmatrix
     ];
     imports = [
-       ./pkgs/cli-tools/Shell-Enhancements-UX/module1.nix
+       ./pkgs/cli-tools/essential-cli-tools.nix
     ];
-    module1.enable = true;
+    essential-cli-tools.enable = true;
 
                         
 
