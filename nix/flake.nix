@@ -189,6 +189,11 @@
     [
      pkgs.cmatrix
     ];
+    imports = [
+       ./pkgs/cli-tools/Shell-Enhancements-UX/test.nix
+    ];
+
+                        
 
       nixpkgs.hostPlatform = "x86_64-linux";
   };
@@ -216,7 +221,8 @@
     nixosConfigurations."test" = nixpkgs.lib.nixosSystem {
       modules = [
         configuration2
-        ./configuration.nix
+       
+        ./nix-os/servers/server-one/configuration.nix
       ];
     };
 
