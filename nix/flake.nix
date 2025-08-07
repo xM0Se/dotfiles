@@ -223,7 +223,7 @@
       modules = [
         configuration2
        
-        ./nix-os/servers/server-one/configuration.nix
+        ./hosts/nix-os/servers/test1/configuration.nix
       ];
     };
 
