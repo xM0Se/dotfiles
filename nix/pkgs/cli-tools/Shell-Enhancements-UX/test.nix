@@ -1,17 +1,42 @@
-{ nixpkgs, lib, config, ... }: {
+#{ nixpkgs, lib, config, ... }: {
+#
+#options =  {
+#  module1.enable =
+#};
+#
+#config = {
+#  option1 = 5;
+#  option2 = true;
+#};
+#
+#    environment.systemPackages =
+#    [
+#    nixpkgs.btop
+#    ];
+#
+#}
 
-options =  {
-  module1.enable =
-};
 
-config = {
-  option1 = 5;
-  option2 = true;
-};
+{ lib, config, options, nixpkgs, ... }: {
 
-    environment.systemPackages =
-    [
-    nixpkgs.btop
+  options = {
+    # You can define custom module options here if needed
+    module1.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "Enable module1.";
+    };
+  };
+
+  config = {
+    option1 = 5;
+    option2 = true;
+
+    # This must be inside the config block
+    environment.systemPackages = [
+      nixpkgs.btop
     ];
+  };
 
 }
+
