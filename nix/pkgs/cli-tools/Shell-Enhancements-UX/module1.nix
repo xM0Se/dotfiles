@@ -57,7 +57,7 @@
 #
 #}
 #
-{ nixpkgs, lib, config, ... }: {
+{ pkgs, lib, config, ... }: {
 
   options = { pkgs, ... }: {
     module1.enable = 
@@ -67,7 +67,7 @@
   config = lib.mkIf config.module1.enable {
     environment.systemPackages =
     [
-    inputs.nixpkgs.btop
+    pkgs.btop
     ];
   
   };
