@@ -192,6 +192,7 @@
     imports = [
        ./pkgs/cli-tools/Shell-Enhancements-UX/module1.nix
     ];
+    module1.enable = true;
 
                         
 
