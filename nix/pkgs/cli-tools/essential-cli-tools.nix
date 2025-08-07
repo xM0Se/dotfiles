@@ -10,8 +10,10 @@
   };
 
   config = lib.mkIf config.essential-cli-tools.enable {
-    eza.enable = true;
-    oh-my-posh.enable = true;
+    eza.enable = 
+	lib.mkDeafault true;
+    oh-my-posh.enable = 
+	lib.mkDeafault true;
   };
 
 }
