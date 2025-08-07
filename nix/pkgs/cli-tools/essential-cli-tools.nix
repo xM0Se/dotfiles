@@ -11,9 +11,9 @@
 
   config = lib.mkIf config.essential-cli-tools.enable {
     eza.enable = 
-	lib.mkDeafault true;
+	lib.mkDefault true;
     oh-my-posh.enable = 
-	lib.mkDeafault true;
+	lib.mkDefault true;
   };
 
 }
