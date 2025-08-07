@@ -190,7 +190,7 @@
      pkgs.cmatrix
     ];
     imports = [
-       ./pkgs/cli-tools/Shell-Enhancements-UX/test.nix
+       ./pkgs/cli-tools/Shell-Enhancements-UX/module1.nix
     ];
 
                         
