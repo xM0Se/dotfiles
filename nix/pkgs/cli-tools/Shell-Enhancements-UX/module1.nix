@@ -67,7 +67,7 @@
   config = lib.mkIf config.module1.enable {
     environment.systemPackages =
     [
-    nixpkgs.btop
+    pkgs.btop
     ];
   
   };
