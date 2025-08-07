@@ -7,7 +7,6 @@
 
   config = lib.mkIf config.essential-cli-tools.enable {
     imports = [
-       ./eza.nix
        ./oh-my-posh.nix
     ];
   };
