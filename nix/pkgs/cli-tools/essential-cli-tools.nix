@@ -1,14 +1,17 @@
 { pkgs, lib, config, ... }: {
 
+  imports = [
+      ./eza.nix
+      ./oh-my-posh.nix
+  ]; 
   options = {
-    essential-cli-tools.enable = 
+    essential-cli-tools.enable =
       lib.mkEnableOption "enables essential-cli-tools";
   };
 
   config = lib.mkIf config.essential-cli-tools.enable {
-    imports = [
-       ./oh-my-posh.nix
-    ];
+    eza.enable = true;
+    oh-my-posh.enable = true;
   };
 
 }
