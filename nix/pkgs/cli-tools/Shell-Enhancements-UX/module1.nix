@@ -59,7 +59,7 @@
 #
 { pkgs, lib, config, ... }: {
 
-  options = { pkgs, ... }: {
+  options = {
     module1.enable = 
       lib.mkEnableOption "enables module1";
   };
