@@ -193,6 +193,8 @@
        ./pkgs/cli-tools/essential-cli-tools.nix
     ];
     essential-cli-tools.enable = true;
+    eza.enable = true;
+    oh-my-posh.enable = true;
 
                         
 

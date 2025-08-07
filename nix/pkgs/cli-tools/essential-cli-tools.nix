@@ -10,8 +10,6 @@
        ./eza.nix
        ./oh-my-posh.nix
     ];
-    eza.enable = true;
-    oh-my-posh.enable = true;
   };
 
 }
