@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  home.homeDirectory = "/root";
-
 
   home.stateVersion = "25.05";
 
