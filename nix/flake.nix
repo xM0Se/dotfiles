@@ -195,6 +195,8 @@
     ];
 
     essential-cli-tools.enable = true;
+    users.users.root.home = "/root";
+
 
                         
     nixpkgs.hostPlatform = "x86_64-linux";
@@ -225,7 +227,7 @@
         home-manager.darwinModules.home-manager {
          home-manager.useGlobalPkgs = true;
          home-manager.useUserPackages = true;
-         home-manager.users.xm0se = ./home-manager/home2.nix;}
+         home-manager.users.root = ./home-manager/home2.nix;}
         configuration2
        
         ./hosts/nix-os/servers/test1/configuration.nix
