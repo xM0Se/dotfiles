@@ -10,6 +10,7 @@
     userName = "xm0se";
     userEmail = "189546389+xM0Se@users.noreply.github.com";
   };
+
   programs.btop = {
     enable = true;
     settings  = {
@@ -18,8 +19,8 @@
       truecolor = true;
       vim_keys = true;
     };
-
   };
+
   home.packages = [
      pkgs.hello
   ];

@@ -191,7 +191,7 @@
      pkgs.cmatrix
     ];
     imports = [
-       ./pkgs/cli-tools/essential-cli-tools.nix
+       ./pkgs/nixpkgs-unbstable/cli/essential-cli-tools.nix
     ];
 
     essential-cli-tools.enable = true;
@@ -223,6 +223,7 @@
                 }
                 ];
     };
+
     nixosConfigurations."test" = nixpkgs.lib.nixosSystem {
       modules = [
         home-manager.nixosModules.home-manager {
@@ -230,11 +231,8 @@
          home-manager.useUserPackages = true;
          home-manager.users.root = ./home-manager/home2.nix;}
         configuration2
-       
         ./hosts/nix-os/servers/test1/configuration.nix
       ];
     };
-
   };
 }
-
