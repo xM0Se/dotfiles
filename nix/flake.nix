@@ -193,7 +193,6 @@
     imports = [
        ./pkgs/cli-tools/essential-cli-tools.nix
     ];
-    users.users.root.home = "/root";
 
     essential-cli-tools.enable = true;
 
