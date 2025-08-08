@@ -224,7 +224,7 @@
     };
     nixosConfigurations."test" = nixpkgs.lib.nixosSystem {
       modules = [
-        home-manager.darwinModules.home-manager {
+        home-manager.nixosModules.home-manager {
          home-manager.useGlobalPkgs = true;
          home-manager.useUserPackages = true;
          home-manager.users.root = ./home-manager/home2.nix;}
