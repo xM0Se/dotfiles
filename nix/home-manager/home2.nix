@@ -13,8 +13,10 @@
   programs.btop = {
     enable = true;
     settings  = {
-      color_theme = "Default";
+      color_theme = "dracula";
       theme_background = false;
+      truecolor = true;
+      vim_keys = true;
     };
 
   };
