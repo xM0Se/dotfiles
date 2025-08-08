@@ -193,11 +193,12 @@
     imports = [
        ./pkgs/cli-tools/essential-cli-tools.nix
     ];
+    users.users.root.home = "/root";
+
     essential-cli-tools.enable = true;
 
                         
-
-      nixpkgs.hostPlatform = "x86_64-linux";
+    nixpkgs.hostPlatform = "x86_64-linux";
   };
   in
   {
@@ -209,7 +210,7 @@
                 home-manager.darwinModules.home-manager {
                  home-manager.useGlobalPkgs = true;
                  home-manager.useUserPackages = true;
-                 home-manager.users.xm0se = ./home-manager/home.nix;}
+                 home-manager.users.xm0se = ./home-manager/home1.nix;}
                 nix-homebrew.darwinModules.nix-homebrew
                 {
                   nix-homebrew = {
@@ -222,6 +223,10 @@
     };
     nixosConfigurations."test" = nixpkgs.lib.nixosSystem {
       modules = [
+        home-manager.darwinModules.home-manager {
+         home-manager.useGlobalPkgs = true;
+         home-manager.useUserPackages = true;
+         home-manager.users.xm0se = ./home-manager/home2.nix;}
         configuration2
        
         ./hosts/nix-os/servers/test1/configuration.nix
