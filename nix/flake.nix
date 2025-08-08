@@ -196,6 +196,7 @@
 
     essential-cli-tools.enable = true;
     users.users.root.home = "/root";
+    home-manager.backupFileExtension = "hm-backup";
 
 
                         

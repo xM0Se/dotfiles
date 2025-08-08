@@ -3,7 +3,6 @@
 {
   home.username = "root";
   home.homeDirectory = "/root";
-  backupFileExtension = "hm-backup";
   home.stateVersion = "25.05";
 
   programs.git = {
