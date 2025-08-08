@@ -7,7 +7,7 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     home-manager = {
-                     url = "github:nix-community/home-manager";
+                     url = "github:nix-community/home-manager/master";
                      inputs.nixpkgs.follows = "nixpkgs";
                    };
   };
@@ -18,6 +18,7 @@
       system = {
                 primaryUser = "xm0se";
                };
+      users.users.xm0se.home = "/Users/xm0se";
 
       nixpkgs.config.allowUnfree = true;
       environment.systemPackages =
@@ -164,7 +165,7 @@
       system.defaults.screensaver.askForPasswordDelay = 0;
 
 
-      users.users.xm0se.home = "/Users/xm0se";
+
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
@@ -208,7 +209,7 @@
                 home-manager.darwinModules.home-manager {
                  home-manager.useGlobalPkgs = true;
                  home-manager.useUserPackages = true;
-                 home-manager.users.xm0se = ./home.nix;}
+                 home-manager.users.xm0se = ./home-manager/home.nix;}
                 nix-homebrew.darwinModules.nix-homebrew
                 {
                   nix-homebrew = {
