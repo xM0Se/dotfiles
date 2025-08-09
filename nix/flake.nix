@@ -17,7 +17,7 @@
     configuration1 = { pkgs, ... }: {
       imports = [
         ./configuration/system/mac-os/docksettings.nix
-        ./configuration/system/mac-/findersettigs.nix
+        ./configuration/system/mac-os/findersettigs.nix
       ]; 
       docksettings.enable = true;
       findersetting.enable = true;
