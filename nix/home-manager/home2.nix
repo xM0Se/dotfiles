@@ -5,11 +5,10 @@
   home.homeDirectory = "/root";
   home.stateVersion = "25.05";
 
-  programs.git = {
-    enable = true;
-    userName = "xm0se";
-    userEmail = "189546389+xM0Se@users.noreply.github.com";
-  };
+  imports = [
+      ./test.nix
+  ];
+  git.enable = true;
 
   programs.btop = {
     enable = true;
