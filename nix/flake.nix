@@ -17,8 +17,10 @@
     configuration1 = { pkgs, ... }: {
       imports = [
         ./configuration/system/mac-os/docksettings.nix
+        ./configuration/system/mac-/findersettigs.nix
       ]; 
       docksettings.enable = true;
+      findersetting.enable = true;
 
 
       system = {
@@ -107,24 +109,6 @@
                  };
 
       #macOS setings
-
-      #Finder
-      system.defaults.finder = {
-                                AppleShowAllExtensions = true;
-                                AppleShowAllFiles = true;
-                                FXDefaultSearchScope = "SCcf";
-                                FXEnableExtensionChangeWarning = false;
-                                FXRemoveOldTrashItems = true;
-                                NewWindowTarget = "Home";
-                                QuitMenuItem = true;
-                                ShowExternalHardDrivesOnDesktop = false;
-                                ShowPathbar = true;
-                                ShowRemovableMediaOnDesktop = false;
-                                ShowStatusBar = true;
-                                CreateDesktop = false;
-                               };
-
-
 
       system.defaults.NSGlobalDomain.AppleShowAllExtensions = true;
       #hot corners
