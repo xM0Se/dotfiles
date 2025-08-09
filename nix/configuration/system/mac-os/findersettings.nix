@@ -21,6 +21,7 @@
       ShowStatusBar = true;
       CreateDesktop = false;
     };
+    system.defaults.NSGlobalDomain.AppleShowAllExtensions = true;
 
   };
 }
