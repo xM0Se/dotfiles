@@ -6,19 +6,11 @@
   home.stateVersion = "25.05";
 
   imports = [
-      ./test.nix
+      ./gitconf.nix
+      ./btopconf.nix
   ];
-  git.enable = true;
-
-  programs.btop = {
-    enable = true;
-    settings  = {
-      color_theme = "dracula";
-      theme_background = false;
-      truecolor = true;
-      vim_keys = true;
-    };
-  };
+  gitconf.enable = true;
+  btopconf.enable = true;
 
   home.packages = [
      pkgs.hello
