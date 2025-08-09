@@ -20,7 +20,7 @@
         ./configuration/system/mac-os/findersettings.nix
       ]; 
       docksettings.enable = true;
-      findersetting.enable = true;
+      findersettings.enable = true;
 
 
       system = {
