@@ -110,7 +110,6 @@
 
       #macOS setings
 
-      system.defaults.NSGlobalDomain.AppleShowAllExtensions = true;
       #hot corners
       system.defaults.dock = {
                               wvous-tr-corner = 1;
