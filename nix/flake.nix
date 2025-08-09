@@ -15,6 +15,12 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager }:
   let
     configuration1 = { pkgs, ... }: {
+      imports = [
+        ./configuration/system/mac-os/docksettings.nix
+      ]; 
+      docksettings.enable = true;
+
+
       system = {
                 primaryUser = "xm0se";
                };
@@ -101,18 +107,6 @@
                  };
 
       #macOS setings
-
-      #dock settings
-
-      system.defaults.dock = {
-                                autohide = true;
-                                tilesize = 1;
-                                orientation = "left";         # Dock on the left
-                                static-only = true;
-                                autohide-delay = 5.0;
-                                show-recents = false;
-                                show-process-indicators = false;
-                             };
 
       #Finder
       system.defaults.finder = {
