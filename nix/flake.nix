@@ -18,9 +18,11 @@
       imports = [
         ./configuration/system/mac-os/docksettings.nix
         ./configuration/system/mac-os/findersettings.nix
+        ./pkgs/homebrew/Casks/essential-brew-mac-apps.nix
       ]; 
       docksettings.enable = true;
       findersettings.enable = true;
+      essential-brew-mac-apps.enable = true;
 
 
       system = {
@@ -85,15 +87,6 @@
                          ];
 
                  casks = [
-                         #Apps
-                         "zen"
-                         "twingate"
-                         "signal"
-                         "mullvad-vpn"
-                         "orcaslicer"
-                         "aerospace"
-                         "minecraft"
-                         "logi-options+"
                          #fonts
                          "font-sketchybar-app-font"
                          "sf-symbols"
