@@ -8,7 +8,7 @@
       ./orcaslicer.nix
       ./aerospace.nix
       ./minecraft.nix
-      ./logi-option-plus.nix
+      ./logi-options-plus.nix
   ];
 
   options = {
