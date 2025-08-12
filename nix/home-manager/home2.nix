@@ -8,10 +8,12 @@
       ./gitconf.nix
       ./btopconf.nix
       ./zshconf.nix
+      ./ohmyposhconf.nix
   ];
   gitconf.enable = true;
   btopconf.enable = true;
   zshconf.enable = true;
+  ohmyposhconf.enable = true;
   home.packages = [
      pkgs.hello
   ];
