@@ -7,6 +7,9 @@
       ./u-pkg-zoxide.nix
       ./u-pkg-neofetch.nix
       ./u-pkg-vim.nix
+      ./u-pkg-neovim.nix
+      ./u-pkg-tmux.nix
+      ./u-pkg-fzf.nix
   ]; 
   options = {
     essential-cli-tools.enable =
@@ -25,6 +28,12 @@
     neofetch.enable =
         lib.mkDefault true;
     vim.enable =
+        lib.mkDefault true;
+    neovim.enable =
+        lib.mkDefault true;
+    tmux.enable =
+        lib.mkDefault true;
+    fzf.enable =
         lib.mkDefault true;
   };
 

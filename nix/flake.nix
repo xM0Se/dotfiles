@@ -19,10 +19,12 @@
         ./configuration/system/mac-os/docksettings.nix
         ./configuration/system/mac-os/findersettings.nix
         ./pkgs/homebrew/Casks/essential-brew-mac-apps.nix
+        ./pkgs/nixpkgs-unbstable/cli/essential-cli-tools.nix
       ]; 
       docksettings.enable = true;
       findersettings.enable = true;
       essential-brew-mac-apps.enable = true;
+      essential-cli-tools.enable = true;
 
 
       system = {
@@ -34,15 +36,6 @@
       environment.systemPackages =
         [
           #cli tools
-          pkgs.oh-my-posh
-          pkgs.eza
-          pkgs.atuin
-          pkgs.zoxide
-          pkgs.neofetch
-          pkgs.vim
-          pkgs.neovim
-          pkgs.tmux
-          pkgs.fzf
           pkgs.btop
           pkgs.bat
           pkgs.cmatrix
