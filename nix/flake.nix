@@ -160,7 +160,6 @@
     [
      pkgs.cmatrix
      pkgs.zsh
-     pkgs.neofetch
     ];
     imports = [
        ./pkgs/nixpkgs-unbstable/cli/essential-cli-tools.nix
