@@ -3,6 +3,7 @@
   imports = [
       ./eza.nix
       ./oh-my-posh.nix
+      ./atuin.nix
   ]; 
   options = {
     essential-cli-tools.enable =
@@ -14,6 +15,8 @@
 	lib.mkDefault true;
     oh-my-posh.enable = 
 	lib.mkDefault true;
+    atuin.enable =
+        lib.mkDefault true;
   };
 
 }
