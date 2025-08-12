@@ -7,7 +7,7 @@
 
   config = lib.mkIf config.zshconf.enable {
     home.file = {
-      ".zshrc".source = /../../zshrc/.zshrc;
+      ".zshrc".source = ../../zshrc/.zshrc;
     };
   };
 }
