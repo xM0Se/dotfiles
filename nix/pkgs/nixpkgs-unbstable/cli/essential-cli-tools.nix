@@ -4,6 +4,7 @@
       ./eza.nix
       ./oh-my-posh.nix
       ./atuin.nix
+      ./zoxide.nix
   ]; 
   options = {
     essential-cli-tools.enable =
@@ -16,6 +17,8 @@
     oh-my-posh.enable = 
 	lib.mkDefault true;
     atuin.enable =
+        lib.mkDefault true;
+    zoxide.enable =
         lib.mkDefault true;
   };
 
