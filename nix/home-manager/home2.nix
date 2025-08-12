@@ -8,10 +8,11 @@
   imports = [
       ./gitconf.nix
       ./btopconf.nix
+      ./zshconf.nix
   ];
   gitconf.enable = true;
   btopconf.enable = true;
-
+  zshconf.enable = true;
   home.packages = [
      pkgs.hello
   ];
