@@ -159,6 +159,7 @@
     environment.systemPackages =
     [
      pkgs.cmatrix
+     pkgs.zsh
     ];
     imports = [
        ./pkgs/nixpkgs-unbstable/cli/essential-cli-tools.nix
@@ -166,6 +167,7 @@
 
     essential-cli-tools.enable = true;
     users.users.root.home = "/root";
+    users.users.root.shell = pkgs.zsh;
     home-manager.backupFileExtension = "hm-backup";
 
 

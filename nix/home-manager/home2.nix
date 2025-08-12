@@ -4,7 +4,6 @@
   home.username = "root";
   home.homeDirectory = "/root";
   home.stateVersion = "25.05";
-  programs.zsh.enable = true;
   imports = [
       ./gitconf.nix
       ./btopconf.nix
