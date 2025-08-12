@@ -168,6 +168,7 @@
     essential-cli-tools.enable = true;
     users.users.root.home = "/root";
     users.users.root.shell = pkgs.zsh;
+    programs.zsh.enable = true;
     home-manager.backupFileExtension = "hm-backup";
 
 
