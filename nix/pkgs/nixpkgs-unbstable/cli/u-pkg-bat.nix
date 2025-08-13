@@ -1,11 +1,11 @@
 { pkgs, lib, config, ... }: {
 
   options = {
-    bat.enable =
+    u-pkg-bat.enable =
       lib.mkEnableOption "installs bat using nixpkgs unstable";
   };
 
-  config = lib.mkIf config.bat.enable {
+  config = lib.mkIf config.u-pkg-bat.enable {
     environment.systemPackages =
     [
     pkgs.bat

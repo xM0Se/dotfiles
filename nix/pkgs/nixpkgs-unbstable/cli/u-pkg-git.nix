@@ -1,11 +1,11 @@
 { pkgs, lib, config, ... }: {
 
   options = {
-    git.enable =
+    u-pkg-git.enable =
       lib.mkEnableOption "installs git using nixpkgs unstable";
   };
 
-  config = lib.mkIf config.git.enable {
+  config = lib.mkIf config.u-pkg-git.enable {
     environment.systemPackages =
     [
     pkgs.git

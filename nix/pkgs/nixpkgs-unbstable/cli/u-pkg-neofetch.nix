@@ -1,11 +1,11 @@
 { pkgs, lib, config, ... }: {
 
   options = {
-    neofetch.enable =
+    u-pkg-neofetch.enable =
       lib.mkEnableOption "enables neofetch";
   };
 
-  config = lib.mkIf config.neofetch.enable {
+  config = lib.mkIf config.u-pkg-neofetch.enable {
     environment.systemPackages =
     [
     pkgs.neofetch

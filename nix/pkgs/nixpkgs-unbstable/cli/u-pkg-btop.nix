@@ -1,11 +1,11 @@
 { pkgs, lib, config, ... }: {
 
   options = {
-    btop.enable =
+    u-pkg-btop.enable =
       lib.mkEnableOption "installs btop using nixpkgs unstable";
   };
 
-  config = lib.mkIf config.btop.enable {
+  config = lib.mkIf config.u-pkg-btop.enable {
     environment.systemPackages =
     [
     pkgs.btop

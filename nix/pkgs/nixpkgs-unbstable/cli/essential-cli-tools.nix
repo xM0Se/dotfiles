@@ -21,31 +21,31 @@
   };
 
   config = lib.mkIf config.essential-cli-tools.enable {
-    eza.enable = 
+    u-pkg-eza.enable = 
 	lib.mkDefault true;
-    oh-my-posh.enable = 
+    u-pkg-oh-my-posh.enable = 
 	lib.mkDefault true;
-    atuin.enable =
+    u-pkg-atuin.enable =
         lib.mkDefault true;
-    zoxide.enable =
+    u-pkg-zoxide.enable =
         lib.mkDefault true;
-    neofetch.enable =
+    u-pkg-neofetch.enable =
         lib.mkDefault true;
-    vim.enable =
+    u-pkg-vim.enable =
         lib.mkDefault true;
-    neovim.enable =
+    u-pkg-neovim.enable =
         lib.mkDefault true;
-    tmux.enable =
+    u-pkg-tmux.enable =
         lib.mkDefault true;
-    fzf.enable =
+    u-pkg-fzf.enable =
         lib.mkDefault true;
-    btop.enable =
+    u-pkg-btop.enable =
         lib.mkDefault true;
-    bat.enable =
+    u-pkg-bat.enable =
         lib.mkDefault true;
-    git.enable =
+    u-pkg-git.enable =
         lib.mkDefault true;
-    pay-respects.enable =
+    u-pkg-pay-respects.enable =
         lib.mkDefault true;
   };
 

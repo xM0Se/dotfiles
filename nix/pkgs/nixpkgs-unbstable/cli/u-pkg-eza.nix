@@ -1,11 +1,11 @@
 { pkgs, lib, config, ... }: {
 
   options = {
-    eza.enable = 
+    u-pkg-eza.enable = 
       lib.mkEnableOption "enables eza";
   };
 
-  config = lib.mkIf config.eza.enable {
+  config = lib.mkIf config.u-pkg-eza.enable {
     environment.systemPackages =
     [
     pkgs.eza

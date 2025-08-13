@@ -1,11 +1,11 @@
 { pkgs, lib, config, ... }: {
 
   options = {
-    atuin.enable =
+    u-pkg-atuin.enable =
       lib.mkEnableOption "installs atuin using nixpkgs unstable";
   };
 
-  config = lib.mkIf config.atuin.enable {
+  config = lib.mkIf config.u-pkg-atuin.enable {
     environment.systemPackages =
     [
     pkgs.atuin
