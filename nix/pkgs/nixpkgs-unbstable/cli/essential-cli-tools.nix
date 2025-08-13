@@ -13,7 +13,7 @@
       ./u-pkg-btop.nix
       ./u-pkg-bat.nix
       ./u-pkg-git.nix
-      ./u-pkg-git.nix
+      ./u-pkg-pay-respects.nix
   ]; 
   options = {
     essential-cli-tools.enable =
