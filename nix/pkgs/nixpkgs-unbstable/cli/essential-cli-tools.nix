@@ -10,6 +10,7 @@
       ./u-pkg-neovim.nix
       ./u-pkg-tmux.nix
       ./u-pkg-fzf.nix
+      ./u-pkg-btop.nix
   ]; 
   options = {
     essential-cli-tools.enable =
@@ -34,6 +35,8 @@
     tmux.enable =
         lib.mkDefault true;
     fzf.enable =
+        lib.mkDefault true;
+    btop.enable =
         lib.mkDefault true;
   };
 

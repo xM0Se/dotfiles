@@ -36,7 +36,6 @@
       environment.systemPackages =
         [
           #cli tools
-          pkgs.btop
           pkgs.bat
           pkgs.cmatrix
           pkgs.git
