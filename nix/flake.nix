@@ -153,7 +153,7 @@
      pkgs.zsh
     ];
     imports = [
-       ./pkgs/nixpkgs-unbstable/cli/essential-cli-tools.nix
+       ./pkgs/nixpkgs-unstable/cli/essential-cli-tools.nix
     ];
 
     essential-cli-tools.enable = true;
