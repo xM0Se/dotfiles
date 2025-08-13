@@ -11,6 +11,7 @@
       ./u-pkg-tmux.nix
       ./u-pkg-fzf.nix
       ./u-pkg-btop.nix
+      ./u-pkg-bat.nix
   ]; 
   options = {
     essential-cli-tools.enable =
@@ -37,6 +38,8 @@
     fzf.enable =
         lib.mkDefault true;
     btop.enable =
+        lib.mkDefault true;
+    bat.enable =
         lib.mkDefault true;
   };
 
