@@ -36,8 +36,9 @@
       environment.systemPackages =
         [
           #cli tools
-          pkgs.bat
           pkgs.cmatrix
+
+
           pkgs.git
           pkgs.nmap
           pkgs.pay-respects

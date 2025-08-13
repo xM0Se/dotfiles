@@ -12,6 +12,8 @@
       ./u-pkg-fzf.nix
       ./u-pkg-btop.nix
       ./u-pkg-bat.nix
+      ./u-pkg-git.nix
+      ./u-pkg-git.nix
   ]; 
   options = {
     essential-cli-tools.enable =
@@ -40,6 +42,10 @@
     btop.enable =
         lib.mkDefault true;
     bat.enable =
+        lib.mkDefault true;
+    git.enable =
+        lib.mkDefault true;
+    pay-respects.enable =
         lib.mkDefault true;
   };
 
