@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }: {
 
   options = {
-    u-pkg-oh-my-posh.nix.enable = 
+    u-pkg-oh-my-posh.enable = 
       lib.mkEnableOption "enables oh-my-posh";
   };
 
