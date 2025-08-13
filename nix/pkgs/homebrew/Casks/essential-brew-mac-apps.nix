@@ -29,6 +29,10 @@
       lib.mkDefault true;
     aerospace.enable =
       lib.mkDefault true;
+    minecraft.enable =
+      lib.mkDefault true;
+    logi-options-plus.enable =
+      lib.mkDefault true;
   };
 
 }

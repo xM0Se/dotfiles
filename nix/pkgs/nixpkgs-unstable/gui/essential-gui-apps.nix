@@ -2,7 +2,7 @@
 
   imports = [
     ./terminal/u-pkg-wezterm.nix
-    ./terminal/u-pkg-ghossty.nix
+    ./terminal/u-pkg-ghostty.nix
     ./terminal/u-pkg-alacritty.nix
   ];
 
@@ -14,7 +14,7 @@
   config = lib.mkIf config.essential-cli-tools.enable {
     u-pkg-wezterm.enable =
       lib.mkDefault true;
-    u-pkg-ghossty.enable =
+    u-pkg-ghostty.enable =
       lib.mkDefault true;
     u-pkg-alacritty.enable =
       lib.mkDefault true;
