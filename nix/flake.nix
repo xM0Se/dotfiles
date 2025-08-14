@@ -21,12 +21,14 @@
         ./pkgs/homebrew/Casks/essential-brew-mac-apps.nix
         ./pkgs/nixpkgs-unstable/cli/essential-cli-tools.nix
         ./pkgs/nixpkgs-unstable/gui/essential-gui-apps.nix
+        ./pkgs/homebrew/fonts/essential-brew-fonts.nix
       ]; 
       docksettings.enable = true;
       findersettings.enable = true;
       essential-brew-mac-apps.enable = true;
       essential-cli-tools.enable = true;
-
+      essential-gui-apps.enable = true;
+      essential-brew-fonts.enable = true;
 
       system = {
                 primaryUser = "xm0se";
@@ -76,14 +78,6 @@
                  brews = [
                          { name = "sketchybar"; start_service = true; }
                          ];
-
-                 casks = [
-                         #fonts
-                         "font-sketchybar-app-font"
-                         "sf-symbols"
-                         "font-hack-nerd-font"
-                         ];
-
                  masApps = {
                            "dropover" = 1355679052;
                            "DaVinciResolve" = 571213070;
