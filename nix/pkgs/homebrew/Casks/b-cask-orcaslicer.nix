@@ -1,11 +1,11 @@
 { pkgs, lib, config, ... }: {
 
   options = {
-    orcaslicer.enable =
+    b-cask-orcaslicer.enable =
       lib.mkEnableOption "installs orcaslicer via homebrew";
   };
 
-  config = lib.mkIf config.orcaslicer.enable {
+  config = lib.mkIf config.b-cask-orcaslicer.enable {
     homebrew.casks = [
     "orcaslicer"
     ];

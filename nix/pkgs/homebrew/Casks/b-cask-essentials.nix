@@ -1,14 +1,14 @@
 { pkgs, lib, config, ... }: {   
  
   imports = [
-      ./zen.nix
-      ./twingate.nix
-      ./signal.nix
-      ./mullvad.nix
-      ./orcaslicer.nix
-      ./aerospace.nix
-      ./minecraft.nix
-      ./logi-options-plus.nix
+    ./b-cask-zen.nix
+    ./b-cask-twingate.nix
+    ./b-cask-signal.nix
+    ./b-cask-mullvad.nix
+    ./b-cask-orcaslicer.nix
+    ./b-cask-aerospace.nix
+    ./b-cask-minecraft.nix
+    ./b-cask-logi-options-plus.nix
   ];
 
   options = {

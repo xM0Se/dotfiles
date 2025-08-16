@@ -1,11 +1,11 @@
 { pkgs, lib, config, ... }: {
 
   options = {
-    signal.enable =
+    b-cask-signal.enable =
       lib.mkEnableOption "installs signal via homebrew";
   };
 
-  config = lib.mkIf config.signal.enable {
+  config = lib.mkIf config.b-cask-signal.enable {
     homebrew.casks = [
     "signal"
     ];

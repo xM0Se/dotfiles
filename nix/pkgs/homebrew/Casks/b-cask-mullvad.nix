@@ -1,11 +1,11 @@
 { pkgs, lib, config, ... }: {
 
   options = {
-    mullvad.enable =
+    b-cask-mullvad.enable =
       lib.mkEnableOption "installs mullvad vpn client via homebrew";
   };
 
-  config = lib.mkIf config.mullvad.enable {
+  config = lib.mkIf config.b-cask-mullvad.enable {
     homebrew.casks = [
     "mullvad-vpn"
     ];

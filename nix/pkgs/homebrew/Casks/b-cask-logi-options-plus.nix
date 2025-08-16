@@ -1,11 +1,11 @@
 { pkgs, lib, config, ... }: {
 
   options = {
-    logi-options-plus.enable =
+    b-cask-logi-options-plus.enable =
       lib.mkEnableOption "installs logi-options-plus via homebrew";
   };
 
-  config = lib.mkIf config.logi-options-plus.enable {
+  config = lib.mkIf config.b-cask-logi-options-plus.enable {
     homebrew.casks = [
     "logi-options+"
     ];
