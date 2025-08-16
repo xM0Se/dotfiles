@@ -16,7 +16,7 @@
         pu = "push";
         com = "commit";
         a = "add";
-      }
+      };
     };
 
   };
