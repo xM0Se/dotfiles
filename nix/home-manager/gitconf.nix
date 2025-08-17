@@ -17,6 +17,10 @@
         com = "commit";
         a = "add";
       };
+      ignores = [
+        "*.swp"
+        "*.DS_Store"
+      ]
     };
 
   };

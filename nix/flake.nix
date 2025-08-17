@@ -18,10 +18,10 @@
       imports = [
         ./configuration/system/mac-os/docksettings.nix
         ./configuration/system/mac-os/findersettings.nix
-        ./pkgs/homebrew/Casks/essential-brew-mac-apps.nix
+        ./pkgs/homebrew/Casks/b-cask-essentials.nix
         ./pkgs/nixpkgs-unstable/cli/essential-cli-tools.nix
         ./pkgs/nixpkgs-unstable/gui/essential-gui-apps.nix
-        ./pkgs/homebrew/fonts/essential-brew-fonts.nix
+        ./pkgs/homebrew/fonts/b-fonts-essentials.nix
       ]; 
       docksettings.enable = true;
       findersettings.enable = true;
