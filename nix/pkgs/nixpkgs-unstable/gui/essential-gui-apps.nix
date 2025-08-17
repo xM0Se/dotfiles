@@ -4,6 +4,7 @@
     ./terminal/u-pkg-wezterm.nix
     ./terminal/u-pkg-ghostty.nix
     ./terminal/u-pkg-alacritty.nix
+    ./u-pkg-discord.nix
   ];
 
   options = {
@@ -17,6 +18,8 @@
     u-pkg-ghostty.enable =
       lib.mkDefault true;
     u-pkg-alacritty.enable =
+      lib.mkDefault true;
+    u-pkg-discord.enable =
       lib.mkDefault true;
   };
 
