@@ -20,7 +20,7 @@
       ignores = [
         "*.swp"
         "*.DS_Store"
-      ]
+      ];
     };
 
   };
