@@ -19,7 +19,8 @@
         ./configuration/system/mac-os/docksettings.nix
         ./configuration/system/mac-os/findersettings.nix
         ./pkgs/homebrew/Casks/b-cask-essentials.nix
-        ./pkgs/nixpkgs-unstable/cli/essential-cli-tools.nix
+        ./pkgs/nixpkgs-unstable/cli/essential-cli-tools.nix  
+        ./pkgs/nixpkgs-unstable/cli/b-pkgs-all-cli-tools.nix
         ./pkgs/nixpkgs-unstable/gui/essential-gui-apps.nix
         ./pkgs/homebrew/fonts/b-fonts-essentials.nix
       ]; 

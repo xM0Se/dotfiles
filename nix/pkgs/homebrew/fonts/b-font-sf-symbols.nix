@@ -5,7 +5,7 @@
       lib.mkEnableOption "installs sf-symbols using homebrew casks";
   };
 
-  config = lib.mkIf config.u-font-sf-symbols.enable {
+  config = lib.mkIf config.b-font-sf-symbols.enable {
     homebrew.casks = [
       "sf-symbols"
     ];

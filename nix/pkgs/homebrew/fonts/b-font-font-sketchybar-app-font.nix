@@ -5,7 +5,7 @@
       lib.mkEnableOption "installs font-sketchybar-app-font using homebrew casks";
   };
 
-  config = lib.mkIf config.u-font-font-sketchybar-app-font.enable {
+  config = lib.mkIf config.b-font-font-sketchybar-app-font.enable {
     homebrew.casks = [
       "font-sketchybar-app-font"
     ];

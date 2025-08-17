@@ -5,7 +5,7 @@
       lib.mkEnableOption "installs font-hack-nerd-font using homebrew casks";
   };
 
-  config = lib.mkIf config.u-font-font-hack-nerd-font.enable {
+  config = lib.mkIf config.b-font-font-hack-nerd-font.enable {
     homebrew.casks = [
       "sf-symbols"
     ];
