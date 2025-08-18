@@ -31,9 +31,7 @@
       essential-gui-apps.enable = true;
       essential-brew-fonts.enable = true;
 
-      system = {
-                primaryUser = "xm0se";
-               };
+      system.primaryUser = "xm0se";
       users.users.xm0se.home = "/Users/xm0se";
 
       nixpkgs.config.allowUnfree = true;
