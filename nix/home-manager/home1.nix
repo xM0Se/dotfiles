@@ -3,6 +3,8 @@
 {
   imports = [
     ./jankyborderconf.nix
+    ./vscodeconf.nix
+    ./gitconf.nix
   ];
 
   home.username = "xm0se";
@@ -11,6 +13,7 @@
 
   jankyborderconf.enable = true;
   vscodeconf.enable = true;
+  gitconf.enable = true;
   home.stateVersion = "25.05";
 
   home.packages = [
