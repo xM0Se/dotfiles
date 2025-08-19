@@ -1,11 +1,11 @@
 { pkgs, lib, config, ... }: {
 
   options = {
-    gitconf.enable =
-      lib.mkEnableOption "enables gitconf";
+    vscodeconf.enable =
+      lib.mkEnableOption "enables vscodeconf";
   };
 
-  config = lib.mkIf config.gitconf.enable {
+  config = lib.mkIf config.vscodeconf.enable {
 
     programs.vscode = {
       enable = true;
