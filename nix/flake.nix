@@ -35,8 +35,7 @@
       users.users.xm0se.home = "/Users/xm0se";
 
       nixpkgs.config.allowUnfree = true;
-      environment.systemPackages =
-        [
+      environment.systemPackages = [
           #cli tools
           pkgs.cmatrix
           pkgs.nmap 
