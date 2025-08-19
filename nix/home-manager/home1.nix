@@ -1,27 +1,16 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "xm0se";
-  home.homeDirectory = "/Users/xm0se";
-
-  programs.vscode = {
-    enable = true;
-    profiles.default = {
-		userSettings = {
-			"workbench.colorTheme" = "Dracula Theme";
-		};
-		extensions = with pkgs.vscode-extensions; [
-          dracula-theme.theme-dracula
-   		  vscodevim.vim
-          yzhang.markdown-all-in-one
-  		];
-	};
-  };
-
   imports = [
     ./jankyborderconf.nix
   ];
+
+  home.username = "xm0se";
+  home.homeDirectory = "/Users/xm0se";
+
+
   jankyborderconf.enable = true;
+  vscodeconf.enable = true;
   home.stateVersion = "25.05";
 
   home.packages = [
