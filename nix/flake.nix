@@ -71,45 +71,43 @@
         ];
 
       homebrew = {
-                 enable = true;
-                 onActivation.cleanup = "zap";
-                 taps =  [
-                          "FelixKratz/formulae"
-                          "nikitabobko/tap"
-                         ];
-                 brews = [
-                         { name = "sketchybar"; start_service = true; }
-                         ];
-                 masApps = {
-                           "dropover" = 1355679052;
-                           "DaVinciResolve" = 571213070;
-                           };
-
-
-                 };
+        enable = true;
+        onActivation.cleanup = "zap";
+        taps =  [
+          "FelixKratz/formulae"
+          "nikitabobko/tap"
+        ];
+        brews = [
+          { name = "sketchybar"; start_service = true; }
+        ];
+        masApps = {
+          "dropover" = 1355679052;
+          "DaVinciResolve" = 571213070;
+        };
+      };
 
       #macOS setings
 
       #hot corners
       system.defaults.dock = {
-                              wvous-tr-corner = 1;
-                              wvous-tl-corner = 1;
-                              wvous-br-corner = 1;
-                              wvous-bl-corner = 1;
-                             };
+        wvous-tr-corner = 1;
+        wvous-tl-corner = 1;
+        wvous-br-corner = 1;
+        wvous-bl-corner = 1;
+     };
       #other
       system.defaults.NSGlobalDomain.NSAutomaticWindowAnimationsEnabled = false;
       system.defaults.WindowManager.EnableTilingByEdgeDrag = false;
 
       #jankyborders
       services.jankyborders = {
-                                enable = true;
-                                active_color = "0xffffffff";
-                                hidpi = false;
-                                inactive_color = "0xff56606d";
-                                style = "round";
-                                width = 6.0;
-                              };
+        enable = true;
+        active_color = "0xffffffff";
+        hidpi = false;
+        inactive_color = "0xff56606d";
+        style = "round";
+        width = 6.0;
+      };
       system.defaults.NSGlobalDomain._HIHideMenuBar = true;
 
       #Security stuff
@@ -122,24 +120,13 @@
       system.defaults.screensaver.askForPasswordDelay = 0;
 
 
-
-      # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
-      # Enable alternative shell support in nix-darwin.
-      # programs.fish.enable = true;
-
-      # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
 
-      # Used for backwards compatibility, please read the changelog before changing.
-      # $ darwin-rebuild changelog
       system.stateVersion = 6;
 
-      # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
-
-
     };
    configuration2 = { pkgs, lib, ... }: {
     nixpkgs.config.allowUnfree = true;
