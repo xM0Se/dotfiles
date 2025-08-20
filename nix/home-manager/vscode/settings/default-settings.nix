@@ -2,6 +2,7 @@
 
   imports = [
     ./default-theme.nix
+    ./right-sidebar.nix
   ];
 
   options = {
@@ -11,6 +12,8 @@
 
   config = lib.mkIf config.default-settings.enable {
     default-theme.enable =
+      lib.mkDefault true;
+    right-sidebar.enable =
       lib.mkDefault true;
   };
 
