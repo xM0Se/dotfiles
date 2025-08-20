@@ -34,6 +34,7 @@
       essential-cli-tools.enable = true;
       essential-gui-apps.enable = true;
       essential-brew-fonts.enable = true;
+      u-pkg-qmk.enable = true;
 
       system.primaryUser = "xm0se";
       users.users.xm0se.home = "/Users/xm0se";
