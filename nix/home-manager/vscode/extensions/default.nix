@@ -1,7 +1,8 @@
 { pkgs, lib, config, ... }: {
 
   imports = [
-      ./dracula-theme.nix
+    ./dracula-theme.nix
+    ./vscodevim.nix
   ];
 
   options = {
@@ -11,6 +12,8 @@
 
   config = lib.mkIf config.vs-code-extentions.enable {
     dracula-theme.enable =
+      lib.mkDefault true;
+    vscodevim.enable = 
       lib.mkDefault true;
   };
 
