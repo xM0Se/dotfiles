@@ -2,6 +2,7 @@
   description = "xM0Se nix-darwin system flake";
 
   inputs = {
+    nixpkgs-stable.url = "github:nixos/nixpkgs/release-25.05";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
 
