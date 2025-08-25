@@ -5,6 +5,7 @@
     ./jankyborderconf.nix
     ./vscode/vscodeconf.nix
     ./gitconf.nix
+    ./tmux/tmuxconf.nix
   ];
 
   home.username = "xm0se";
@@ -14,6 +15,7 @@
   jankyborderconf.enable = true;
   vscodeconf.enable = true;
   gitconf.enable = true;
+  tmuxconf.enable = true;
   home.stateVersion = "25.05";
 
   home.packages = [
