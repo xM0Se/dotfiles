@@ -35,9 +35,30 @@
       essential-gui-apps.enable = true;
       essential-brew-fonts.enable = true;
       u-pkg-qmk.enable = true;
+      u-pkg-neofetch.enable = false;
 
       system.primaryUser = "xm0se";
       users.users.xm0se.home = "/Users/xm0se";
+      users.knownUsers = [ "minecraft" ];
+      users.knownGroups = [ "minecraft" ];
+
+      users.groups.minecraft = {
+        gid = 5010; # pick a free number >= 500
+        description = "Minecraft service group";
+      };
+
+      users.users.minecraft = {
+        name = "minecraft";
+        uid = 5010;              # must be unique
+        gid = 5010;              # primary group is the one above
+        home = "/Users/minecraft";
+        createHome = true;
+        isHidden = true;        
+        description = "Minecraft Mods. User";
+        packages = [ pkgs.utm ];          # no extra packages installed
+        shell = pkgs.zsh;       # needed for terminal access        
+      };
+
 
       nixpkgs.config.allowUnfree = true;
       environment.systemPackages = [

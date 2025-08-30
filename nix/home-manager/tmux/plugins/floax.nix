@@ -10,7 +10,7 @@
       tmuxPlugins.cpu
      {
         plugin = omerxx.tmux-floax;
-        extraConfig = "set -g @resurrect-strategy-nvim 'session'";
+        extraConfig = " ";
      }
  # {
  #   plugin = tmuxPlugins.continuum;
@@ -19,7 +19,7 @@
  #     set -g @continuum-save-interval '60' # minutes
  #   '';
  # }
-]
+];
 
   };
 
