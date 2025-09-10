@@ -2,12 +2,12 @@
   description = "xM0Se nix-darwin system flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/master";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -16,7 +16,7 @@
 
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nixpkgs-unstable, nix-homebrew, home-manager }:
   let
     configuration1 = { pkgs, ... }: {
       imports = [
@@ -134,11 +134,6 @@
     };
    configuration2 = { pkgs, lib, ... }: {
     nixpkgs.config.allowUnfree = true;
-    environment.systemPackages =
-    [
-     pkgs.cmatrix
-     pkgs.zsh
-    ];
     imports = [
        ./pkgs/nixpkgs-unstable/cli/essential-cli-tools.nix
     ];
