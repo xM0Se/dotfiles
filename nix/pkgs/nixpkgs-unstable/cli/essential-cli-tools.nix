@@ -14,6 +14,7 @@
       ./u-pkg-bat.nix
       ./u-pkg-git.nix
       ./u-pkg-pay-respects.nix
+      ./u-pkg-zsh.nix
   ]; 
   options = {
     essential-cli-tools.enable =
@@ -46,6 +47,8 @@
     u-pkg-git.enable =
         lib.mkDefault true;
     u-pkg-pay-respects.enable =
+        lib.mkDefault true;
+    u-pkg-zsh.enable =
         lib.mkDefault true;
   };
 
