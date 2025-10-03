@@ -53,7 +53,6 @@
           pkgs.zsh-syntax-highlighting
           #Gui Apps
           pkgs.utm
-          pkgs.jankyborders
           pkgs.raycast
           pkgs.anki-bin
           pkgs.bitwarden
@@ -103,15 +102,6 @@
       system.defaults.NSGlobalDomain.NSAutomaticWindowAnimationsEnabled = false;
       system.defaults.WindowManager.EnableTilingByEdgeDrag = false;
 
-      #jankyborders
-      services.jankyborders = {
-        enable = true;
-        active_color = "0xffffffff";
-        hidpi = false;
-        inactive_color = "0xff56606d";
-        style = "round";
-        width = 6.0;
-      };
       system.defaults.NSGlobalDomain._HIHideMenuBar = true;
 
       #Security stuff

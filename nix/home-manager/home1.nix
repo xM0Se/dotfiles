@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./jankyborderconf.nix
+#    ./jankyborderconf.nix
     ./vscode/vscodeconf.nix
     ./gitconf.nix
 #    ./tmux/tmuxconf.nix
@@ -12,7 +12,7 @@
   home.homeDirectory = "/Users/xm0se";
 
 
-  jankyborderconf.enable = true;
+#  jankyborderconf.enable = true;
   vscodeconf.enable = true;
   gitconf.enable = true;
 #  tmuxconf.enable = true;
