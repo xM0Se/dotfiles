@@ -81,6 +81,7 @@
           "nikitabobko/tap"
         ];
         brews = [
+	  { name = "borders"; start_service = true; }
           { name = "sketchybar"; start_service = true; }
         ];
         masApps = {

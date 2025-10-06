@@ -2,7 +2,6 @@
 
 {
   imports = [
-#    ./jankyborderconf.nix
     ./vscode/vscodeconf.nix
     ./gitconf.nix
 #    ./tmux/tmuxconf.nix
@@ -12,7 +11,6 @@
   home.homeDirectory = "/Users/xm0se";
 
 
-#  jankyborderconf.enable = true;
   vscodeconf.enable = true;
   gitconf.enable = true;
 #  tmuxconf.enable = true;
@@ -29,6 +27,7 @@
     "Library/Application Support/com.mitchellh.ghostty/config".source = ../../ghostty/config;
     ".wezterm.lua".source = ../../wezterm/.wezterm.lua;
     ".config/ohmyposh/base.json".source = ../../ohmyposh/base.json;
+    ".config/nvim".source = ../../nvim;
   };
 
   programs.home-manager.enable = true;
