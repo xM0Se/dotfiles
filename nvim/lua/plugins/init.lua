@@ -7,7 +7,6 @@ return {
 	require("plugins.dashboard"),
 	require("plugins.mini-pairs"),
 	require("plugins.flash"),
-    require("plugins.mason"),
-    require("plugins.mason-lsp"),
+    require("plugins.lsp")
 }
 
