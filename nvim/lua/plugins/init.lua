@@ -9,7 +9,7 @@ return {
 	require("plugins.flash"),
 	require("plugins.treesitter"),
 	require("plugins.lsp.mason"),
-	require("plugins.lsp.mason-lspconfig"),
-	require("plugins.lsp.lspconfig"),
+	require("plugins.lsp.mason-lspconf"),
+	require("plugins.lsp.lspconf"),
 }
 
