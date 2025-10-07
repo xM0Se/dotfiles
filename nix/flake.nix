@@ -46,7 +46,7 @@
           #cli tools
           pkgs.cmatrix
           pkgs.nmap 
-
+          pkgs.nodejs_24
           pkgs.tldr
           pkgs.yazi
           pkgs.zsh-autosuggestions
@@ -81,6 +81,7 @@
           "nikitabobko/tap"
         ];
         brews = [
+        "tree-sitter-cli"
 	  { name = "borders"; start_service = true; }
           { name = "sketchybar"; start_service = true; }
         ];
