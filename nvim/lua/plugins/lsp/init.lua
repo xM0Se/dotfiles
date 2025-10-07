@@ -1,5 +1,5 @@
 return {
-    require("mason"),
-    require("mason-lspconfig"),
-    require("nvim-lspconfig"),
+    require("plugins.lsp.mason"),
+    require("plugins.lsp.mason-lspconfig"),
+    require("plugins.lsp.nvim-lspconfig"),
 }
