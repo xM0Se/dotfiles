@@ -8,5 +8,6 @@ return {
 	require("plugins.mini-pairs"),
 	require("plugins.flash"),
 	require("plugins.treesitter"),
+    require("plugins.lsp"),
 }
 
