@@ -1,11 +1,12 @@
 -- Highlight on yank
+local highlight_yank_group = vim.api.nvim_create_augroup("highlight_yank", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
-    group = augroup("highlight_yank"),
+    group = highlight_yank_group,
     callback = function()
         (vim.hl or vim.highlight).on_yank()
     end,
 })
-
+ 
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)
         local client = vim.lsp.get_client_by_id(args.data.client_id)
