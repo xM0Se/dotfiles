@@ -7,10 +7,8 @@ return {
       { "mason-org/mason-lspconfig.nvim", config = function() end },
     },
     opts = function()
-      ---@class PluginLspOpts
       local ret = {
         -- options for vim.diagnostic.config()
-        ---@type vim.diagnostic.Opts
         diagnostics = {
           underline = true,
           update_in_insert = false,
@@ -67,8 +65,6 @@ return {
           timeout_ms = nil,
         },
         -- LSP Server Settings
-        ---@alias lazyvim.lsp.Config vim.lsp.Config|{mason?:boolean, enabled?:boolean}
-        ---@type table<string, lazyvim.lsp.Config|boolean>
         servers = {
           stylua = { enabled = false },
           lua_ls = {
@@ -118,7 +114,6 @@ return {
       }
       return ret
     end,
-    ---@param opts PluginLspOpts
     config = vim.schedule_wrap(function(_, opts)
       -- setup autoformat
       LazyVim.format.register(LazyVim.lsp.formatter())
@@ -236,7 +231,6 @@ return {
         "shfmt",
       },
     },
-    ---@param opts MasonSettings | {ensure_installed: string[]}
     config = function(_, opts)
       require("mason").setup(opts)
       local mr = require("mason-registry")
