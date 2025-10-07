@@ -8,8 +8,5 @@ return {
 	require("plugins.mini-pairs"),
 	require("plugins.flash"),
 	require("plugins.treesitter"),
-	require("plugins.lsp.mason"),
-	require("plugins.lsp.mason-lspconf"),
-	require("plugins.lsp.lspconf"),
 }
 
