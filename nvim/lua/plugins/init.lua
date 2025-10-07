@@ -7,6 +7,7 @@ return {
 	require("plugins.dashboard"),
 	require("plugins.mini-pairs"),
 	require("plugins.flash"),
-    require("plugins.lsp")
+    require("plugins.lsp"),
+    require("plugins.treesitter"),
 }
 
