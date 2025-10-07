@@ -3,7 +3,6 @@ return {
     "nvim-treesitter/nvim-treesitter",
     branch = 'main',
     lazy = false,
-    event = { "LazyFile", "VeryLazy" },
     cmd = { "TSUpdate", "TSInstall", "TSLog", "TSUninstall" },
     opts_extend = { "ensure_installed" },
     opts = {
