@@ -15,3 +15,5 @@ map('n', 'l', 'o' )
 map('n', 'L', 'O' ) 
 map('n', 'k', 'e' ) 
 map('n', 'K', 'E' )
+
+map({"n","x"}, "y", "<Plug>(YankyYank)")
