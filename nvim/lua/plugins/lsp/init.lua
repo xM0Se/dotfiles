@@ -5,20 +5,19 @@ return {
 
         opts = {
             ensure_installed = { "lua_ls", "rust_analyzer" },
-                            handlers = {
-                    function(server)
-                        lspconfig[server].setup({
-                            capabilities = capabilities,
-                        })
-                    end,
-                },
+            handlers = {
+                function(server)
+                    lspconfig[server].setup({
+                        capabilities = capabilities,
+                    })
+                end,
+            },
         },
 
         dependencies = {
             { "mason-org/mason.nvim", opts = {} },
-            {
-                "neovim/nvim-lspconfig",
-            },
+            "neovim/nvim-lspconfig",
+            "saghen/blink.cmp",
         },
     },
 
