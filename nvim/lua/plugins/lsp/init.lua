@@ -14,7 +14,7 @@ return {
 
                 config = function()
                     local capabilites = require("blink.cmp").get_lsp_capabilities()
-                    require("lspconfig").lua_ls.setup({ capabilites = capabilites })
+                    vim.lspconfig(lua_ls.setup({ capabilites = capabilites }))
                 end,
             },
         },
