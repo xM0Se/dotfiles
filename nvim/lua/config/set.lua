@@ -16,6 +16,6 @@ set.hlsearch = false
 set.incsearch = true
 
 set.timeout = true
-set.timeoutlen = 300
+set.timeoutlen = 200
 
 set.mouse = ""
