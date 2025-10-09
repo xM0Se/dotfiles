@@ -15,7 +15,7 @@ return {
                     icon_hl = '@variable',
                     desc = 'Files',
                     group = 'Label',
-                    action = "Telescope find_files ",
+                    action = "Telescope find_files",
                     key = 'f',
                 },
                 {
