@@ -48,7 +48,7 @@ return {
             end,
             desc = "Flash search Line"
         },
-        { "<leader>r",  mode = "o",               function() require("flash").remote() end,                                     desc = "Remote Flash" },
+        { "<leader>r",  mode = "o",               function() require("flash").remote() end,                                     desc = "Flash remote" },
         { "<leader>R",  mode = { "o", "x" },      function() require("flash").treesitter_search() end,                          desc = "Flash Treesitter Search" },
         { "<leader>fw", mode = { "n", "x", "o" }, function() require("flash").jump({ pattern = vim.fn.expand("<cword>") }) end, desc = "Flash Search with current word" },
     },
