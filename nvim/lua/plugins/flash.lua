@@ -16,7 +16,26 @@ return {
     keys = {
         { "s",         mode = { "n", "x", "o" }, function() require("flash").jump() end,                    desc = "Flash" },
         { "S",         mode = { "n", "x", "o" }, function() require("flash").treesitter() end,              desc = "Flash Treesitter" },
-        { "<leader>s", mode = { "n", "x", "o" }, function() require("flash").jump({ continue = true }) end, desc = "continue flash search" },
+        { "<leader>s", mode = { "n", "x", "o" }, function() require("flash").jump({ continue = true }) end, desc = "Flash continue Search" },
+        {
+            "<leader>sws",
+            mode = { "n", "x", "o" },
+            function()
+                require("flash").jump({
+                    pattern = ".",
+                    search = {
+                        mode = function(pattern)
+                            if pattern:sub(1, 1) == "." then
+                                pattern = pattern:sub(2)
+                            end
+                            return ([[\<%s\w*\>]]):format(pattern), ([[\<%s]]):format(pattern)
+                        end,
+                    },
+                    jump = { pos = "range" },
+                })
+            end,
+            desc = "Flash search and select a word"
+        },
         {
             "<leader>sl",
             mode = { "n", "x", "o" },
@@ -24,15 +43,13 @@ return {
                 require("flash").jump({
                     search = { mode = "search", max_length = 0 },
                     label = { after = { 0, 0 } },
-                    pattern =
-                    "^"
+                    pattern = "^"
                 })
             end,
-            desc = "Flash search Line "
+            desc = "Flash search Line"
         },
         { "<leader>r",  mode = "o",               function() require("flash").remote() end,                                     desc = "Remote Flash" },
-        { "<leader>R",  mode = { "o", "x" },      function() require("flash").treesitter_search() end,                          desc = "Treesitter Search" },
-        { "<leader>fw", mode = { "n", "x", "o" }, function() require("flash").jump({ pattern = vim.fn.expand("<cword>") }) end, desc = "flash with current word" },
-        { "<c-s>",      mode = { "c" },           function() require("flash").toggle() end,                                     desc = "Toggle Flash Search" },
+        { "<leader>R",  mode = { "o", "x" },      function() require("flash").treesitter_search() end,                          desc = "Flash Treesitter Search" },
+        { "<leader>fw", mode = { "n", "x", "o" }, function() require("flash").jump({ pattern = vim.fn.expand("<cword>") }) end, desc = "Flash Search with current word" },
     },
 }
