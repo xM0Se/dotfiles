@@ -13,6 +13,9 @@ set.undodir = os.getenv("HOME") .. "/.vim/undodir"
 set.undofile = true
 
 set.hlsearch = false
-set.incsearch = true 
+set.incsearch = true
+
+set.timeout = true
+set.timeoutlen = 300
 
 set.mouse = ""

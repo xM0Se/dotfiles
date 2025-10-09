@@ -18,7 +18,7 @@ return {
         { "S",         mode = { "n", "x", "o" }, function() require("flash").treesitter() end,              desc = "Flash Treesitter" },
         { "<leader>s", mode = { "n", "x", "o" }, function() require("flash").jump({ continue = true }) end, desc = "continue flash search" },
         {
-            "<leader>sl",
+            "<leader>ls",
             mode = { "n", "x", "o" },
             function()
                 require("flash").jump({
