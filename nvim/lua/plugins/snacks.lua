@@ -20,26 +20,25 @@ return {
                 pick = nil,
 
                 ---@type snacks.dashboard.Item[]
-                keys = {
-                    { icon = "¿ ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-                    { icon = "¿ ", key = "n", desc = "New File", action = ":ene | startinsert" },
-                    { icon = "¿ ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
-                    { icon = "¿ ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
-                    { icon = "¿ ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
-                    { icon = "¿ ", key = "s", desc = "Restore Session", section = "session" },
-                    { icon = "¿ ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
-                    { icon = "¿ ", key = "q", desc = "Quit", action = ":qa" },
-                },
-
-                header = [[
-¿¿¿¿   ¿¿¿¿¿¿¿¿¿¿¿ ¿¿¿¿¿¿¿ ¿¿¿   ¿¿¿¿¿¿¿¿¿¿   ¿¿¿¿
-¿¿¿¿¿  ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿   ¿¿¿¿¿¿¿¿¿¿¿ ¿¿¿¿¿
-¿¿¿¿¿¿ ¿¿¿¿¿¿¿¿¿  ¿¿¿   ¿¿¿¿¿¿   ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
-¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿  ¿¿¿   ¿¿¿¿¿¿¿ ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿
-¿¿¿ ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿ ¿¿¿¿¿¿¿ ¿¿¿¿¿¿ ¿¿¿ ¿¿¿
-¿¿¿  ¿¿¿¿¿¿¿¿¿¿¿¿¿ ¿¿¿¿¿¿¿   ¿¿¿¿¿  ¿¿¿¿¿¿     ¿¿¿]],
-            },
-
+                    keys = {
+      { icon = "ï€‚ ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+      { icon = "ï…› ", key = "n", desc = "New File", action = ":ene | startinsert" },
+      { icon = "ï€¢ ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+      { icon = "ïƒ… ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+      { icon = "ï£ ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+      { icon = "îˆ ", key = "s", desc = "Restore Session", section = "session" },
+      { icon = "ó°’² ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+      { icon = "ï¦ ", key = "q", desc = "Quit", action = ":qa" },
+    },
+    -- Used by the `header` section
+    header = [[
+â–ˆâ–ˆâ–ˆâ•—   â–ˆâ–ˆâ•—â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ•— â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ•— â–ˆâ–ˆâ•—   â–ˆâ–ˆâ•—â–ˆâ–ˆâ•—â–ˆâ–ˆâ–ˆâ•—   â–ˆâ–ˆâ–ˆâ•—
+â–ˆâ–ˆâ–ˆâ–ˆâ•—  â–ˆâ–ˆâ•‘â–ˆâ–ˆâ•”â•â•â•â•â•â–ˆâ–ˆâ•”â•â•â•â–ˆâ–ˆâ•—â–ˆâ–ˆâ•‘   â–ˆâ–ˆâ•‘â–ˆâ–ˆâ•‘â–ˆâ–ˆâ–ˆâ–ˆâ•— â–ˆâ–ˆâ–ˆâ–ˆâ•‘
+â–ˆâ–ˆâ•”â–ˆâ–ˆâ•— â–ˆâ–ˆâ•‘â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ•—  â–ˆâ–ˆâ•‘   â–ˆâ–ˆâ•‘â–ˆâ–ˆâ•‘   â–ˆâ–ˆâ•‘â–ˆâ–ˆâ•‘â–ˆâ–ˆâ•”â–ˆâ–ˆâ–ˆâ–ˆâ•”â–ˆâ–ˆâ•‘
+â–ˆâ–ˆâ•‘â•šâ–ˆâ–ˆâ•—â–ˆâ–ˆâ•‘â–ˆâ–ˆâ•”â•â•â•  â–ˆâ–ˆâ•‘   â–ˆâ–ˆâ•‘â•šâ–ˆâ–ˆâ•— â–ˆâ–ˆâ•”â•â–ˆâ–ˆâ•‘â–ˆâ–ˆâ•‘â•šâ–ˆâ–ˆâ•”â•â–ˆâ–ˆâ•‘
+â–ˆâ–ˆâ•‘ â•šâ–ˆâ–ˆâ–ˆâ–ˆâ•‘â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ•—â•šâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ•”â• â•šâ–ˆâ–ˆâ–ˆâ–ˆâ•”â• â–ˆâ–ˆâ•‘â–ˆâ–ˆâ•‘ â•šâ•â• â–ˆâ–ˆâ•‘
+â•šâ•â•  â•šâ•â•â•â•â•šâ•â•â•â•â•â•â• â•šâ•â•â•â•â•â•   â•šâ•â•â•â•  â•šâ•â•â•šâ•â•     â•šâ•â•]],
+  },
             formats = {
                 icon = function(item)
                     -- Ensure correct operator precedence and guard M.icon
@@ -60,7 +59,7 @@ return {
                         local file = vim.fn.fnamemodify(fname, ":t")
                         if dir and file then
                             file = file:sub(-(ctx.width - #dir - 2))
-                            fname = dir .. "/¿" .. file
+                            fname = dir .. "/ï¿½" .. file
                         end
                     end
                     local dir, file = fname:match("^(.*)/(.+)$")
@@ -78,12 +77,12 @@ return {
                     height = 5,
                     padding = 1,
                 },
-                { section = "keys", gap = 1, padding = 1 },
-                { pane = 2, icon = "¿ ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
-                { pane = 2, icon = "¿ ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+                { section = "keys",  gap = 1,     padding = 1 },
+                { pane = 2,          icon = "ï¿½ ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
+                { pane = 2,          icon = "ï¿½ ", title = "Projects",     section = "projects",     indent = 2, padding = 1 },
                 {
                     pane = 2,
-                    icon = "¿ ",
+                    icon = "ï¿½ ",
                     title = "Git Status",
                     section = "terminal",
                     enabled = function()
