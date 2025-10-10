@@ -18,6 +18,36 @@ return {
             { "mason-org/mason.nvim", opts = {} },
             "neovim/nvim-lspconfig",
             "saghen/blink.cmp",
+
+            config = function()
+                -- ✅ Define diagnostic signs (nerd font safe)
+                local signs = {
+                    Error = " ",
+                    Warn  = " ",
+                    Hint  = " ",
+                    Info  = " ",
+                }
+
+                for type, icon in pairs(signs) do
+                    local hl = "DiagnosticSign" .. type
+                    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+                end
+
+                -- ✅ Configure diagnostics behavior
+                vim.diagnostic.config({
+                    virtual_text = {
+                        prefix = "●", -- change to "" if you want no inline icons
+                    },
+                    signs = true,
+                    underline = true,
+                    update_in_insert = false,
+                    severity_sort = true,
+                    float = {
+                        border = "rounded",
+                        source = "always",
+                    },
+                })
+            end,
         },
     },
 
