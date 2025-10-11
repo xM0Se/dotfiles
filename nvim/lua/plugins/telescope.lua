@@ -4,10 +4,23 @@ return {
     opts = {
         defaults = {
             mappings = {
+                i = {
+                    ["<C-c>"] = require("telescope.actions").close,
+                },
                 n = {
-                    [":q"] = actions.close, -- map :q to close Telescope
+                    ["q"] = require("telescope.actions").close,
                 },
             },
+            attach_mappings = function(prompt_bufnr, _)
+                vim.api.nvim_buf_attach(prompt_bufnr, false, {
+                    on_lines = function()
+                        if require("telescope.actions.state").get_current_line() == ":q" then
+                            require("telescope.actions").close(prompt_bufnr)
+                        end
+                    end,
+                })
+                return true
+            end,
         },
     },
     branch = "master",
