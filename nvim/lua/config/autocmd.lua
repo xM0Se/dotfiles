@@ -27,12 +27,23 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 vim.api.nvim_create_autocmd("VimEnter", {
     callback = function()
-        -- Only run if started without file arguments (like `nvim .`)
-        if #vim.fn.argv() == 0 and vim.fn.isdirectory(vim.fn.getcwd()) == 1 then
-            -- Use pcall to avoid errors if telescope isn't loaded yet
+        -- Get arguments safely
+        local argv = vim.fn.argv()
+        if #argv == 0 then
+            return
+        end
+
+        local first_arg = argv[1]
+        if vim.fn.isdirectory(first_arg) == 1 then
             local ok, telescope = pcall(require, "telescope.builtin")
             if ok then
-                telescope.find_files()
+                vim.cmd.cd(first_arg)
+                -- Schedule Telescope after startup finishes
+                vim.schedule(function()
+                    telescope.find_files()
+                end)
+            else
+                vim.notify("Telescope not available", vim.log.levels.WARN)
             end
         end
     end,
