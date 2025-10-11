@@ -4,18 +4,26 @@ return {
     opts = {
         defaults = {
             mappings = {
+                attach_mappings = function(prompt_bufnr, _)
+                    vim.api.nvim_buf_attach(prompt_bufnr, false, {
+                        on_lines = function()
+                            local prompt = require("telescope.actions.state").get_current_line()
+                            if not prompt or prompt == ":q" then
+                                require("telescope.actions").close(prompt_bufnr)
+                            end
+                        end,
+                    })
+                    return true
+                end,
                 i = {
-                    ["<CR>"] = function(prompt_bufnr)
-                        if require("telescope.actions.state").get_current_line() == ":q" then
-                            require("telescope.actions").close(prompt_bufnr)
+                    ["<CR>"] = function(bufnr)
+                        local prompt = require("telescope.actions.state").get_current_line()
+                        if not prompt or prompt == ":q" then
+                            require("telescope.actions").close(bufnr)
                         else
-                            require("telescope.actions").select_default(prompt_bufnr)
+                            require("telescope.actions").select_default(bufnr)
                         end
                     end,
-                    ["<C-c>"] = require("telescope.actions").close,
-                },
-                n = {
-                    ["q"] = require("telescope.actions").close,
                 },
             },
         },
