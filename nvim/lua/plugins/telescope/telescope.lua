@@ -27,6 +27,8 @@ return {
                     end,
                 },
                 n = {
+                    ["e"] = "move_selection_previous",
+                    ["i"] = "move_selection_next",
                     ["q"] = require("telescope.actions").close,
                 },
             },
