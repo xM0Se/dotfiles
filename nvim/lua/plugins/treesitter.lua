@@ -1,7 +1,7 @@
 return {
 
     "nvim-treesitter/nvim-treesitter",
-    branch = 'main',
+    branch = "main",
     lazy = false,
     cmd = { "TSUpdate", "TSInstall", "TSLog", "TSUninstall" },
     opts_extend = { "ensure_installed" },
@@ -20,5 +20,4 @@ return {
             "nix",
         },
     },
-
 }
