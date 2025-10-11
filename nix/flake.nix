@@ -48,6 +48,7 @@
           pkgs.nmap 
           pkgs.nodejs_24
           pkgs.dwt1-shell-color-scripts
+          pkgs.ripgrep
           pkgs.tldr
           pkgs.yazi
           pkgs.zsh-autosuggestions
