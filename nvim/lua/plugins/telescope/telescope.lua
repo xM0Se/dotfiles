@@ -14,6 +14,9 @@ return {
                         end
                     end,
                 },
+                n = {
+                    [":q"] = require("telescope.actions").close,
+                },
             },
         },
     },
