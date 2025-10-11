@@ -1,6 +1,15 @@
 return {
 
     "nvim-telescope/telescope.nvim",
+    opts = {
+        defaults = {
+            mappings = {
+                n = {
+                    [":q"] = actions.close, -- map :q to close Telescope
+                },
+            },
+        },
+    },
     branch = "master",
     keys = {
         {
