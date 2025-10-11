@@ -1,6 +1,7 @@
 return {
 
     "nvim-telescope/telescope.nvim",
+    branch = "master",
     keys = {
         {
             "<leader>ff",
