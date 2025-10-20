@@ -81,6 +81,7 @@
         casks = [
             "homerow"
             "kindavim"
+            "discord"
         ];
         taps =  [
           "FelixKratz/formulae"
