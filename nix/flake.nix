@@ -78,6 +78,10 @@
       homebrew = {
         enable = true;
         onActivation.cleanup = "zap";
+        casks = [
+            "homerow"
+            "kindavim"
+        ];
         taps =  [
           "FelixKratz/formulae"
           "nikitabobko/tap"
