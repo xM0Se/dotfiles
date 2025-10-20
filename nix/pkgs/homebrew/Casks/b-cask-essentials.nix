@@ -9,7 +9,9 @@
     ./b-cask-aerospace.nix
     ./b-cask-minecraft.nix
     ./b-cask-logi-options-plus.nix
-  ];
+    ./b-cask-discord.nix
+    ./b-cask-homerow.nix
+    ];
 
   options = {
     essential-brew-mac-apps.enable =
@@ -32,6 +34,10 @@
     b-cask-minecraft.enable =
       lib.mkDefault true;
     b-cask-logi-options-plus.enable =
+      lib.mkDefault true;
+    b-cask-discord.enable =
+      lib.mkDefault true;
+    b-cask-homerow.enable =
       lib.mkDefault true;
   };
 
