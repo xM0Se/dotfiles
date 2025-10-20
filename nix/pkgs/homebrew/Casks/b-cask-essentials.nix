@@ -11,6 +11,7 @@
     ./b-cask-logi-options-plus.nix
     ./b-cask-discord.nix
     ./b-cask-homerow.nix
+    ./b-cask-kindavim.nix
     ];
 
   options = {
@@ -38,6 +39,8 @@
     b-cask-discord.enable =
       lib.mkDefault true;
     b-cask-homerow.enable =
+      lib.mkDefault true;
+    b-cask-kindavim.enable =
       lib.mkDefault true;
   };
 
