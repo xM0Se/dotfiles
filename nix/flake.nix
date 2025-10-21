@@ -22,20 +22,28 @@
       imports = [
         ./configuration/system/mac-os/docksettings.nix
         ./configuration/system/mac-os/findersettings.nix
-        ./pkgs/homebrew/Casks/b-cask-essentials.nix
         ./pkgs/nixpkgs-unstable/cli/essential-cli-tools.nix  
         ./pkgs/nixpkgs-unstable/cli/u-pkgs-all-cli-tools.nix
         ./pkgs/nixpkgs-unstable/gui/essential-gui-apps.nix
-        ./pkgs/homebrew/fonts/b-fonts-essentials.nix
+        ./pkgs/homebrew/b-opts-default.nix
+        ./pkgs/homebrew/brews/b-brews-essentials.nix
+        ./pkgs/homebrew/taps/b-taps-essentials.nix
+        ./pkgs/homebrew/mas/b-mas-essentials.nix
+        ./pkgs/homebrew/casks/b-cask-essentials.nix
+        ./pkgs/homebrew/fonts/b-font-essentials.nix
       ]; 
       docksettings.enable = true;
       findersettings.enable = true;
-      essential-brew-mac-apps.enable = true;
       essential-cli-tools.enable = true;
       essential-gui-apps.enable = true;
-      essential-brew-fonts.enable = true;
       u-pkg-qmk.enable = true;
       u-pkg-neofetch.enable = false;
+      b-opts-default.enable = true;
+      b-taps-essentials.enable = true;
+      b-brews-essentials.enable = true;
+      b-cask-essentials.enable = true;
+      b-mas-essentials.enable = true;
+      b-font-essentials.enable = true;
 
       system.primaryUser = "xm0se";
       users.users.xm0se.home = "/Users/xm0se";
@@ -74,24 +82,6 @@
           pkgs.vscode-extensions.dracula-theme.theme-dracula
           pkgs.vscode-extensions.vscodevim.vim
         ];
-
-      homebrew = {
-        enable = true;
-        onActivation.cleanup = "zap";
-        taps =  [
-          "FelixKratz/formulae"
-          "nikitabobko/tap"
-        ];
-        brews = [
-        "tree-sitter-cli"
-	  { name = "borders"; start_service = true; }
-          { name = "sketchybar"; start_service = true; }
-        ];
-        masApps = {
-          "dropover" = 1355679052;
-          "DaVinciResolve" = 571213070;
-        };
-      };
 
       #macOS setings
 

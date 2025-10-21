@@ -15,11 +15,11 @@
     ];
 
   options = {
-    essential-brew-mac-apps.enable =
+    b-cask-essentials.enable =
       lib.mkEnableOption "enables essential-brew-mac-apps";
   };
 
-  config = lib.mkIf config.essential-brew-mac-apps.enable {
+  config = lib.mkIf config.b-cask-essentials.enable {
     b-cask-zen.enable =
       lib.mkDefault true;
     b-cask-twingate.enable =
@@ -43,5 +43,4 @@
     b-cask-kindavim.enable =
       lib.mkDefault true;
   };
-
 }

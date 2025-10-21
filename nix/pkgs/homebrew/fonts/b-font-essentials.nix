@@ -7,11 +7,11 @@
   ];
 
   options = {
-    essential-brew-fonts.enable =
+    b-font-essentials.enable =
       lib.mkEnableOption "enables essential-brew-fonts";
   };
 
-  config = lib.mkIf config.essential-brew-fonts.enable {
+  config = lib.mkIf config.b-font-essentials.enable {
     b-font-font-sketchybar-app-font.enable =
       lib.mkDefault true;
     b-font-sf-symbols.enable =
