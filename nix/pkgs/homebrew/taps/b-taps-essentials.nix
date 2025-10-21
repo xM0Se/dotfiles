@@ -1,0 +1,20 @@
+{ pkgs, lib, config, ... }: {
+
+    imports = [
+        ./b-taps-felixkratz.nix
+        ./b-taps-nikitaboko.nix
+    ];
+
+    options = {
+        b-taps-essentials.enable =
+            lib.mkEnableOption "enables essential-brew cli tools";
+    };
+
+    config = lib.mkIf config.b-taps-essentials.enable {
+        b-taps-felixkratz.enable =
+            lib.mkEnableOption true;
+        b-taps-nikitaboko.enable =
+            lib.mkEnableOption true;
+    };
+
+}
