@@ -2,7 +2,7 @@
 
     imports = [
         ./b-taps-felixkratz.nix
-        ./b-taps-nikitaboko.nix
+        ./b-taps-nikitabobko.nix
     ];
 
     options = {
@@ -13,7 +13,7 @@
     config = lib.mkIf config.b-taps-essentials.enable {
         b-taps-felixkratz.enable =
             lib.mkEnableOption true;
-        b-taps-nikitaboko.enable =
+        b-taps-nikitabobko.enable =
             lib.mkEnableOption true;
     };
 
