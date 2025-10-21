@@ -9,6 +9,7 @@
 
     programs.git = {
       enable = true;
+      settings = {
       userName = "xm0se";
       userEmail = "189546389+xM0Se@users.noreply.github.com";
       aliases = {
@@ -16,6 +17,7 @@
         pu = "push";
         com = "commit";
         a = "add";
+      };
       };
       ignores = [
         "*.swp"

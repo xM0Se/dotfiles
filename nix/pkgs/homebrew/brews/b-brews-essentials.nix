@@ -7,11 +7,11 @@
     ];
 
     options = {
-        essential-brew-mac-apps.enable =
+        b-brews-essentials.enable =
             lib.mkEnableOption "enables essential-brew cli tools";
     };
 
-    config = lib.mkIf config.essential-brew-mac-apps.enable {
+    config = lib.mkIf config.b-brews-essentials.enable {
         b-brews-borders.enable =
             lib.mkEnableOption true;
         b-brews-sketchybar.enable =
