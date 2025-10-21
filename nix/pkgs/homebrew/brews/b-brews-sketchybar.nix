@@ -6,9 +6,11 @@
     };
 
     config = lib.mkIf config.b-brews-sketchybar.enable {
-        homebrew.brews = [
-            { name = "sketchybar"; start_service = true; }
-        ];
+        homebrew = {
+            brews = [
+                { name = "sketchybar"; start_service = true; }
+            ];
+        };
     };
 
 }
