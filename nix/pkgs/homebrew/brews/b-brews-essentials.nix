@@ -4,7 +4,7 @@
     #     ./b-brews-borders.nix
         ./b-brews-sketchybar.nix
     #     ./b-brews-treesitter.nix
-    # ];
+    ];
 
     options = {
         b-brews-essentials.enable =
