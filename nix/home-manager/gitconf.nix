@@ -10,14 +10,14 @@
     programs.git = {
       enable = true;
       settings = {
-      userName = "xm0se";
-      userEmail = "189546389+xM0Se@users.noreply.github.com";
-      aliases = {
-        co = "checkout";
-        pu = "push";
-        com = "commit";
-        a = "add";
-      };
+        userName =  { value = "xm0se"; };
+        userEmail = { value = "189546389+xM0Se@users.noreply.github.com"; }; 
+        aliases = {
+          co = "checkout";
+          pu = "push";
+          com = "commit";
+          a = "add";
+        };
       };
       ignores = [
         "*.swp"

@@ -30,7 +30,7 @@
         ./pkgs/homebrew/taps/b-taps-essentials.nix
         ./pkgs/homebrew/mas/b-mas-essentials.nix
         ./pkgs/homebrew/fonts/b-font-essentials.nix
-        ./pkgs/homebrew/casks/b-cask-aerospace.nix
+        ./pkgs/homebrew/casks/b-cask-essentials.nix
       ]; 
       docksettings.enable = true;
       findersettings.enable = true;

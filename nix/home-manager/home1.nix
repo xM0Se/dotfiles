@@ -28,6 +28,7 @@
     ".wezterm.lua".source = ../../wezterm/.wezterm.lua;
     ".config/ohmyposh/base.json".source = ../../ohmyposh/base.json;
     ".config/nvim".source = ../../nvim;
+    "qmk_firmware/keyboards/crkbd/keymaps/custom".source = ../../qmk;
   };
 
   programs.home-manager.enable = true;
