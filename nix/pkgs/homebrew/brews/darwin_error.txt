@@ -1,0 +1,48 @@
+❯sudo darwin-rebuild switch --flake ~/dotfiles/nix#dMACOS
+Password:
+building the system configuration...
+error:
+       … while calling the 'derivationStrict' builtin
+         at <nix/derivation-internal.nix>:37:12:
+           36|
+           37|   strict = derivationStrict drvAttrs;
+             |            ^
+           38|
+
+       … while evaluating derivation 'darwin-system-25.11.c3211fc'
+         whose name attribute is located at /nix/store/7agp54mgffm9m1wc1kgmkm37pvy18qhf-source/pkgs/stdenv/generic/make-derivation.nix:544:13
+
+       … while evaluating attribute 'activationScript' of derivation 'darwin-system-25.11.c3211fc'
+         at /nix/store/n81ajfbr6wf65w91c7iyk2kkvm6065yx-source/modules/system/default.nix:89:7:
+           88|
+           89|       activationScript = cfg.activationScripts.script.text;
+             |       ^
+           90|
+
+       … while evaluating the option `system.activationScripts.script.text':
+
+       … while evaluating definitions from `/nix/store/n81ajfbr6wf65w91c7iyk2kkvm6065yx-source/modules/system/activation-scripts.nix':
+
+       … while evaluating the option `system.activationScripts.homebrew.text':
+
+       … while evaluating definitions from `/nix/store/n81ajfbr6wf65w91c7iyk2kkvm6065yx-source/modules/homebrew.nix':
+
+       … while evaluating the option `homebrew.onActivation.brewBundleCmd':
+
+       … while evaluating definitions from `/nix/store/n81ajfbr6wf65w91c7iyk2kkvm6065yx-source/modules/homebrew.nix':
+
+       … while evaluating the option `homebrew.brewfile':
+
+       … while evaluating definitions from `/nix/store/n81ajfbr6wf65w91c7iyk2kkvm6065yx-source/modules/homebrew.nix':
+
+       … while evaluating the option `homebrew.brews':
+
+       … while evaluating definitions from `/nix/store/idhisx9mi2w2dr63zpc8q7sr6ahml5vn-source/nix/pkgs/homebrew/brews/b-brews-sketchybar.nix':
+
+       … while evaluating the option `b-brews-sketchybar.enable':
+
+       … while evaluating an attribute `description`
+
+       (stack trace truncated; use '--show-trace' to show the full, detailed trace)
+
+       error: cannot coerce a Boolean to a string: true

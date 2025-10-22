@@ -1,13 +1,16 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, lib, config, ... }: {
 
-{
-      
-  options.b-brews-sketchybar = {
-    enable = lib.mkEnableOption "Install sketchybar via Homebrew";
-  };
+    options = {
+        b-brews-sketchybar.enable =
+            lib.mkEnableOption "installs sketchybar via homebrew and starts it on startup";
+    };
 
+    config = lib.mkIf config.b-brews-sketchybar.enable {
+        homebrew = {
+            brews = [
+                { name = "sketchybar"; start_service = true; }
+            ];
+        };
+    };
 
-  config = lib.mkIf config.b-brews-sketchybar.enable {
-    homebrew.brews = [ "sketchybar" ];
-  };
 }
