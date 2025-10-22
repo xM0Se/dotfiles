@@ -1,9 +1,9 @@
 { pkgs, lib, config, ... }: {
 
     imports = [
-    #     ./b-brews-borders.nix
+        ./b-brews-borders.nix
         ./b-brews-sketchybar.nix
-    #     ./b-brews-treesitter.nix
+        ./b-brews-treesitter.nix
     ];
 
     options = {
@@ -12,12 +12,12 @@
     };
 
     config = lib.mkIf config.b-brews-essentials.enable {
-    #     b-brews-borders.enable =
-    #         lib.mkEnableOption true;
+        b-brews-borders.enable =
+            lib.mkDefault true;
         b-brews-sketchybar.enable =
-            lib.mkEnableOption true;
-        # b-brews-treesitter.enable =
-    #         lib.mkEnableOption true;
+            lib.mkDefault true;
+        b-brews-treesitter.enable =
+            lib.mkDefault true;
      };
 
 }

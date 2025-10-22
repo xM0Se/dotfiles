@@ -1,8 +1,8 @@
 { pkgs, lib, config, ... }: {
 
     imports = [
-        # ./b-taps-felixkratz.nix
- #       ./b-taps-nikitabobko.nix
+        ./b-taps-felixkratz.nix
+       ./b-taps-nikitabobko.nix
     ];
 
     options = {
@@ -11,10 +11,10 @@
     };
 
     config = lib.mkIf config.b-taps-essentials.enable {
-        # b-taps-felixkratz.enable =
-        #     lib.mkEnableOption true;
-        # # b-taps-nikitabobko.enable =
-            # lib.mkEnableOption true;
+        b-taps-felixkratz.enable =
+             lib.mkEnableOption true;
+        b-taps-nikitabobko.enable =
+            lib.mkEnableOption true;
     };
 
 }

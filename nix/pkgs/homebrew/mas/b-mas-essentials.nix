@@ -12,9 +12,9 @@
 
     config = lib.mkIf config.b-mas-essentials.enable {
         b-mas-dropover.enable =
-            lib.mkEnableOption true;
+            lib.mkDefault true;
         b-mas-davinciresolve.enable =
-            lib.mkEnableOption true;
+            lib.mkDefault true;
     };
 
 }
