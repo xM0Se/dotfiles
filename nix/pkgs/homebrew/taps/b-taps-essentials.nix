@@ -12,9 +12,9 @@
 
     config = lib.mkIf config.b-taps-essentials.enable {
         b-taps-felixkratz.enable =
-             lib.mkEnableOption true;
+             lib.mkDefault true;
         b-taps-nikitabobko.enable =
-            lib.mkEnableOption true;
+            lib.mkDefault true;
     };
 
 }

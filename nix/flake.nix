@@ -30,6 +30,7 @@
         ./pkgs/homebrew/taps/b-taps-essentials.nix
         ./pkgs/homebrew/mas/b-mas-essentials.nix
         ./pkgs/homebrew/fonts/b-font-essentials.nix
+        ./pkgs/homebrew/casks/b-cask-essentials.nix
       ]; 
       docksettings.enable = true;
       findersettings.enable = true;
@@ -42,6 +43,7 @@
       b-brews-essentials.enable = true;
       b-mas-essentials.enable = true;
       b-font-essentials.enable = true;
+      b-cask-essentials.enable = true;
 
       system.primaryUser = "xm0se";
       users.users.xm0se.home = "/Users/xm0se";
