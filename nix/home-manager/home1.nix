@@ -27,7 +27,7 @@
     "Library/Application Support/com.mitchellh.ghostty/config".source = ../../ghostty/config;
     ".wezterm.lua".source = ../../wezterm/.wezterm.lua;
     ".config/ohmyposh/base.json".source = ../../ohmyposh/base.json;
-    ".config/nvim".source = ../../nvim;
+    ".config/nvim" = pkgs.lib.mkOutOfStoreSymlink ../../nvim;
     "qmk_firmware/keyboards/crkbd/keymaps/custom".source = ../../qmk;
   };
 
