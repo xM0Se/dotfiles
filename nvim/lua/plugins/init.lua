@@ -1,5 +1,5 @@
 return {
-    require("plugins.dracula"),
+    require("plugins.rose-pine"),
     require("plugins.telescope"),
     require("plugins.undotree"),
     require("plugins.gitsigns"),

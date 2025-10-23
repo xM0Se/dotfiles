@@ -13,6 +13,7 @@
     ./b-cask-homerow.nix
     ./b-cask-kindavim.nix
     ./b-cask-lulu.nix
+    ./b-cask-claude.nix
     ];
 
   options = {
@@ -44,6 +45,8 @@
     b-cask-kindavim.enable =
       lib.mkDefault true;
     b-cask-lulu.enable =
+      lib.mkDefault true;
+    b-cask-claude.enable =
       lib.mkDefault true;
   };
 
