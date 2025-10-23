@@ -11,6 +11,18 @@ return {
                         capabilities = capabilities,
                     })
                 end,
+                                ["nil_ls"] = function()
+                    lspconfig.nil_ls.setup({
+                        capabilities = capabilities,
+                        settings = {
+                            ['nil'] = {
+                                formatting = {
+                                    command = { "alejandra" },
+                                },
+                            },
+                        },
+                    })
+                end,
             },
         },
 
@@ -48,15 +60,6 @@ return {
                     },
                 })
             end,
-            lspconfig.nil_ls.setup({
-                settings = {
-                    ['nil'] = {
-                        formatting = {
-                            command = { "alejandra" },
-                        },
-                    },
-                },
-            })
         },
     },
 
