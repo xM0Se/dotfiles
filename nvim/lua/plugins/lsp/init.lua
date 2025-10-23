@@ -4,14 +4,14 @@ return {
         "mason-org/mason-lspconfig.nvim",
 
         opts = {
-            ensure_installed = { "lua_ls", "rust_analyzer", "nil_ls", "alejandra" },
+            ensure_installed = { "lua_ls", "rust_analyzer", "nil_ls", "alejandra", },
             handlers = {
                 function(server)
                     lspconfig[server].setup({
                         capabilities = capabilities,
                     })
                 end,
-                                ["nil_ls"] = function()
+                ["nil_ls"] = function()
                     lspconfig.nil_ls.setup({
                         capabilities = capabilities,
                         settings = {
