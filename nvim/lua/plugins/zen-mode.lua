@@ -10,4 +10,14 @@ return {
             height = 1, -- use full height, no resizing
         },
     },
+    keys = {
+        {
+            "<leader>z",
+            mode = { "n", "x", "o" },
+            function()
+                require("zen-mode").toggle()
+            end,
+            desc = "toggles zen-mode",
+        },
+    },
 }
