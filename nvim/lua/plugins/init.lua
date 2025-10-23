@@ -9,6 +9,6 @@ return {
     require("plugins.treesitter"),
     require("plugins.lsp"),
     require("plugins.smear-cursor"),
-    require("plugins.twinlight"),
+    require("plugins.zen-mode"),
     require("plugins.yanky"),
 }
