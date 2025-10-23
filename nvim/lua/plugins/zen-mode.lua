@@ -5,7 +5,9 @@ return {
     },
 
     opts = {
-        width = "1",
-        height = "1",
+        window = {
+            width = 1, -- use full width, no resizing
+            height = 1, -- use full height, no resizing
+        },
     },
 }
