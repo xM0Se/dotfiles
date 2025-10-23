@@ -24,10 +24,10 @@
     ".zshrc".source = ../../zshrc/.zshrc;
     ".aerospace.toml".source = ../../aerospace/.aerospace.toml;
     ".config/sketchybar".source = ../../sketchybar/.config/sketchybar;
-    "Library/Application Support/com.mitchellh.ghostty/config".source = ../../ghostty/config;
+    "library/application support/com.mitchellh.ghostty/config".source = ../../ghostty/config;
     ".wezterm.lua".source = ../../wezterm/.wezterm.lua;
     ".config/ohmyposh/base.json".source = ../../ohmyposh/base.json;
-    ".config/nvim" = pkgs.lib.mkOutOfStoreSymlink ../../nvim;
+    ".config/nvim".source =  ../../nvim;
     "qmk_firmware/keyboards/crkbd/keymaps/custom".source = ../../qmk;
   };
 
