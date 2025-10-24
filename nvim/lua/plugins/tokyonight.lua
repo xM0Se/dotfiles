@@ -1,5 +1,5 @@
 return {
-    "rose-pine/neovim",
+    "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
     config = function()
