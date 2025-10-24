@@ -19,8 +19,8 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, nixpkgs-unstable, nix-homebrew, home-manager }:
   let
     configuration1 = { pkgs, ... }: {
-      imports = [
-        ./configuration/system/mac-os/docksettings.nix
+        imports = [
+            ./configuration/system/mac-os/docksettings.nix
         ./configuration/system/mac-os/findersettings.nix
         ./pkgs/nixpkgs-unstable/cli/essential-cli-tools.nix  
         ./pkgs/nixpkgs-unstable/cli/u-pkgs-all-cli-tools.nix
@@ -69,7 +69,7 @@
           pkgs.bitwarden
           pkgs.wezterm
           pkgs.alacritty
-          pkgs.ghostty-bin
+          pkgs.ghostty
           pkgs.obsidian
           pkgs.keycastr
           pkgs.vscode
