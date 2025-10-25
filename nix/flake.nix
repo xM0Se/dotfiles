@@ -53,6 +53,7 @@
       environment.systemPackages = [
           #cli tools
           pkgs.cargo
+          pkgs.gh
           pkgs.cmatrix
           pkgs.nmap 
           pkgs.nodejs_24
