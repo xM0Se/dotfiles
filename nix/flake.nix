@@ -70,7 +70,7 @@
           pkgs.bitwarden
           pkgs.wezterm
           pkgs.alacritty
-          pkgs.ghostty
+          pkgs.ghostty-bin
           pkgs.obsidian
           pkgs.keycastr
           pkgs.vscode
