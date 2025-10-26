@@ -22,7 +22,6 @@
   outputs = inputs@{ self, nvf, nix-darwin, nixpkgs, nixpkgs-unstable, nix-homebrew, home-manager }:
   let
     configuration1 = { pkgs, ... }: {
-          specialArgs = { inherit inputs; };
         imports = [
             ./configuration/system/mac-os/docksettings.nix
         ./configuration/system/mac-os/findersettings.nix
@@ -144,6 +143,7 @@
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#simple
     darwinConfigurations."dMACOS" = nix-darwin.lib.darwinSystem {
+      specialArgs = { inherit inputs; };
       modules = [
                 configuration1
                 home-manager.darwinModules.home-manager {
