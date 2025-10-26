@@ -147,7 +147,7 @@
                 configuration1
 		 # <- this imports the NixOS module that provides the options
                 home-manager.darwinModules.home-manager {
-
+		 extraSpecialArgs = { inherit inputs; };
                  home-manager.useGlobalPkgs = true;
                  home-manager.useUserPackages = true;
                  home-manager.users.xm0se = ./home-manager/home1.nix;
