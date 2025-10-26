@@ -149,7 +149,9 @@
                 home-manager.darwinModules.home-manager {
                  home-manager.useGlobalPkgs = true;
                  home-manager.useUserPackages = true;
-                 home-manager.users.xm0se = ./home-manager/home1.nix;
+		 home-manager.users.xm0se = import ./home-manager/home1.nix {
+  		 	inherit inputs;
+		 };
 		 }
                 nix-homebrew.darwinModules.nix-homebrew {
                   nix-homebrew = {
