@@ -9,7 +9,6 @@
             vim.mini.pairs.enable = true;
             vim.mini.indentscope.enable = true;
             vim.utility.snacks-nvim.enable = true;
-            vim.utility.yanky-nvim.enable = true;
             vim.utility.undotree.enable = true;
             vim.viAlias = true;
             vim.vimAlias = true;
