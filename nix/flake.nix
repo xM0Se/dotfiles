@@ -17,7 +17,7 @@
 
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nixpkgs-unstable, nix-homebrew, home-manager }:
+  outputs = inputs@{ self, nvf, nix-darwin, nixpkgs, nixpkgs-unstable, nix-homebrew, home-manager }:
   let
     configuration1 = { pkgs, ... }: {
         imports = [
