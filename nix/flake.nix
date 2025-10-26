@@ -146,7 +146,6 @@
       modules = [
                 configuration1
 		 # <- this imports the NixOS module that provides the options
-		nvf.nixosModules.default
                 home-manager.darwinModules.home-manager {
 
                  home-manager.useGlobalPkgs = true;
