@@ -13,8 +13,10 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nvf.url = "github:notashelf/nvf";
-
+    nvf = {
+	url = "github:notashelf/nvf";
+	inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nvf, nix-darwin, nixpkgs, nixpkgs-unstable, nix-homebrew, home-manager }:
@@ -143,14 +145,15 @@
     darwinConfigurations."dMACOS" = nix-darwin.lib.darwinSystem {
       modules = [
                 configuration1
+		nvf.nixosModules.default # <- this imports the NixOS module that provides the options
                 home-manager.darwinModules.home-manager {
                  home-manager.useGlobalPkgs = true;
                  home-manager.useUserPackages = true;
-                 home-manager.users.xm0se = ./home-manager/home1.nix;}
-                nix-homebrew.darwinModules.nix-homebrew
-                {
+                 home-manager.users.xm0se = ./home-manager/home1.nix;
+		 }
+                nix-homebrew.darwinModules.nix-homebrew {
                   nix-homebrew = {
-                                  enable = true;
+                	enable = true;
                                   enableRosetta = true;
                                   user = "xm0se";
                                   };
