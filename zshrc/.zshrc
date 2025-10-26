@@ -11,7 +11,7 @@ eval "$(zoxide init zsh)"
 
 eval "$(pay-respects zsh --alias)"
 
-alias vim=nvim
+alias vim="NVIM_APPNAME=nvimnix nvim"
 
 alias ls="eza --color=always --long --no-time --git --icons=always --no-user --no-permissions --color-scale-mode=gradient --grid --all --group-directories-first"
 
