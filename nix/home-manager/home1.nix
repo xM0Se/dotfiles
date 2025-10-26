@@ -6,6 +6,7 @@
     ./gitconf.nix
 #    ./tmux/tmuxconf.nix
     ./nvim/test.nix
+    inputs.nvf.homeManagerModules.default
   ];
 
   home.username = "xm0se";
