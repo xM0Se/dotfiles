@@ -2,10 +2,7 @@
 
 {
   imports = [
-     inputs.nvf.homeManagerModules.default
-  ];
-
-  imports = [
+  inputs.nvf.homeManagerModules.default
     ./vscode/vscodeconf.nix
     ./gitconf.nix
 #    ./tmux/tmuxconf.nix
