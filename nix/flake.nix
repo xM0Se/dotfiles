@@ -33,14 +33,14 @@
         flake-parts.lib.mkFlake { inherit inputs; } {
             flake = {
                 darwinConfigurations."dMACOS" = nix-darwin.lib.darwinSystem {
-                    specialArgs = { inherit inputs; };
+                    specialArgs = { inherit inputs self; };
                     modules = [
                         ./dMACOS.nix
                         home-manager.darwinModules.home-manager {
                             home-manager = {
                                 useGlobalPkgs = true;
                                 useUserPackages = true;
-                                users.xm0se = { config, pkgs, ... }: import ./home-manager/home1.nix { inherit config pkgs inputs; };
+                                users.xm0se = { config, pkgs, ... }: import ./home-manager/home1.nix { inherit config pkgs inputs self; };
                             };
                         }
                         nix-homebrew.darwinModules.nix-homebrew {
