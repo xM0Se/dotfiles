@@ -74,7 +74,7 @@
                 packages.nvimconf = nvf.lib.neovimConfiguration {
                     pkgs = pkgs;
                     modules = [
-                        ./home-manager/nvim/flake.nix
+                        ./home-manager/nvim/testty.nix
                     ];
                 };
             };
