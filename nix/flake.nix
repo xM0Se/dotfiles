@@ -79,7 +79,7 @@
                 };
             };
             packages = {
-                nvimconf = perSystem."${builtins.currentSystem}".packages.nvimconf;
+                nvimconf = self.perSystem."${builtins.currentSystem}".packages.nvimconf;
             };
         };
 
