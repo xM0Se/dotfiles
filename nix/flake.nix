@@ -66,8 +66,21 @@
                 };
             };
 
+
             systems = [
                 "aarch64-darwin"
-            ];     
+            ];
+            perSystem = { system, pkgs, ... }: {
+                packages.nvimconf = nvf.lib.neovimConfiguration {
+                    pkgs = pkgs;
+                    modules = [
+                        ./home-manager/nvim/nvim-module.nix
+                    ];
+                };
+            };
+            packages = {
+                nvimconf = perSystem."${builtins.currentSystem}".packages.nvimconf;
+            };
         };
+
 }
