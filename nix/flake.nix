@@ -51,23 +51,23 @@
                             };
                         }
                     ];
-
                 };
+
                 nixosConfigurations."test" = nixpkgs.lib.nixosSystem {
-                modules = [
-                    home-manager.nixosModules.home-manager {
-                        home-manager.useGlobalPkgs = true;
-                        home-manager.useUserPackages = true;
-                        home-manager.users.root = ./home-manager/home2.nix;
-                    }
-                    ./test.nix
-                    ./hosts/nix-os/servers/test1/configuration.nix
-                ];
+                    modules = [
+                        ./test.nix
+                        ./hosts/nix-os/servers/test1/configuration.nix
+                        home-manager.nixosModules.home-manager {
+                            home-manager.useGlobalPkgs = true;
+                            home-manager.useUserPackages = true;
+                            home-manager.users.root = ./home-manager/home2.nix;
+                        }
+                    ];
+                };
             };
 
             systems = [
                 "aarch64-darwin"
             ];     
         };
-    };
 }
