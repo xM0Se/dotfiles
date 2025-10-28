@@ -72,16 +72,11 @@
             ];
             perSystem = { system, pkgs, ... }: {
                 packages.nvimconf = nvf.lib.neovimConfiguration {
+                    name = "nvimconf";
                     pkgs = pkgs;
                     modules = [
-                ({pkgs, ...}: {
-                                                        
-              config.vim = {
-                theme.enable = true;
-              };
-            }
-          )
-        ];
+                        ./home-manager/nvim/testy.nix
+                    ];
                 };
             };
         };
