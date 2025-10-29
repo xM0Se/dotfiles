@@ -7,7 +7,6 @@
       ./u-pkg-zoxide.nix
       ./u-pkg-neofetch.nix
       ./u-pkg-vim.nix
-      ./u-pkg-neovim.nix
       ./u-pkg-tmux.nix
       ./u-pkg-fzf.nix
       ./u-pkg-btop.nix
@@ -33,8 +32,6 @@
     u-pkg-neofetch.enable =
         lib.mkDefault true;
     u-pkg-vim.enable =
-        lib.mkDefault true;
-    u-pkg-neovim.enable =
         lib.mkDefault true;
     u-pkg-tmux.enable =
         lib.mkDefault true;
