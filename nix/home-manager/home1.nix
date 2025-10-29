@@ -2,11 +2,9 @@
 
 {
   imports = [
-  inputs.nvf.homeManagerModules.default
     ./vscode/vscodeconf.nix
     ./gitconf.nix
 #    ./tmux/tmuxconf.nix
-  ./nvim/testy.nix
   ];
 
   home.username = "xm0se";
