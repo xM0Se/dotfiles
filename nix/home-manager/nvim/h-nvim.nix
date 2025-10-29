@@ -4,7 +4,7 @@
         enable = true;
         settings = {
             modules = [
-                ./nvim/testy.nix
+                ./testy.nix
             ];
         };
     };
