@@ -33,7 +33,6 @@
 
         nixpkgs.config.allowUnfree = true;
         environment.systemPackages = [
-                pkgs.nvimconf
                 #cli tools
                 pkgs.cargo
                 pkgs.stow
