@@ -74,12 +74,14 @@
             ];
 
             perSystem = { system, pkgs, ... }: {
+                                config = {
                 packages.nvimconf = (nvf.lib.neovimConfiguration {
                     pkgs = pkgs;
                     modules = [
                         ./home-manager/nvim/testy.nix
                     ];
                 }).neovim;
+                        };
             };
 
         };

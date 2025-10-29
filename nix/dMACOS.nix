@@ -1,4 +1,4 @@
-{ self, config, pkgs, inputs, ... }: 
+{ self, config, pkgs, inputs, packages,... }: 
 {
 
         imports = [
@@ -34,8 +34,8 @@
 
         nixpkgs.config.allowUnfree = true;
         environment.systemPackages = [
-                self.packages.${pkgs.stdenv.system}.neovim
                 #cli tools
+                config.packages.nvimconf
                 pkgs.cargo
                 pkgs.stow
                 pkgs.gh
