@@ -1,10 +1,4 @@
-{ self, config, pkgs, inputs, ... }: 
-
-let
-  nvimconf = self.packages.${pkgs.stdenv.system}.nvimconf;
-in
-
-{
+{ self, config, pkgs, inputs, ... }: {
 
         imports = [
                 ./configuration/system/mac-os/docksettings.nix

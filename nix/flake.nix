@@ -31,13 +31,13 @@
 
     };
 
-    outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nvf, nix-darwin, nix-homebrew, home-manager, flake-parts, ... }:
+    outputs = inputs@{ self, pkgs, nixpkgs, nixpkgs-unstable, nvf, nix-darwin, nix-homebrew, home-manager, flake-parts, ... }:
         flake-parts.lib.mkFlake { inherit inputs self; } {
             flake = {
                 darwinConfigurations."dMACOS" = nix-darwin.lib.darwinSystem {
                     specialArgs = { inherit inputs self; };
                     modules = [
-                        ./dMACOS.nix 
+                         (./dMACOS.nix { inherit pkgs; nvimconf = self.packages.${pkgs.stdenv.system}.nvimconf; })
                         home-manager.darwinModules.home-manager {
                             home-manager = {
                                 useGlobalPkgs = true;
