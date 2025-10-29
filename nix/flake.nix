@@ -37,10 +37,7 @@
                 darwinConfigurations."dMACOS" = nix-darwin.lib.darwinSystem {
                     specialArgs = { inherit inputs self; };
                     modules = [
-                        ({pkgs, ...}: {
-                            environment.systemPackages = [self.packages.${pkgs.stdenv.system}.neovim];
-                        })
-                        ./dMACOS.nix
+                        ./dMACOS.nix 
                         home-manager.darwinModules.home-manager {
                             home-manager = {
                                 useGlobalPkgs = true;

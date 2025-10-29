@@ -1,4 +1,10 @@
-{ self, config, pkgs, inputs, ... }: {
+{ self, config, pkgs, inputs, ... }: 
+
+let
+  nvimconf = self.packages.${pkgs.stdenv.system}.nvimconf;
+in
+
+{
 
         imports = [
                 ./configuration/system/mac-os/docksettings.nix
@@ -33,6 +39,7 @@
 
         nixpkgs.config.allowUnfree = true;
         environment.systemPackages = [
+                nvimconf.neovim
                 #cli tools
                 pkgs.cargo
                 pkgs.stow
