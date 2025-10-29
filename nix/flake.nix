@@ -37,8 +37,8 @@
                 darwinConfigurations."dMACOS" = nix-darwin.lib.darwinSystem {
                     specialArgs = { inherit inputs self; };
                     modules = [
-                        ./dMACOS.nix
-                        home-manager.darwinModules.home-manager {
+                         ./dMACOS.nix 
+                                                        home-manager.darwinModules.home-manager {
                             home-manager = {
                                 useGlobalPkgs = true;
                                 useUserPackages = true;

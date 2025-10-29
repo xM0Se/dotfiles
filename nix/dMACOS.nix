@@ -1,7 +1,4 @@
 { self, config, pkgs, inputs, ... }: 
-let
-  nvimconf = builtins.getAttr "nvimconf" self.packages.${pkgs.stdenv.system};
-in
 {
 
         imports = [
@@ -37,7 +34,7 @@ in
 
         nixpkgs.config.allowUnfree = true;
         environment.systemPackages = [
-                nvimconf.neovim
+                self.packages.${pkgs.stdenv.system}.neovim
                 #cli tools
                 pkgs.cargo
                 pkgs.stow
