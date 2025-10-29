@@ -24,13 +24,15 @@
 	        url = "github:notashelf/nvf";
 	        inputs.nixpkgs.follows = "nixpkgs";
         };
+
+        zen-browser.url = "github:0xc000022070/zen-browser-flake";
    
         flake-parts.url = "github:hercules-ci/flake-parts";
 
     };
 
     outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nvf, nix-darwin, nix-homebrew, home-manager, flake-parts, ... }:
-        flake-parts.lib.mkFlake { inherit inputs; } {
+        flake-parts.lib.mkFlake { inherit inputs self; } {
             flake = {
                 darwinConfigurations."dMACOS" = nix-darwin.lib.darwinSystem {
                     specialArgs = { inherit inputs self; };
@@ -70,15 +72,16 @@
             systems = [
                 "aarch64-darwin"
             ];
+
             perSystem = { system, pkgs, ... }: {
-                packages.nvimconf = nvf.lib.neovimConfiguration {
-                    name = "nvimconf";
+                packages.nvimconf = (nvf.lib.neovimConfiguration {
                     pkgs = pkgs;
                     modules = [
                         ./home-manager/nvim/testy.nix
                     ];
-                };
+                }).neovim;
             };
+
         };
 
 }
