@@ -2,11 +2,9 @@
 
     programs.nvf = {
         enable = true;
-        settings = {
-            modules = [
-                ./testy.nix
-            ];
-        };
+        modules = [
+            ./testy.nix
+        ];
     };
 }
 
