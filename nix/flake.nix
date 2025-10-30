@@ -25,7 +25,7 @@
 	        inputs.nixpkgs.follows = "";
         };
 
-        zen-browser.url = "github:0xc000022070/zen-browser-flake";
+        zen-browser.url = "github:0xc000022070/zen-browser-flake/beta";
 		
 		firefox-addons = {
 			url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -47,6 +47,7 @@
                             home-manager = {
                                 useGlobalPkgs = true;
                                 useUserPackages = true;
+								extraSpecialArgs = { inherit inputs self; };
                                 users.xm0se = { config, pkgs, ... }: import ./home-manager/home1.nix { inherit config pkgs inputs self; };
                             };
                         }
