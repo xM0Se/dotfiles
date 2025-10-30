@@ -5,6 +5,7 @@
     ./vscode/vscodeconf.nix
     ./gitconf.nix
 #    ./tmux/tmuxconf.nix
+	./zen/zenconf.nix 
   ];
 
   home.username = "xm0se";

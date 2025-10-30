@@ -22,12 +22,17 @@
 
         nvf = {
 	        url = "github:notashelf/nvf";
-	        inputs.nixpkgs.follows = "nixpkgs";
+	        inputs.nixpkgs.follows = "";
         };
 
         zen-browser.url = "github:0xc000022070/zen-browser-flake";
+		
+		firefox-addons = {
+			url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
    
-        flake-parts.url = "github:hercules-ci/flake-parts";
+		flake-parts.url = "github:hercules-ci/flake-parts";
 
     };
 
