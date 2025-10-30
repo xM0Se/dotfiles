@@ -1,15 +1,14 @@
 { self, pkgs, inputs, packages, config,... }:
 {
-  # home.nix
   imports = [
     inputs.zen-browser.homeModules.beta
   ];
 
   programs.zen-browser = {
 		enable = true;
-                extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
-                        vimium
-                ];
+                # extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
+                        # vimium
+                # ];
 
 
 		profiles."default" = {
