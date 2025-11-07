@@ -1,7 +1,7 @@
 { self, pkgs, inputs, packages, config,... }:
 {
   imports = [
-    inputs.zen-browser.homeModules.beta
+    inputs.zen-browser.homeModules.twilight
   ];
 
   programs.zen-browser = {
