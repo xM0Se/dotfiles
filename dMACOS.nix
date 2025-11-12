@@ -36,6 +36,7 @@
         environment.systemPackages = [
                 #cli tools
                 pkgs.cargo
+                pkgs.gtk3
                 pkgs.stow
                 pkgs.gh
                 pkgs.cmatrix
@@ -51,7 +52,7 @@
                 pkgs.utm
                 pkgs.raycast
                 pkgs.anki-bin
-                pkgs.bitwarden
+                pkgs.bitwarden-desktop
                 pkgs.wezterm
                 pkgs.alacritty
                 pkgs.ghostty-bin

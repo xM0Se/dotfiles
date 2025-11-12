@@ -6,9 +6,9 @@
   };
 
   config = lib.mkIf config.b-cask-zen.enable {
-    homebrew.casks = [
-    "zen"
-    ];
+    #homebrew.casks = [
+   # "zen"
+   #];
 
     
   };

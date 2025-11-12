@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }: {   
  
   imports = [
-    ./b-cask-zen.nix
+    #./b-cask-zen.nix
     ./b-cask-twingate.nix
     ./b-cask-signal.nix
     ./b-cask-mullvad.nix
@@ -22,8 +22,8 @@
   };
 
   config = lib.mkIf config.b-cask-essentials.enable {
-    b-cask-zen.enable =
-      lib.mkDefault true;
+   # b-cask-zen.enable =
+    #  lib.mkDefault true;
     b-cask-twingate.enable =
       lib.mkDefault true;
     b-cask-signal.enable =

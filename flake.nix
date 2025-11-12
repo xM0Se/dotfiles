@@ -4,15 +4,15 @@
 
     inputs = {
 
-        nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+        nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
 
-        nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+        nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
         nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
 
         nix-darwin = {
             url = "github:nix-darwin/nix-darwin/master";
-            inputs.nixpkgs.follows = "nixpkgs-unstable";
+            inputs.nixpkgs.follows = "nixpkgs";
         };
 
         home-manager = {
@@ -22,12 +22,11 @@
 
         nvf = {
 	        url = "github:notashelf/nvf";
-	        inputs.nixpkgs.follows = "";
+	        inputs.nixpkgs.follows = "nixpkgs";
         };
 
         zen-browser = {
                 url = "github:0xc000022070/zen-browser-flake";
-                inputs.nixpkgs.follows = "nixpkgs";
         };
 		firefox-addons = {
 			url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -38,7 +37,7 @@
 
     };
 
-    outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nvf, nix-darwin, nix-homebrew, home-manager, flake-parts, ... }:
+    outputs = inputs@{ self, nixpkgs, nixpkgs-stable, nvf, nix-darwin, nix-homebrew, home-manager, flake-parts, ... }:
         flake-parts.lib.mkFlake { inherit inputs self; } {
             flake = {
                 darwinConfigurations."dMACOS" = nix-darwin.lib.darwinSystem {
@@ -49,6 +48,7 @@
                             home-manager = {
                                 useGlobalPkgs = true;
                                 useUserPackages = true;
+				backupFileExtension = "backup";
 								extraSpecialArgs = { inherit inputs self; };
                                 users.xm0se = { config, pkgs, ... }: import ./home-manager/home1.nix { inherit config pkgs inputs self; };
                             };
