@@ -14,6 +14,7 @@
     ./b-cask-kindavim.nix
     ./b-cask-lulu.nix
     ./b-cask-claude.nix
+    ./b-cask-affinity.nix
     ];
 
   options = {
@@ -47,6 +48,8 @@
     b-cask-lulu.enable =
       lib.mkDefault true;
     b-cask-claude.enable =
+      lib.mkDefault true;
+    b-cask-affinity.enable =
       lib.mkDefault true;
   };
 
