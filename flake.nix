@@ -20,11 +20,11 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        nvf = {
-	        url = "github:notashelf/nvf";
-	        inputs.nixpkgs.follows = "nixpkgs";
-        };
-
+         nvf = {
+          url = "github:notashelf/nvf";
+          inputs.nixpkgs.follows = "nixpkgs";
+         };
+        
         zen-browser = {
                 url = "github:0xc000022070/zen-browser-flake";
         };
@@ -81,7 +81,7 @@
                 "aarch64-darwin"
             ];
 
-            perSystem = { system, pkgs, ... }: {
+	perSystem = { system, pkgs, ... }: {
                                 config = {
                 packages.nvimconf = (nvf.lib.neovimConfiguration {
                     pkgs = pkgs;
@@ -93,5 +93,4 @@
             };
 
         };
-
 }
