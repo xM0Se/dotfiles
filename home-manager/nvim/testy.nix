@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   vim = {
-    # from nvim/lua/config/keymap.lua
     keymaps = [
       {
         key = "J";
@@ -14,18 +13,6 @@
         silent = true;
         action = ":m '<-2<CR>gv=gv";
       }
-      # telescope
-      # {
-      #     key = "<leader>ff";
-      #     mode = "n";
-      #     silent = true;
-      #     action = ``
-      #         function()
-      #             require("telescope.builtin").find_files()
-      #         end,``;
-      #     desc = "Telescope find files";
-      # }
-      # Flash.nvim mappings
       {
         key = "<leader>s";
         mode = "n";
@@ -37,7 +24,24 @@
         '';
         desc = "Flash continue Search";
       }
+      {
+        key = "<leader>u";
+        mode = "n";
+        silent = true;
+        action = "<cmd>UndotreeToggle<cr>";
+        desc = "toggle undotree";
+      }
+      {
+        key = "<leader>fy";
+        mode = "n";
+        silent = true;
+        action = "<cmd>lua require('telescope').extensions.yank_history.yank_history()<CR>";
+        desc = "Yank History";
+      }
     ];
+
+    viAlias = true;
+    vimAlias = true;
 
     options = {
       shiftwidth = 4;
@@ -48,14 +52,14 @@
       hlsearch = false;
       incsearch = true;
 
-      #undodir = "os.getenv('HOME') .. '/.vim/undodir'";
-      #undofile = true;
-
       timeout = true;
       timeoutlen = 100;
 
       mouse = "";
     };
+
+    undoFile.enable = true;
+    undoFile.path = "../../../.vim/undodir";
 
     theme = {
       enable = true;
@@ -78,25 +82,34 @@
     };
 
     utility = {
+      yanky-nvim = {
+        enable = true;
+        setupOpts.ring.storage = "sqlite";
+      };
+      undotree.enable = true;
       motion.flash-nvim = {
         enable = true;
         mappings.jump = "s";
-        # setupOpts = {''
-        #     modes = {
-        #         search = {
-        #             enabled = true,
-        #         },
-        #         char = {
-        #             jump_labels = true,
-        #         },
-        #     },
-        # ''};
       };
     };
+
+    luaConfigPost = ''
+      vim.g.undotree_WindowLayout = 3
+    '';
 
     lsp = {
       enable = true;
       formatOnSave = true;
+      trouble.enable = true;
+    };
+
+    git = {
+      enable = true;
+    };
+
+    spellcheck = {
+      enable = true;
+      programmingWordlist.enable = true;
     };
 
     autocomplete.blink-cmp.enable = true;
@@ -106,10 +119,19 @@
 
       nix = {
         enable = true;
-        lsp.enable = true;
-        lsp.servers = ["nixd"];
-        format.enable = true;
-        format.type = ["alejandra"];
+        treesitter.enable = true;
+        lsp = {
+          enable = true;
+          servers = ["nixd"];
+        };
+        extraDiagnostics = {
+          enable = true;
+          types = ["statix" "deadnix"];
+        };
+        format = {
+          enable = true;
+          type = ["alejandra"];
+        };
       };
       lua.enable = true;
     };
