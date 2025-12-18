@@ -1,5 +1,8 @@
-{ pkgs, lib, config, ... }: {
-
+{
+  lib,
+  config,
+  ...
+}: {
   options = {
     docksettings.enable =
       lib.mkEnableOption "enables custum dock settings";

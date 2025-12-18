@@ -1,14 +1,16 @@
-{ pkgs, lib, config, ... }: {
+{
+  lib,
+  config,
+  ...
+}: {
+  options = {
+    b-mas-davinciresolve.enable =
+      lib.mkEnableOption "installs DaVinciResolve via the mac appstore";
+  };
 
-    options = {
-        b-mas-davinciresolve.enable =
-            lib.mkEnableOption "installs DaVinciResolve via the mac appstore";
+  config = lib.mkIf config.b-mas-davinciresolve.enable {
+    homebrew.masApps = {
+      "DaVinciResolve" = 571213070;
     };
-
-    config = lib.mkIf config.b-mas-davinciresolve.enable {
-        homebrew.masApps = {
-            "DaVinciResolve" = 571213070;
-        };
-    };
-
+  };
 }

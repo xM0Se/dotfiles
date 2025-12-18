@@ -1,25 +1,22 @@
-{ config, pkgs, inputs, ... }:
-
-{
+{pkgs, ...}: {
   imports = [
     ./vscode/vscodeconf.nix
     ./gitconf.nix
-#    ./tmux/tmuxconf.nix
-	./zen/zenconf.nix 
+    #    ./tmux/tmuxconf.nix
+    ./zen/zenconf.nix
   ];
-  
- programs.firefox.darwinDefaultsId = "app.zen-browser.zen";
+
+  programs.firefox.darwinDefaultsId = "app.zen-browser.zen";
   home.username = "xm0se";
   home.homeDirectory = "/Users/xm0se";
 
-
   vscodeconf.enable = true;
   gitconf.enable = true;
-#  tmuxconf.enable = true;
+  #  tmuxconf.enable = true;
   home.stateVersion = "25.05";
 
   home.packages = [
-     pkgs.hello
+    pkgs.hello
   ];
 
   home.file = {

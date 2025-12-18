@@ -1,5 +1,8 @@
-{ pkgs, lib, config, ... }: {
-
+{
+  lib,
+  config,
+  ...
+}: {
   imports = [
     ./settings/default-settings.nix
     ./extensions/default.nix
@@ -17,5 +20,4 @@
     vs-code-extentions.enable =
       lib.mkDefault true;
   };
-
 }

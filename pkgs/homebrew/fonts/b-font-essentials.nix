@@ -1,5 +1,8 @@
-{ pkgs, lib, config, ... }: {
-
+{
+  lib,
+  config,
+  ...
+}: {
   imports = [
     ./b-font-font-sketchybar-app-font.nix
     ./b-font-sf-symbols.nix
@@ -19,5 +22,4 @@
     b-font-font-hack-nerd-font.enable =
       lib.mkDefault true;
   };
-
 }

@@ -1,18 +1,15 @@
-{ config, lib, pkgs, ... }:
+{pkgs, ...}: {
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
-{
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
-
- nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
 
   users.users.xm0se = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel"]; # Enable ‘sudo’ for the user.
   };
 
   environment.systemPackages = with pkgs; [
@@ -29,6 +26,4 @@
   networking.firewall.enable = false;
 
   system.stateVersion = "25.05";
-
 }
-

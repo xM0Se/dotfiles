@@ -1,5 +1,8 @@
-{ pkgs, lib, config, ... }: {
-
+{
+  lib,
+  config,
+  ...
+}: {
   options = {
     ohmyposhconf.enable =
       lib.mkEnableOption "enables ohmyposhconf";

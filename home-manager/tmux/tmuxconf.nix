@@ -1,5 +1,8 @@
-{ pkgs, lib, config, ... }: {
-
+{
+  lib,
+  config,
+  ...
+}: {
   imports = [
     ./plugins/floax.nix
   ];
@@ -11,8 +14,7 @@
 
   config = lib.mkIf config.tmuxconf.enable {
     programs.tmux.enable = true;
-    floax.enable = 
+    floax.enable =
       lib.mkDefault true;
   };
-
 }

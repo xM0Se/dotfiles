@@ -1,5 +1,8 @@
-{ pkgs, lib, config, ... }: {   
- 
+{
+  lib,
+  config,
+  ...
+}: {
   imports = [
     #./b-cask-zen.nix
     ./b-cask-twingate.nix
@@ -15,7 +18,7 @@
     ./b-cask-lulu.nix
     ./b-cask-claude.nix
     ./b-cask-affinity.nix
-    ];
+  ];
 
   options = {
     b-cask-essentials.enable =
@@ -23,8 +26,6 @@
   };
 
   config = lib.mkIf config.b-cask-essentials.enable {
-   # b-cask-zen.enable =
-    #  lib.mkDefault true;
     b-cask-twingate.enable =
       lib.mkDefault true;
     b-cask-signal.enable =
@@ -34,8 +35,6 @@
     b-cask-orcaslicer.enable =
       lib.mkDefault true;
     b-cask-aerospace.enable =
-      lib.mkDefault true;
-    b-cask-minecraft.enable =
       lib.mkDefault true;
     b-cask-logi-options-plus.enable =
       lib.mkDefault true;
@@ -52,5 +51,4 @@
     b-cask-affinity.enable =
       lib.mkDefault true;
   };
-
 }

@@ -1,5 +1,8 @@
-{ pkgs, lib, config, ... }: {
-
+{
+  lib,
+  config,
+  ...
+}: {
   options = {
     b-font-sf-symbols.enable =
       lib.mkEnableOption "installs sf-symbols using homebrew casks";
@@ -10,5 +13,4 @@
       "sf-symbols"
     ];
   };
-
 }

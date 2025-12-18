@@ -5,31 +5,27 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   };
 
-  outputs = { self, nixpkgs }:
-  let
+  outputs = {nixpkgs}: let
     pkgs = nixpkgs.legacyPackages."aarch64-darwin";
-  in
-  {
+  in {
     devShells."aarch64-darwin".default = pkgs.mkShell {
+      packages = [
+        pkgs.go
+        pkgs.figurine
 
-        packages =  [
-                     pkgs.go
-                     pkgs.figurine
+        pkgs.uv
+        pkgs.go
+        pkgs.ollama
+        pkgs.mcphost
+      ];
 
-                     pkgs.uv
-                     pkgs.go
-                     pkgs.ollama
-                     pkgs.mcphost
-                    ];
+      shellHook = ''
 
-        shellHook = ''
+        ./.mcp-obsidian-flake-script
+        #exits the
+        exit
 
-         ./.mcp-obsidian-flake-script
-         #exits the
-         exit
-
-        '';
+      '';
     };
- };
-
+  };
 }

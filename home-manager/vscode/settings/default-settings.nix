@@ -1,5 +1,8 @@
-{ pkgs, lib, config, ... }: {
-
+{
+  lib,
+  config,
+  ...
+}: {
   imports = [
     ./default-theme.nix
     ./right-sidebar.nix
@@ -16,5 +19,4 @@
     right-sidebar.enable =
       lib.mkDefault true;
   };
-
 }

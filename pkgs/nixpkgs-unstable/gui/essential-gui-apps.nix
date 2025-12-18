@@ -1,5 +1,8 @@
-{ pkgs, lib, config, ... }: {
-
+{
+  lib,
+  config,
+  ...
+}: {
   imports = [
     ./terminal/u-pkg-wezterm.nix
     ./terminal/u-pkg-ghostty.nix
@@ -19,5 +22,4 @@
     u-pkg-alacritty.enable =
       lib.mkDefault true;
   };
-
 }

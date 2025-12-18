@@ -1,5 +1,9 @@
-{ pkgs, lib, config, ... }: {
-
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   options = {
     vscodevim.enable =
       lib.mkEnableOption "installs vscodevim for vscode";

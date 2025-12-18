@@ -1,7 +1,10 @@
-{ pkgs, lib, config, ... }: {
-
+{
+  lib,
+  config,
+  ...
+}: {
   imports = [
-      ./u-pkg-qmk.nix
+    ./u-pkg-qmk.nix
   ];
   options = {
     u-pkgs-all-cli-tools.enable =
@@ -10,7 +13,6 @@
 
   config = lib.mkIf config.u-pkgs-all-cli-tools.enable {
     u-pkg-qmk.enable =
-        lib.mkDefault false;
+      lib.mkDefault false;
   };
-
 }

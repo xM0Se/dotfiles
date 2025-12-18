@@ -1,15 +1,17 @@
-{ pkgs, lib, config, ... }: {
-
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   options = {
-    u-pkg-oh-my-posh.enable = 
+    u-pkg-oh-my-posh.enable =
       lib.mkEnableOption "enables oh-my-posh";
   };
 
   config = lib.mkIf config.u-pkg-oh-my-posh.enable {
-    environment.systemPackages =
-    [
-    pkgs.oh-my-posh
+    environment.systemPackages = [
+      pkgs.oh-my-posh
     ];
-  
   };
 }

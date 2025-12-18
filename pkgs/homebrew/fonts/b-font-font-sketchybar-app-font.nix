@@ -1,5 +1,8 @@
-{ pkgs, lib, config, ... }: {
-
+{
+  lib,
+  config,
+  ...
+}: {
   options = {
     b-font-font-sketchybar-app-font.enable =
       lib.mkEnableOption "installs font-sketchybar-app-font using homebrew casks";
@@ -10,5 +13,4 @@
       "font-sketchybar-app-font"
     ];
   };
-
 }

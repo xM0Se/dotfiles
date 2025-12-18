@@ -1,5 +1,9 @@
-{ pkgs, lib, config, ... }: {
-
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   options = {
     dracula-theme.enable =
       lib.mkEnableOption "installs dracula-theme for vscode";

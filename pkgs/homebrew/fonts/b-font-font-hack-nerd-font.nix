@@ -1,5 +1,8 @@
-{ pkgs, lib, config, ... }: {
-
+{
+  lib,
+  config,
+  ...
+}: {
   options = {
     b-font-font-hack-nerd-font.enable =
       lib.mkEnableOption "installs font-hack-nerd-font using homebrew casks";
@@ -10,5 +13,4 @@
       "sf-symbols"
     ];
   };
-
 }

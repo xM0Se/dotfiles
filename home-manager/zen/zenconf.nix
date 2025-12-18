@@ -1,128 +1,109 @@
-{ pkgs, config, inputs, ... }:
-
 {
+  config,
+  inputs,
+  ...
+}: {
   imports = [
     inputs.zen-browser.homeModules.beta
   ];
 
   programs.zen-browser = {
     enable = true;
-    profiles."default" = {  # Add 'rec' here for self-references
+    profiles."default" = {
+      # Add 'rec' here for self-references
       containersForce = true;
       containers = {
-                                programming = {
+        programming = {
+          color = "purple";
 
-				color = "purple";
+          icon = "circle";
 
-				icon = "circle";
+          id = 1;
+        };
 
-				id = 1;
+        nix = {
+          color = "blue";
 
-			};
+          icon = "circle";
 
-			nix = {
+          id = 2;
+        };
 
-				color = "blue";
+        cybersecurity = {
+          color = "purple";
 
-				icon = "circle";
+          icon = "fingerprint";
 
-				id = 2;
+          id = 3;
+        };
 
-			};
+        devops = {
+          color = "red";
 
-			cybersecurity = {
+          icon = "circle";
 
-				color = "purple";
+          id = 4;
+        };
 
-				icon = "fingerprint";
+        keyboards = {
+          color = "blue";
 
-				id = 3;
+          icon = "circle";
 
-			};
+          id = 5;
+        };
 
-			devops = {
+        shopping = {
+          color = "green";
 
-				color = "red";
+          icon = "dollar";
 
-				icon = "circle";
+          id = 6;
+        };
 
-				id = 4;
+        chess = {
+          color = "green";
 
-			};
+          icon = "circle";
 
-			keyboards = {
+          id = 7;
+        };
 
-				color = "blue";
+        random-tabs = {
+          color = "orange";
 
-				icon = "circle";
+          icon = "circle";
 
-				id = 5;
+          id = 8;
+        };
 
-			};
+        YouTube = {
+          color = "red";
 
-			shopping = {
+          icon = "chill";
 
-				color = "green";
+          id = 9;
+        };
 
-				icon = "dollar";
+        music = {
+          color = "red";
 
-				id = 6;
+          icon = "circle";
 
-			};
+          id = 10;
+        };
 
-			chess = {
+        school = {
+          color = "blue";
 
-				color = "green";
+          icon = "briefcase";
 
-				icon = "circle";
-
-				id = 7;
-
-			};
-
-			random-tabs = {
-
-				color = "orange";
-
-				icon = "circle";
-
-				id = 8;
-
-			};
-
-			YouTube = {
-
-				color = "red";
-
-				icon = "chill";
-
-				id = 9;
-
-			};
-
-			music = {
-
-				color = "red";
-
-				icon = "circle";
-
-				id = 10;
-
-			};
-
-			school = {
-
-				color = "blue";
-
-				icon = "briefcase";
-
-				id = 11;
-
-			};
+          id = 11;
+        };
       };
       #spacesForce = true;
       spaces = let
-  	containers = config.programs.zen-browser.profiles."default".containers;
+        containers = config.programs.zen-browser.profiles."default".containers;
       in {
         "programming" = {
           id = "c6de089c-410d-4206-961d-ab11f988d40a";
@@ -131,52 +112,52 @@
         };
         "nix" = {
           id = "cdd10fab-4fc5-494b-9041-325e5759195b";
-         # container = containers."nix".id;
+          # container = containers."nix".id;
           position = 2000;
         };
         "cybersecurity" = {
           id = "78aabdad-8aae-4fe0-8ff0-2a0c6c4ccc24";
-         # container = containers."cybersecurity".id;
+          # container = containers."cybersecurity".id;
           position = 3000;
         };
-       "devops" = {
+        "devops" = {
           id = "996c3c38-3953-4c71-812d-8e1ee34369db";
-         # container = containers."devops".id;
+          # container = containers."devops".id;
           position = 4000;
         };
         "keyboards" = {
           id = "a093acd1-9365-4678-8c53-1ceab41a8e15";
-         # container = containers."keyboards".id;
+          # container = containers."keyboards".id;
           position = 5000;
         };
         "shopping" = {
           id = "74f27dab-7dcc-43fd-b0dd-9aca9d837ffe";
-         # container = containers."shopping".id;
+          # container = containers."shopping".id;
           position = 6000;
         };
         "chess" = {
           id = "52c07226-bed1-4f92-a4da-ad69154341b4";
-         # container = containers."chess".id;
+          # container = containers."chess".id;
           position = 7000;
         };
         "random-tabs" = {
           id = "cfdd9177-6ea0-4978-8112-2d47f78f778f";
-         # container = containers."random-tabs".id;
+          # container = containers."random-tabs".id;
           position = 8000;
         };
         "YouTube" = {
           id = "40146f90-5862-40ab-9b1a-e8b64309dde0";
-         # container = containers."YouTube".id;
+          # container = containers."YouTube".id;
           position = 9000;
         };
         "music" = {
           id = "569974e0-9c81-45f5-be8e-968367a6cff7";
-         # container = containers."music".id;
+          # container = containers."music".id;
           position = 10000;
         };
         "school" = {
           id = "51c13df6-1f76-46f6-9834-a6c4b6641674";
-         # container = containers."school".id;
+          # container = containers."school".id;
           position = 11000;
         };
       };
@@ -200,5 +181,5 @@
         Fingerprinting = true;
       };
     };
-};
+  };
 }

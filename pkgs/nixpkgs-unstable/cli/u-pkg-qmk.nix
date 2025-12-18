@@ -1,14 +1,17 @@
-{ pkgs, lib, config, ... }: {
-
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   options = {
     u-pkg-qmk.enable =
       lib.mkEnableOption "installs qmk using nixpkgs unstable";
   };
 
   config = lib.mkIf config.u-pkg-qmk.enable {
-    environment.systemPackages =
-    [
-    pkgs.qmk
+    environment.systemPackages = [
+      pkgs.qmk
     ];
   };
 }
