@@ -6,8 +6,8 @@
   imports = [
     ./configuration/system/mac-os/docksettings.nix
     ./configuration/system/mac-os/findersettings.nix
-    ./pkgs/nixpkgs-unstable/cli/essential-cli-tools.nix
-    ./pkgs/nixpkgs-unstable/cli/u-pkgs-all-cli-tools.nix
+    ./pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix
+    ./pkgs/nixpkgs-unstable/cli/u-pkg-all-cli-tools.nix
     ./pkgs/nixpkgs-unstable/gui/essential-gui-apps.nix
     ./pkgs/homebrew/b-opts-default.nix
     ./pkgs/homebrew/brews/b-brews-essentials.nix
@@ -68,6 +68,7 @@
   #macOS setings
 
   #hot corners
+
   system.defaults.dock = {
     wvous-tr-corner = 1;
     wvous-tl-corner = 1;
