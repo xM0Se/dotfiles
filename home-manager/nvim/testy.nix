@@ -59,7 +59,7 @@
     };
 
     undoFile.enable = true;
-    undoFile.path = "../../../.vim/undodir";
+    # undoFile.path = "../../../.vim/undodir";
 
     theme = {
       enable = true;
