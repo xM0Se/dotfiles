@@ -4,13 +4,11 @@
   ...
 }: {
   imports = [
-    #./b-cask-zen.nix
     ./b-cask-twingate.nix
     ./b-cask-signal.nix
     ./b-cask-mullvad.nix
     ./b-cask-orcaslicer.nix
     ./b-cask-aerospace.nix
-    ./b-cask-minecraft.nix
     ./b-cask-logi-options-plus.nix
     ./b-cask-discord.nix
     ./b-cask-homerow.nix

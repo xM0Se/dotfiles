@@ -5,13 +5,10 @@
   ...
 }: {
   options = {
-    u-pkg-qmk.enable =
-      lib.mkEnableOption "installs qmk using nixpkgs unstable";
+    u-pkg-qmk.enable = lib.mkEnableOption "qmk, keyboard programming";
   };
 
   config = lib.mkIf config.u-pkg-qmk.enable {
-    environment.systemPackages = [
-      pkgs.qmk
-    ];
+    environment.systemPackages = [pkgs.qmk];
   };
 }

@@ -5,13 +5,10 @@
   ...
 }: {
   options = {
-    u-pkg-tmux.enable =
-      lib.mkEnableOption "enables tmux";
+    u-pkg-tmux.enable = lib.mkEnableOption "tmux, terminal multiplexer";
   };
 
   config = lib.mkIf config.u-pkg-tmux.enable {
-    environment.systemPackages = [
-      pkgs.tmux
-    ];
+    environment.systemPackages = [pkgs.tmux];
   };
 }

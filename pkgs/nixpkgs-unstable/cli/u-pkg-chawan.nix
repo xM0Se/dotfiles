@@ -5,13 +5,10 @@
   ...
 }: {
   options = {
-    u-pkg-chawan.enable =
-      lib.mkEnableOption "installs chawan using nixpkgs unstable";
+    u-pkg-chawan.enable = lib.mkEnableOption "chawan, cli browser";
   };
 
   config = lib.mkIf config.u-pkg-chawan.enable {
-    environment.systemPackages = [
-      pkgs.chawan
-    ];
+    environment.systemPackages = [pkgs.chawan];
   };
 }

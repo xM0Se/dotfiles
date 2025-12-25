@@ -5,13 +5,10 @@
   ...
 }: {
   options = {
-    u-pkg-fzf.enable =
-      lib.mkEnableOption "enables fzf";
+    u-pkg-fzf.enable = lib.mkEnableOption "fzf, fuzzy finder";
   };
 
   config = lib.mkIf config.u-pkg-fzf.enable {
-    environment.systemPackages = [
-      pkgs.fzf
-    ];
+    environment.systemPackages = [pkgs.fzf];
   };
 }

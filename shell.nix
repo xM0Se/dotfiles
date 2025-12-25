@@ -20,11 +20,9 @@
       ];
 
       shellHook = ''
+        local FIG="$HOME/go/bin/figurine"
 
-        ./.mcp-obsidian-flake-script
-        #exits the
-        exit
-
+        "$FIG" -f "DOS Rebel.flf" "nix dev Shell"
       '';
     };
   };

@@ -6,12 +6,14 @@
         mode = "v";
         silent = true;
         action = ":m '>+1<CR>gv=gv";
+        desc = "";
       }
       {
         key = "K";
         mode = "v";
         silent = true;
         action = ":m '<-2<CR>gv=gv";
+        desc = "";
       }
       {
         key = "<leader>s";
@@ -113,6 +115,8 @@
     };
 
     autocomplete.blink-cmp.enable = true;
+
+    debugger.nvim-dap.enable = true;
 
     languages = {
       enableTreesitter = true;

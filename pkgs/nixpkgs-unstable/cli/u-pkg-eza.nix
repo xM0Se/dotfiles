@@ -5,13 +5,10 @@
   ...
 }: {
   options = {
-    u-pkg-eza.enable =
-      lib.mkEnableOption "enables eza";
+    u-pkg-eza.enable = lib.mkEnableOption "eza, better ls";
   };
 
   config = lib.mkIf config.u-pkg-eza.enable {
-    environment.systemPackages = [
-      pkgs.eza
-    ];
+    environment.systemPackages = [pkgs.eza];
   };
 }

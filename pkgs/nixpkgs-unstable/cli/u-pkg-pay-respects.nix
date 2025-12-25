@@ -5,13 +5,10 @@
   ...
 }: {
   options = {
-    u-pkg-pay-respects.enable =
-      lib.mkEnableOption "installs pay-respects using nixpkgs unstable";
+    u-pkg-pay-respects.enable = lib.mkEnableOption "pay-respects, command correction";
   };
 
   config = lib.mkIf config.u-pkg-pay-respects.enable {
-    environment.systemPackages = [
-      pkgs.pay-respects
-    ];
+    environment.systemPackages = [pkgs.pay-respects];
   };
 }

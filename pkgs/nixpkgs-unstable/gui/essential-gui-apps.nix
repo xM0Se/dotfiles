@@ -10,8 +10,7 @@
   ];
 
   options = {
-    essential-gui-apps.enable =
-      lib.mkEnableOption "enables essential-cli-tools";
+    essential-gui-apps.enable = lib.mkEnableOption "essential-cli-tools";
   };
 
   config = lib.mkIf config.essential-cli-tools.enable {

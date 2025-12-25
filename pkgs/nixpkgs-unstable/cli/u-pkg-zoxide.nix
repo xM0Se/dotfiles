@@ -6,12 +6,10 @@
 }: {
   options = {
     u-pkg-zoxide.enable =
-      lib.mkEnableOption "installs zoxide using nixpkgs unstable";
+      lib.mkEnableOption "zoxide, better cd";
   };
 
   config = lib.mkIf config.u-pkg-zoxide.enable {
-    environment.systemPackages = [
-      pkgs.zoxide
-    ];
+    environment.systemPackages = [pkgs.zoxide];
   };
 }

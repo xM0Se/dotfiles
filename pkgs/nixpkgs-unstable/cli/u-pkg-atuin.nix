@@ -5,13 +5,10 @@
   ...
 }: {
   options = {
-    u-pkg-atuin.enable =
-      lib.mkEnableOption "installs atuin using nixpkgs unstable";
+    u-pkg-atuin.enable = lib.mkEnableOption "atuin, shell history";
   };
 
   config = lib.mkIf config.u-pkg-atuin.enable {
-    environment.systemPackages = [
-      pkgs.atuin
-    ];
+    environment.systemPackages = [pkgs.atuin];
   };
 }

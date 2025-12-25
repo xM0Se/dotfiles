@@ -20,8 +20,7 @@
     ./u-pkg-chawan.nix
   ];
   options = {
-    essential-cli-tools.enable =
-      lib.mkEnableOption "enables essential-cli-tools";
+    essential-cli-tools.enable = lib.mkEnableOption "essential-cli-tools";
   };
 
   config = lib.mkIf config.essential-cli-tools.enable {

@@ -5,13 +5,10 @@
   ...
 }: {
   options = {
-    u-pkg-zsh.enable =
-      lib.mkEnableOption "installs zsh using nixpkgs unstable";
+    u-pkg-zsh.enable = lib.mkEnableOption "zsh, shell";
   };
 
   config = lib.mkIf config.u-pkg-zsh.enable {
-    environment.systemPackages = [
-      pkgs.zsh
-    ];
+    environment.systemPackages = [pkgs.zsh];
   };
 }
