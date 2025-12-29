@@ -16,17 +16,6 @@
         desc = "";
       }
       {
-        key = "<leader>s";
-        mode = "n";
-        silent = true;
-        action = ''
-          function()
-              require("flash").treesitter_search()
-          end,
-        '';
-        desc = "Flash continue Search";
-      }
-      {
         key = "<leader>u";
         mode = "n";
         silent = true;
@@ -39,6 +28,27 @@
         silent = true;
         action = "<cmd>lua require('telescope').extensions.yank_history.yank_history()<CR>";
         desc = "Yank History";
+      }
+      {
+        key = "<leader>v";
+        mode = "n";
+        silent = true;
+        action = "<cmd>vsplit<cr>";
+        desc = "creates vertical split";
+      }
+      {
+        key = "<leader>s";
+        mode = "n";
+        silent = true;
+        action = "<cmd>split<cr>";
+        desc = "creates split";
+      }
+      {
+        key = "<leader>x";
+        mode = "n";
+        silent = true;
+        action = "<cmd>close<cr>";
+        desc = "close";
       }
     ];
 
@@ -70,6 +80,9 @@
     };
 
     extraPlugins = {
+      tmux-navigator = {
+        package = pkgs.vimPlugins.vim-tmux-navigator;
+      };
       smear-cursor = {
         package = pkgs.vimPlugins.smear-cursor-nvim;
         setup = ''require('smear_cursor').setup {}'';
@@ -115,6 +128,9 @@
     };
 
     autocomplete.blink-cmp.enable = true;
+    statusline.lualine = {
+      enable = true;
+    };
 
     debugger.nvim-dap.enable = true;
 
@@ -135,6 +151,23 @@
         format = {
           enable = true;
           type = ["alejandra"];
+        };
+      };
+
+      bash = {
+        enable = true;
+        treesitter.enable = true;
+        lsp = {
+          enable = true;
+          servers = ["bash-ls"];
+        };
+        extraDiagnostics = {
+          enable = true;
+          types = ["shellcheck"];
+        };
+        format = {
+          enable = true;
+          type = ["shfmt"];
         };
       };
       lua.enable = true;

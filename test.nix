@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   nixpkgs.config.allowUnfree = true;
   imports = [
-    ./pkgs/nixpkgs-unstable/cli/essential-cli-tools.nix
+    ./pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix
   ];
 
   essential-cli-tools.enable = true;

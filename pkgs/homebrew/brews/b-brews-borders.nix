@@ -4,16 +4,10 @@
   ...
 }: {
   options = {
-    b-brews-borders.enable =
-      lib.mkEnableOption "installs borders via homebrew and starts it on startup";
+    b-brews-borders.enable = lib.mkEnableOption "borders, window borders darwin";
   };
 
   config = lib.mkIf config.b-brews-borders.enable {
-    homebrew.brews = [
-      {
-        name = "borders";
-        start_service = true;
-      }
-    ];
+    homebrew.brews = ["borders"];
   };
 }
