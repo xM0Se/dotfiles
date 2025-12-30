@@ -30,25 +30,67 @@
         desc = "Yank History";
       }
       {
-        key = "<leader>v";
+        key = "<leader>sv";
         mode = "n";
         silent = true;
         action = "<cmd>vsplit<cr>";
         desc = "creates vertical split";
       }
       {
-        key = "<leader>s";
+        key = "<leader>sh";
         mode = "n";
         silent = true;
         action = "<cmd>split<cr>";
         desc = "creates split";
       }
       {
-        key = "<leader>x";
+        key = "<leader>q";
         mode = "n";
         silent = true;
         action = "<cmd>close<cr>";
         desc = "close";
+      }
+      {
+        key = "<leader>m";
+        mode = "n";
+        silent = true;
+        action = "<C-w>_<C-w>|";
+        desc = "maximize window";
+      }
+      {
+        key = "<leader>=";
+        mode = "n";
+        silent = true;
+        action = "<C-w>=";
+        desc = "equalize windows";
+      }
+      {
+        key = "<leader>h";
+        mode = "n";
+        silent = true;
+        action = "<cmd>:vertical resize -5<cr>";
+        desc = "resize window -5 verticaly";
+      }
+      {
+        key = "<leader>j";
+        mode = "n";
+        silent = true;
+        action = "<cmd>:resize +5";
+        desc = "resize window +5";
+      }
+      {
+        key = "<leader>k";
+        mode = "n";
+        silent = true;
+        action = "<cmd>:resize -5<cr>";
+        desc = "resize window -5";
+      }
+      {
+        key = "<leader>l";
+        mode = "n";
+        silent = true;
+        action = "<cmd>:vertical resize +5<cr>";
+        desc = "resize window +5 verticaly";
       }
     ];
 
