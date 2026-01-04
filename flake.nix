@@ -111,7 +111,7 @@
 
         nixosConfigurations."minecraft-server" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [ ./hosts/nix-os/servers/minecraft-server.nix ];
+          modules = [ ./hosts/nix-os/servers/minecraft-server/configuration.nix ];
         };
 
 
