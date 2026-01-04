@@ -9,7 +9,11 @@
   ];
 
   essential-cli-tools.enable = true;
-
+  programs.zsh.enable = true;
+  users.users.root = {
+    home = "/root";
+    shell = pkgs.zsh;
+  };
   nixpkgs = {
     hostPlatform = "x86_64-linux";
     config.allowUnfree = true;
