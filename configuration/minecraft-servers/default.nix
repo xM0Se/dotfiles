@@ -13,6 +13,12 @@
     servers.test = {
       enable = true;
       package = pkgs.vanillaServers.vanilla-1_21_4;
+      serverProperties = {
+        server-port = 25565;
+        difficulty = 3;
+        max-players = 7;
+        motd = "NixOS Minecraft server!";
+      };
       # autoStart = true;
       # operators = {
       #   xMose = {
