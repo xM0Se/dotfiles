@@ -9,7 +9,7 @@
     enable = true;
     openFirewall = true;
     eula = true;
-    dataDir = "/root/minecraft-server";
+    dataDir = "/var/minecraft-server";
     servers.test = {
       enable = true;
       package = pkgs.vanillaServers.vanilla-1_21_4;
