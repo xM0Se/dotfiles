@@ -5,6 +5,7 @@
     enable = true;
     eula = true;
     dataDir = "/root/minecraft-server";
+    services.minecraft-servers.openFirewall = true;
     servers.vanilla = {
       enable = true;
       autoStart = true;
@@ -16,6 +17,7 @@
         };
       };
       serverProperties = {
+        "white-list" = true;
         gamemode = "survival";
         difficulty = "hard";
         "simulation-distance" = 10;
