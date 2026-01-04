@@ -11,7 +11,7 @@
     enable = true;
     eula = true;
     dataDir = "/root/minecraft-server";
-    servers = {
+    servers.vanilla = {
       test = {
         enable = true;
         autoStart = true;
