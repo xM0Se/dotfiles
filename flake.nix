@@ -90,8 +90,16 @@
         };
       };
 
+      nixosConfigurations."minecraft-server" = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs self;};
+        modules = [
+          ./minecraft-server.nix
+        ];
+      };
+
       systems = [
         "aarch64-darwin"
+        "x86_64-linux"
       ];
 
       perSystem = {pkgs, ...}: {
