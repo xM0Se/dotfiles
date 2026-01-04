@@ -1,7 +1,6 @@
 {
   inputs,
   pkgs,
-  lib,
   ...
 }: {
   imports = [inputs.nix-minecraft.nixosModules.minecraft-servers];
@@ -25,7 +24,7 @@
           };
         };
         serverProperties = {
-          gamode = "survival";
+          gamemode = "survival";
           difficulty = "hard";
           simulation-distance = 10;
           spawn-protection = 0;
