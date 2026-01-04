@@ -110,7 +110,24 @@
         nixosConfigurations."minecraft-server" = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs self;};
           system = "x86_64-linux";
-          modules = [./minecraft-server.nix];
+          modules = [
+            ./minecraft-server.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                backupFileExtension = "backup";
+                extraSpecialArgs = {inherit inputs self;};
+                users.root = {
+                  config,
+                  pkgs,
+                  ...
+                }:
+                  import ./home-manager/home3.nix {inherit config pkgs inputs self;};
+              };
+            }
+          ];
         };
       };
     };
