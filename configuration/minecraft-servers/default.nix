@@ -22,17 +22,17 @@
         };
       };
       serverProperties = {
-        "white-list" = true;
+        white-list = true;
         gamemode = "survival";
         difficulty = "hard";
-        "simulation-distance" = 10;
-        "spawn-protection" = 0;
-        "hide-online-players" = false;
-        "log-ips" = true;
-        "force-gamemode" = false;
+        simulation-distance = 10;
+        spawn-protection = 0;
+        hide-online-players = false;
+        log-ips = true;
+        force-gamemode = false;
         motd = "hope it works";
-        "server-port" = 25565;
-        "view-distance" = 10;
+        server-port = 25565;
+        view-distance = 10;
       };
       whitelist = {
         xMose = "0a9b0753-9941-4861-ab0f-20a82e462ae9";
