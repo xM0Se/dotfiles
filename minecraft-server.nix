@@ -10,7 +10,8 @@
 
 	nixpkgs.hostPlatform = "x86_64-linux";	
 	nixpkgs.config.allowUnfree = true;
-	environment.systemPackages = [
-		self.packages.${pkgs.system}.nvimconf
-	];
+environment.systemPackages = [
+  (self.packages.${pkgs.system}.nvimconf)
+];
+
 }
