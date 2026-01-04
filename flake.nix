@@ -32,6 +32,8 @@
     };
 
     flake-parts.url = "github:hercules-ci/flake-parts";
+
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
   outputs = inputs @ {
@@ -42,6 +44,7 @@
     nix-homebrew,
     home-manager,
     flake-parts,
+    nix-minecraft,
     ...
   }:
     flake-parts.lib.mkFlake {inherit inputs self;} {
