@@ -115,6 +115,10 @@
           system = "x86_64-linux";
           modules = [
             ./minecraft-server.nix
+            nix-minecraft.nixosModules.minecraft-servers
+            {
+              nixpkgs.overlays = [inputs.nix-minecraft.overlay];
+            }
             home-manager.nixosModules.home-manager
             {
               home-manager = {

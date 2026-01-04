@@ -6,6 +6,7 @@
   imports = [
     ./hosts/nix-os/servers/minecraft-server/configuration.nix
     ./pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix
+    ./configuration/minecraft-servers/default.nix
   ];
 
   essential-cli-tools.enable = true;
