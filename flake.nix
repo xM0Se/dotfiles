@@ -45,14 +45,12 @@
     ...
   }:
     flake-parts.lib.mkFlake {inherit inputs self;} {
-
       systems = [
-
         "aarch64-darwin"
-
         "x86_64-linux"
-]; 
-     perSystem = {pkgs, ...}: {
+      ];
+
+      perSystem = {pkgs, ...}: {
         config = {
           packages.nvimconf =
             (nvf.lib.neovimConfiguration {
@@ -96,25 +94,24 @@
         };
 
         #nixosConfigurations."test" = nixpkgs.lib.nixosSystem {
-         # modules = [
-          #  ./test.nix
-           # ./hosts/nix-os/servers/test1/configuration.nix
-           # home-manager.nixosModules.home-manager
-            #{
-             # home-manager.useGlobalPkgs = true;
-          #   home-manager.useUserPackages = true;
-           #   home-manager.users.root = ./home-manager/home2.nix;
-           # }
-         # ];
-       # };
-     # };
+        # modules = [
+        #  ./test.nix
+        # ./hosts/nix-os/servers/test1/configuration.nix
+        # home-manager.nixosModules.home-manager
+        #{
+        # home-manager.useGlobalPkgs = true;
+        #   home-manager.useUserPackages = true;
+        #   home-manager.users.root = ./home-manager/home2.nix;
+        # }
+        # ];
+        # };
+        # };
 
         nixosConfigurations."minecraft-server" = nixpkgs.lib.nixosSystem {
+          sepcialArgs = {inherit inputs self;};
           system = "x86_64-linux";
-          modules = [ ./hosts/nix-os/servers/minecraft-server/configuration.nix ];
+          modules = [./hosts/nix-os/servers/minecraft-server/configuration.nix];
         };
-
-
+      };
     };
-};
 }
