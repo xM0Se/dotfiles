@@ -13,33 +13,27 @@
     servers.test = {
       enable = true;
       package = pkgs.vanillaServers.vanilla-1_21_4;
-      serverProperties = {
-        server-port = 25565;
-        difficulty = 3;
-        max-players = 7;
-        motd = "NixOS Minecraft server!";
+      autoStart = true;
+      operators = {
+        xMose = {
+          uuid = "0a9b0753-9941-4861-ab0f-20a82e462ae9";
+          level = 3;
+          bypassesPlayerLimit = true;
+        };
       };
-      # autoStart = true;
-      # operators = {
-      #   xMose = {
-      #     uuid = "0a9b0753-9941-4861-ab0f-20a82e462ae9";
-      #     level = 3;
-      #     bypassesPlayerLimit = true;
-      #   };
-      # };
-      # serverProperties = {
-      #   "white-list" = true;
-      #   gamemode = "survival";
-      #   difficulty = "hard";
-      #   "simulation-distance" = 10;
-      #   "spawn-protection" = 0;
-      #   "hide-online-players" = false;
-      #   "log-ips" = true;
-      #   "force-gamemode" = false;
-      #   motd = "hope it works";
-      #   "server-port" = 25565;
-      #   "view-distance" = 10;
-      # };
+      serverProperties = {
+        "white-list" = true;
+        gamemode = "survival";
+        difficulty = "hard";
+        "simulation-distance" = 10;
+        "spawn-protection" = 0;
+        "hide-online-players" = false;
+        "log-ips" = true;
+        "force-gamemode" = false;
+        motd = "hope it works";
+        "server-port" = 25565;
+        "view-distance" = 10;
+      };
       # whitelist = {
       #     xMose = "0a9b0753-9941-4861-ab0f-20a82e462ae9";
       #     ElroKnight = "2beb73ed-3cf2-4a4b-a4ae-683db5b71dec";
