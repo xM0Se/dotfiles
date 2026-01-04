@@ -37,6 +37,8 @@
         bind-key -T copy-mode-vi 'C-\' select-pane -l
         bind r source-file ~/.config/tmux/tmux.conf \; display-message "Config reloaded"
         bind v split-window -h
+        bind '"' split-window -v -c "#{pane_current_path}"
+        bind % split-window -h -c "#{pane_current_path}"
         set-option -g base-index 1
         bind C-a send-prefix
         bind s split-window -v

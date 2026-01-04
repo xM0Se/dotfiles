@@ -7,6 +7,7 @@
     ./b-font-font-sketchybar-app-font.nix
     ./b-font-sf-symbols.nix
     ./b-font-font-hack-nerd-font.nix
+    ./b-font-jet-brains-mono.nix
   ];
 
   options = {
@@ -20,6 +21,8 @@
     b-font-sf-symbols.enable =
       lib.mkDefault true;
     b-font-font-hack-nerd-font.enable =
+      lib.mkDefault true;
+    b-font-jetbrains-mono.enable =
       lib.mkDefault true;
   };
 }

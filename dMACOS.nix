@@ -36,6 +36,7 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = [
     #cli tools
+    self.packages.${pkgs.system}.nvimconf
     pkgs.cargo
     pkgs.gtk3
     pkgs.stow
@@ -60,9 +61,6 @@
     pkgs.obsidian
     pkgs.keycastr
     pkgs.vscode
-
-    #fonts
-    pkgs.jetbrains-mono
   ];
 
   #macOS setings
