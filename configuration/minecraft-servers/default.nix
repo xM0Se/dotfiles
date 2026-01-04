@@ -1,13 +1,18 @@
-{inputs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [inputs.nix-minecraft.nixosModules.minecraft-servers];
 
   services.minecraft-servers = {
     enable = true;
+    openFirewall = true;
     eula = true;
     dataDir = "/root/minecraft-server";
-    services.minecraft-servers.openFirewall = true;
-    servers.vanilla = {
+    servers.test = {
       enable = true;
+      package = pkgs.vanillaServers.vanilla-1_21_4;
       autoStart = true;
       operators = {
         xMose = {
@@ -34,8 +39,6 @@
         ElroKnight = "2beb73ed-3cf2-4a4b-a4ae-683db5b71dec";
         Mathehaeft = "62a27dc6-217f-4c30-b9e8-634f7df68044";
         Toaster0077282 = "82db6cf8-5a4f-43fe-95f3-486698fd910b";
-      };
-      symlinks = {
       };
     };
   };
