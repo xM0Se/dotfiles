@@ -90,17 +90,16 @@
         };
       };
 
-  minecraft-server = inputs.nixpkgs.lib.nixosSystem {
-    system = "x86_64-linux";  # or set nixpkgs.hostPlatform in a module.
-    modules = [
-      ./hosts/nix-os/servers/minecraft-server.nix
-    ];
-  };
-        #nixosConfigurations."minecraft-server" = nixpkgs.lib.nixosSystem {
-         # system = "x86_64-linux";
-          #modules = [ ./hosts/nix-os/servers/minecraft-server.nix ];
-       # };
- #     };
+  #minecraft-server = input.nixpkgs.lib.nixosSystem {
+   # system = "x86_64-linux";  # or set nixpkgs.hostPlatform in a module.
+    #modules = [
+     # ./hosts/nix-os/servers/minecraft-server.nix
+#    ];
+ # };
+        nixosConfigurations."minecraft-server" = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ ./hosts/nix-os/servers/minecraft-server.nix ];
+        };
 
 
       systems = [
