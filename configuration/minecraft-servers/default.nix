@@ -12,7 +12,7 @@
     dataDir = "/var/minecraft-server";
     servers.test = {
       enable = true;
-      package = pkgs.vanillaServers.vanilla-1_21_4;
+      package = pkgs.vanillaServers.vanilla-1_21_11;
       autoStart = true;
       operators = {
         xMose = {
