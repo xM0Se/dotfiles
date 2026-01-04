@@ -45,6 +45,25 @@
     ...
   }:
     flake-parts.lib.mkFlake {inherit inputs self;} {
+
+      systems = [
+
+        "aarch64-darwin"
+
+        "x86_64-linux"
+]; 
+     perSystem = {pkgs, ...}: {
+        config = {
+          packages.nvimconf =
+            (nvf.lib.neovimConfiguration {
+              pkgs = pkgs;
+              modules = [
+                ./home-manager/nvim/testy.nix
+              ];
+            }).neovim;
+        };
+      };
+
       flake = {
         darwinConfigurations."dMACOS" = nix-darwin.lib.darwinSystem {
           specialArgs = {inherit inputs self;};
@@ -96,22 +115,6 @@
         };
 
 
-      systems = [
-        "aarch64-darwin"
-        "x86_64-linux"
-      ];
-
-      perSystem = {pkgs, ...}: {
-        config = {
-          packages.nvimconf =
-            (nvf.lib.neovimConfiguration {
-              pkgs = pkgs;
-              modules = [
-                ./home-manager/nvim/testy.nix
-              ];
-            }).neovim;
-        };
-      };
     };
 };
 }
