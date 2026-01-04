@@ -108,7 +108,7 @@
         # };
 
         nixosConfigurations."minecraft-server" = nixpkgs.lib.nixosSystem {
-          sepcialArgs = {inherit inputs self;};
+          specialArgs = {inherit inputs self;};
           system = "x86_64-linux";
           modules = [./hosts/nix-os/servers/minecraft-server/configuration.nix];
         };
