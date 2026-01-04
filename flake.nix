@@ -94,7 +94,6 @@
     system = "x86_64-linux";  # or set nixpkgs.hostPlatform in a module.
     modules = [
       ./hosts/nix-os/servers/minecraft-server.nix
-      config.nixosModules.my-module
     ];
   };
         #nixosConfigurations."minecraft-server" = nixpkgs.lib.nixosSystem {
