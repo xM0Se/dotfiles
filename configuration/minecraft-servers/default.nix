@@ -11,7 +11,7 @@
   services.minecraft-servers = {
     enable = true;
     eula = true;
-    dataDir = "../../../minecraft-server";
+    dataDir = "/root/minecraft-server";
     servers = {
       test = {
         enable = true;
