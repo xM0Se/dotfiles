@@ -19,7 +19,7 @@
         autoStart = true;
         operators = {
           xMose = {
-            uuid = "a9b0753-9941-4861-ab0f-20a82e462ae9";
+            uuid = "0a9b0753-9941-4861-ab0f-20a82e462ae9";
             level = 3;
             bypassesPlayerLimit = true;
           };
