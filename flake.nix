@@ -76,26 +76,20 @@
           ];
         };
 
-        nixosConfigurations."test" = nixpkgs.lib.nixosSystem {
-          modules = [
-            ./test.nix
-            ./hosts/nix-os/servers/test1/configuration.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.root = ./home-manager/home2.nix;
-            }
-          ];
-        };
-      };
+        #nixosConfigurations."test" = nixpkgs.lib.nixosSystem {
+         # modules = [
+          #  ./test.nix
+           # ./hosts/nix-os/servers/test1/configuration.nix
+           # home-manager.nixosModules.home-manager
+            #{
+             # home-manager.useGlobalPkgs = true;
+          #   home-manager.useUserPackages = true;
+           #   home-manager.users.root = ./home-manager/home2.nix;
+           # }
+         # ];
+       # };
+     # };
 
-  #minecraft-server = input.nixpkgs.lib.nixosSystem {
-   # system = "x86_64-linux";  # or set nixpkgs.hostPlatform in a module.
-    #modules = [
-     # ./hosts/nix-os/servers/minecraft-server.nix
-#    ];
- # };
         nixosConfigurations."minecraft-server" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [ ./hosts/nix-os/servers/minecraft-server.nix ];
