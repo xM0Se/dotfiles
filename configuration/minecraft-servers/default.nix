@@ -4,10 +4,10 @@
   services.minecraft-servers = {
     enable = true;
     eula = true;
+    dataDir = "/root/minecraft-server";
     servers.vanilla = {
       enable = true;
       autoStart = true;
-      dataDir = "/root/minecraft-server";
       operators = {
         xMose = {
           uuid = "0a9b0753-9941-4861-ab0f-20a82e462ae9";
