@@ -63,9 +63,6 @@
       };
 
       flake = {
-        overlays.default = final: prev: {
-          nvimconf = self.packages.${final.system}.nvimconf;
-        };
         darwinConfigurations."dMACOS" = nix-darwin.lib.darwinSystem {
           specialArgs = {inherit inputs self;};
           modules = [
