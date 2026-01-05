@@ -12,7 +12,9 @@
     dataDir = "/var/server-mini";
     servers.the-new-kingdom = {
       enable = true;
-      package = pkgs.vanillaServers.vanilla-1_21_11;
+      package = pkgs.fabricServers.fabric-1_21_11.override {
+        loaderVersion = "0.18.4";
+      };
       autoStart = true;
       operators = {
         xMose = {
@@ -41,6 +43,16 @@
         Toaster0077282 = "82db6cf8-5a4f-43fe-95f3-486698fd910b";
         P1Paxs = "9a3e9ef2-4fdd-4976-9a5c-6986fc7c3a62";
         Muecke1234 = "501c6362-50a6-4438-95e3-23e2e4e63de2";
+      };
+      symlinks = {
+        mods = pkgs.linkFarmFromDrvs "mods" (
+          builtins.attrValues {
+            Fabric-API = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/P7dR8mSH/versions/9YVrKY0Z/fabric-api-0.115.0%2B1.21.1.jar";
+              sha512 = "e5f3c3431b96b281300dd118ee523379ff6a774c0e864eab8d159af32e5425c915f8664b1cd576f20275e8baf995e016c5971fea7478c8cb0433a83663f2aea8";
+            };
+          }
+        );
       };
     };
   };
