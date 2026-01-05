@@ -1,29 +1,33 @@
-{ config, lib, pkgs, modulesPath, ... }:
-
 {
+  lib,
+  modulesPath,
+  ...
+}: {
+  imports = [(modulesPath + "/profiles/qemu-guest.nix")];
 
-	imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
+  boot = {
+    initrd = {
+      availableKernelModules = ["ahci" "xhci_pci" "virtio_pci" "virtio_scsi" "sd_mod" "sr_mod"];
+      kernelModules = [];
+    };
+    kernelModules = [];
+    extraModulePackages = [];
+  };
 
-	boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "virtio_pci" "virtio_scsi" "sd_mod" "sr_mod" ];
- 	boot.initrd.kernelModules = [ ];
-	boot.kernelModules = [ ];
-	boot.extraModulePackages = [ ];
+  fileSystems."/" = {
+    device = "/dev/disk/by-label/NIXROOT";
+    fsType = "ext4";
+  };
 
- 	fileSystems."/" =
-    		{ device = "/dev/disk/by-label/NIXROOT";
-      		fsType = "ext4";
-    	};
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-label/NIXBOOT";
+    fsType = "vfat";
+    options = ["fmask=0022" "dmask=0022"];
+  };
 
-	fileSystems."/boot" =
-    		{ device = "/dev/disk/by-label/NIXBOOT";
-     		fsType = "vfat";
-     		options = [ "fmask=0022" "dmask=0022" ];
-   	};
+  swapDevices = [];
 
-  	swapDevices = [ ];
+  networking.useDHCP = lib.mkDefault true;
 
-  	networking.useDHCP = lib.mkDefault true;
-
-  	nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }

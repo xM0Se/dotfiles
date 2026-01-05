@@ -1,41 +1,42 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  imports = [./hardware-configuration.nix];
 
-	imports = [ ./hardware-configuration.nix ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
-	nix.settings.experimental-features = ["nix-command" "flakes"];
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/sda";
 
-	boot.loader.grub.enable = true;
-	boot.loader.grub.device = "/dev/sda";
+  networking.hostName = "nixos";
 
-	networking.hostName = "nixos"; 
+  time.timeZone = "Europe/Amsterdam";
 
-	time.timeZone = "Europe/Amsterdam";
+  services.xserver.xkb.layout = "us";
 
-	services.xserver.xkb.layout = "us";
+  users.users.xm0se = {
+    isNormalUser = true;
+    extraGroups = ["wheel"];
+    packages = with pkgs; [
+      tree
+      git
+    ];
+  };
 
-	users.users.xm0se = {
-		isNormalUser = true;
-		extraGroups = [ "wheel" ];
-		packages = with pkgs; [
-			tree
-			git
-		];
-   	};
+  environment.systemPackages = with pkgs; [
+    vim
+    git
+    wget
+  ];
 
-	environment.systemPackages = with pkgs; [
-		vim
-		git
-		wget
-	];
+  services.openssh.enable = true;
+  services.openssh.settings.PasswordAuthentication = true;
+  services.openssh.settings.PermitRootLogin = "yes";
 
-	services.openssh.enable = true;
-    	services.openssh.settings.PasswordAuthentication = true;
-    	services.openssh.settings.PermitRootLogin = "yes";
+  networking.firewall.enable = false;
 
-    	networking.firewall.enable = false;
-
-  	system.stateVersion = "25.05";
-
+  system.stateVersion = "25.05";
 }
