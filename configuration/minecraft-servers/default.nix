@@ -10,7 +10,7 @@
     enable = true;
     openFirewall = true;
     eula = true;
-    dataDir = "/var/minecraft-server";
+    dataDir = "/var/minecraft";
     servers.testty = {
       enable = true;
       package = pkgs.vanillaServers.vanilla-1_21_11;
@@ -41,9 +41,9 @@
         Mathehaeft = "62a27dc6-217f-4c30-b9e8-634f7df68044";
         Toaster0077282 = "82db6cf8-5a4f-43fe-95f3-486698fd910b";
       };
-      symlinks = {
-        "world/datapacks" = "${config.services.minecraft-servers.dataDir}/datapacks";
-      };
+      # symlinks = {
+      # "world/datapacks" = "${config.services.minecraft-servers.dataDir}/datapacks";
+      # };
     };
   };
 }
