@@ -22,6 +22,7 @@
         };
       };
       serverProperties = {
+        sync-chunk-writes = false;
         white-list = true;
         gamemode = "survival";
         difficulty = "hard";
