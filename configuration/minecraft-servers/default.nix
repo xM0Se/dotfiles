@@ -40,16 +40,16 @@
         Mathehaeft = "62a27dc6-217f-4c30-b9e8-634f7df68044";
         Toaster0077282 = "82db6cf8-5a4f-43fe-95f3-486698fd910b";
       };
-      #   symlinks = {
-      #     "world/datapacks/afk display v1.1.15 (MC 1.21-1.21.11).zip" = "/var/datapacks/afk display v1.1.15 (MC 1.21-1.21.11).zip";
-      #     "world/datapacks/anti enderman grief v1.1.15 (MC 1.21-1.21.11).zip" = "/var/datapacks/anti enderman grief v1.1.15 (MC 1.21-1.21.11).zip";
-      #     "world/datapacks/armor statues v2.8.21 (MC 1.21-1.21.11).zip" = "/var/datapacks/armor statues v2.8.21 (MC 1.21-1.21.11).zip";
-      #     "world/datapacks/coordinates hud v1.2.16 (MC 1.21-1.21.11).zip" = "/var/datapacks/coordinates hud v1.2.16 (MC 1.21-1.21.11).zip";
-      #     "world/datapacks/custom nether portals v2.3.18 (MC 1.21-1.21.11).zip" = "/var/datapacks/custom nether portals v2.3.18 (MC 1.21-1.21.11).zip";
-      #     "world/datapacks/durability ping v1.1.16 (MC 1.21-1.21.11).zip" = "/var/datapacks/durability ping v1.1.16 (MC 1.21-1.21.11).zip";
-      #     "world/datapacks/Invisible item frame.zip" = "/var/datapacks/Invisible item frame.zip";
-      #     "world/datapacks/mini blocks v1.1.5 (MC 1.21-1.21.11).zip" = "/var/datapacks/mini blocks v1.1.5 (MC 1.21-1.21.11).zip";
-      #   };
+      symlinks = {
+        "world/datapacks/afk display v1.1.15 (MC 1.21-1.21.11).zip" = "/var/datapacks/afk display v1.1.15 (MC 1.21-1.21.11).zip";
+        "world/datapacks/anti enderman grief v1.1.15 (MC 1.21-1.21.11).zip" = "/var/datapacks/anti enderman grief v1.1.15 (MC 1.21-1.21.11).zip";
+        "world/datapacks/armor statues v2.8.21 (MC 1.21-1.21.11).zip" = "/var/datapacks/armor statues v2.8.21 (MC 1.21-1.21.11).zip";
+        "world/datapacks/coordinates hud v1.2.16 (MC 1.21-1.21.11).zip" = "/var/datapacks/coordinates hud v1.2.16 (MC 1.21-1.21.11).zip";
+        "world/datapacks/custom nether portals v2.3.18 (MC 1.21-1.21.11).zip" = "/var/datapacks/custom nether portals v2.3.18 (MC 1.21-1.21.11).zip";
+        "world/datapacks/durability ping v1.1.16 (MC 1.21-1.21.11).zip" = "/var/datapacks/durability ping v1.1.16 (MC 1.21-1.21.11).zip";
+        "world/datapacks/Invisible item frame.zip" = "/var/datapacks/Invisible item frame.zip";
+        "world/datapacks/mini blocks v1.1.5 (MC 1.21-1.21.11).zip" = "/var/datapacks/mini blocks v1.1.5 (MC 1.21-1.21.11).zip";
+      };
     };
   };
 }
