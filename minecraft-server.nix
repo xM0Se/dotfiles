@@ -15,6 +15,7 @@
     home = "/root";
     shell = pkgs.zsh;
   };
+  virtualisation.docker.enable = true;
   nixpkgs = {
     hostPlatform = "x86_64-linux";
     config.allowUnfree = true;
