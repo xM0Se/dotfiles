@@ -9,8 +9,8 @@
     enable = true;
     openFirewall = true;
     eula = true;
-    dataDir = "/var/mini-server";
-    servers.testty = {
+    dataDir = "/var/mini";
+    servers.mini = {
       enable = true;
       package = pkgs.vanillaServers.vanilla-1_21_11;
       autoStart = true;
