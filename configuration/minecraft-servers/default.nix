@@ -1,5 +1,6 @@
 {
   inputs,
+  config,
   pkgs,
   ...
 }: {
@@ -41,7 +42,7 @@
         Toaster0077282 = "82db6cf8-5a4f-43fe-95f3-486698fd910b";
       };
       symlinks = {
-        "world/datapacks" = "var/minecraft-server/datapacks";
+        "world/datapacks" = "${config.services.minecraft-servers.dataDir}/datapacks";
       };
     };
   };
