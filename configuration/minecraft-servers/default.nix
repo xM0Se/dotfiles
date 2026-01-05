@@ -9,7 +9,7 @@
     enable = true;
     openFirewall = true;
     eula = true;
-    dataDir = "/var/minecraft";
+    dataDir = "/var/mini-server";
     servers.testty = {
       enable = true;
       package = pkgs.vanillaServers.vanilla-1_21_11;
