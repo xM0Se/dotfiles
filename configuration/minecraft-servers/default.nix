@@ -11,7 +11,7 @@
     openFirewall = true;
     eula = true;
     dataDir = "/var/minecraft-server";
-    servers.test = {
+    servers.testty = {
       enable = true;
       package = pkgs.vanillaServers.vanilla-1_21_11;
       autoStart = true;
