@@ -25,14 +25,14 @@
         white-list = true;
         gamemode = "survival";
         difficulty = "hard";
-        simulation-distance = 12;
+        simulation-distance = 15;
         spawn-protection = 0;
         hide-online-players = false;
         log-ips = true;
         force-gamemode = false;
         motd = "The new Kingdom, a new era begins ... ";
         server-port = 25565;
-        view-distance = 12;
+        view-distance = 15;
       };
       whitelist = {
         xMose = "0a9b0753-9941-4861-ab0f-20a82e462ae9";
