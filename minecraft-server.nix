@@ -21,6 +21,7 @@
     config.allowUnfree = true;
   };
   environment.systemPackages = [
+    pkgs.jdk25_headless
     self.packages.${pkgs.system}.nvimconf
   ];
 }
