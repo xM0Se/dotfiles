@@ -14,6 +14,7 @@
       enable = true;
       autoStart = true;
       package = pkgs.fabricServers.fabric-1_21_11;
+      javaPackage = pkgs.jdk25_headless;
       operators = {
         xMose = {
           uuid = "0a9b0753-9941-4861-ab0f-20a82e462ae9";
