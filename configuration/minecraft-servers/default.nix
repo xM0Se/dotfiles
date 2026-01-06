@@ -10,7 +10,7 @@
     openFirewall = true;
     eula = true;
     dataDir = "/var/server-mini";
-    servers.forge-the-new-kingdom = {
+    servers.the-new-kingdom-fabric = {
       enable = true;
       autoStart = true;
       package = pkgs.fabricServers.fabric-1_21_11;
