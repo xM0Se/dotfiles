@@ -22,6 +22,6 @@
   };
   environment.systemPackages = [
     pkgs.jdk25_headless
-    self.packages.${pkgs.system}.nvimconf
+    self.packages.${pkgs.stdenv.hostPlatform.system}.nvimconf
   ];
 }

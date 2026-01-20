@@ -36,7 +36,7 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = [
     #cli tools
-    self.packages.${pkgs.system}.nvimconf
+    self.packages.${pkgs.stdenv.hostPlatform.system}.nvimconf
     pkgs.cargo
     pkgs.gtk3
     pkgs.stow

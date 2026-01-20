@@ -196,6 +196,15 @@
         };
       };
 
+      clang = {
+        enable = true;
+        treesitter.enable = true;
+        lsp = {
+          enable = true;
+          servers = ["clangd"];
+        };
+      };
+
       bash = {
         enable = true;
         treesitter.enable = true;
