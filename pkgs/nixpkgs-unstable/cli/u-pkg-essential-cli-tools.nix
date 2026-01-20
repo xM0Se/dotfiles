@@ -6,7 +6,6 @@
   imports = [
     ./u-pkg-eza.nix
     ./u-pkg-oh-my-posh.nix
-    ./u-pkg-atuin.nix
     ./u-pkg-zoxide.nix
     ./u-pkg-neofetch.nix
     ./u-pkg-vim.nix
@@ -27,8 +26,6 @@
     u-pkg-eza.enable =
       lib.mkDefault true;
     u-pkg-oh-my-posh.enable =
-      lib.mkDefault true;
-    u-pkg-atuin.enable =
       lib.mkDefault true;
     u-pkg-zoxide.enable =
       lib.mkDefault true;
