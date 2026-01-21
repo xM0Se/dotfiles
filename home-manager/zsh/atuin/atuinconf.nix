@@ -10,10 +10,11 @@
   config = lib.mkIf config.atuinconf.enable {
     programs.atuin = {
       enable = true;
-      enableZshIntegration = true;
       settings = {
-        enter_accept = true;
+        enter_accept = false;
       };
+      forceOverwriteSettings = true;
+      enableZshIntegration = true;
     };
   };
 }
