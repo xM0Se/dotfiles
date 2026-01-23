@@ -205,6 +205,12 @@
         };
       };
 
+      just = {
+        enable = true;
+        treesitter.enable = true;
+        lsp.enable = true;
+      };
+
       bash = {
         enable = true;
         treesitter.enable = true;
