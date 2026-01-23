@@ -17,6 +17,7 @@
     ./u-pkg-pay-respects.nix
     ./u-pkg-zsh.nix
     ./u-pkg-chawan.nix
+    ./u-pkg-just.nix
   ];
   options = {
     essential-cli-tools.enable = lib.mkEnableOption "essential-cli-tools";
@@ -48,6 +49,8 @@
     u-pkg-zsh.enable =
       lib.mkDefault true;
     u-pkg-chawan.enable =
+      lib.mkDefault true;
+    u-pkg-just.enable =
       lib.mkDefault true;
   };
 }
