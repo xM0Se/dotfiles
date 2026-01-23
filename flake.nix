@@ -59,7 +59,7 @@
             (nvf.lib.neovimConfiguration {
               pkgs = pkgs;
               modules = [
-                ./home-manager/nvim/testy.nix
+                ./pkgs/custom/nvim/testy.nix
               ];
             }).neovim;
         };
