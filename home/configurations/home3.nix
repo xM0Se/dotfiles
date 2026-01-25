@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   imports = [
-    ./zsh/zshconf.nix
-    ./gitconf.nix
-    ./tmux/tmuxconf.nix
+    ./../modules/zsh/zshconf.nix
+    ./../modules/gitconf.nix
+    ./../modules/tmux/tmuxconf.nix
   ];
 
   home.sessionVariables = {
