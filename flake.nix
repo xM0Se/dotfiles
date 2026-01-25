@@ -8,6 +8,11 @@
 
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
 
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -41,6 +46,7 @@
     nixpkgs-stable,
     nixpkgs,
     nvf,
+    sops-nix,
     nix-darwin,
     nix-homebrew,
     home-manager,
@@ -77,6 +83,7 @@
             specialArgs = {inherit inputs pkgs-stable self;};
             modules = [
               ./dMACOS.nix
+              sops-nix.darwinModules.sops
               home-manager.darwinModules.home-manager
               {
                 home-manager = {
@@ -89,7 +96,7 @@
                     pkgs,
                     ...
                   }:
-                    import ./home-manager/home1.nix {inherit config pkgs pkgs-stable inputs self;};
+                    import ./home/configurations/home1.nix {inherit config pkgs pkgs-stable inputs self;};
                 };
               }
               nix-homebrew.darwinModules.nix-homebrew
@@ -114,6 +121,7 @@
             system = "x86_64-linux";
             modules = [
               ./minecraft-server.nix
+              sops-nix.nixosModules.sops
               nix-minecraft.nixosModules.minecraft-servers
               {
                 nixpkgs.overlays = [inputs.nix-minecraft.overlay];
@@ -130,7 +138,7 @@
                     pkgs,
                     ...
                   }:
-                    import ./home-manager/home3.nix {inherit config pkgs inputs pkgs-stable self;};
+                    import ./home/configurations/home3.nix {inherit config pkgs inputs pkgs-stable self;};
                 };
               }
             ];

@@ -1,10 +1,10 @@
 {pkgs, ...}: {
   imports = [
-    ./vscode/vscodeconf.nix
-    ./zsh/zshconf.nix
-    ./gitconf.nix
-    ./tmux/tmuxconf.nix
-    ./zen/zenconf.nix
+    ./../modules/vscode/vscodeconf.nix
+    ./../modules/zsh/zshconf.nix
+    ./../modules/gitconf.nix
+    ./../modules/tmux/tmuxconf.nix
+    ./../modules/zen/zenconf.nix
   ];
 
   home.sessionVariables = {
@@ -13,6 +13,7 @@
   };
 
   programs.firefox.darwinDefaultsId = "app.zen-browser.zen";
+
   home.username = "xm0se";
   home.homeDirectory = "/Users/xm0se";
 
@@ -31,7 +32,6 @@
     ".config/sketchybar".source = /Users/xm0se/dotfiles-for-humans/sketchybar;
     "library/application support/com.mitchellh.ghostty".source = /Users/xm0se/dotfiles-for-humans/ghostty;
     ".wezterm.lua".source = /Users/xm0se/dotfiles-for-humans/wezterm/.wezterm.lua;
-    ".config/ohmyposh".source = /Users/xm0se/dotfiles-for-humans/ohmyposh;
     "qmk_firmware/keyboards/crkbd/keymaps/custom".source = /Users/xm0se/dotfiles-for-humans/qmk;
   };
   programs.home-manager.enable = true;
