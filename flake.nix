@@ -82,7 +82,7 @@
           nix-darwin.lib.darwinSystem {
             specialArgs = {inherit inputs pkgs-stable self;};
             modules = [
-              ./dMACOS.nix
+              ./hosts/darwin/dMACOS.nix
               sops-nix.darwinModules.sops
               home-manager.darwinModules.home-manager
               {
@@ -120,7 +120,7 @@
             specialArgs = {inherit inputs pkgs-stable self;};
             system = "x86_64-linux";
             modules = [
-              ./minecraft-server.nix
+              ./hosts/nix-os/servers/minecraft-server/config.nix
               sops-nix.nixosModules.sops
               nix-minecraft.nixosModules.minecraft-servers
               {
