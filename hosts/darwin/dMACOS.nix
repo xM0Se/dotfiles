@@ -1,9 +1,11 @@
 {
   self,
+  inputs,
   pkgs,
   ...
 }: {
   imports = [
+    inputs.sops-nix.nixosModules.sops
     ../../configuration/system/mac-os/docksettings.nix
     ../../configuration/system/mac-os/findersettings.nix
     ../../pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix
@@ -16,6 +18,13 @@
     ../../pkgs/homebrew/fonts/b-font-essentials.nix
     ../../pkgs/homebrew/casks/b-cask-essentials.nix
   ];
+
+  sops.defaultSopsFile = ../../secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
+
+  sops.age.keyFile = "/home/user/.config/sops/age/keys.txt";
+
+  sops.secrets.example-key = {};
 
   docksettings.enable = true;
   findersettings.enable = true;

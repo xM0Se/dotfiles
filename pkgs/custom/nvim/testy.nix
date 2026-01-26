@@ -204,6 +204,11 @@
           servers = ["clangd"];
         };
       };
+      yaml = {
+        enable = true;
+        treesitter.enable = true;
+        lsp.enable = true;
+      };
 
       just = {
         enable = true;
