@@ -4,17 +4,17 @@
   ...
 }: {
   imports = [
-    ./configuration/system/mac-os/docksettings.nix
-    ./configuration/system/mac-os/findersettings.nix
-    ./pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix
-    ./pkgs/nixpkgs-unstable/cli/u-pkg-all-cli-tools.nix
-    ./pkgs/nixpkgs-unstable/gui/essential-gui-apps.nix
-    ./pkgs/homebrew/b-opts-default.nix
-    ./pkgs/homebrew/brews/b-brews-essentials.nix
-    ./pkgs/homebrew/taps/b-taps-essentials.nix
-    ./pkgs/homebrew/mas/b-mas-essentials.nix
-    ./pkgs/homebrew/fonts/b-font-essentials.nix
-    ./pkgs/homebrew/casks/b-cask-essentials.nix
+    ../../configuration/system/mac-os/docksettings.nix
+    ../../configuration/system/mac-os/findersettings.nix
+    ../../pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix
+    ../../pkgs/nixpkgs-unstable/cli/u-pkg-all-cli-tools.nix
+    ../../pkgs/nixpkgs-unstable/gui/essential-gui-apps.nix
+    ../../pkgs/homebrew/b-opts-default.nix
+    ../../pkgs/homebrew/brews/b-brews-essentials.nix
+    ../../pkgs/homebrew/taps/b-taps-essentials.nix
+    ../../pkgs/homebrew/mas/b-mas-essentials.nix
+    ../../pkgs/homebrew/fonts/b-font-essentials.nix
+    ../../pkgs/homebrew/casks/b-cask-essentials.nix
   ];
 
   docksettings.enable = true;
@@ -35,6 +35,8 @@
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = [
+    pkgs.age
+    pkgs.sops
     #cli tools
     self.packages.${pkgs.stdenv.hostPlatform.system}.nvimconf
     pkgs.cargo
