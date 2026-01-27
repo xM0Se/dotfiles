@@ -1,11 +1,12 @@
 {
   self,
   inputs,
+  config,
   pkgs,
   ...
 }: {
   imports = [
-    inputs.sops-nix.nixosModules.sops
+    inputs.sops-nix.darwinModules.sops
     ../../configuration/system/mac-os/docksettings.nix
     ../../configuration/system/mac-os/findersettings.nix
     ../../pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix
@@ -47,6 +48,10 @@
     pkgs.age
     pkgs.sops
     #cli tools
+    pkgs.vesktop
+    #--
+    pkgs.mkalias # fixing screen sharing problems for apps installed using nix-pkgs on nix-darwin
+    #--
     self.packages.${pkgs.stdenv.hostPlatform.system}.nvimconf
     pkgs.cargo
     pkgs.gtk3
@@ -85,6 +90,27 @@
     wvous-bl-corner = 1;
   };
   #other
+  # fixing screen sharing problems on nix darwin for pkgs installed via nixpkgs
+  system.activationScripts.applications.text = let
+    env = pkgs.buildEnv {
+      name = "system-applications";
+      paths = config.environment.systemPackages;
+      pathsToLink = "/Applications";
+    };
+  in
+    pkgs.lib.mkForce ''
+      # Set up applications.
+      echo "setting up /Applications..." >&2
+      rm -rf /Applications/Nix\ Apps
+      mkdir -p /Applications/Nix\ Apps
+      find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
+      while read -r src; do
+        app_name=$(basename "$src")
+        echo "copying $src" >&2
+        ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
+      done
+    '';
+  #--
   system.defaults.NSGlobalDomain.NSAutomaticWindowAnimationsEnabled = false;
   system.defaults.WindowManager.EnableTilingByEdgeDrag = false;
 
