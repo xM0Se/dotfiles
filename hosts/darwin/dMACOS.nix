@@ -95,7 +95,7 @@
     env = pkgs.buildEnv {
       name = "system-applications";
       paths = config.environment.systemPackages;
-      pathsToLink = "/Applications";
+      pathsToLink = ["/Applications"];
     };
   in
     pkgs.lib.mkForce ''
@@ -110,6 +110,7 @@
         ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
       done
     '';
+
   #--
   system.defaults.NSGlobalDomain.NSAutomaticWindowAnimationsEnabled = false;
   system.defaults.WindowManager.EnableTilingByEdgeDrag = false;
