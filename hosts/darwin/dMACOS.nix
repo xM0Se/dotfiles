@@ -20,12 +20,12 @@
     ../../pkgs/homebrew/casks/b-cask-essentials.nix
   ];
 
+	# todo move to seperate file
   sops.defaultSopsFile = ../../secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
-
   sops.age.keyFile = "/home/user/.config/sops/age/keys.txt";
-
   sops.secrets.example-key = {};
+	# --
 
   docksettings.enable = true;
   findersettings.enable = true;
@@ -40,8 +40,10 @@
   b-font-essentials.enable = true;
   b-cask-essentials.enable = true;
 
+
   system.primaryUser = "xm0se";
   users.users.xm0se.home = "/Users/xm0se";
+
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = [
@@ -81,8 +83,6 @@
 
   #macOS setings
 
-  #hot corners
-
   system.defaults.dock = {
     wvous-tr-corner = 1;
     wvous-tl-corner = 1;
@@ -112,25 +112,48 @@
     '';
 
   #--
-  system.defaults.NSGlobalDomain.NSAutomaticWindowAnimationsEnabled = false;
-  system.defaults.WindowManager.EnableTilingByEdgeDrag = false;
 
-  system.defaults.NSGlobalDomain._HIHideMenuBar = true;
+
 
   #Security stuff
-  system.defaults.loginwindow.SHOWFULLNAME = true;
-  system.defaults.loginwindow.GuestEnabled = false;
-  networking.applicationFirewall.enable = true;
-  system.defaults.SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
-  networking.applicationFirewall.enableStealthMode = true;
-  system.defaults.screensaver.askForPassword = true;
-  system.defaults.screensaver.askForPasswordDelay = 0;
+  networking = {
 
+		applicationFirewall = {
+			enable = true;
+			enableStealthMode = true;
+		};
+
+	};
+
+	system.defaults = {
+
+		loginwindow = {
+			SHOWFULLNAME = true;
+		  GuestEnabled = false;
+		};
+
+		NSGlobalDomain = {
+			NSAutomaticWindowAnimationsEnabled = false;
+			_HIHideMenuBar = true;
+		};
+
+		WindowManager.EnableTilingByEdgeDrag = false;
+		SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
+  
+		screensaver = {
+			askForPassword = true;
+			askForPasswordDelay = 0;
+		};
+
+	};
+
+	# ---
   nix.settings.experimental-features = "nix-command flakes";
 
-  system.configurationRevision = self.rev or self.dirtyRev or null;
-
-  system.stateVersion = 6;
+  system = {
+		configurationRevision = self.rev or self.dirtyRev or null;
+		stateVersion = 6;
+	};
 
   nixpkgs.hostPlatform = "aarch64-darwin";
 }
