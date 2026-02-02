@@ -13,7 +13,7 @@
   config = lib.mkIf config.tmuxconf.enable {
     programs.tmux = {
       enable = true;
-      shortcut = "a";
+      shortcut = "space";
       keyMode = "vi";
       disableConfirmationPrompt = true;
       extraConfig = ''
@@ -35,13 +35,19 @@
         bind-key -T copy-mode-vi 'C-k' select-pane -U
         bind-key -T copy-mode-vi 'C-l' select-pane -R
         bind-key -T copy-mode-vi 'C-\' select-pane -l
+
         bind r source-file ~/.config/tmux/tmux.conf \; display-message "Config reloaded"
-        bind v split-window -h
-        bind '"' split-window -v -c "#{pane_current_path}"
-        bind % split-window -h -c "#{pane_current_path}"
+
+        bind v split-window -h -c "#{pane_current_path}"
+        bind s split-window -v -c "#{pane_current_path}"
+        # moving panes with prefix and hjkl repeatable
+        bind -r h swap-pane -d -t '{left-of}'
+        bind -r j swap-pane -d -t '{down-of}'
+        bind -r k swap-pane -d -t '{up-of}'
+        bind -r l swap-pane -d -t '{right-of}'
+
         set-option -g base-index 1
-        bind C-a send-prefix
-        bind s split-window -v
+
         set-option -g status-position top
         set-option -g status-style bg=#393552,fg=#e0def4
         set-option -g status-right "#H"
