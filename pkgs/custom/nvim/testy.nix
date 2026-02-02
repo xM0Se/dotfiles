@@ -121,15 +121,28 @@
       style = "moon";
     };
 
-    extraPlugins = {
-      twilight = {
+    lazy.plugins = {
+      ${pkgs.vimPlugins.twilight-nvim.pname} = {
         package = pkgs.vimPlugins.twilight-nvim;
-        setup = ''require('twilight').setup {}'';
+        cmd = ["Twilight"];
       };
-      zen-mode = {
+      ${pkgs.vimPlugins.zen-mode-nvim.pname} = {
         package = pkgs.vimPlugins.zen-mode-nvim;
-        setup = ''require('zen-mode').setup {}'';
+        cmd = ["ZenMode"];
+        keys = [
+          {
+            mode = "n";
+            key = "<leader>z";
+            silent = true;
+            action = "function() require('zen-mode').toggle({window = {width = 1 }}) end";
+            lua = true;
+            desc = "start zen-mode";
+          }
+        ];
       };
+    };
+
+    extraPlugins = {
       tmux-navigator = {
         package = pkgs.vimPlugins.vim-tmux-navigator;
       };
