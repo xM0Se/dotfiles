@@ -122,6 +122,14 @@
     };
 
     extraPlugins = {
+      twilight = {
+        package = pkgs.vimPlugins.twilight-nvim;
+        setup = ''require('twilight').setup {}'';
+      };
+      zen-mode = {
+        package = pkgs.vimPlugins.zen-mode-nvim;
+        setup = ''require('zen-mode').setup {}'';
+      };
       tmux-navigator = {
         package = pkgs.vimPlugins.vim-tmux-navigator;
       };
