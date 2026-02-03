@@ -51,8 +51,11 @@
     pkgs.vesktop
     #--
     pkgs.mkalias # fixing screen sharing problems for apps installed using nix-pkgs on nix-darwin
-    #--
+    #-- qmk
+    pkgs.qmk_hid
+    #--custom nvim package todo: move to home-manager
     self.packages.${pkgs.stdenv.hostPlatform.system}.nvimconf
+    #--
     pkgs.cargo
     pkgs.gtk3
     pkgs.stow
