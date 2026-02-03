@@ -20,12 +20,12 @@
     ../../pkgs/homebrew/casks/b-cask-essentials.nix
   ];
 
-	# todo move to seperate file
+  # todo move to seperate file
   sops.defaultSopsFile = ../../secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
   sops.age.keyFile = "/home/user/.config/sops/age/keys.txt";
   sops.secrets.example-key = {};
-	# --
+  # --
 
   docksettings.enable = true;
   findersettings.enable = true;
@@ -40,10 +40,8 @@
   b-font-essentials.enable = true;
   b-cask-essentials.enable = true;
 
-
   system.primaryUser = "xm0se";
   users.users.xm0se.home = "/Users/xm0se";
-
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = [
@@ -116,47 +114,41 @@
 
   #--
 
-
-
   #Security stuff
   networking = {
+    applicationFirewall = {
+      enable = true;
+      enableStealthMode = true;
+    };
+  };
 
-		applicationFirewall = {
-			enable = true;
-			enableStealthMode = true;
-		};
+  system.defaults = {
+    loginwindow = {
+      SHOWFULLNAME = true;
+      GuestEnabled = false;
+    };
 
-	};
+    NSGlobalDomain = {
+      NSAutomaticWindowAnimationsEnabled = false;
+      _HIHideMenuBar = true;
+    };
 
-	system.defaults = {
+    WindowManager.EnableTilingByEdgeDrag = false;
+    SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
 
-		loginwindow = {
-			SHOWFULLNAME = true;
-		  GuestEnabled = false;
-		};
+    screensaver = {
+      askForPassword = true;
+      askForPasswordDelay = 0;
+    };
+  };
 
-		NSGlobalDomain = {
-			NSAutomaticWindowAnimationsEnabled = false;
-			_HIHideMenuBar = true;
-		};
-
-		WindowManager.EnableTilingByEdgeDrag = false;
-		SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
-  
-		screensaver = {
-			askForPassword = true;
-			askForPasswordDelay = 0;
-		};
-
-	};
-
-	# ---
+  # ---
   nix.settings.experimental-features = "nix-command flakes";
 
   system = {
-		configurationRevision = self.rev or self.dirtyRev or null;
-		stateVersion = 6;
-	};
+    configurationRevision = self.rev or self.dirtyRev or null;
+    stateVersion = 6;
+  };
 
   nixpkgs.hostPlatform = "aarch64-darwin";
 }
