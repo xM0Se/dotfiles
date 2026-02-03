@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    inputs.sops-nix.darwinModules.sops
+    # inputs.sops-nix.darwinModules.sops
     ../../configuration/system/mac-os/docksettings.nix
     ../../configuration/system/mac-os/findersettings.nix
     ../../pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix
@@ -20,11 +20,11 @@
   ];
 
   # todo move to seperate file
-  sops.defaultSopsFile = ../../secrets/secrets.yaml;
-  sops.defaultSopsFormat = "yaml";
-  sops.age.keyFile = "/home/user/.config/sops/age/keys.txt";
-  sops.secrets.example-key = {};
-  # --
+  # sops.defaultSopsFile = ../../secrets/secrets.yaml;
+  # sops.defaultSopsFormat = "yaml";
+  # sops.age.keyFile = "/home/user/.config/sops/age/keys.txt";
+  # sops.secrets.example-key = {};
+  # # --
 
   docksettings.enable = true;
   findersettings.enable = true;
