@@ -217,14 +217,6 @@
         };
       };
 
-      clang = {
-        enable = true;
-        treesitter.enable = true;
-        lsp = {
-          enable = true;
-          servers = ["clangd"];
-        };
-      };
       yaml = {
         enable = true;
         treesitter.enable = true;
