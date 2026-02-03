@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   config,
   ...
 }: {
@@ -16,6 +17,13 @@
       shortcut = "space";
       keyMode = "vi";
       disableConfirmationPrompt = true;
+      plugins = with pkgs; [
+        {
+          plugin = tmuxPlugins.copy-toolkit;
+          extraConfig = ''
+          '';
+        }
+      ];
       extraConfig = ''
         vim_pattern='(\S+/)?g?\.?(view|l?n?vim?x?|fzf)(diff)?(-wrapped)?'
         is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
@@ -47,6 +55,8 @@
         bind -r l swap-pane -d -t '{right-of}'
 
         set-option -g base-index 1
+
+        set -g history-limit 10000
 
         set-option -g status-position top
         set-option -g status-style bg=#393552,fg=#e0def4
