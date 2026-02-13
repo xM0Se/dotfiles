@@ -179,6 +179,7 @@
       enable = true;
       formatOnSave = true;
       trouble.enable = true;
+      harper-ls.enable = true;
     };
 
     git = {
