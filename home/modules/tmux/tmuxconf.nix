@@ -54,6 +54,12 @@
         bind -r k swap-pane -d -t '{up-of}'
         bind -r l swap-pane -d -t '{right-of}'
 
+        # Ensure tmux uses 256 colors
+        set -g default-terminal "xterm-256color"
+        # Enable True Color support
+        set -ag terminal-overrides ",$TERM:Tc"
+
+
         set-option -g base-index 1
 
         set -g history-limit 10000
