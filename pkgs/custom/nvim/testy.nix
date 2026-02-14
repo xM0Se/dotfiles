@@ -178,6 +178,7 @@
     lsp = {
       enable = true;
       formatOnSave = true;
+      inlayHints.enable = true;
       trouble.enable = true;
       harper-ls.enable = true;
     };
