@@ -175,14 +175,6 @@
       vim.g.undotree_WindowLayout = 3
     '';
 
-    lsp = {
-      enable = true;
-      formatOnSave = true;
-      inlayHints.enable = true;
-      trouble.enable = true;
-      harper-ls.enable = true;
-    };
-
     git = {
       enable = true;
     };
@@ -195,6 +187,21 @@
     autocomplete.blink-cmp.enable = true;
     statusline.lualine = {
       enable = true;
+    };
+
+    lsp = {
+      enable = true;
+      formatOnSave = true;
+      inlayHints.enable = true;
+      trouble.enable = true;
+      harper-ls.enable = true;
+    };
+
+    diagnostics = {
+      enable = true;
+      config = {
+        virtual_lines = true;
+      };
     };
 
     debugger.nvim-dap.enable = true;
