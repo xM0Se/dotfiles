@@ -1,8 +1,4 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./keymaps.nix
   ];
@@ -26,10 +22,7 @@
       mouse = "";
     };
 
-    undoFile = {
-      enable = true;
-      path = inputs.nvf.lib.nvim.lua.mkLuaInline "os.getenv('XDG_DATA_HOME') .. '/nvim/undo'";
-    };
+    undoFile.enable = true;
 
     theme = {
       enable = true;
