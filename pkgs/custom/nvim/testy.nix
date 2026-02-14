@@ -69,6 +69,16 @@
     };
 
     utility = {
+      snacks-nvim = {
+        enable = true;
+        setupOpts = {
+          picker = {
+            enabled = true;
+            ui_select = true;
+          };
+        };
+      };
+
       yanky-nvim = {
         enable = true;
         setupOpts.ring.storage = "sqlite";
