@@ -46,13 +46,20 @@
 
         bind r source-file ~/.config/tmux/tmux.conf \; display-message "Config reloaded"
 
-        bind v split-window -h -c "#{pane_current_path}"
-        bind s split-window -v -c "#{pane_current_path}"
-        # moving panes with prefix and hjkl repeatable
-        bind -r h swap-pane -d -t '{left-of}'
-        bind -r j swap-pane -d -t '{down-of}'
-        bind -r k swap-pane -d -t '{up-of}'
-        bind -r l swap-pane -d -t '{right-of}'
+        bind -r v split-window -h -c "#{pane_current_path}"
+        bind -r s split-window -v -c "#{pane_current_path}"
+
+        # rezising panes with prefix and hjkl repeatable
+        bind -r h resize-pane -L 5
+        bind -r j resize-pane -D 5
+        bind -r k resize-pane -U 5
+        bind -r l resize-pane -R 5
+
+        # moving panes with prefix and HJKL repeatable
+        bind -r H swap-pane -t '{left-of}'
+        bind -r J swap-pane -t '{down-of}'
+        bind -r K swap-pane -t '{up-of}'
+        bind -r L swap-pane -t '{right-of}'
 
         # Ensure tmux uses 256 colors
         set -g default-terminal "xterm-256color"
