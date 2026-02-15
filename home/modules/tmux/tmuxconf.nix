@@ -61,6 +61,8 @@
         bind -r K swap-pane -t '{up-of}'
         bind -r L swap-pane -t '{right-of}'
 
+        bind -r q kill-pane
+        bind -r Q kill-window
         # Ensure tmux uses 256 colors
         set -g default-terminal "xterm-256color"
         # Enable True Color support
