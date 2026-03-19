@@ -1,5 +1,5 @@
 {
-  description = "xM0Se nix-darwin system flake";
+  description = "xM0Se NIX Flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";

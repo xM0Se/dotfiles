@@ -180,10 +180,6 @@
           enable = true;
           type = ["prettierd"];
         };
-        lsp = {
-          enable = true;
-          servers = ["marksman"];
-        };
       };
       lua.enable = true;
     };
