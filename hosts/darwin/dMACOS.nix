@@ -46,11 +46,12 @@
   environment.systemPackages = [
     pkgs.age
     pkgs.sops
-    #cli tools
+    #CLI tools
     pkgs.vesktop
     #--custom nvim package todo: move to home-manager
     self.packages.${pkgs.stdenv.hostPlatform.system}.nvimconf
     #--
+    pkgs.fastfetch
     pkgs.cargo
     pkgs.gtk3
     pkgs.stow

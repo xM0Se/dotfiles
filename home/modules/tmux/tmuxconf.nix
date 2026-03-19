@@ -67,17 +67,19 @@
         set -g default-terminal "xterm-256color"
         # Enable True Color support
         set -ag terminal-overrides ",$TERM:Tc"
+        set -as terminal-features ',*:sync'
 
+        set -sg escape-time 0
+        set -g assume-paste-time 0
 
         set-option -g base-index 1
 
         set -g history-limit 10000
 
         set-option -g status-position top
-        set-option -g status-style bg=#393552,fg=#e0def4
-        set-option -g status-right "#H"
-        # set-option -g window-status-format
-        # set-option -g window-status-current-format "\
+        set-option -g status-style bg=#232136,fg=#e0def4
+        set-option -g status-right "[#H] "
+        set-option -g status-left "[#S] [#W]"
       '';
     };
   };
