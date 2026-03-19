@@ -182,7 +182,7 @@
         };
         lsp = {
           enable = true;
-          type = ["marksman"];
+          servers = ["marksman"];
         };
       };
       lua.enable = true;
