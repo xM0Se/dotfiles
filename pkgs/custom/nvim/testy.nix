@@ -173,6 +173,18 @@
           type = ["shfmt"];
         };
       };
+      markdown = {
+        enable = true;
+        extensions.markview-nvim.enable = true;
+        format = {
+          enable = true;
+          type = ["prettierd"];
+        };
+        lsp = {
+          enable = true;
+          type = ["marksman"];
+        };
+      };
       lua.enable = true;
     };
   };

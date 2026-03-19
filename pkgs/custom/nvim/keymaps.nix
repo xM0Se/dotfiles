@@ -35,5 +35,12 @@
       action = "<cmd>lua require('telescope').extensions.yank_history.yank_history()<CR>";
       desc = "Yank History";
     }
+    {
+      key = "<leader>m";
+      mode = "n";
+      silent = true;
+      action = "<cmd>Markview toggle<cr>";
+      desc = "toggel markdown viewer";
+    }
   ];
 }
