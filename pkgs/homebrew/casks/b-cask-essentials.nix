@@ -17,6 +17,7 @@
     ./b-cask-claude.nix
     ./b-cask-affinity.nix
     ./b-cask-beeper.nix
+    ./b-cask-ghostty.nix
   ];
 
   options = {
@@ -50,6 +51,8 @@
     b-cask-affinity.enable =
       lib.mkDefault true;
     b-cask-beeper.enable =
+      lib.mkDefault true;
+    b-cask-ghostty.enable =
       lib.mkDefault true;
   };
 }
