@@ -176,6 +176,11 @@
       markdown = {
         enable = true;
         extensions.markview-nvim.enable = true;
+        lsp = {
+          enable = true;
+          servers = ["markdown-oxide"];
+        };
+
         format = {
           enable = true;
           type = ["prettierd"];
