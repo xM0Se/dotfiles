@@ -51,6 +51,7 @@
     self.packages.${pkgs.stdenv.hostPlatform.system}.nvimconf
     #--
     pkgs.fastfetch
+    pkgs.nym
     pkgs.cargo
     pkgs.gtk3
     pkgs.stow
