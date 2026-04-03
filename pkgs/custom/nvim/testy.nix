@@ -124,7 +124,7 @@
     };
 
     debugger.nvim-dap.enable = true;
-
+    treesitter.enable = true;
     languages = {
       enableTreesitter = true;
 
