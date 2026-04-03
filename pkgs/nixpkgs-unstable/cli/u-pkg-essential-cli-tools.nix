@@ -7,7 +7,6 @@
     ./u-pkg-eza.nix
     ./u-pkg-oh-my-posh.nix
     ./u-pkg-zoxide.nix
-    ./u-pkg-neofetch.nix
     ./u-pkg-vim.nix
     ./u-pkg-tmux.nix
     ./u-pkg-fzf.nix
@@ -29,8 +28,6 @@
     u-pkg-oh-my-posh.enable =
       lib.mkDefault true;
     u-pkg-zoxide.enable =
-      lib.mkDefault true;
-    u-pkg-neofetch.enable =
       lib.mkDefault true;
     u-pkg-vim.enable =
       lib.mkDefault true;
