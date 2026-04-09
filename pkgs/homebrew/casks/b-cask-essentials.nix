@@ -19,6 +19,7 @@
     ./b-cask-beeper.nix
     ./b-cask-ghostty.nix
     ./b-cask-hammerspoon.nix
+    ./b-cask-blackhole.nix
   ];
 
   options = {
@@ -56,6 +57,8 @@
     b-cask-ghostty.enable =
       lib.mkDefault true;
     b-cask-hammerspoon.enable =
+      lib.mkDefault true;
+    b-cask-blackhole.enable =
       lib.mkDefault true;
   };
 }
