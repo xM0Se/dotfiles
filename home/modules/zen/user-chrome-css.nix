@@ -12,6 +12,7 @@
       settings = {
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "zen.themes.disable-all" = true;
+        "zen.theme.accent-color" = "#232136";
       };
 
       userChrome = ''
