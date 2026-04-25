@@ -10,6 +10,7 @@
     ./extensions.nix
     ./search.nix
     ./mods.nix
+    ./user-chrome-css.nix
   ];
 
   zen-containers.enable = true;
@@ -17,6 +18,7 @@
   zen-extensions.enable = true;
   zen-search.enable = true;
   zen-mods.enable = true;
+  zen-user-chrome-css.enable = true;
 
   programs.zen-browser = {
     enable = true;
