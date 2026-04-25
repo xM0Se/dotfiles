@@ -8,7 +8,7 @@
       lib.mkEnableOption "user-chrome-css";
   };
   config = lib.mkIf config.zen-user-chrome-css.enable {
-    programs.zen-browser.profiles.default.userChrome = ''
+    programs.zen-browser.profiles."default".userChrome = ''
       * {
         --base:           #232136;
         --surface:        #2a273f;
@@ -26,6 +26,7 @@
         --highlightMed:   #44415a;
         --highlightHigh:  #56526e;
       }
+
       :root {
         --zen-colors-primary: var(--base) !important;
         --zen-primary-color: var(--base) !important;
