@@ -107,13 +107,12 @@
     statusline.lualine = {
       enable = true;
     };
-
     lsp = {
       enable = true;
       formatOnSave = true;
       inlayHints.enable = true;
       trouble.enable = true;
-      harper-ls.enable = true;
+      presets.harper.enable = true;
     };
 
     diagnostics = {
@@ -162,7 +161,7 @@
         treesitter.enable = true;
         lsp = {
           enable = true;
-          servers = ["bash-ls"];
+          servers = ["bash-language-server"];
         };
         extraDiagnostics = {
           enable = true;
