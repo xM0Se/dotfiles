@@ -11,6 +11,7 @@
     programs.zen-browser.profiles."default" = {
       settings = {
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+        "zen.themes.disable-all" = true;
       };
 
       userChrome = ''
