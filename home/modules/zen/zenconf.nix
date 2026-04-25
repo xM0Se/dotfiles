@@ -12,7 +12,7 @@
     ./mods.nix
   ];
 
-  zen-cotainers.enable = true;
+  zen-containers.enable = true;
   zen-spaces.enable = true;
   zen-extensions.enable = true;
   zen-search.enable = true;
