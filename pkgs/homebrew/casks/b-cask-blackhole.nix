@@ -11,6 +11,7 @@
   config = lib.mkIf config.b-cask-blackhole.enable {
     homebrew.casks = [
       "blackhole-2ch"
+      "blackhole-16ch"
     ];
   };
 }

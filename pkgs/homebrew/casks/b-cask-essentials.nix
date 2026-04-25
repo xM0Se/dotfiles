@@ -17,7 +17,6 @@
     ./b-cask-claude.nix
     ./b-cask-affinity.nix
     ./b-cask-beeper.nix
-    ./b-cask-ghostty.nix
     ./b-cask-hammerspoon.nix
     ./b-cask-blackhole.nix
   ];
@@ -53,8 +52,6 @@
     b-cask-affinity.enable =
       lib.mkDefault true;
     b-cask-beeper.enable =
-      lib.mkDefault true;
-    b-cask-ghostty.enable =
       lib.mkDefault true;
     b-cask-hammerspoon.enable =
       lib.mkDefault true;
