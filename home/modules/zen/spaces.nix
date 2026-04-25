@@ -14,7 +14,7 @@
         spaces = {
           "programming" = {
             id = "c6de089c-410d-4206-961d-ab11f988d40a";
-            cotainer = 1;
+            container = 1;
             position = 1000;
           };
           "nix" = {
