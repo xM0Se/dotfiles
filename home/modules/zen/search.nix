@@ -21,6 +21,16 @@
           urls = [{template = "https://search.nixos.org/packages?query={searchTerms}";}];
           definedAliases = ["@np"];
         };
+        nixopts = {
+          name = "NixOpts Search";
+          urls = [{template = "https://search.nixos.org/options?query={searchTerms}";}];
+          definedAliases = ["@no"];
+        };
+        cve = {
+          name = "CVE Search";
+          urls = [{template = "https://nvd.nist.gov/vuln/search/results?query={searchTerms}";}];
+          definedAliases = ["@cve"];
+        };
       };
     };
   };
