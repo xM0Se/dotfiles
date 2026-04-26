@@ -11,10 +11,9 @@
     programs.zen-browser.profiles."default" = {
       settings = {
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-        "zen.themes.disable-all" = true;
-        "zen.theme.accent-color" = "#232136";
+        "zen.themes.disable-all" = false;
       };
-
+      # Warning to future self the user-Chrome-CSS is vibe coded because rose-pine-moon ones was broken
       userChrome = ''
         * {
           --base:           #232136;
@@ -33,14 +32,21 @@
           --highlightMed:   #44415a;
           --highlightHigh:  #56526e;
         }
-
         :root {
-          --zen-colors-primary: var(--base) !important;
-          --zen-primary-color: var(--base) !important;
+          --zen-branding-dark: var(--base) !important;
+          --zen-branding-paper: var(--text) !important;
+          --zen-branding-bg: var(--base) !important;
+          --zen-branding-bg-reverse: var(--text) !important;
+
+          --zen-primary-color: var(--iris) !important;
+
+          --zen-colors-primary: var(--iris) !important;
           --zen-colors-secondary: var(--surface) !important;
           --zen-colors-tertiary: var(--overlay) !important;
           --zen-colors-border: var(--iris) !important;
+
           --toolbarbutton-icon-fill: var(--iris) !important;
+
           --lwt-text-color: var(--text) !important;
           --toolbar-field-color: var(--text) !important;
           --tab-selected-textcolor: var(--iris) !important;
@@ -48,14 +54,20 @@
           --toolbar-color: var(--text) !important;
           --newtab-text-primary-color: var(--text) !important;
           --arrowpanel-color: var(--text) !important;
-          --arrowpanel-background: var(--overlay) !important;
           --sidebar-text-color: var(--text) !important;
           --lwt-sidebar-text-color: var(--text) !important;
+
           --lwt-sidebar-background-color: var(--base) !important;
-          --toolbar-bgcolor: var(--base) !important;
+          --arrowpanel-background: var(--overlay) !important;
           --newtab-background-color: var(--overlay) !important;
-          --zen-themed-toolbar-bg: var(--base) !important;
+
+          --zen-navigator-toolbox-background: var(--base) !important;
+          --zen-themed-toolbar-bg-transparent: var(--base) !important;
+
           --zen-main-browser-background: var(--base) !important;
+          --zen-main-browser-background-toolbar: var(--base) !important;
+
+          --zen-urlbar-background: var(--surface) !important;
         }
 
         #permissions-granted-icon {
@@ -67,14 +79,14 @@
         }
 
         #zen-workspaces-button {
-          background-color: var(--surface) !important;
+          background-color: var(--base) !important;
         }
 
         #urlbar-background {
-           background-color: var(--surface) !important;
+          background-color: var(--surface) !important;
         }
 
-        .tab-background[selected=""] {
+        .tab-background[selected] {
           background: var(--overlay) !important;
         }
 
