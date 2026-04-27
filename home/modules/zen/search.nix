@@ -31,6 +31,11 @@
           urls = [{template = "https://nvd.nist.gov/vuln/search/results?query={searchTerms}";}];
           definedAliases = ["@cve"];
         };
+				youtube = {
+					name = "YouTube Search";
+					urls = [{template = "https://youtube.com/search?q={searchTerms}";}];
+					definedAliases = ["@yt"];
+				};
       };
     };
   };
