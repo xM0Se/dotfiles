@@ -30,7 +30,6 @@
   essential-cli-tools.enable = true;
   essential-gui-apps.enable = true;
   u-pkg-qmk.enable = true;
-  u-pkg-neofetch.enable = false;
   b-opts-default.enable = true;
   b-taps-essentials.enable = true;
   b-brews-essentials.enable = true;
