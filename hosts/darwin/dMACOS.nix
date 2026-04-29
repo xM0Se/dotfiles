@@ -46,6 +46,7 @@
     pkgs.sops
     #CLI tools
     pkgs.vesktop
+    pkgs.browsers
     #--custom nvim package todo: move to home-manager
     self.packages.${pkgs.stdenv.hostPlatform.system}.nvimconf
     #--
