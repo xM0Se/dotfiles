@@ -6,7 +6,7 @@
   imports = [
     ./b-cask-twingate.nix
     ./b-cask-signal.nix
-    ./b-cask-mullvad.nix
+    ./b-cask-mullvad-browser.nix
     ./b-cask-orcaslicer.nix
     ./b-cask-aerospace.nix
     ./b-cask-logi-options-plus.nix
@@ -31,7 +31,7 @@
       lib.mkDefault true;
     b-cask-signal.enable =
       lib.mkDefault true;
-    b-cask-mullvad.enable =
+    b-cask-mullvad-browser.enable =
       lib.mkDefault true;
     b-cask-orcaslicer.enable =
       lib.mkDefault true;
