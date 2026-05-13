@@ -31,11 +31,16 @@
           urls = [{template = "https://nvd.nist.gov/vuln/search/results?query={searchTerms}";}];
           definedAliases = ["@cve"];
         };
-				youtube = {
-					name = "YouTube Search";
-					urls = [{template = "https://youtube.com/search?q={searchTerms}";}];
-					definedAliases = ["@yt"];
-				};
+        youtube = {
+          name = "YouTube Search";
+          urls = [{template = "https://youtube.com/search?q={searchTerms}";}];
+          definedAliases = ["@yt"];
+        };
+        amazon = {
+          name = "Amazon Search";
+          urls = [{template = "https://amazon.de/search?q={searchTerms}";}];
+          definedAliases = ["@am"];
+        };
       };
     };
   };
