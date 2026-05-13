@@ -8,8 +8,8 @@
     vimAlias = true;
 
     options = {
-      shiftwidth = 4;
-      softtabstop = 4;
+      shiftwidth = 2;
+      softtabstop = 2;
       expandtab = true;
       smartindent = true;
 
