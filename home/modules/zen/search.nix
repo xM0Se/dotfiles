@@ -41,6 +41,11 @@
           urls = [{template = "https://amazon.de/search?q={searchTerms}";}];
           definedAliases = ["@am"];
         };
+        nvf = {
+          name = "NVF option search";
+          urls = [{template = "https://nvf.notashelf.dev/options.html?q={searchTerms}";}];
+          definedAliases = ["@nvf"];
+        };
       };
     };
   };

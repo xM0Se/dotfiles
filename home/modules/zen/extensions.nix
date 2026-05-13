@@ -15,17 +15,21 @@
       });
     in {
       ExtensionSettings = mkExtensionSettings {
-        #To-do find out if it works with capital letters in description
-
-        "{d7742d87-e61d-4b78-b8a1-b469842139fa}" = "vimium";
-        "myallychou@gmail.com" = "unhook";
-        "uBlock0@raymondhill.net" = "ublock";
-        "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}" = "stylus";
-        "{762f9885-5a13-4abd-9c77-433dcd38b8fd}" = "return-youtube-dislike";
-        "{8ad4bea8-ad8d-4e98-b434-a76065dee6cb}" = "prettier-lichess";
-        "clipper@obsidian.md" = "obsidian-web-clipper";
-        "addon@darkreader.org" = "dark-reader";
-        "{3c6bf0cc-3ae2-42fb-9993-0d33104fdcaf}" = "improve-youtube";
+        #Name of the extensions and ids can be found at about:support
+        "{3c6bf0cc-3ae2-42fb-9993-0d33104fdcaf}" = "'Improve YouTube!' 🎧 (for YouTube & Videos)";
+        "{5b22cb75-8e43-4f2a-bb9b-1da0655ae564}" = "Archive Page";
+        "{446900e4-71c2-419f-a6a7-df9c091e268b}" = "Bitwarden Password Manager";
+        "addon@darkreader.org" = "Dark Reader";
+        "@testpilot-containers" = "Firefox Multi-Account Containers";
+        "amptra@keepa.com" = "Keepa - Amazon Price Tracker";
+        "clipper@obsidian.md" = "Obsidian Web Clipper";
+        "{8ad4bea8-ad8d-4e98-b434-a76065dee6cb}" = "Prettier Lichess";
+        "{762f9885-5a13-4abd-9c77-433dcd38b8fd}" = "Return YouTube Dislike";
+        "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}" = "Stylus";
+        "firefox@tampermonkey.net" = "Tampermonkey";
+        "uBlock0@raymondhill.net" = "uBlock Origin";
+        "myallychou@gmail.com" = "Unhook - Remove YouTube Recommended & Shorts";
+        "{d7742d87-e61d-4b78-b8a1-b469842139fa}" = "Vimium";
       };
     };
   };

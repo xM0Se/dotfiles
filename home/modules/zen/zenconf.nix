@@ -23,6 +23,9 @@
   programs.zen-browser = {
     enable = true;
     setAsDefaultBrowser = true;
+    profiles.default.settings = {
+      "zen.workspaces.force-container-workspace" = true; #Switch to workspace where container is set as default when opening container tabs
+    };
     policies = {
       AutofillAddressEnabled = true;
       AutofillCreditCardEnabled = false;
