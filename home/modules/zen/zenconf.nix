@@ -11,6 +11,7 @@
     ./search.nix
     ./mods.nix
     ./user-chrome-css.nix
+    ./bookmarks.nix
   ];
 
   zen-containers.enable = true;
@@ -19,6 +20,7 @@
   zen-search.enable = true;
   zen-mods.enable = true;
   zen-user-chrome-css.enable = true;
+  zen-bookmarks.enable = true;
 
   programs.zen-browser = {
     enable = true;
@@ -28,7 +30,8 @@
       "zen.workspaces.force-container-workspace" = true; #Switch to workspace where container is set as default when opening container tabs
       "zen.tabs.vertical" = true;
       "zen.tabs.vertical.right-side" = true;
-      "zen.welcome-screen.seen" = false;
+      "zen.tabs.show-newtab-vertical" = false;
+      "zen.welcome-screen.seen" = true;
     };
     policies = {
       Preferences = {
@@ -57,7 +60,6 @@
       DisablePocket = true;
       DisableTelemetry = true;
       DontCheckDefaultBrowser = true;
-      NoDefaultBookmarks = true;
       OfferToSaveLogins = false;
       EnableTrackingProtection = {
         Value = true;

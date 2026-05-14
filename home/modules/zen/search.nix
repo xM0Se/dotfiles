@@ -1,4 +1,5 @@
 {
+  #to-do add home-manager search
   lib,
   config,
   ...
