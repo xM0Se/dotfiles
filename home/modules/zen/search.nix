@@ -38,13 +38,8 @@
         };
         amazon = {
           name = "Amazon Search";
-          urls = [{template = "https://amazon.de/search?q={searchTerms}";}];
+          urls = [{template = "https://www.amazon.de/s?k={searchTerms}";}];
           definedAliases = ["@am"];
-        };
-        nvf = {
-          name = "NVF option search";
-          urls = [{template = "https://nvf.notashelf.dev/options.html?q={searchTerms}";}];
-          definedAliases = ["@nvf"];
         };
       };
     };
