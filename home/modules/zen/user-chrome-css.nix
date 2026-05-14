@@ -13,9 +13,9 @@
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "zen.themes.disable-all" = false;
       };
-      # Warning to future self the user-Chrome-CSS is vibe coded because rose-pine-moon ones was broken
       userChrome = ''
-        * {
+        /* ---------- Rosé Pine Moon Color Scheme (this is Vibe-coded because it was broken before) */
+        *{
           --base:           #232136;
           --surface:        #2a273f;
           --overlay:        #393552;
@@ -112,6 +112,57 @@
                 .toolbarbutton-badge-stack
               ) {
               fill: var(--base);
+            }
+          }
+        }
+
+        /* ---------- SuperPins (v1.7.0) CSS because otherwise its not declaratively */
+
+        /* ----- Keep pinned tabs at the top when scrolling */
+        zen-workspace > arrowscrollbox.workspace-arrowscrollbox {
+          overflow-y: hidden !important;
+          flex-basis: 100%;
+        }
+
+        #tabbrowser-arrowscrollbox .zen-workspace-pinned-tabs-section {
+          flex: 0 1 0;
+        }
+
+        #tabbrowser-arrowscrollbox .zen-workspace-normal-tabs-section {
+          flex: 1 1 0;
+          overflow-y: auto !important;
+          margin-bottom: 5px;
+        }
+
+        /* ----- Removes the sidebar scrollbar */
+        scrollbox:nth-child(5),
+        #tabbrowser-arrowscrollbox .zen-workspace-normal-tabs-section {
+          scrollbar-width: none !important;
+        }
+
+        /* ----- Display seperators when there are essentials and/or pinned tabs */
+        zen-workspace[active="true"]:has(.zen-workspace-pinned-tabs-section .tabbrowser-tab) {
+          &:has(
+          ~ #zen-tabs-wrapper
+            #zen-browser-tabs-container
+            #vertical-pinned-tabs-container
+            .zen-workspace-tabs-section[active="true"]
+            .tabbrowser-tab
+          ) {
+            margin-top: 6px !important;
+          }
+        }
+
+        .zen-essentials-container {
+          &:has(> :nth-child(1)) ~ #zen-tabs-wrapper .zen-workspace-pinned-tabs-section {
+            min-height: 20px !important;
+          }
+        }
+
+        .zen-essentials-container {
+          &:has(> :nth-child(1)) ~ #zen-tabs-wrapper .zen-workspace-pinned-tabs-section {
+            .pinned-tabs-container-separator {
+              max-height: unset !important;
             }
           }
         }
