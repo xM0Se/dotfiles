@@ -40,7 +40,7 @@
           Status = "locked";
         };
         "browser.tabs.warnOnClose" = {
-          Value = true;
+          Value = false;
           Status = "locked"; # User cannot change this
         };
         "browser.download.panel.shown" = {
@@ -48,6 +48,14 @@
           Status = "locked";
         };
         "browser.download.useDownloadDir" = {
+          Value = false;
+          Status = "locked";
+        };
+        "browser.warnOnQuit" = {
+          Value = false;
+          Status = "locked";
+        };
+        "browser.warnOnQuitShortcut" = {
           Value = false;
           Status = "locked";
         };
