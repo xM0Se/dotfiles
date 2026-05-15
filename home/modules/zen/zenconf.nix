@@ -59,6 +59,15 @@
           Value = false;
           Status = "locked";
         };
+        # ---------- Configuring Zen Mod "Zen Context Menu (v3.1)"
+        "widget.macos.native-context-menus" = {
+          Value = false;
+          Status = "locked";
+        };
+        "uc.hidecontext.separators" = {
+          Value = true;
+          Status = "locked";
+        };
       };
       AutofillAddressEnabled = true;
       AutofillCreditCardEnabled = false;
