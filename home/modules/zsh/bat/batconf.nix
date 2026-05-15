@@ -10,7 +10,7 @@
   config = lib.mkIf config.batconf.enable {
     programs.bat = {
       enable = true;
-      theme = {
+      themes = {
         RosePineMoon = {
           src = pkgs.fetchFromGitHub {
             owner = "drluckyspin";
