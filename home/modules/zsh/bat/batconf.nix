@@ -21,6 +21,9 @@
           file = "themes/Rose-Pine-Moon.tmTheme";
         };
       };
+      config = {
+        theme = "RosePineMoon";
+      };
     };
   };
 }
