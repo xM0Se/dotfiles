@@ -9,6 +9,7 @@
     ./oh-my-posh/oh-my-poshconf.nix
     ./pay-respects/pay-respectsconf.nix
     ./zoxide/zoxideconf.nix
+    ./bat/batconf.nix
   ];
 
   options = {
@@ -20,6 +21,7 @@
     oh-my-poshconf.enable = true;
     pay-respectsconf.enable = true;
     zoxideconf.enable = true;
+    batconf.enable = true;
     programs.zsh = {
       enable = true;
       plugins = [
