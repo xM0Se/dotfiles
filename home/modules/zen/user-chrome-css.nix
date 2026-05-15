@@ -166,6 +166,13 @@
             }
           }
         }
+        /* ---------- Custom CSS */
+
+        /* ----- Remove close Tab button */
+        .tabbrowser-tab .tab-close-button {
+          visibility: collapse !important;
+        }
+
       '';
     };
   };
