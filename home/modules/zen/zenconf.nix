@@ -1,6 +1,5 @@
 {
   pkgs,
-  system,
   inputs,
   ...
 }: {
@@ -36,11 +35,4 @@
       pkgs.tridactyl-native
     ];
   };
-  home.packages = [
-    (
-      inputs.zen-browser.packages."${system}".default.override {
-        nativeMessagingHosts = [pkgs.firefoxpwa];
-      }
-    )
-  ];
 }
