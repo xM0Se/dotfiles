@@ -29,7 +29,7 @@
         "firefox@tampermonkey.net" = "Tampermonkey";
         "uBlock0@raymondhill.net" = "uBlock Origin";
         "myallychou@gmail.com" = "Unhook - Remove YouTube Recommended & Shorts";
-        "vimium-c@gdh1995.cn" = "Vimium C - All by Keyboard";
+        "{d7742d87-e61d-4b78-b8a1-b469842139fa}" = "Vimium";
       };
     };
   };
