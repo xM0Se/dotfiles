@@ -28,9 +28,9 @@
         "{762f9885-5a13-4abd-9c77-433dcd38b8fd}" = "return-youtube-dislikes"; #Return YouTube Dislike
         "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}" = "styl-us"; #Stylus
         "firefox@tampermonkey.net" = "Tampermonkey"; #Tampermonkey
+        "tridactyl.vim@cmcaine.co.uk" = "tridactyl-vim"; #Tridactyl
         "uBlock0@raymondhill.net" = "ublock-origin"; #uBlock Origin
         "myallychou@gmail.com" = "youtube-recommended-videos"; #Unhook: Remove YouTube Recommended Videos Comments
-        "{d7742d87-e61d-4b78-b8a1-b469842139fa}" = "vimium-ff"; #Vimium
       };
     };
   };
