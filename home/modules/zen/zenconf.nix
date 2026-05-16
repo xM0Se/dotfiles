@@ -21,7 +21,7 @@
   zen-user-chrome-css.enable = true;
   zen-bookmarks.enable = true;
   zen-policy-templates.enable = true;
-  zen-polices.enable = true;
+  zen-policies.enable = true;
   zen-settings.enable = true;
 
   programs.zen-browser = {
