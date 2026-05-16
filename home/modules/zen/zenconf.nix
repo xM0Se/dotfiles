@@ -1,8 +1,4 @@
-{
-  config,
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   imports = [
     inputs.zen-browser.homeModules.beta
     ./containers.nix
@@ -12,6 +8,9 @@
     ./mods.nix
     ./user-chrome-css.nix
     ./bookmarks.nix
+    ./policy-templates.nix
+    ./policies.nix
+    ./settings.nix
   ];
 
   zen-containers.enable = true;
@@ -21,73 +20,12 @@
   zen-mods.enable = true;
   zen-user-chrome-css.enable = true;
   zen-bookmarks.enable = true;
+  zen-policy-templates.enable = true;
+  zen-polices.enable = true;
+  zen-settings.enable = true;
 
   programs.zen-browser = {
     enable = true;
     setAsDefaultBrowser = true;
-
-    profiles.default.settings = {
-      "zen.workspaces.force-container-workspace" = true; #Switch to workspace where container is set as default when opening container tabs
-      "zen.tabs.vertical" = true;
-      "zen.tabs.vertical.right-side" = true;
-      "zen.tabs.show-newtab-vertical" = false;
-      "zen.welcome-screen.seen" = true;
-    };
-    policies = {
-      Preferences = {
-        "browser.aboutConfig.showWarning" = {
-          Value = false;
-          Status = "locked";
-        };
-        "browser.tabs.warnOnClose" = {
-          Value = false;
-          Status = "locked"; # User cannot change this
-        };
-        "browser.download.panel.shown" = {
-          Value = true;
-          Status = "locked";
-        };
-        "browser.download.useDownloadDir" = {
-          Value = false;
-          Status = "locked";
-        };
-        "browser.warnOnQuit" = {
-          Value = false;
-          Status = "locked";
-        };
-        "browser.warnOnQuitShortcut" = {
-          Value = false;
-          Status = "locked";
-        };
-        "accessibility.typeaheadfind" = {
-          Value = false;
-          Status = "locked";
-        };
-        # ---------- Configuring Zen Mod "Zen Context Menu (v3.1)"
-        "widget.macos.native-context-menus" = {
-          Value = false;
-          Status = "locked";
-        };
-        "uc.hidecontext.separators" = {
-          Value = true;
-          Status = "locked";
-        };
-      };
-      AutofillAddressEnabled = true;
-      AutofillCreditCardEnabled = false;
-      DisableAppUpdate = true;
-      DisableFeedbackCommands = true;
-      DisableFirefoxStudies = true;
-      DisablePocket = true;
-      DisableTelemetry = true;
-      DontCheckDefaultBrowser = true;
-      OfferToSaveLogins = false;
-      EnableTrackingProtection = {
-        Value = true;
-        Locked = true;
-        Cryptomining = true;
-        Fingerprinting = true;
-      };
-    };
   };
 }
