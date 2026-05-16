@@ -35,4 +35,7 @@
       pkgs.tridactyl-native
     ];
   };
+  home.packages = [
+    pkgs.tridactyl-native
+  ];
 }
