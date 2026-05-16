@@ -35,5 +35,5 @@
       pkgs.tridactyl-native
     ];
   };
-  home.file."Library/Application Support/zen/Profiles/default/native-messaging-hosts/tridactyl.json".source = "${pkgs.tridactyl-native}/lib/mozilla/native-messaging-hosts/tridactyl.json";
+  home.file."Library/Application Support/Mozilla/NativeMessagingHosts/tridactyl.json".source = "${pkgs.tridactyl-native}/lib/mozilla/native-messaging-hosts/tridactyl.json";
 }
