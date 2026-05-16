@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     inputs.zen-browser.homeModules.beta
     ./containers.nix
@@ -27,5 +31,8 @@
   programs.zen-browser = {
     enable = true;
     setAsDefaultBrowser = true;
+    nativeMessagingHosts = [
+      pkgs.tridactyl-native
+    ];
   };
 }
