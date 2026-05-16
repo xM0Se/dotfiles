@@ -59,6 +59,10 @@
           Value = false;
           Status = "locked";
         };
+        "accessibility.typeaheadfind" = {
+          Value = false;
+          Status = "locked";
+        };
         # ---------- Configuring Zen Mod "Zen Context Menu (v3.1)"
         "widget.macos.native-context-menus" = {
           Value = false;
