@@ -7,6 +7,7 @@
     ./../modules/zen/zenconf.nix
     ./../modules/sketchybar/default.nix
     ./../modules/aerospace/default.nix
+    ./../modules/borders/default.nix
   ];
 
   home.sessionVariables = {
