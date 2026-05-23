@@ -13,6 +13,7 @@
     ./../modules/aerospace/default.nix
     ./../modules/borders/default.nix
     ./../modules/ghostty/default.nix
+    ./../modules/vesktop/default.nix
   ];
 
   vscodeconf.enable = true;
