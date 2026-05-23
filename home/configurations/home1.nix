@@ -12,6 +12,7 @@
     ./../modules/sketchybar/default.nix
     ./../modules/aerospace/default.nix
     ./../modules/borders/default.nix
+    ./../modules/ghostty/default.nix
   ];
 
   vscodeconf.enable = true;
@@ -30,7 +31,6 @@
       PAGER = "bat";
     };
     file = {
-      "library/application support/com.mitchellh.ghostty".source = /Users/xm0se/dotfiles-for-humans/ghostty;
       ".wezterm.lua".source = /Users/xm0se/dotfiles-for-humans/wezterm/.wezterm.lua;
       "qmk_firmware/keyboards/crkbd/keymaps/custom".source = /Users/xm0se/dotfiles-for-humans/qmk;
     };
