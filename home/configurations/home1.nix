@@ -5,6 +5,7 @@
     ./../modules/gitconf.nix
     ./../modules/tmux/tmuxconf.nix
     ./../modules/zen/zenconf.nix
+    ./../modules/sketchybar/default.nix
   ];
 
   home.sessionVariables = {
