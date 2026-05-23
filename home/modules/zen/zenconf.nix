@@ -28,6 +28,8 @@
   zen-policies.enable = true;
   zen-settings.enable = true;
 
+  programs.firefox.darwinDefaultsId = "app.zen-browser.zen";
+
   programs.zen-browser = {
     enable = true;
     setAsDefaultBrowser = true;
