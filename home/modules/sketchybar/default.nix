@@ -4,6 +4,7 @@
     service.enable = true;
     includeSystemPath = true;
     extraPackages = [
+      pkgs.aerospace
     ];
     config = {
       source = ./config;
