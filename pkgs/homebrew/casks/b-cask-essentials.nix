@@ -8,7 +8,6 @@
     ./b-cask-signal.nix
     ./b-cask-mullvad-browser.nix
     ./b-cask-orcaslicer.nix
-    ./b-cask-aerospace.nix
     ./b-cask-logi-options-plus.nix
     ./b-cask-discord.nix
     ./b-cask-homerow.nix
@@ -34,8 +33,6 @@
     b-cask-mullvad-browser.enable =
       lib.mkDefault true;
     b-cask-orcaslicer.enable =
-      lib.mkDefault true;
-    b-cask-aerospace.enable =
       lib.mkDefault true;
     b-cask-logi-options-plus.enable =
       lib.mkDefault true;
