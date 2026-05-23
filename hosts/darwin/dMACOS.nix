@@ -69,7 +69,7 @@
     pkgs.utm
     pkgs.raycast
     pkgs.anki-bin
-    pkgs.bitwarden-desktop
+    # pkgs.bitwarden-desktop
     pkgs.wezterm
     pkgs.alacritty
     pkgs.ghostty-bin
