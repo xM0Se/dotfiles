@@ -63,7 +63,6 @@
     # pkgs.bitwarden-desktop
     pkgs.wezterm
     pkgs.alacritty
-    pkgs.ghostty-bin
     pkgs.obsidian
     pkgs.keycastr
     pkgs.vscode
