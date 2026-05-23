@@ -5,7 +5,7 @@ sketchybar \
   --set front_app \
   script="$PLUGIN_DIR/front_app.sh" \
   icon.drawing=on \
-  icon.color=$OPEN_SPACE_COLOR \
+  icon.color="$OPEN_SPACE_COLOR" \
   icon.font="sketchybar-app-font:Regular:16.0" \
   icon.font.size=18 \
   icon.padding_left=4 \

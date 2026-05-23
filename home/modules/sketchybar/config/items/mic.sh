@@ -2,7 +2,7 @@
 
 sketchybar -m --add item mic right \
   --set mic update_freq=3 \
-  --set mic script="~/.config/sketchybar/plugins/mic.sh" \
+  --set mic script="$PLUGIN_DIR/mic.sh" \
   icon.font.size=18 \
   icon.padding_left=4 \
   icon.padding_right=4 \

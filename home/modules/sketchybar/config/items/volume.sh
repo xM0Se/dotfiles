@@ -9,5 +9,5 @@ sketchybar \
   icon.padding_right=4 \
   padding_left=6 \
   padding_right=6 \
-  icon.color=$TEXT \
+  icon.color="$TEXT" \
   --subscribe volume volume_change

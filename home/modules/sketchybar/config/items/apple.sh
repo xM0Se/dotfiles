@@ -10,4 +10,4 @@ sketchybar -m \
   padding_left=6 \
   padding_right=6 \
   icon="􀣺" \
-  icon.color=$ACCENT_TEXT
+  icon.color="$ACCENT_TEXT"

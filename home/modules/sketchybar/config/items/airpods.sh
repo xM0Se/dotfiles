@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#_______________ airpod case _______________
-
 sketchybar -m \
   --add item casep right \
   --set casep update_freq=10 \
@@ -22,9 +20,7 @@ sketchybar -m \
   padding_left=6 \
   padding_right=6 \
   icon="􂭇" \
-  icon.color=$TEXT
-
-#_______________ left airpod _______________
+  icon.color="$TEXT"
 
 sketchybar -m \
   --add item lpodp right \
@@ -46,9 +42,7 @@ sketchybar -m \
   padding_left=6 \
   padding_right=6 \
   icon="􂭄" \
-  icon.color=$TEXT
-
-#_______________ right airpod _______________
+  icon.color="$TEXT"
 
 sketchybar -m \
   --add item rpodp right \
@@ -70,4 +64,4 @@ sketchybar -m \
   padding_left=6 \
   padding_right=6 \
   icon="􂭅" \
-  icon.color=$TEXT
+  icon.color="$TEXT"
