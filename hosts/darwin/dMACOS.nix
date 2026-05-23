@@ -22,7 +22,6 @@
   # sops.defaultSopsFormat = "yaml";
   # sops.age.keyFile = "/home/user/.config/sops/age/keys.txt";
   # sops.secrets.example-key = {};
-  # # --
 
   docksettings.enable = true;
   findersettings.enable = true;
@@ -35,19 +34,14 @@
   b-font-essentials.enable = true;
   b-cask-essentials.enable = true;
 
-  system.primaryUser = "xm0se";
   users.users.xm0se.home = "/Users/xm0se";
 
-  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = [
     pkgs.age
     pkgs.sops
     #CLI tools
     pkgs.vesktop
     pkgs.browsers
-    #--custom nvim package todo: move to home-manager
-    self.packages.${pkgs.stdenv.hostPlatform.system}.nvimconf
-    #--
     pkgs.fastfetch
     pkgs.nym
     pkgs.cargo
@@ -63,7 +57,6 @@
     pkgs.yazi
     pkgs.zsh-autosuggestions
     pkgs.zsh-syntax-highlighting
-    #Gui Apps
     pkgs.utm
     pkgs.raycast
     pkgs.anki-bin
@@ -76,9 +69,6 @@
     pkgs.vscode
   ];
 
-  #macOS setings
-
-  #Security stuff
   networking = {
     applicationFirewall = {
       enable = true;
@@ -86,40 +76,43 @@
     };
   };
 
-  system.defaults = {
-    loginwindow = {
-      SHOWFULLNAME = true;
-      GuestEnabled = false;
-    };
-
-    NSGlobalDomain = {
-      NSAutomaticWindowAnimationsEnabled = false;
-      _HIHideMenuBar = true;
-    };
-
-    WindowManager.EnableTilingByEdgeDrag = false;
-    SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
-
-    dock = {
-      wvous-tr-corner = 1;
-      wvous-tl-corner = 1;
-      wvous-br-corner = 1;
-      wvous-bl-corner = 1;
-    };
-
-    screensaver = {
-      askForPassword = true;
-      askForPasswordDelay = 0;
-    };
-  };
-
-  # ---
-  nix.settings.experimental-features = "nix-command flakes";
-
   system = {
+    primaryUser = "xm0se";
+    defaults = {
+      loginwindow = {
+        SHOWFULLNAME = true;
+        GuestEnabled = false;
+      };
+
+      NSGlobalDomain = {
+        NSAutomaticWindowAnimationsEnabled = false;
+        _HIHideMenuBar = true;
+      };
+
+      WindowManager.EnableTilingByEdgeDrag = false;
+      SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
+
+      dock = {
+        wvous-tr-corner = 1;
+        wvous-tl-corner = 1;
+        wvous-br-corner = 1;
+        wvous-bl-corner = 1;
+      };
+
+      screensaver = {
+        askForPassword = true;
+        askForPasswordDelay = 0;
+      };
+    };
+
     configurationRevision = self.rev or self.dirtyRev or null;
     stateVersion = 6;
   };
 
-  nixpkgs.hostPlatform = "aarch64-darwin";
+  nix.settings.experimental-features = "nix-command flakes";
+
+  nixpkgs = {
+    config.allowUnfree = true;
+    hostPlatform = "aarch64-darwin";
+  };
 }
