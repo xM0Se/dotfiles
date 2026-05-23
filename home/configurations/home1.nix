@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  self,
+  ...
+}: {
   imports = [
     ./../modules/vscode/vscodeconf.nix
     ./../modules/zsh/zshconf.nix
@@ -10,30 +14,27 @@
     ./../modules/borders/default.nix
   ];
 
-  home.sessionVariables = {
-    EDITOR = "nvim";
-    PAGER = "bat";
-  };
-
-  programs.firefox.darwinDefaultsId = "app.zen-browser.zen";
-
-  home.username = "xm0se";
-  home.homeDirectory = "/Users/xm0se";
-
   vscodeconf.enable = true;
   zshconf.enable = true;
   gitconf.enable = true;
   tmuxconf.enable = true;
-  home.stateVersion = "25.05";
 
-  home.packages = [
-    pkgs.hello
-  ];
-
-  home.file = {
-    "library/application support/com.mitchellh.ghostty".source = /Users/xm0se/dotfiles-for-humans/ghostty;
-    ".wezterm.lua".source = /Users/xm0se/dotfiles-for-humans/wezterm/.wezterm.lua;
-    "qmk_firmware/keyboards/crkbd/keymaps/custom".source = /Users/xm0se/dotfiles-for-humans/qmk;
+  home = {
+    username = "xm0se";
+    homeDirectory = "/Users/xm0se";
+    packages = [
+      self.packages.${pkgs.stdenv.hostPlatform.system}.nvimconf
+    ];
+    sessionVariables = {
+      EDITOR = "nvim";
+      PAGER = "bat";
+    };
+    file = {
+      "library/application support/com.mitchellh.ghostty".source = /Users/xm0se/dotfiles-for-humans/ghostty;
+      ".wezterm.lua".source = /Users/xm0se/dotfiles-for-humans/wezterm/.wezterm.lua;
+      "qmk_firmware/keyboards/crkbd/keymaps/custom".source = /Users/xm0se/dotfiles-for-humans/qmk;
+    };
+    stateVersion = "25.05";
   };
   programs.home-manager.enable = true;
 }
