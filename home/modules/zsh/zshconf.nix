@@ -10,6 +10,7 @@
     ./pay-respects/pay-respectsconf.nix
     ./zoxide/zoxideconf.nix
     ./bat/batconf.nix
+    ./btopconf.nix
   ];
 
   options = {
@@ -22,6 +23,7 @@
     pay-respectsconf.enable = true;
     zoxideconf.enable = true;
     batconf.enable = true;
+    btopconf.enable = true;
     programs.zsh = {
       enable = true;
       plugins = [
