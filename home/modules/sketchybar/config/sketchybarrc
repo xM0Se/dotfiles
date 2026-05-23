@@ -1,0 +1,39 @@
+#!/bin/bash
+
+ITEM_DIR="$CONFIG_DIR/items"
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+source "$CONFIG_DIR/colors.sh"
+source "$CONFIG_DIR/globals.sh"
+source "$ITEM_DIR/seperator.sh"
+
+sketchybar --bar "${SB_BAR[@]}" --default "${SB_DEFAULT[@]}"
+sketchybar --add event window_change
+sketchybar --add event front_app_switched
+sketchybar --add event volume_change
+
+source "$ITEM_DIR/clock.sh"
+sb_separator left 14 14
+source "$ITEM_DIR/date.sh"
+sb_separator left 14 14
+source "$ITEM_DIR/spaces.sh"
+sb_separator left 14 14
+source "$ITEM_DIR/front_app.sh"
+sb_separator left 14 14
+
+source "$ITEM_DIR/apple.sh"
+sb_separator right 14 14
+source "$ITEM_DIR/cpu.sh"
+source "$ITEM_DIR/ram.sh"
+sb_separator right 14 14
+source "$ITEM_DIR/wifi.sh"
+source "$ITEM_DIR/vpn.sh"
+sb_separator right 14 14
+source "$ITEM_DIR/mic.sh"
+source "$ITEM_DIR/volume.sh"
+sb_separator right 14 14
+source "$ITEM_DIR/airpods.sh"
+sb_separator right 14 14
+
+##################
+
+sketchybar --update
