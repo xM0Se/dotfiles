@@ -61,8 +61,6 @@
     pkgs.raycast
     pkgs.anki-bin
     # pkgs.bitwarden-desktop
-    pkgs.wezterm
-    pkgs.alacritty
     pkgs.obsidian
     pkgs.keycastr
     pkgs.vscode
