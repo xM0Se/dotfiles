@@ -17,16 +17,6 @@
         "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger aerospace_focus_change"
       ];
 
-      enable-normalization-flatten-containers = true;
-      enable-normalization-opposite-orientation-for-nested-containers = true;
-
-      accordion-padding = 30;
-
-      default-root-container-layout = "tiles";
-      on-focused-monitor-changed = ["move-mouse monitor-lazy-center"];
-
-      automatically-unhide-macos-hidden-apps = false;
-
       gaps = {
         inner.horizontal = 18;
         inner.vertical = 18;
@@ -140,6 +130,18 @@
         {
           "if".app-id = "com.mitchellh.ghostty";
           run = "move-node-to-workspace G";
+        }
+        {
+          "if".app-id = "com.apple.MobileSMS";
+          run = "move-node-to-workspace 1";
+        }
+        {
+          "if".app-id = "com.automattic.beeper.desktop";
+          run = "move-node-to-workspace M";
+        }
+        {
+          "if".app-id = "net.nymtech.vpn";
+          run = "move-node-to-workspace 1";
         }
         {
           "if".app-id = "com.apple.Passwords";
