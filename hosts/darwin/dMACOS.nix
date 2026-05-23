@@ -40,7 +40,6 @@
     pkgs.age
     pkgs.sops
     #CLI tools
-    pkgs.vesktop
     pkgs.browsers
     pkgs.fastfetch
     pkgs.nym
