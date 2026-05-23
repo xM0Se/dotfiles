@@ -8,7 +8,7 @@
       copy-on-select = true;
       keybind = [
         "global:cmd+t+shift=toggle_quick_terminal"
-        "keybind = option+backspace=text:\x17"
+        ''option+backspace=text:\x17''
       ];
       theme = "Rose Pine Moon";
       macos-titlebar-style = "hidden";
