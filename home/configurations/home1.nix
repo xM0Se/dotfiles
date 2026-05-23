@@ -30,7 +30,6 @@
 
   home.file = {
     ".aerospace.toml".source = /Users/xm0se/dotfiles-for-humans/aerospace/.aerospace.toml;
-    ".config/sketchybar".source = /Users/xm0se/dotfiles-for-humans/sketchybar;
     "library/application support/com.mitchellh.ghostty".source = /Users/xm0se/dotfiles-for-humans/ghostty;
     ".wezterm.lua".source = /Users/xm0se/dotfiles-for-humans/wezterm/.wezterm.lua;
     "qmk_firmware/keyboards/crkbd/keymaps/custom".source = /Users/xm0se/dotfiles-for-humans/qmk;
