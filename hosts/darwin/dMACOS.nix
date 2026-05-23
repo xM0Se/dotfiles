@@ -12,7 +12,6 @@
     ../../pkgs/nixpkgs-unstable/gui/essential-gui-apps.nix
     ../../pkgs/homebrew/b-opts-default.nix
     ../../pkgs/homebrew/brews/b-brews-essentials.nix
-    ../../pkgs/homebrew/taps/b-taps-essentials.nix
     ../../pkgs/homebrew/mas/b-mas-essentials.nix
     ../../pkgs/homebrew/fonts/b-font-essentials.nix
     ../../pkgs/homebrew/casks/b-cask-essentials.nix
@@ -31,7 +30,6 @@
   essential-gui-apps.enable = true;
   u-pkg-qmk.enable = true;
   b-opts-default.enable = true;
-  b-taps-essentials.enable = true;
   b-brews-essentials.enable = true;
   b-mas-essentials.enable = true;
   b-font-essentials.enable = true;
