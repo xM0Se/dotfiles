@@ -31,7 +31,6 @@
       PAGER = "bat";
     };
     file = {
-      ".wezterm.lua".source = /Users/xm0se/dotfiles-for-humans/wezterm/.wezterm.lua;
       "qmk_firmware/keyboards/crkbd/keymaps/custom".source = /Users/xm0se/dotfiles-for-humans/qmk;
     };
     stateVersion = "25.05";
