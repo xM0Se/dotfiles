@@ -6,6 +6,7 @@
     ./../modules/tmux/tmuxconf.nix
     ./../modules/zen/zenconf.nix
     ./../modules/sketchybar/default.nix
+    ./../modules/aerospace/default.nix
   ];
 
   home.sessionVariables = {
@@ -29,7 +30,6 @@
   ];
 
   home.file = {
-    ".aerospace.toml".source = /Users/xm0se/dotfiles-for-humans/aerospace/.aerospace.toml;
     "library/application support/com.mitchellh.ghostty".source = /Users/xm0se/dotfiles-for-humans/ghostty;
     ".wezterm.lua".source = /Users/xm0se/dotfiles-for-humans/wezterm/.wezterm.lua;
     "qmk_firmware/keyboards/crkbd/keymaps/custom".source = /Users/xm0se/dotfiles-for-humans/qmk;
