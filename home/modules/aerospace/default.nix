@@ -6,7 +6,7 @@
       enable = true;
       keepAlive = true;
     };
-    userSettings = {
+    settings = {
       start-at-login = true;
       exec-on-workspace-change = [
         "/bin/bash"
