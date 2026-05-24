@@ -35,26 +35,22 @@
   users.users.xm0se.home = "/Users/xm0se";
 
   environment.systemPackages = [
+    #--
     pkgs.age
     pkgs.sops
     #CLI tools
     pkgs.browsers
     pkgs.fastfetch
     pkgs.nym
-    pkgs.cargo
-    pkgs.gtk3
     pkgs.stow
     pkgs.gh
     pkgs.cmatrix
     pkgs.nmap
-    pkgs.nodejs_24
     pkgs.dwt1-shell-color-scripts
     pkgs.ripgrep
     pkgs.tldr
-    pkgs.yazi
     pkgs.zsh-autosuggestions
     pkgs.zsh-syntax-highlighting
-    pkgs.utm
     pkgs.raycast
     pkgs.anki-bin
     # pkgs.bitwarden-desktop
