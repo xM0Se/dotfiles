@@ -36,11 +36,6 @@
       };
     };
 
-    firefox-addons = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     flake-parts.url = "github:hercules-ci/flake-parts";
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
