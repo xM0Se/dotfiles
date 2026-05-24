@@ -5,15 +5,12 @@
 }: {
   imports = [
     ./b-cask-twingate.nix
-    ./b-cask-signal.nix
     ./b-cask-mullvad-browser.nix
     ./b-cask-orcaslicer.nix
     ./b-cask-logi-options-plus.nix
-    ./b-cask-discord.nix
     ./b-cask-homerow.nix
     ./b-cask-kindavim.nix
     ./b-cask-lulu.nix
-    ./b-cask-claude.nix
     ./b-cask-affinity.nix
     ./b-cask-beeper.nix
     ./b-cask-hammerspoon.nix
@@ -28,23 +25,17 @@
   config = lib.mkIf config.b-cask-essentials.enable {
     b-cask-twingate.enable =
       lib.mkDefault true;
-    b-cask-signal.enable =
-      lib.mkDefault true;
     b-cask-mullvad-browser.enable =
       lib.mkDefault true;
     b-cask-orcaslicer.enable =
       lib.mkDefault true;
     b-cask-logi-options-plus.enable =
       lib.mkDefault true;
-    b-cask-discord.enable =
-      lib.mkDefault true;
     b-cask-homerow.enable =
       lib.mkDefault true;
     b-cask-kindavim.enable =
       lib.mkDefault true;
     b-cask-lulu.enable =
-      lib.mkDefault true;
-    b-cask-claude.enable =
       lib.mkDefault true;
     b-cask-affinity.enable =
       lib.mkDefault true;
