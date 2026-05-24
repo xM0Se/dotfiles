@@ -31,9 +31,9 @@
       EDITOR = "nvim";
       PAGER = "bat";
     };
-    file = {
-      "qmk_firmware/keyboards/crkbd/keymaps/custom".source = /Users/xm0se/dotfiles-for-humans/qmk;
-    };
+    # file = {
+    #   "qmk_firmware/keyboards/crkbd/keymaps/custom".source = /Users/xm0se/dotfiles-for-humans/qmk;
+    # };
     stateVersion = "25.05";
   };
   programs.home-manager.enable = true;

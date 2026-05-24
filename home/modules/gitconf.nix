@@ -14,11 +14,22 @@
       settings = {
         userName = {value = "xm0se";};
         userEmail = {value = "189546389+xM0Se@users.noreply.github.com";};
-        aliases = {
+        alias = {
+          cm = "commit -m";
           co = "checkout";
-          pu = "push";
-          com = "commit";
-          a = "add";
+          sw = "switch";
+          br = "branch";
+          ci = "commit";
+          ca = "commit --amend";
+          aa = "add --all";
+          a = "add .";
+          unstage = "reset HEAD --";
+          pl = "pull";
+          ps = "push";
+          l = "log --oneline";
+          lg = "log --oneline --graph --decorate";
+          last = "log -1 HEAD";
+          st = "status";
         };
       };
       ignores = [
