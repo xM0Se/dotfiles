@@ -33,6 +33,7 @@
           file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
         }
       ];
+      autosuggestion.enable = true;
       shellAliases = {
         j = "just";
         c = "clear";

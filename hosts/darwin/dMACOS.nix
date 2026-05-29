@@ -49,8 +49,6 @@
     pkgs.dwt1-shell-color-scripts
     pkgs.ripgrep
     pkgs.tldr
-    pkgs.zsh-autosuggestions
-    pkgs.zsh-syntax-highlighting
     pkgs.raycast
     pkgs.anki-bin
     # pkgs.bitwarden-desktop

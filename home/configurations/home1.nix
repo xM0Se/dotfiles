@@ -14,6 +14,7 @@
     ./../modules/borders/default.nix
     ./../modules/ghostty/default.nix
     ./../modules/vesktop/default.nix
+    # ./../modules/anki/default.nix anki not building on macos right now
   ];
 
   vscodeconf.enable = true;
