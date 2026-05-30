@@ -14,13 +14,6 @@
       enable = true;
       autoStart = true;
       package = pkgs.fabricServers.fabric-26_1_2.override {jre_headless = pkgs.openjdk25_headless;}; # will be changed to pkgs.fabricServers when "https://github.com/Infinidoge/nix-minecraft/issues/211" gets resolved
-      operators = {
-        xMose = {
-          uuid = "0a9b0753-9941-4861-ab0f-20a82e462ae9";
-          level = 3;
-          bypassesPlayerLimit = true;
-        };
-      };
       serverProperties = {
         sync-chunk-writes = false;
         white-list = true;
