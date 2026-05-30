@@ -11,6 +11,7 @@
     ./zoxide/zoxideconf.nix
     ./bat/batconf.nix
     ./btopconf.nix
+    ./tmux/tmuxconf.nix
   ];
 
   options = {
@@ -24,6 +25,7 @@
     zoxideconf.enable = true;
     batconf.enable = true;
     btopconf.enable = true;
+    tmuxconf.enable = true;
     programs.zsh = {
       enable = true;
       plugins = [

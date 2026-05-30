@@ -12,11 +12,15 @@
   };
 
   config = lib.mkIf config.tmuxconf.enable {
+    programs.zsh.prezto.tmux.autoStartRemote = true;
+
     programs.tmux = {
       enable = true;
       shortcut = "space";
       keyMode = "vi";
       disableConfirmationPrompt = true;
+      terminal = "xterm-256color";
+      newSession = true;
       plugins = with pkgs; [
         {
           plugin = tmuxPlugins.copy-toolkit;

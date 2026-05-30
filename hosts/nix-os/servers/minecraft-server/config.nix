@@ -1,69 +1,49 @@
-{
-  pkgs,
-  self,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
     ../../../../pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix
     ../../../../configuration/minecraft-servers/default.nix
   ];
-  nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  boot.loader.grub = {
-    enable = true;
-    device = "/dev/sda";
-  };
+  essential-cli-tools.enable = true;
 
   networking = {
     hostName = "nixos";
     firewall.enable = false;
   };
 
-  time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "Europe/Berlin";
 
-  services.xserver.xkb.layout = "us";
-
-  users.users.xm0se = {
-    isNormalUser = true;
-    extraGroups = ["wheel"];
-    packages = with pkgs; [
-      tree
-      git
-    ];
+  users.users = {
+    xm0se = {
+      isNormalUser = true;
+      extraGroups = ["wheel"];
+      home = "/xm0se";
+    };
+    root.home = "/root";
   };
 
-  services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = true;
-      PermitRootLogin = "yes";
+  services = {
+    xserver.xkb.layout = "us";
+    openssh = {
+      enable = true;
+      settings = {
+        PasswordAuthentication = true;
+        PermitRootLogin = "yes";
+      };
     };
   };
 
-  essential-cli-tools.enable = true;
-
-  programs.zsh.enable = true;
-
-  users.users.root = {
-    home = "/root";
-    shell = pkgs.zsh;
-  };
-
   virtualisation.docker.enable = true;
-
-  nixpkgs = {
-    hostPlatform = "x86_64-linux";
-    config.allowUnfree = true;
-  };
 
   environment.systemPackages = [
     pkgs.vim
     pkgs.git
     pkgs.wget
     pkgs.jdk25_headless
-    self.packages.${pkgs.stdenv.hostPlatform.system}.nvimconf
   ];
 
+  nixpkgs.config.allowUnfree = true;
+  nix.settings.experimental-features = ["nix-command" "flakes"];
   system.stateVersion = "25.05";
 }

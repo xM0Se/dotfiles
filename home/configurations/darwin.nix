@@ -7,7 +7,6 @@
     ./../modules/vscode/vscodeconf.nix
     ./../modules/zsh/zshconf.nix
     ./../modules/gitconf.nix
-    ./../modules/tmux/tmuxconf.nix
     ./../modules/zen/zenconf.nix
     ./../modules/sketchybar/default.nix
     ./../modules/aerospace/default.nix
@@ -20,7 +19,6 @@
   vscodeconf.enable = true;
   zshconf.enable = true;
   gitconf.enable = true;
-  tmuxconf.enable = true;
 
   home = {
     username = "xm0se";

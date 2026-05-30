@@ -96,7 +96,7 @@
                     pkgs,
                     ...
                   }:
-                    import ./home/configurations/home1.nix {inherit config pkgs pkgs-stable inputs self;};
+                    import ./home/configurations/darwin.nix {inherit config pkgs pkgs-stable inputs self;};
                 };
               }
               nix-homebrew.darwinModules.nix-homebrew
@@ -138,7 +138,7 @@
                     pkgs,
                     ...
                   }:
-                    import ./home/configurations/home3.nix {inherit config pkgs inputs pkgs-stable self;};
+                    import ./home/configurations/server.nix {inherit config pkgs inputs pkgs-stable self;};
                 };
               }
             ];
