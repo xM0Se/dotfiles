@@ -29,9 +29,6 @@
         server-port = 25565;
         view-distance = 9;
       };
-      operators = {
-        ElroKnight = "2beb73ed-3cf2-4a4b-a4ae-683db5b71dec";
-      };
       whitelist = {
         xMose = "0a9b0753-9941-4861-ab0f-20a82e462ae9";
         ElroKnight = "2beb73ed-3cf2-4a4b-a4ae-683db5b71dec";
@@ -61,6 +58,10 @@
           C2ME = pkgs.fetchurl {
             url = "https://cdn.modrinth.com/data/VSNURh3q/versions/iFyIEVsG/c2me-fabric-mc26.1.2-0.3.7%2Balpha.0.69.jar";
             sha512 = "sha512-MuWiGRTs0WtFYNLVmkwalr6ShB1kLLJ4rNdkYcD+cOOHWUSRfLnlHaxxlCHXWr/9V7y6/m4pfnR36vNFFIV87Q==";
+          };
+          Krypton = pkgs.fetchurl {
+            url = "https://cdn.modrinth.com/data/fQEb0iXm/versions/kYAGItyj/krypton-0.3.0.jar";
+            sha512 = "sha512-FCMyECg6dvPPQ1o7jdvL1lqFjSsaELiP9kPAoBSG39K/GEO9NFbNT7hsuzsG8t6gxOZjsZdqSOlt4W07WnB+yQ==";
           };
         });
       };
