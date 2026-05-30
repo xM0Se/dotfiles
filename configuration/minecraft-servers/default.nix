@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  fetchurl,
   ...
 }: {
   imports = [inputs.nix-minecraft.nixosModules.minecraft-servers];
@@ -40,11 +41,14 @@
         Itz_mikalli = "c50d4b30-2e56-4f03-84da-ce195fcefaee";
         Jari2k24 = "7bb0ef18-eb20-4a80-a3f8-8faf652307d9";
       };
-  		symlinks = {
-    		mods = pkgs.linkFarmFromDrvs "mods" (builtins.attrValues {
-					FabricApi = fetchurl { url = "https://cdn.modrinth.com/data/P7dR8mSH/versions/E1mjhYMF/fabric-api-0.150.0%2B26.1.2.jar"; sha512 = "sha512-I4x5O3IO0h0tW1ZOyojHFM8hiPew+x/TCGRmD4CQHitNrSc5lLb3fePAqjZfkw7Yqsz/rEmzbGRWsVO1LV0h3A=="; };
-				});
-			};
+      symlinks = {
+        mods = pkgs.linkFarmFromDrvs "mods" (builtins.attrValues {
+          FabricApi = fetchurl {
+            url = "https://cdn.modrinth.com/data/P7dR8mSH/versions/E1mjhYMF/fabric-api-0.150.0%2B26.1.2.jar";
+            sha512 = "sha512-I4x5O3IO0h0tW1ZOyojHFM8hiPew+x/TCGRmD4CQHitNrSc5lLb3fePAqjZfkw7Yqsz/rEmzbGRWsVO1LV0h3A==";
+          };
+        });
+      };
     };
   };
 }
