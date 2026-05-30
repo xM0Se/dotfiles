@@ -40,7 +40,6 @@
     pkgs.vim
     pkgs.git
     pkgs.wget
-    pkgs.jdk25_headless
   ];
 
   nixpkgs.config.allowUnfree = true;

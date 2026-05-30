@@ -5,6 +5,10 @@
 }: {
   imports = [inputs.nix-minecraft.nixosModules.minecraft-servers];
 
+  environment.systemPackages = [
+    pkgs.jdk25
+  ];
+
   services.minecraft-servers = {
     enable = true;
     openFirewall = true;
