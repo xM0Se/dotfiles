@@ -5,51 +5,64 @@
 }: {
   imports = [inputs.nix-minecraft.nixosModules.minecraft-servers];
 
-  environment.systemPackages = [
-    pkgs.jdk25
-  ];
-
-  services.minecraft-servers = {
-    enable = true;
-    openFirewall = true;
-    eula = true;
-    dataDir = "/var/server-mach-was";
-    servers.mach-was = {
+  services = {
+    zfs = {
+      autoReplication = {
+        enable = true;
+        localFilesystem = "/var/server-mach-was";
+        remoteFilesystem = "/var/server-mach-was-backup";
+      };
+      autoSnapshot = {
+        enable = true;
+        frequent = 8;
+        hourly = 7;
+        daily = 2;
+        weekly = 4;
+        monthly = 4;
+      };
+    };
+    minecraft-servers = {
       enable = true;
-      autoStart = true;
-      package = pkgs.fabricServers.fabric;
-      operators = {
-        xMose = {
-          uuid = "0a9b0753-9941-4861-ab0f-20a82e462ae9";
-          level = 3;
-          bypassesPlayerLimit = true;
+      openFirewall = true;
+      eula = true;
+      dataDir = "/var/server-mach-was";
+      servers.mach-was = {
+        enable = true;
+        autoStart = true;
+        package = pkgs.fabricServers.fabric-26_1_2.override {jre_headless = pkgs.openjdk25_headless;}; # will be changed to pkgs.fabricServers when "https://github.com/Infinidoge/nix-minecraft/issues/211" gets resolved
+        operators = {
+          xMose = {
+            uuid = "0a9b0753-9941-4861-ab0f-20a82e462ae9";
+            level = 3;
+            bypassesPlayerLimit = true;
+          };
         };
-      };
-      serverProperties = {
-        sync-chunk-writes = false;
-        white-list = true;
-        gamemode = "survival";
-        difficulty = "hard";
-        simulation-distance = 6;
-        spawn-protection = 0;
-        hide-online-players = false;
-        log-ips = true;
-        force-gamemode = false;
-        motd = "Mach was !";
-        level-seed = 3791842102387187656;
-        server-port = 25565;
-        view-distance = 9;
-      };
-      whitelist = {
-        xMose = "0a9b0753-9941-4861-ab0f-20a82e462ae9";
-        ElroKnight = "2beb73ed-3cf2-4a4b-a4ae-683db5b71dec";
-        Mathehaeft = "62a27dc6-217f-4c30-b9e8-634f7df68044";
-        Toaster0077282 = "82db6cf8-5a4f-43fe-95f3-486698fd910b";
-        P1Paxs = "9a3e9ef2-4fdd-4976-9a5c-6986fc7c3a62";
-        Muecke1234 = "501c6362-50a6-4438-95e3-23e2e4e63de2";
-        GAMERSBLADE5668 = "06264d01-5235-4c5c-8516-a34457b7b723";
-        Itz_mikalli = "c50d4b30-2e56-4f03-84da-ce195fcefaee";
-        Jari2k24 = "7bb0ef18-eb20-4a80-a3f8-8faf652307d9";
+        serverProperties = {
+          sync-chunk-writes = false;
+          white-list = true;
+          gamemode = "survival";
+          difficulty = "hard";
+          simulation-distance = 6;
+          spawn-protection = 0;
+          hide-online-players = false;
+          log-ips = true;
+          force-gamemode = false;
+          motd = "Mach was !";
+          level-seed = 3791842102387187656;
+          server-port = 25565;
+          view-distance = 9;
+        };
+        whitelist = {
+          xMose = "0a9b0753-9941-4861-ab0f-20a82e462ae9";
+          ElroKnight = "2beb73ed-3cf2-4a4b-a4ae-683db5b71dec";
+          Mathehaeft = "62a27dc6-217f-4c30-b9e8-634f7df68044";
+          Toaster0077282 = "82db6cf8-5a4f-43fe-95f3-486698fd910b";
+          P1Paxs = "9a3e9ef2-4fdd-4976-9a5c-6986fc7c3a62";
+          Muecke1234 = "501c6362-50a6-4438-95e3-23e2e4e63de2";
+          GAMERSBLADE5668 = "06264d01-5235-4c5c-8516-a34457b7b723";
+          Itz_mikalli = "c50d4b30-2e56-4f03-84da-ce195fcefaee";
+          Jari2k24 = "7bb0ef18-eb20-4a80-a3f8-8faf652307d9";
+        };
       };
     };
   };
