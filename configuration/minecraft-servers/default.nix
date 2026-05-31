@@ -47,7 +47,6 @@ in {
       };
       symlinks = {
         "mods" = "${PerformanceMods}/mods";
-        "config" = "${PerformanceMods}/config";
       };
     };
   };
