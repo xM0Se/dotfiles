@@ -1,8 +1,0 @@
-name = "VanillaTweaks"
-filename = "share"
-side = "both"
-
-[download]
-url = "https://vanillatweaks.net/share#GnIBqb"
-hash-format = "sha256"
-hash = "f3442e1ed9e286ce53e9b6d3d98a5fc0e46c906b6635deb7d6a428fc7b3e3be2"
