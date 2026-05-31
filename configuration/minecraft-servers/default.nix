@@ -2,7 +2,9 @@
   inputs,
   pkgs,
   ...
-}: {
+}: let
+  PerformanceMods = import ./PerformanceMods.nix {inherit pkgs;};
+in {
   imports = [inputs.nix-minecraft.nixosModules.minecraft-servers];
   environment.systemPackages = [
     pkgs.packwiz
@@ -29,7 +31,7 @@
         motd = "Mach was !";
         level-seed = 3791842102387187656;
         server-port = 25565;
-        view-distance = 9;
+        view-distance = 15;
       };
       whitelist = {
         xMose = "0a9b0753-9941-4861-ab0f-20a82e462ae9";
@@ -44,28 +46,8 @@
         Jonulinka = "5f0eacfc-6d33-4778-8ae9-37a738cd2cf2";
       };
       symlinks = {
-        mods = pkgs.linkFarmFromDrvs "mods" (builtins.attrValues {
-          FabricApi = pkgs.fetchurl {
-            url = "https://cdn.modrinth.com/data/P7dR8mSH/versions/E1mjhYMF/fabric-api-0.150.0%2B26.1.2.jar";
-            sha512 = "sha512-I4x5O3IO0h0tW1ZOyojHFM8hiPew+x/TCGRmD4CQHitNrSc5lLb3fePAqjZfkw7Yqsz/rEmzbGRWsVO1LV0h3A==";
-          };
-          Lithium = pkgs.fetchurl {
-            url = "https://cdn.modrinth.com/data/gvQqBUqZ/versions/rzrH7czY/lithium-fabric-0.24.4%2Bmc26.1.2.jar";
-            sha512 = "sha512-XUOWYJaLwG3upio7ds5G76aQfEYGAtbm1w/VB4oi9BrLyl0Rd+6Pc6NUpZyjmB8z7iDa/d/79B/wtL+/xle2yg==";
-          };
-          FerriteCore = pkgs.fetchurl {
-            url = "https://cdn.modrinth.com/data/uXXizFIs/versions/d5ddUdiB/ferritecore-9.0.0-fabric.jar";
-            sha512 = "sha512-2B+pfhF4TBnUL4nC9DODHQB2A91xk87kX6F35KapxSs4SxmFhuBKD39jzZlv7XEzIleL3pqNtX4RiIVK5cvlhA==";
-          };
-          C2ME = pkgs.fetchurl {
-            url = "https://cdn.modrinth.com/data/VSNURh3q/versions/iFyIEVsG/c2me-fabric-mc26.1.2-0.3.7%2Balpha.0.69.jar";
-            sha512 = "sha512-MuWiGRTs0WtFYNLVmkwalr6ShB1kLLJ4rNdkYcD+cOOHWUSRfLnlHaxxlCHXWr/9V7y6/m4pfnR36vNFFIV87Q==";
-          };
-          Krypton = pkgs.fetchurl {
-            url = "https://cdn.modrinth.com/data/fQEb0iXm/versions/kYAGItyj/krypton-0.3.0.jar";
-            sha512 = "sha512-FCMyECg6dvPPQ1o7jdvL1lqFjSsaELiP9kPAoBSG39K/GEO9NFbNT7hsuzsG8t6gxOZjsZdqSOlt4W07WnB+yQ==";
-          };
-        });
+        "mods" = "${PerformanceMods}/mods";
+        "config" = "${PerformanceMods}/config";
       };
     };
   };
