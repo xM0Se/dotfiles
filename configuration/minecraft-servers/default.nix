@@ -4,7 +4,9 @@
   ...
 }: {
   imports = [inputs.nix-minecraft.nixosModules.minecraft-servers];
-
+  environment.systemPackages = [
+    pkgs.packwiz
+  ];
   services.minecraft-servers = {
     enable = true;
     openFirewall = true;
