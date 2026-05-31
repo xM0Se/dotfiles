@@ -1,0 +1,13 @@
+name = "Datapacks"
+author = "xM0Se"
+version = "1.0.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "36f4c5c042942210ce9d654ff88114732654c926fc3c39c3da9c8f08780a2b7a"
+
+[versions]
+fabric = "0.19.2"
+minecraft = "26.1.2"

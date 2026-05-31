@@ -1,0 +1,11 @@
+hash-format = "sha256"
+
+[[files]]
+file = "world/datapacks/invis-item-frame.pw.toml"
+hash = "5569be186cd32bf0d6bd832e4ca9eef7d45178628e9d02bc59d607cefde3c529"
+metafile = true
+
+[[files]]
+file = "mods/vanillatweaks.pw.toml"
+hash = "01cf619467a6c790f6b8ddf3928dc5a83ce9a4141b3dad9edc5fcedbbf1c738f"
+metafile = true
