@@ -1,6 +1,11 @@
 hash-format = "sha256"
 
 [[files]]
+file = "mods/async.pw.toml"
+hash = "bac3e198aa9948d6b46b5a7483a74e25233919f93bae6fdcc592908e3705e4e5"
+metafile = true
+
+[[files]]
 file = "mods/c2me-fabric.pw.toml"
 hash = "82f8e930d470d72330d18b6609e233f5c61a37866cec7c93f17d9bc6006e7565"
 metafile = true
@@ -58,6 +63,11 @@ metafile = true
 [[files]]
 file = "mods/scalablelux.pw.toml"
 hash = "645be5d20d755e83c986014b768abbf473d3bf31da5dcd197af63c8b200cc141"
+metafile = true
+
+[[files]]
+file = "mods/servercore.pw.toml"
+hash = "74b9be2bf4e2ba3b1c621cea436e14a0cd1a35423e8e02ea9eac51b340f8f299"
 metafile = true
 
 [[files]]
