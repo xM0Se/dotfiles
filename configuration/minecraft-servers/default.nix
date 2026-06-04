@@ -44,6 +44,7 @@ in {
         Itz_mikalli = "c50d4b30-2e56-4f03-84da-ce195fcefaee";
         Jari2k24 = "7bb0ef18-eb20-4a80-a3f8-8faf652307d9";
         Jonulinka = "5f0eacfc-6d33-4778-8ae9-37a738cd2cf2";
+        Fynndus135 = "52236dbe-88b6-4c28-8e0a-ae0d71c61a2c";
       };
       symlinks = {
         "mods" = "${PerformanceMods}/mods";
