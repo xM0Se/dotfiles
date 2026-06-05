@@ -1,10 +1,11 @@
 {
   self,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
-    # inputs.sops-nix.darwinModules.sops
+    inputs.sops-nix.darwinModules.sops
     ../../configuration/system/mac-os/docksettings.nix
     ../../configuration/system/mac-os/findersettings.nix
     ../../pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix
@@ -16,11 +17,13 @@
     ../../pkgs/homebrew/casks/b-cask-essentials.nix
   ];
 
-  # todo move to seperate file
-  # sops.defaultSopsFile = ../../secrets/secrets.yaml;
-  # sops.defaultSopsFormat = "yaml";
-  # sops.age.keyFile = "/home/user/.config/sops/age/keys.txt";
-  # sops.secrets.example-key = {};
+  # to-do move to separate file
+  sops = {
+    defaultSopsFile = ../../secrets/secrets.yaml;
+    defaultSopsFormat = "yaml";
+    age.keyFile = "/.config/sops/age/keys.txt";
+    secrets.example-key = {};
+  };
 
   docksettings.enable = true;
   findersettings.enable = true;
@@ -33,7 +36,6 @@
   b-cask-essentials.enable = true;
 
   users.users.xm0se.home = "/Users/xm0se";
-
   environment.systemPackages = [
     #--
     pkgs.age
