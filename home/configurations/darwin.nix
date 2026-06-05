@@ -4,16 +4,15 @@
   ...
 }: {
   imports = [
-    ./../modules/vscode/vscodeconf.nix
-    ./../modules/zsh/zshconf.nix
-    ./../modules/gitconf.nix
-    ./../modules/zen/zenconf.nix
-    ./../modules/sketchybar/default.nix
-    ./../modules/aerospace/default.nix
-    ./../modules/borders/default.nix
-    ./../modules/ghostty/default.nix
-    ./../modules/vesktop/default.nix
-    # ./../modules/anki/default.nix anki not building on macos right now
+    ./../modules/common/vscode/vscodeconf.nix
+    ./../modules/common/vesktop/default.nix
+    ./../modules/common/zsh/zshconf.nix
+    ./../modules/common/git.nix
+    ./../modules/common/zen/zenconf.nix
+    ./../modules/darwin/sketchybar/default.nix
+    ./../modules/darwin/aerospace/default.nix
+    ./../modules/darwin/borders/default.nix
+    ./../modules/darwin/ghostty/default.nix
   ];
 
   vscodeconf.enable = true;

@@ -4,8 +4,8 @@
   ...
 }: {
   imports = [
-    ./../modules/zsh/zshconf.nix
-    ./../modules/gitconf.nix
+    ./../modules/common/zsh/zshconf.nix
+    ./../modules/common/git.nix
   ];
 
   zshconf.enable = true;
