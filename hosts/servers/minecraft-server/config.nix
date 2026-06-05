@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
-    ../../../../pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix
-    ../../../../configuration/minecraft-servers/default.nix
+    ../../../pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix
+    ../../../configuration/modules/nixos/minecraft-servers/default.nix
   ];
 
   essential-cli-tools.enable = true;
