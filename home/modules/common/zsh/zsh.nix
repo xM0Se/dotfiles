@@ -9,7 +9,7 @@
     ./oh-my-posh/oh-my-posh.nix
     ./pay-respects/pay-respects.nix
     ./zoxide/zoxide.nix
-    ./bat/batconf.nix
+    ./bat/bat.nix
     ./btop.nix
     ./tmux/tmux.nix
   ];
