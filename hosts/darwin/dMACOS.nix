@@ -6,8 +6,6 @@
 }: {
   imports = [
     inputs.sops-nix.darwinModules.sops
-    ../../configuration/system/mac-os/docksettings.nix
-    ../../configuration/system/mac-os/findersettings.nix
     ../../pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix
     ../../pkgs/nixpkgs-unstable/cli/u-pkg-all-cli-tools.nix
     ../../pkgs/nixpkgs-unstable/gui/essential-gui-apps.nix
@@ -15,6 +13,7 @@
     ../../pkgs/homebrew/mas/b-mas-essentials.nix
     ../../pkgs/homebrew/fonts/b-font-essentials.nix
     ../../pkgs/homebrew/casks/b-cask-essentials.nix
+    ../../configuration/configurations/darwin.nix
   ];
 
   # to-do move to separate file
@@ -24,8 +23,6 @@
     age.keyFile = "/.config/sops/age/keys.txt";
   };
 
-  docksettings.enable = true;
-  findersettings.enable = true;
   essential-cli-tools.enable = true;
   essential-gui-apps.enable = true;
   u-pkg-qmk.enable = true;
@@ -80,13 +77,6 @@
 
       WindowManager.EnableTilingByEdgeDrag = false;
       SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
-
-      dock = {
-        wvous-tr-corner = 1;
-        wvous-tl-corner = 1;
-        wvous-br-corner = 1;
-        wvous-bl-corner = 1;
-      };
 
       screensaver = {
         askForPassword = true;
