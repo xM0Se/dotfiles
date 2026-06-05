@@ -5,6 +5,7 @@ _: {
       settings = {
         UseDns = false;
         PasswordAuthentication = false;
+        PermitRootLogin = "no";
       };
     };
     fail2ban = {
