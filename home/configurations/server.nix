@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ./../modules/common/zsh/zshconf.nix
+    ./../modules/common/zsh/zsh.nix
     ./../modules/common/git.nix
   ];
 

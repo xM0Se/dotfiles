@@ -6,7 +6,7 @@
   imports = [
     ./../modules/common/vscode/vscodeconf.nix
     ./../modules/common/vesktop/default.nix
-    ./../modules/common/zsh/zshconf.nix
+    ./../modules/common/zsh/zsh.nix
     ./../modules/common/git.nix
     ./../modules/common/zen/zenconf.nix
     ./../modules/darwin/sketchybar/default.nix
