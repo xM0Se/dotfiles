@@ -3,6 +3,7 @@
     ./hardware-configuration.nix
     ../../../pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix
     ../../../configuration/modules/nixos/minecraft-servers/default.nix
+    ../../../configuration/configurations/server.nix
   ];
 
   essential-cli-tools.enable = true;
@@ -26,16 +27,7 @@
     root.home = "/root";
   };
 
-  services = {
-    xserver.xkb.layout = "us";
-    openssh = {
-      enable = true;
-      settings = {
-        PasswordAuthentication = true;
-        PermitRootLogin = "yes";
-      };
-    };
-  };
+  services.xserver.xkb.layout = "us";
 
   virtualisation.docker.enable = true;
 
