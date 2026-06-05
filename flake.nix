@@ -133,7 +133,7 @@
                   useUserPackages = true;
                   backupFileExtension = "backup";
                   extraSpecialArgs = {inherit inputs pkgs-stable self;};
-                  users.root = {
+                  users.xm0se = {
                     config,
                     pkgs,
                     ...
