@@ -33,9 +33,6 @@ in {
         level-seed = 3791842102387187656;
         server-port = 25565;
         view-distance = 15;
-        resource-pack = "https://cdn.modrinth.com/data/r4GILswZ/versions/yjAqtxxY/Faithful%2064x%20-%20Release%2013.zip";
-        resource-pack-sha1 = "06f37fc2febd487e5b94a1d93858c50ae8c8ca51";
-        require-resource-pack = true;
       };
       whitelist = {
         xMose = "0a9b0753-9941-4861-ab0f-20a82e462ae9";
