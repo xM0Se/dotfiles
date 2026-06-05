@@ -1,15 +1,7 @@
-{
-  lib,
-  config,
-  ...
-}: {
-  options = {
-    findersettings.enable =
-      lib.mkEnableOption "enables custom finder settings";
-  };
-
-  config = lib.mkIf config.findersettings.enable {
-    system.defaults.finder = {
+_: {
+  system.defaults = {
+    NSGlobalDomain.AppleShowAllExtensions = true;
+    finder = {
       AppleShowAllExtensions = true;
       AppleShowAllFiles = true;
       FXDefaultSearchScope = "SCcf";
@@ -23,6 +15,5 @@
       ShowStatusBar = true;
       CreateDesktop = false;
     };
-    system.defaults.NSGlobalDomain.AppleShowAllExtensions = true;
   };
 }
