@@ -120,7 +120,7 @@
             specialArgs = {inherit inputs pkgs-stable self;};
             system = "x86_64-linux";
             modules = [
-              ./hosts/nix-os/servers/minecraft-server/config.nix
+              ./hosts/servers/minecraft-server/config.nix
               sops-nix.nixosModules.sops
               nix-minecraft.nixosModules.minecraft-servers
               {
