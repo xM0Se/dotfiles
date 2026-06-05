@@ -1,4 +1,4 @@
-{...}: {
+_: {
   programs.aerospace.settings.on-window-detected = [
     {
       "if".app-id = "app.zen-browser.zen";

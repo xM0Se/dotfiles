@@ -1,4 +1,4 @@
-{...}: {
+_: {
   programs.aerospace.settings.gaps = {
     inner.horizontal = 18;
     inner.vertical = 18;

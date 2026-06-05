@@ -1,4 +1,4 @@
-{...}: {
+_: {
   programs.aerospace.settings.mode.main.binding = {
     alt-tab = "layout tiles horizontal vertical";
     alt-shift-tab = "layout accordion horizontal vertical";
