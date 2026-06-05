@@ -22,7 +22,6 @@
     defaultSopsFile = ../../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
     age.keyFile = "/.config/sops/age/keys.txt";
-    secrets.example-key = {};
   };
 
   docksettings.enable = true;
