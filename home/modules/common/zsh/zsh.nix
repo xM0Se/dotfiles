@@ -5,13 +5,13 @@
   ...
 }: {
   imports = [
-    ./atuin/atuinconf.nix
-    ./oh-my-posh/oh-my-poshconf.nix
-    ./pay-respects/pay-respectsconf.nix
-    ./zoxide/zoxideconf.nix
+    ./atuin/atuin.nix
+    ./oh-my-posh/oh-my-posh.nix
+    ./pay-respects/pay-respects.nix
+    ./zoxide/zoxide.nix
     ./bat/batconf.nix
-    ./btopconf.nix
-    ./tmux/tmuxconf.nix
+    ./btop.nix
+    ./tmux/tmux.nix
   ];
 
   options = {
