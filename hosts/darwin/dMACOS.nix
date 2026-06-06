@@ -17,7 +17,6 @@
   essential-cli-tools.enable = true;
   essential-gui-apps.enable = true;
   u-pkg-qmk.enable = true;
-  brew.enable = true;
   b-mas-essentials.enable = true;
   b-font-essentials.enable = true;
   b-cask-essentials.enable = true;
