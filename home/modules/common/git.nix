@@ -12,8 +12,10 @@
     programs.git = {
       enable = true;
       settings = {
-        userName = "xm0se";
-        userEmail = "189546389+xM0Se@users.noreply.github.com";
+        user = {
+          name = "xm0se";
+          email = "189546389+xM0Se@users.noreply.github.com";
+        };
         alias = {
           cm = "commit -m";
           co = "checkout";
