@@ -95,7 +95,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 backupFileExtension = "backup";
-                users.xm0se = ./home/configurations/server.nix;
+                users.admin = ./home/configurations/server.nix;
               };
             }
           ];
