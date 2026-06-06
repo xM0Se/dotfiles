@@ -1,9 +1,11 @@
 {
   pkgs,
   self,
+  inputs,
   ...
 }: {
   imports = [
+    inputs.sops-nix.homeManagerModules.sops
     ./../modules/common/vscode/vscodeconf.nix
     ./../modules/common/vesktop/default.nix
     ./../modules/common/zsh/zsh.nix
@@ -14,6 +16,14 @@
     ./../modules/darwin/borders/default.nix
     ./../modules/darwin/ghostty/default.nix
   ];
+
+  home.extraOptions = {
+    home-manager = {
+      useGlobalPkgs = true;
+      useUserPackages = true;
+      backupFileExtension = "backup";
+    };
+  };
 
   vscodeconf.enable = true;
   zshconf.enable = true;

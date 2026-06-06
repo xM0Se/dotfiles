@@ -72,77 +72,32 @@
       };
 
       flake = {
-        darwinConfigurations."dMACOS" = let
-          system = "x86_64-linux";
-          pkgs-stable = self.lib.mkpkgs {
-            nixpkgs = inputs.nixpkgs-stable;
-            inherit system;
-          };
-        in
-          nix-darwin.lib.darwinSystem {
-            specialArgs = {inherit inputs pkgs-stable self;};
-            modules = [
-              ./hosts/darwin/dMACOS.nix
-              sops-nix.darwinModules.sops
-              home-manager.darwinModules.home-manager
-              {
-                home-manager = {
-                  useGlobalPkgs = true;
-                  useUserPackages = true;
-                  backupFileExtension = "backup";
-                  extraSpecialArgs = {inherit inputs pkgs-stable self;};
-                  users.xm0se = {
-                    config,
-                    pkgs,
-                    ...
-                  }:
-                    import ./home/configurations/darwin.nix {inherit config pkgs pkgs-stable inputs self;};
-                };
-              }
-              nix-homebrew.darwinModules.nix-homebrew
-              {
-                nix-homebrew = {
-                  enable = true;
-                  enableRosetta = true;
-                  user = "xm0se";
-                };
-              }
-            ];
-          };
-        nixosConfigurations."minecraft-server" = let
-          system = "x86_64-linux";
-          pkgs-stable = self.lib.mkpkgs {
-            nixpkgs = inputs.nixpkgs-stable;
-            inherit system;
-          };
-        in
-          nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit inputs pkgs-stable self;};
-            system = "x86_64-linux";
-            modules = [
-              ./hosts/servers/minecraft-server/config.nix
-              sops-nix.nixosModules.sops
-              nix-minecraft.nixosModules.minecraft-servers
-              {
-                nixpkgs.overlays = [inputs.nix-minecraft.overlay];
-              }
-              home-manager.nixosModules.home-manager
-              {
-                home-manager = {
-                  useGlobalPkgs = true;
-                  useUserPackages = true;
-                  backupFileExtension = "backup";
-                  extraSpecialArgs = {inherit inputs pkgs-stable self;};
-                  users.xm0se = {
-                    config,
-                    pkgs,
-                    ...
-                  }:
-                    import ./home/configurations/server.nix {inherit config pkgs inputs pkgs-stable self;};
-                };
-              }
-            ];
-          };
+        darwinConfigurations."dMACOS" = nix-darwin.lib.darwinSystem {
+          specialArgs = {inherit inputs self;};
+          modules = [
+            ./hosts/darwin/dMACOS.nix
+            home-manager.darwinModules.home-manager
+            {
+              home-manager = {
+                extraSpecialArgs = {inherit inputs self;};
+                users.xm0se = ./home/configurations/darwin.nix;
+              };
+            }
+          ];
+        };
+        nixosConfigurations.minecraft-server = nixpkgs.lib.nixosSystem {
+          specialArgs = {inherit inputs self;};
+          modules = [
+            ./hosts/servers/minecraft-server/config.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                extraSpecialArgs = {inherit inputs self;};
+                users.xm0se = ./home/configurations/server.nix;
+              };
+            }
+          ];
+        };
       };
     };
 }
