@@ -3,5 +3,6 @@ _: {
     ../modules/darwin/dock.nix
     ../modules/darwin/finder.nix
     ../modules/darwin/hotcorners.nix
+    ../modules/darwin/sops.nix
   ];
 }
