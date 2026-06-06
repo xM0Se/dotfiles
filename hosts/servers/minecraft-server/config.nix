@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ../../../pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix
@@ -15,14 +19,15 @@
 
   time.timeZone = "Europe/Berlin";
 
+  sops.secrets."userPasswords/nixServer/xm0se".neededForUsers = true;
+
   users.users = {
     xm0se = {
       isNormalUser = true;
       extraGroups = ["wheel"];
       home = "/xm0se";
-      openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJBl1kqPOoIsYob5yTncLgTFqB5MgLl+2lnAe4hEoYpL nix-server"
-      ];
+      password = config.sops.secrets."userPasswords/nixServer/xm0se".path;
+      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJBl1kqPOoIsYob5yTncLgTFqB5MgLl+2lnAe4hEoYpL nix-server"];
     };
     root.home = "/root";
   };
