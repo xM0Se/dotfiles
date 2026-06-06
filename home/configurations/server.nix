@@ -10,13 +10,6 @@
     ./../modules/common/git.nix
   ];
 
-  home.extraOptions = {
-    home-manager = {
-      useGlobalPkgs = true;
-      useUserPackages = true;
-      backupFileExtension = "backup";
-    };
-  };
   zshconf.enable = true;
   gitconf.enable = true;
 

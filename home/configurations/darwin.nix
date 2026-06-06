@@ -17,14 +17,6 @@
     ./../modules/darwin/ghostty/default.nix
   ];
 
-  home.extraOptions = {
-    home-manager = {
-      useGlobalPkgs = true;
-      useUserPackages = true;
-      backupFileExtension = "backup";
-    };
-  };
-
   vscodeconf.enable = true;
   zshconf.enable = true;
   gitconf.enable = true;

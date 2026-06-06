@@ -80,6 +80,9 @@
             {
               home-manager = {
                 extraSpecialArgs = {inherit inputs self;};
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                backupFileExtension = "backup";
                 users.xm0se = ./home/configurations/darwin.nix;
               };
             }
@@ -93,6 +96,9 @@
             {
               home-manager = {
                 extraSpecialArgs = {inherit inputs self;};
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                backupFileExtension = "backup";
                 users.xm0se = ./home/configurations/server.nix;
               };
             }
