@@ -33,6 +33,7 @@
 
   environment.systemPackages = [
     pkgs.vim
+    pkgs.sops
     pkgs.git
     pkgs.wget
   ];
