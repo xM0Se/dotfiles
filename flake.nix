@@ -43,15 +43,11 @@
 
   outputs = inputs @ {
     self,
-    nixpkgs-stable,
     nixpkgs,
     nvf,
-    sops-nix,
     nix-darwin,
-    nix-homebrew,
     home-manager,
     flake-parts,
-    nix-minecraft,
     ...
   }:
     flake-parts.lib.mkFlake {inherit inputs self;} {
@@ -63,7 +59,7 @@
         config = {
           packages.nvimconf =
             (nvf.lib.neovimConfiguration {
-              pkgs = pkgs;
+              inherit pkgs;
               modules = [
                 ./pkgs/custom/nvim/testy.nix
               ];
