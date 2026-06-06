@@ -19,8 +19,8 @@
       PAGER = "bat";
     };
 
-    username = "xm0se";
-    homeDirectory = "/xm0se";
+    username = "admin";
+    homeDirectory = "/admin";
     packages = [
       pkgs.hello
       self.packages.${pkgs.stdenv.hostPlatform.system}.nvimconf
