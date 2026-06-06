@@ -22,10 +22,10 @@
   sops.secrets."userPasswords/nixServer/xm0se".neededForUsers = true;
 
   users.users = {
-    xm0se = {
+    admin = {
       isNormalUser = true;
       extraGroups = ["wheel"];
-      home = "/xm0se";
+      home = "/admin";
       password = config.sops.secrets."userPasswords/nixServer/xm0se".path;
       openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJBl1kqPOoIsYob5yTncLgTFqB5MgLl+2lnAe4hEoYpL nix-server"];
     };
