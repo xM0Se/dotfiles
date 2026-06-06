@@ -1,0 +1,88 @@
+{
+  self,
+  pkgs,
+  ...
+}: {
+  imports = [
+    ../../pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix
+    ../../pkgs/nixpkgs-unstable/cli/u-pkg-all-cli-tools.nix
+    ../../pkgs/nixpkgs-unstable/gui/essential-gui-apps.nix
+    ../../pkgs/homebrew/brew.nix
+    ../../pkgs/homebrew/mas/b-mas-essentials.nix
+    ../../pkgs/homebrew/fonts/b-font-essentials.nix
+    ../../pkgs/homebrew/casks/b-cask-essentials.nix
+    ../../configuration/configurations/darwin.nix
+  ];
+
+  essential-cli-tools.enable = true;
+  essential-gui-apps.enable = true;
+  u-pkg-qmk.enable = true;
+  brew.enable = true;
+  b-mas-essentials.enable = true;
+  b-font-essentials.enable = true;
+  b-cask-essentials.enable = true;
+
+  users.users.xm0se.home = "/Users/xm0se";
+  environment.systemPackages = [
+    #--
+    pkgs.age
+    pkgs.sops
+    #CLI tools
+    pkgs.browsers
+    pkgs.fastfetch
+    pkgs.nym
+    pkgs.stow
+    pkgs.gh
+    pkgs.cmatrix
+    pkgs.nmap
+    pkgs.dwt1-shell-color-scripts
+    pkgs.ripgrep
+    pkgs.tldr
+    pkgs.raycast
+    pkgs.anki-bin
+    # pkgs.bitwarden-desktop
+    pkgs.obsidian
+    pkgs.keycastr
+    pkgs.vscode
+  ];
+
+  networking = {
+    applicationFirewall = {
+      enable = true;
+      enableStealthMode = true;
+    };
+  };
+
+  system = {
+    primaryUser = "xm0se";
+    defaults = {
+      loginwindow = {
+        SHOWFULLNAME = true;
+        GuestEnabled = false;
+      };
+
+      NSGlobalDomain = {
+        NSAutomaticWindowAnimationsEnabled = false;
+        _HIHideMenuBar = true;
+      };
+
+      WindowManager.EnableTilingByEdgeDrag = false;
+      SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
+
+      screensaver = {
+        askForPassword = true;
+        askForPasswordDelay = 0;
+      };
+    };
+
+    configurationRevision = self.rev or self.dirtyRev or null;
+    stateVersion = 6;
+  };
+
+  nix.settings.experimental-features = "nix-command flakes";
+
+  nixpkgs = {
+    config.allowUnfree = true;
+    hostPlatform = "aarch64-darwin";
+  };
+}
