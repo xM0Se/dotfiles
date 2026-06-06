@@ -14,19 +14,19 @@
 
   networking = {
     hostName = "nixos";
-    firewall.enable = false;
+    firewall.enable = true;
   };
 
   time.timeZone = "Europe/Berlin";
 
-  sops.secrets."userPasswords/nixServer/xm0se".neededForUsers = true;
+  sops.secrets."userPasswords/nixServer/admin".neededForUsers = true;
 
   users.users = {
     admin = {
       isNormalUser = true;
       extraGroups = ["wheel"];
       home = "/admin";
-      password = config.sops.secrets."userPasswords/nixServer/xm0se".path;
+      password = config.sops.secrets."userPasswords/nixServer/admin".path;
       openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJBl1kqPOoIsYob5yTncLgTFqB5MgLl+2lnAe4hEoYpL nix-server"];
     };
     root.home = "/root";
