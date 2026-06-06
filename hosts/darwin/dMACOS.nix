@@ -1,11 +1,9 @@
 {
   self,
   pkgs,
-  inputs,
   ...
 }: {
   imports = [
-    inputs.sops-nix.darwinModules.sops
     ../../pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix
     ../../pkgs/nixpkgs-unstable/cli/u-pkg-all-cli-tools.nix
     ../../pkgs/nixpkgs-unstable/gui/essential-gui-apps.nix
@@ -15,13 +13,6 @@
     ../../pkgs/homebrew/casks/b-cask-essentials.nix
     ../../configuration/configurations/darwin.nix
   ];
-
-  # to-do move to separate file
-  sops = {
-    defaultSopsFile = ../../secrets/secrets.yaml;
-    defaultSopsFormat = "yaml";
-    age.keyFile = "/.config/sops/age/keys.txt";
-  };
 
   essential-cli-tools.enable = true;
   essential-gui-apps.enable = true;
