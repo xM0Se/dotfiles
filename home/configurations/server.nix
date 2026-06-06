@@ -1,13 +1,12 @@
 {
   pkgs,
   self,
-  inputs,
   ...
 }: {
   imports = [
-    inputs.sops-nix.homeManagerModules.sops
     ./../modules/common/zsh/zsh.nix
     ./../modules/common/git.nix
+    ./../modules/common/sops.nix
   ];
 
   zshconf.enable = true;

@@ -1,11 +1,10 @@
 {
   pkgs,
   self,
-  inputs,
   ...
 }: {
   imports = [
-    inputs.sops-nix.homeManagerModules.sops
+    ./../modules/common/sops.nix
     ./../modules/common/vscode/vscodeconf.nix
     ./../modules/common/vesktop/default.nix
     ./../modules/common/zsh/zsh.nix
