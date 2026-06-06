@@ -11,9 +11,9 @@
   config = lib.mkIf config.gitconf.enable {
     programs.git = {
       enable = true;
-      userName = "xm0se";
-      userEmail = "189546389+xM0Se@users.noreply.github.com";
       settings = {
+        userName = "xm0se";
+        userEmail = "189546389+xM0Se@users.noreply.github.com";
         alias = {
           cm = "commit -m";
           co = "checkout";
