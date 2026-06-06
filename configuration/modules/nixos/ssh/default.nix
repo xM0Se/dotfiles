@@ -2,6 +2,7 @@ _: {
   services = {
     openssh = {
       enable = true;
+      openFirewall = true;
       settings = {
         UseDns = false;
         PasswordAuthentication = false;
