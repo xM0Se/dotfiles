@@ -5,7 +5,7 @@ _: {
       AppleShowAllFiles = true;
       NSNavPanelExpandedStateForSaveMode = true;
       NSNavPanelExpandedStateForSaveMode2 = true;
-      "com.apple.springing.delay" = "0.35";
+      "com.apple.springing.delay" = 0.35;
       "com.apple.springing.enabled" = true;
     };
     finder = {
