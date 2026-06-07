@@ -58,14 +58,42 @@
       loginwindow = {
         SHOWFULLNAME = true;
         GuestEnabled = false;
+        DisableConsoleAccess = true;
+        autoLoginUser = false;
       };
 
       NSGlobalDomain = {
+        AppleInterfaceStyle = "Dark";
+        AppleIconAppearanceTheme = "RegularDark";
+        AppleInterfaceStyleSwitchesAutomatically = false;
+        AppleMeasurementUnits = "Centimeters";
+        AppleMetricUnits = 1;
+        ApplePressAndHoldEnabled = false;
+        AppleTemperatureUnit = "Celsius";
+        NSAutomaticCapitalizationEnabled = false;
+        NSAutomaticDashSubstitutionEnabled = false;
+        NSAutomaticInlinePredictionEnabled = false;
+        NSAutomaticPeriodSubstitutionEnabled = false;
+        NSAutomaticQuoteSubstitutionEnabled = false;
+        NSAutomaticSpellingCorrectionEnabled = false;
         NSAutomaticWindowAnimationsEnabled = false;
+        NSWindowShouldDragOnGesture = false;
+        "com.apple.keyboard.fnState" = true;
+
         _HIHideMenuBar = true;
       };
+      screencapture = {
+        target = "clipboard";
+        type = "jpg";
+      };
+      universalaccess.reduceMotion = true;
 
-      WindowManager.EnableTilingByEdgeDrag = false;
+      WindowManager = {
+        EnableTilingByEdgeDrag = false;
+        EnableStandardClickToShowDesktop = false;
+        EnableTopTilingByEdgeDrag = false;
+        GloballyEnabled = false;
+      };
       SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
 
       screensaver = {
