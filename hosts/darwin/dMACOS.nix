@@ -59,7 +59,6 @@
         SHOWFULLNAME = true;
         GuestEnabled = false;
         DisableConsoleAccess = true;
-        autoLoginUser = false;
       };
 
       NSGlobalDomain = {
