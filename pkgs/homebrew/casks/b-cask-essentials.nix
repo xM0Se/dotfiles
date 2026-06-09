@@ -4,6 +4,7 @@
   ...
 }: {
   imports = [
+    ./kicad.nix
     ./b-cask-twingate.nix
     ./b-cask-mullvad-browser.nix
     ./b-cask-orcaslicer.nix
