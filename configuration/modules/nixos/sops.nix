@@ -3,6 +3,6 @@
   sops = {
     defaultSopsFile = ../../../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
-    age.keyFile = "/admin/.config/sops/age/keys.txt";
+    age.keyFile = "/moritz/.config/sops/age/keys.txt";
   };
 }

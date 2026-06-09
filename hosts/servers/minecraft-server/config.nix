@@ -11,7 +11,7 @@
   ];
 
   essential-cli-tools.enable = true;
-  home-manager.users.admin = ../../../home/configurations/server.nix;
+  home-manager.users.moritz = ../../../home/configurations/server.nix;
 
   networking = {
     hostName = "nixos";
@@ -20,14 +20,14 @@
 
   time.timeZone = "Europe/Berlin";
 
-  sops.secrets."userPasswords/nixServer/admin".neededForUsers = true;
+  sops.secrets."userPasswords/nixServer/moritz".neededForUsers = true;
 
   users.users = {
-    admin = {
+    moritz = {
       isNormalUser = true;
       extraGroups = ["wheel"];
-      home = "/admin";
-      password = config.sops.secrets."userPasswords/nixServer/admin".path;
+      home = "/moritz";
+      password = config.sops.secrets."userPasswords/nixServer/moritz".path;
       openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJBl1kqPOoIsYob5yTncLgTFqB5MgLl+2lnAe4hEoYpL nix-server"];
     };
     root.home = "/root";
