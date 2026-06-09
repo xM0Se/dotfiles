@@ -11,6 +11,7 @@
   ];
 
   essential-cli-tools.enable = true;
+  home-manager.users.admin = ../../../home/configurations/server.nix;
 
   networking = {
     hostName = "nixos";

@@ -20,6 +20,7 @@
   b-mas-essentials.enable = true;
   b-font-essentials.enable = true;
   b-cask-essentials.enable = true;
+  home-manager.users.xm0se = ../../home/configurations/darwin.nix;
 
   users.users.xm0se.home = "/Users/xm0se";
   environment.systemPackages = [

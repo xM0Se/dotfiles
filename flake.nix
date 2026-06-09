@@ -46,7 +46,6 @@
     nixpkgs,
     nvf,
     nix-darwin,
-    home-manager,
     flake-parts,
     ...
   }:
@@ -72,32 +71,12 @@
           specialArgs = {inherit inputs self;};
           modules = [
             ./hosts/darwin/dMACOS.nix
-            home-manager.darwinModules.home-manager
-            {
-              home-manager = {
-                extraSpecialArgs = {inherit inputs self;};
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                backupFileExtension = "backup";
-                users.xm0se = ./home/configurations/darwin.nix;
-              };
-            }
           ];
         };
         nixosConfigurations.minecraft-server = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs self;};
           modules = [
             ./hosts/servers/minecraft-server/config.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                extraSpecialArgs = {inherit inputs self;};
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                backupFileExtension = "backup";
-                users.admin = ./home/configurations/server.nix;
-              };
-            }
           ];
         };
       };
