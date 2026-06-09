@@ -41,10 +41,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkg.follows = "nixpkgs";
-    };
+    disko.url = "github:nix-community/disko";
 
     nixos-raspberrypi = {
       url = "github:nvmd/nixos-raspberrypi/main";
