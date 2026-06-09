@@ -36,6 +36,12 @@
       };
     };
 
+    deploy-rs.url = "github:serokell/deploy-rs";
+
+    disko.url = "github:nix-community/disko";
+
+    nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
+
     flake-parts.url = "github:hercules-ci/flake-parts";
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
