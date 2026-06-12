@@ -41,7 +41,7 @@
       isNormalUser = true;
       extraGroups = ["wheel"];
       hashedPassword = "!";
-      openssh.authorizedKeys.keys = [];
+      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIALKJQ+LNa7PhF38vRiBFXU6YHEiHyb9h3EnBfneUTel nix-server-deploy"];
     };
     root = {
       home = "/root";
