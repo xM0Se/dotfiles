@@ -25,6 +25,7 @@
   users.users.xm0se.home = "/Users/xm0se";
 
   environment.systemPackages = [
+    pkgs.colmena
     #--
     pkgs.age
     pkgs.sops

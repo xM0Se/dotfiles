@@ -36,10 +36,7 @@
       };
     };
 
-    deploy-rs = {
-      url = "github:serokell/deploy-rs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    colmena.url = "github:zhaofengli/colmena";
 
     disko.url = "github:nix-community/disko";
 
@@ -59,6 +56,7 @@
     nvf,
     nix-darwin,
     flake-parts,
+    colmena,
     ...
   }:
     flake-parts.lib.mkFlake {inherit inputs self;} {
@@ -79,6 +77,16 @@
       };
 
       flake = {
+        colmenaHive = colmena.lib.makeHive {
+          meta = {
+            nixpkgs = import nixpkgs {
+              system = "x86_64-linux";
+            };
+            specialArgs = {inherit inputs self;};
+          };
+          minecraft-server = import ./hosts/servers/minecraft-server/config.nix;
+        };
+
         darwinConfigurations."dMACOS" = nix-darwin.lib.darwinSystem {
           specialArgs = {inherit inputs self;};
           modules = [

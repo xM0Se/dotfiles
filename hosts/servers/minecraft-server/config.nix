@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    ./deploy.nix
     (self + "/pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix")
     (self + "/configuration/modules/nixos/minecraft-servers/default.nix")
     (self + "/configuration/configurations/server.nix")
