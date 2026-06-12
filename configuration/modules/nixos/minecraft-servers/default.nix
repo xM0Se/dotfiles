@@ -20,6 +20,7 @@ in {
     servers.mach-was = {
       enable = true;
       autoStart = true;
+      enableReload = true;
       package = pkgs.fabricServers.fabric-26_1_2.override {jre_headless = pkgs.openjdk25_headless;}; # will be changed to pkgs.fabricServers when "https://github.com/Infinidoge/nix-minecraft/issues/211" gets resolved
       serverProperties = {
         sync-chunk-writes = false;

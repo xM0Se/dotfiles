@@ -49,6 +49,17 @@
   };
 
   services.xserver.xkb.layout = "us";
+  security.sudo.extraRules = [
+    {
+      users = ["deploy"];
+      commands = [
+        {
+          command = "ALL";
+          options = ["NOPASSWD"];
+        }
+      ];
+    }
+  ];
 
   virtualisation.docker.enable = true;
 
