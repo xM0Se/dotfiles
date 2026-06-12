@@ -79,7 +79,7 @@
         NSAutomaticSpellingCorrectionEnabled = false;
         NSAutomaticWindowAnimationsEnabled = false;
         NSWindowShouldDragOnGesture = false;
-        "com.apkle.keyboard.fnState" = true;
+        "com.apple.keyboard.fnState" = true;
 
         _HIHideMenuBar = true;
       };
