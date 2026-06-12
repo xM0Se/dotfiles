@@ -5,5 +5,6 @@ _: {
     ../modules/darwin/hotcorners.nix
     ../modules/darwin/sops.nix
     ../modules/darwin/home-manager.nix
+    ../modules/common/common.nix
   ];
 }

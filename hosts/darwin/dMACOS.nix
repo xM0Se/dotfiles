@@ -20,9 +20,10 @@
   b-mas-essentials.enable = true;
   b-font-essentials.enable = true;
   b-cask-essentials.enable = true;
-  home-manager.users.xm0se = ../../home/configurations/darwin.nix;
 
+  home-manager.users.xm0se = ../../home/configurations/darwin.nix;
   users.users.xm0se.home = "/Users/xm0se";
+
   environment.systemPackages = [
     #--
     pkgs.age
@@ -78,7 +79,7 @@
         NSAutomaticSpellingCorrectionEnabled = false;
         NSAutomaticWindowAnimationsEnabled = false;
         NSWindowShouldDragOnGesture = false;
-        "com.apple.keyboard.fnState" = true;
+        "com.apkle.keyboard.fnState" = true;
 
         _HIHideMenuBar = true;
       };
@@ -106,10 +107,5 @@
     stateVersion = 6;
   };
 
-  nix.settings.experimental-features = "nix-command flakes";
-
-  nixpkgs = {
-    config.allowUnfree = true;
-    hostPlatform = "aarch64-darwin";
-  };
+  nixpkgs.hostPlatform = "aarch64-darwin";
 }
