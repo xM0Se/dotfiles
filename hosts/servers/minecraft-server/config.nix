@@ -1,18 +1,19 @@
 {
   pkgs,
   config,
+  self,
   ...
 }: {
   imports = [
     ./hardware-configuration.nix
-    ../../../pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix
-    ../../../configuration/modules/nixos/minecraft-servers/default.nix
-    ../../../configuration/configurations/server.nix
+    (self + "/pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix")
+    (self + "/configuration/modules/nixos/minecraft-servers/default.nix")
+    (self + "/configuration/configurations/server.nix")
   ];
 
   essential-cli-tools.enable = true;
   home-manager.users = {
-    moritz = ../../../home/configurations/server.nix;
+    moritz = "${self}/home/configurations/server.nix";
   };
 
   networking = {
