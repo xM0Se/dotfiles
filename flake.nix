@@ -84,7 +84,7 @@
             };
             specialArgs = {inherit inputs self;};
           };
-          minecraft-server = import ./hosts/servers/minecraft-server/config.nix;
+          minecraft-server = import ./hosts/servers/minecraft-server/deploy.nix;
         };
 
         darwinConfigurations."dMACOS" = nix-darwin.lib.darwinSystem {
