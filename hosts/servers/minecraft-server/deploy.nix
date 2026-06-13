@@ -1,6 +1,6 @@
 _: {
   deployment = {
-    targetHost = "deploy-nix-server";
+    targetHost = "nix-server-deploy";
     targetPort = 22;
     targetUser = "deploy";
     buildOnTarget = true;
