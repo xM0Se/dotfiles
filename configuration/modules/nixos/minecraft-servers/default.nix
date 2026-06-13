@@ -50,8 +50,8 @@
       symlinks =
         {
           "plugins/TeaksTweaks/config.yml" = {
-            format = "yml";
-            value = builtins.readFile import ./teaks-tweaks.yml;
+            format = "yaml";
+            value = builtins.readFile ./teaks-tweaks.yml;
           };
         }
         // (import ./plugins.nix {inherit pkgs;});
