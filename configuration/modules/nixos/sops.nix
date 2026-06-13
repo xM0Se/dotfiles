@@ -7,7 +7,9 @@
   sops = {
     defaultSopsFile = "${self}/secrets/secrets.yaml";
     defaultSopsFormat = "yaml";
-    gnupg.sshKeyPaths = [];
-    age.keyFile = "/etc/sops.age.key";
+    age = {
+      keyFile = "/etc/sops.age.key";
+      sshKeyPaths = [];
+    };
   };
 }
