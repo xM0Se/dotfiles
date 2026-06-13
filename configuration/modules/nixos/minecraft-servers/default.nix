@@ -47,9 +47,13 @@
         Jonulinka = "5f0eacfc-6d33-4778-8ae9-37a738cd2cf2";
         Fynndus135 = "52236dbe-88b6-4c28-8e0a-ae0d71c61a2c";
       };
-      symlinks = import ./plugins.nix {inherit pkgs;};
-      files."plugins/TeaksTweaks/config.yml" = {
-        text = builtins.readFile ./config.yml;
+      symlinks = {
+        "plugins/TeaksTweaks/config.yml" =
+          {
+            format = "yaml";
+            value = import ./teakstweaks-config.nix;
+          }
+          // (import ./plugins.nix {inherit pkgs;});
       };
     };
   };
