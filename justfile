@@ -11,3 +11,6 @@ up:
 
 gc:
     sudo nix-collect-garbage --delete-old
+
+update-mods:
+    sh ~/dotfiles/configuration/modules/nixos/minecraft-servers/helper.sh > ~/dotfiles/configuration/modules/nixos/minecraft-servers/plugins.nix
