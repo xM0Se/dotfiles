@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: let
-  PerformanceMods = import ./PerformanceMods.nix {inherit pkgs;};
+  # PerformanceMods = import ./PerformanceMods.nix {inherit pkgs;};
   # QualityOfLifeMods = import ./QualityOfLifeMods.nix {inherit pkgs;};
 in {
   imports = [inputs.nix-minecraft.nixosModules.minecraft-servers];
@@ -16,12 +16,13 @@ in {
     enable = true;
     openFirewall = true;
     eula = true;
-    dataDir = "/var/server-mach-was";
+    dataDir = "/var/minecraft-servers";
     servers.mach-was = {
       enable = true;
       autoStart = true;
       enableReload = true;
-      package = pkgs.fabricServers.fabric-26_1_2.override {jre_headless = pkgs.openjdk25_headless;}; # will be changed to pkgs.fabricServers when "https://github.com/Infinidoge/nix-minecraft/issues/211" gets resolved
+      # package = pkgs.fabricServers.fabric-26_1_2.override {jre_headless = pkgs.openjdk25_headless;}; # will be changed to pkgs.fabricServers when "https://github.com/Infinidoge/nix-minecraft/issues/211" gets resolved
+      package = pkgs.purpurServers;
       serverProperties = {
         sync-chunk-writes = false;
         white-list = true;
@@ -50,9 +51,9 @@ in {
         Jonulinka = "5f0eacfc-6d33-4778-8ae9-37a738cd2cf2";
         Fynndus135 = "52236dbe-88b6-4c28-8e0a-ae0d71c61a2c";
       };
-      symlinks = {
-        "mods" = "${PerformanceMods}/mods";
-      };
+      #   symlinks = {
+      #     "mods" = "${PerformanceMods}/mods";
+      #   };
     };
   };
 }
