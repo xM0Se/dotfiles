@@ -1,6 +1,0 @@
-hash-format = "sha256"
-
-[[files]]
-file = "mods/players-drop-heads.pw.toml"
-hash = "915230e1fea4a3e644237865dc9f100e57bf2fa5d75bcd074d3291b022610543"
-metafile = true

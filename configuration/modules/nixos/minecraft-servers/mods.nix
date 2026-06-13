@@ -1,5 +1,5 @@
 {pkgs}:
 pkgs.fetchPackwizModpack {
-  src = ./PerformanceMods;
+  src = ./mods;
   packHash = "sha256-hgIfdvZuOZQc7A87ac5pMnv7BQI/WiFxsCQroSVtEyc=";
 }

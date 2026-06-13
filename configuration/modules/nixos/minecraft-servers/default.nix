@@ -1,18 +1,17 @@
 {
-  lib,
+  # lib,
   inputs,
   pkgs,
   ...
 }: let
-  # PerformanceMods = import ./PerformanceMods.nix {inherit pkgs;};
-  # QualityOfLifeMods = import ./QualityOfLifeMods.nix {inherit pkgs;};
+  # mods = import ./mods.nix {inherit pkgs;};
 in {
   imports = [inputs.nix-minecraft.nixosModules.minecraft-servers];
   nixpkgs.overlays = [inputs.nix-minecraft.overlay];
-  systemd.services."minecraft-server-mach-was" = {
-    serviceConfig.UnsetEnvironment = "MAINPID";
-    serviceConfig.ExecStop = lib.mkForce "${pkgs.bash}/bin/bash -c 'echo stop > /run/minecraft/mach-was.sock || true'";
-  };
+  # systemd.services."minecraft-server-mach-was" = {
+  #   serviceConfig.UnsetEnvironment = "MAINPID";
+  #   serviceConfig.ExecStop = lib.mkForce "${pkgs.bash}/bin/bash -c 'echo stop > /run/minecraft/mach-was.sock || true'";
+  # };
 
   environment.systemPackages = [
     pkgs.packwiz
@@ -24,10 +23,8 @@ in {
     dataDir = "/var/minecraft-servers";
     servers.mach-was = {
       enable = true;
-      # jvmOpts = "-Xms2G -Xmx4G";
-      # autoStart = true;
-      # enableReload = true;
-      # # package = pkgs.fabricServers.fabric-26_1_2.override {jre_headless = pkgs.openjdk25_headless;}; # will be changed to pkgs.fabricServers when "https://github.com/Infinidoge/nix-minecraft/issues/211" gets resolved
+      autoStart = true;
+      enableReload = true;
       package = pkgs.purpurServers.purpur-26_1_2;
       serverProperties = {
         sync-chunk-writes = false;
@@ -57,9 +54,9 @@ in {
         Jonulinka = "5f0eacfc-6d33-4778-8ae9-37a738cd2cf2";
         Fynndus135 = "52236dbe-88b6-4c28-8e0a-ae0d71c61a2c";
       };
-      #   symlinks = {
-      #     "mods" = "${PerformanceMods}/mods";
-      #   };
+      symlinks = {
+        # "mods" = "${mods}/mods";
+      };
     };
   };
 }
