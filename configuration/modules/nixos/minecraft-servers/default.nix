@@ -24,6 +24,7 @@ in {
     dataDir = "/var/minecraft-servers";
     servers.mach-was = {
       enable = true;
+      jvmOpts = "-Xms2G -Xmx4G";
       # autoStart = true;
       # enableReload = true;
       # # package = pkgs.fabricServers.fabric-26_1_2.override {jre_headless = pkgs.openjdk25_headless;}; # will be changed to pkgs.fabricServers when "https://github.com/Infinidoge/nix-minecraft/issues/211" gets resolved
