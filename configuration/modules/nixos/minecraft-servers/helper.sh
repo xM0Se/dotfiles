@@ -4,5 +4,4 @@ LATEST_VERSION=$(curl -s https://api.purpurmc.org/v2/purpur | jq -r '.versions[-
 nix run github:BatteredBunny/nix-minecraft-plugin-upgrade -- \
   --loader purpur \
   --game-version "$LATEST_VERSION" \
-  --project teaks-tweaks \
-  --project paper-accurate-block-placement
+  --project teaks-tweaks
