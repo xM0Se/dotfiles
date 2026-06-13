@@ -51,7 +51,7 @@
         {
           "plugins/TeaksTweaks/config.yml" = {
             format = "yml";
-            value = import ./teaks-tweaks.yml;
+            value = builtins.readFile import ./teaks-tweaks.yml;
           };
         }
         // (import ./plugins.nix {inherit pkgs;});
