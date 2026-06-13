@@ -4,14 +4,14 @@
   ...
 }: {
   imports = [
-    ../../pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix
-    ../../pkgs/nixpkgs-unstable/cli/u-pkg-all-cli-tools.nix
-    ../../pkgs/nixpkgs-unstable/gui/essential-gui-apps.nix
-    ../../pkgs/homebrew/brew.nix
-    ../../pkgs/homebrew/mas/b-mas-essentials.nix
-    ../../pkgs/homebrew/fonts/b-font-essentials.nix
-    ../../pkgs/homebrew/casks/b-cask-essentials.nix
-    ../../configuration/configurations/darwin.nix
+    (self + "/pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix")
+    (self + "/pkgs/nixpkgs-unstable/cli/u-pkg-all-cli-tools.nix")
+    (self + "/pkgs/nixpkgs-unstable/gui/essential-gui-apps.nix")
+    (self + "/pkgs/homebrew/brew.nix")
+    (self + "/pkgs/homebrew/mas/b-mas-essentials.nix")
+    (self + "/pkgs/homebrew/fonts/b-font-essentials.nix")
+    (self + "/pkgs/homebrew/casks/b-cask-essentials.nix")
+    (self + "/configuration/configurations/darwin.nix")
   ];
 
   essential-cli-tools.enable = true;
@@ -21,7 +21,10 @@
   b-font-essentials.enable = true;
   b-cask-essentials.enable = true;
 
-  home-manager.users.xm0se = ../../home/configurations/darwin.nix;
+  home-manager.users.xm0se.imports = [
+    (self + "/home/configurations/darwin.nix")
+    (self + "/home/users/xm0se.nix")
+  ];
   users.users.xm0se.home = "/Users/xm0se";
 
   environment.systemPackages = [

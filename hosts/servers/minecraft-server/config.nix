@@ -13,7 +13,18 @@
 
   essential-cli-tools.enable = true;
   home-manager.users = {
-    moritz = "${self}/home/configurations/server.nix";
+    moritz = {
+      imports = [
+        (self + "/home/configurations/server.nix")
+        (self + "/home/users/moritz.nix")
+      ];
+    };
+    root = {
+      imports = [
+        (self + "/home/configurations/server.nix")
+        (self + "/home/users/root.nix")
+      ];
+    };
   };
 
   networking = {

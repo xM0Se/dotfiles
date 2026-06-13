@@ -21,8 +21,6 @@
   gitconf.enable = true;
 
   home = {
-    username = "xm0se";
-    homeDirectory = "/Users/xm0se";
     packages = [
       self.packages.${pkgs.stdenv.hostPlatform.system}.nvimconf
     ];
