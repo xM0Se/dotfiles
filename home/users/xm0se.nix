@@ -5,7 +5,7 @@
   };
   sops.secrets = {
     "ssh-private-keys/github" = {
-      path = "${config.homeDirectory}/.ssh/github";
+      path = "${config.home.homeDirectory}/.ssh/github";
       mode = "0600";
     };
     "ssh-private-keys/nixServer/moritz" = {
@@ -13,25 +13,29 @@
       mode = "0600";
     };
     "ssh-private-keys/nixServer/deploy" = {
-      path = "${config.homeDirectory}/.ssh/nix-server-deploy";
+      path = "${config.home.homeDirectory}/.ssh/nix-server-deploy";
       mode = "0600";
     };
   };
-  programs.ssh.settings = {
-    "github.com" = {
-      hostname = "github.com";
-      user = "git";
-      identityFile = "~/.ssh/github";
-    };
-    "nix-server-moritz" = {
-      hostname = "116.203.223.177";
-      user = "moritz";
-      identityFile = "~/.ssh/nix-server-deploy";
-    };
-    "nix-server-deploy" = {
-      hostname = "116.203.223.177";
-      user = "deploy";
-      identityFile = "~/.ssh/nix-server-deploy";
+  programs.ssh = {
+    enable = true;
+    enableDefaultConfig = false;
+    settings = {
+      "github.com" = {
+        HostName = "github.com";
+        User = "git";
+        IdentityFile = "~/.ssh/github";
+      };
+      "nix-server-moritz" = {
+        HostName = "116.203.223.177";
+        User = "moritz";
+        IdentityFile = "~/.ssh/nix-server-moritz";
+      };
+      "nix-server-deploy" = {
+        HostName = "116.203.223.177";
+        User = "deploy";
+        IdentityFile = "~/.ssh/nix-server-deploy";
+      };
     };
   };
 }
