@@ -64,7 +64,7 @@ packs:
   # /afk (Permission: teakstweaks.command.afk)
   # /afk uninstall (Permission: teakstweaks.command.afk.uninstall)
   afk-display:
-    enabled: false
+    enabled: true
     # Whether or not to display [AFK] before an AFK players name
     display-badge: true
     # Badge to show when afk
@@ -104,7 +104,7 @@ packs:
   # Anti Enderman Grief
   # Prevents endermen from picking up blocks.
   anti-enderman-grief:
-    enabled: false
+    enabled: true
 
   # Anti Ghast Grief
   # Prevents ghasts from blowing up blocks.
@@ -202,7 +202,7 @@ packs:
   # teakstweaks.chat-colors.anvil
   # teakstweaks.chat-colors.signs
   chat-colors:
-    enabled: false
+    enabled: true
 
   # Chunk Loaders
   # Drop a Nether Star above a Lodestone to create a chunk loader (AKA a Loadstone) which keeps the chunk it's in loaded until it is broken.
@@ -277,13 +277,13 @@ packs:
   # Confetti Creepers
   # There is a chance each creeper will explode into confetti and do no damage to blocks.
   confetti-creepers:
-    enabled: false
+    enabled: true
     # The % Chance a creeper will be a confetti creeper
-    confetti-chance: 100
+    confetti-chance: 5
     # The % of damage to reduce from explosion damage on entities (players, mobs, etc)
     entity-damage-reduction: 50
     # Whether or not to do damage to blocks nearby
-    do-block-damage: false
+    do-block-damage: true
 
   # Coords HUD
   # Adds information to your actionbar. XYZ Coords and a 24hr clock.
@@ -291,7 +291,7 @@ packs:
   # Commands:
   # /coordshud (Permission: teakstweaks.command.coordshud)
   coords-hud:
-    enabled: false
+    enabled: true
     # Whether or not Coordinates Hud will be automatically enabled on join
     auto-enable: false
     # Whether or not to force users to use Coords HUD
@@ -318,7 +318,7 @@ packs:
   # Custom Nether Portals
   # Ignite nether portals of any size or shape you like, or using crying obsidian in the portal frame if enabled.
   custom-nether-portals:
-    enabled: false
+    enabled: true
     # Whether or not to allow crying obsidian to be used in portal making
     allow-crying-obsidian: true
     # How big a portal has to be to be created (Default: 6 - 2x3)
@@ -663,7 +663,7 @@ packs:
   # Mini Blocks
   # Adds mini blocks to the game. Craft them using the normal block in a Stonecutter.
   mini-blocks:
-    enabled: false
+    enabled: true
     # Amount of mini blocks to craft per normal block
     per-cut: 8
 
@@ -699,7 +699,7 @@ packs:
   # Player Head Drops
   # A player will drop their head when killed by another player. The item displays who the killer is.
   player-head-drops:
-    enabled: false
+    enabled: true
     # Whether to display who killed the player in the items lore (default: true)
     display-killer: true
 
@@ -823,9 +823,9 @@ packs:
   # Permissions:
   # teakstweaks.silence-mobs
   silence-mobs:
-    enabled: false
+    enabled: true
     # Whether or not you can silence minecart types
-    allow-minecarts: false
+    allow-minecarts: true
 
   # Slime Cream
   # Convert Slime Balls to Magma Cream by right-clicking a lava cauldron
@@ -911,7 +911,7 @@ packs:
   # teakstweaks.stair-chairs.create
   # teakstweaks.stair-chairs.sit
   stair-chairs:
-    enabled: false
+    enabled: true
 
   # Storm Channeling
   # Throw a channeling Trident to the skies to summon a thunderstorm.
@@ -969,12 +969,12 @@ packs:
   # Track Raw Stats
   # Adds 100+ scoreboards that track many different statistics. Especially useful for multiplayer.
   track-raw-statistics:
-    enabled: false
+    enabled: true
 
   # Track Statistics
   # Adds statistics that are processed before-hand. E.g. Km swam, Km flown, etc.
   track-statistics:
-    enabled: false
+    enabled: true
 
   # Transferable Pets
   # Right click a player with leads attached to a tamed pet to transfer ownership of the pet to that player.
@@ -987,7 +987,7 @@ packs:
   # Permissions:
   # teakstweaks.unlock-all-recipes
   unlock-all-recipes:
-    enabled: false
+    enabled: true
 
   # Unsticky Pistons
   # Allow players to remove slime from pistons by right-clicking them with an axe
@@ -1081,7 +1081,7 @@ packs:
   # Commands:
   # /workstationhighlight (Permission: teakstweaks.command.workstationhighlight)
   workstation-highlights:
-    enabled: false
+    enabled: true
 
   # XP Management
   # Right-Click an enchanting table with an empty bottle to fill it with some of your XP.
