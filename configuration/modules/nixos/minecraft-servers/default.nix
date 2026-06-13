@@ -50,7 +50,10 @@
       symlinks =
         (import ./plugins.nix {inherit pkgs;})
         // {
-          "plugins/TeaksTweak/config.yml" = ./config.yml;
+          "plugins/TeaksTweak/config.yml" = pkgs.writeTextFile {
+            name = "config.yml";
+            text = builtins.readFile ./config.yml;
+          };
         };
     };
   };
