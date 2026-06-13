@@ -49,8 +49,8 @@
       };
       symlinks =
         {
-          "plugins/TeaksTweaks/config.yml" = {
-            format = "yaml";
+          "plugins/TeaksTweaks/config.yml" = pkgs.writeTextFile {
+            name = "config.yml";
             text = builtins.readFile ./teaks-tweaks.yml;
           };
         }
