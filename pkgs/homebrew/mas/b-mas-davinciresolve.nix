@@ -10,7 +10,7 @@
 
   config = lib.mkIf config.b-mas-davinciresolve.enable {
     # homebrew.masApps = {
-    #   "DaVinciResolve" = 571213070;
+    #   "DaVinci Resolve" = 571213070;
     # };
   };
 }

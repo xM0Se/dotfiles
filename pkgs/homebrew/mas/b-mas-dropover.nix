@@ -9,8 +9,8 @@
   };
 
   config = lib.mkIf config.b-mas-dropover.enable {
-    homebrew.masApps = {
-      "dropover" = 1355679052;
-    };
+    #   homebrew.masApps = {
+    #     "Dropover - Easier Drag & Drop" = 1355679052;
+    #   };
   };
 }

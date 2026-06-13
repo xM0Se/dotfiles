@@ -30,6 +30,7 @@
   environment.systemPackages = [
     pkgs.colmena
     #--
+   pkgs.mas
     pkgs.age
     pkgs.sops
     #CLI tools
