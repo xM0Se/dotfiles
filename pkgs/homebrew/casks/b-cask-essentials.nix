@@ -5,10 +5,8 @@
 }: {
   imports = [
     ./kicad.nix
-    ./b-cask-twingate.nix
     ./b-cask-mullvad-browser.nix
     ./b-cask-orcaslicer.nix
-    ./b-cask-logi-options-plus.nix
     ./b-cask-homerow.nix
     ./b-cask-kindavim.nix
     ./b-cask-lulu.nix
@@ -23,13 +21,9 @@
   };
 
   config = lib.mkIf config.b-cask-essentials.enable {
-    b-cask-twingate.enable =
-      lib.mkDefault true;
     b-cask-mullvad-browser.enable =
       lib.mkDefault true;
     b-cask-orcaslicer.enable =
-      lib.mkDefault true;
-    b-cask-logi-options-plus.enable =
       lib.mkDefault true;
     b-cask-homerow.enable =
       lib.mkDefault true;
