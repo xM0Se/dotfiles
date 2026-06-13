@@ -1,17 +1,10 @@
 {
-  # lib,
   inputs,
   pkgs,
   ...
-}: let
-  # mods = import ./mods.nix {inherit pkgs;};
-in {
+}: {
   imports = [inputs.nix-minecraft.nixosModules.minecraft-servers];
   nixpkgs.overlays = [inputs.nix-minecraft.overlay];
-  # systemd.services."minecraft-server-mach-was" = {
-  #   serviceConfig.UnsetEnvironment = "MAINPID";
-  #   serviceConfig.ExecStop = lib.mkForce "${pkgs.bash}/bin/bash -c 'echo stop > /run/minecraft/mach-was.sock || true'";
-  # };
 
   environment.systemPackages = [
     pkgs.packwiz
@@ -55,7 +48,6 @@ in {
         Fynndus135 = "52236dbe-88b6-4c28-8e0a-ae0d71c61a2c";
       };
       symlinks = {
-        # "mods" = "${mods}/mods";
       };
     };
   };
