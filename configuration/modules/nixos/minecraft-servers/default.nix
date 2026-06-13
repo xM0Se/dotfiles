@@ -48,7 +48,9 @@
         Fynndus135 = "52236dbe-88b6-4c28-8e0a-ae0d71c61a2c";
       };
       symlinks = import ./plugins.nix {inherit pkgs;};
-      files."plugins/TeaksTweaks/config.yml" = import ./config.yml;
+      files."plugins/TeaksTweaks/config.yml" = {
+        text = builtins.readFile ./config.yml;
+      };
     };
   };
 }
