@@ -28,7 +28,7 @@ in {
       # autoStart = true;
       # enableReload = true;
       # # package = pkgs.fabricServers.fabric-26_1_2.override {jre_headless = pkgs.openjdk25_headless;}; # will be changed to pkgs.fabricServers when "https://github.com/Infinidoge/nix-minecraft/issues/211" gets resolved
-      package = pkgs.purpurServers.pupur-26_1_2;
+      package = pkgs.purpurServers.purpur-26_1_2;
       serverProperties = {
         sync-chunk-writes = false;
         white-list = true;
