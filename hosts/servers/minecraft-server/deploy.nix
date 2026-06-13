@@ -3,7 +3,7 @@ _: {
     targetHost = "nix-server-deploy";
     targetPort = 22;
     targetUser = "deploy";
-    buildOnTarget = true;
+    buildOnTarget = false;
   };
   imports = [./config.nix];
 }
