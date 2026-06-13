@@ -1,8 +1,12 @@
-{inputs, ...}: {
+{
+  inputs,
+  self,
+  ...
+}: {
   imports = [inputs.sops-nix.nixosModules.sops];
   sops = {
-    defaultSopsFile = ../../../secrets/secrets.yaml;
+    defaultSopsFile = "${self}/secrets/secrets.yaml";
     defaultSopsFormat = "yaml";
-    age.keyFile = "/moritz/.config/sops/age/keys.txt";
+    age.keyFile = "/etc/sops.age.key";
   };
 }

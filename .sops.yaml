@@ -1,7 +1,9 @@
 keys:
   - &primary age18cxnv2a2lznfwg0js0usugyqk4cgt7fgwr7dkzx50t5rjzstde2ss8xm6e
+  - &nix-server age1ek2kysw5xlw5gkrckpmty67g53v99rkm7lgrr8ds8dsm2l7fafmqzw5m54
 creation_rules:
   - path_regex: secrets/secrets.yaml$
     key_groups:
     - age:
       - *primary
+      - *nix-server
