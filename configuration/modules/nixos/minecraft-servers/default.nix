@@ -1,4 +1,5 @@
 {
+  lib,
   inputs,
   pkgs,
   ...
@@ -8,6 +9,10 @@
 in {
   imports = [inputs.nix-minecraft.nixosModules.minecraft-servers];
   nixpkgs.overlays = [inputs.nix-minecraft.overlay];
+  systemd.services."minecraft-server-mach-was" = {
+    serviceConfig.UnsetEnvironment = "MAINPID";
+    serviceConfig.ExecStop = lib.mkForce "${pkgs.bash}/bin/bash -c 'echo stop > /run/minecraft/mach-was.sock || true'";
+  };
 
   environment.systemPackages = [
     pkgs.packwiz
