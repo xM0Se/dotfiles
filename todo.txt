@@ -1,1 +1,0 @@
-- Move minecraft servers to diffrent directory 
