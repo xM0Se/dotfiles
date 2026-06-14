@@ -1,4 +1,5 @@
 {
+  inputs,
   self,
   pkgs,
   ...
@@ -28,9 +29,9 @@
   users.users.xm0se.home = "/Users/xm0se";
 
   environment.systemPackages = [
-    pkgs.colmena
+    inputs.colmena.packages.${pkgs.system}.colmena
     #--
-   pkgs.mas
+    pkgs.mas
     pkgs.age
     pkgs.sops
     #CLI tools
