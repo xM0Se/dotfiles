@@ -13,7 +13,7 @@ gc:
     sudo nix-collect-garbage --delete-old
 
 update-plugins:
-    sh ~/dotfiles/configuration/modules/nixos/minecraft-servers/helper.sh > ~/dotfiles/configuration/modules/nixos/minecraft-servers/plugins.nix
+    sh ~/dotfiles/configuration/modules/nixos/minecraft-servers/helper.sh
 
 deploy:
     colmena apply

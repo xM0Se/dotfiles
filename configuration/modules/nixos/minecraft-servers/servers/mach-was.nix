@@ -18,7 +18,7 @@
       {
         "plugins/TeaksTweaks/config.yml" = pkgs.writeTextFile {
           name = "config.yml";
-          text = builtins.readFile ../plugins/teaks-tweaks.yml;
+          text = builtins.readFile ../plugins/purpur/config/teaks-tweaks.yml;
         };
         "purpur.yml" = pkgs.writeTextFile {
           name = "purpur.yml";
@@ -41,6 +41,7 @@
           text = builtins.readFile ../config/purpur/spigot.yml;
         };
       }
-      // (import ../plugins/plugins.nix {inherit pkgs;});
+      // (import ../plugins/purpur/plugins.nix {inherit pkgs;})
+      // (import ../plugins/paper/plugins.nix {inherit pkgs;});
   };
 }
