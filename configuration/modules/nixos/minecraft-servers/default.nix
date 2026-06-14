@@ -61,6 +61,10 @@
             name = "bukkit.yml";
             text = builtins.readFile ./bukkit.yml;
           };
+          "config/paper-global.yml" = pkgs.writeTextFile {
+            name = "paper-global.yml";
+            text = builtins.readFile ./paper-global.yml;
+          };
         }
         // (import ./plugins.nix {inherit pkgs;});
     };
