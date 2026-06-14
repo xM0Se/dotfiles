@@ -11,7 +11,7 @@ nix run github:BatteredBunny/nix-minecraft-plugin-upgrade -- \
   --loader paper \
   --game-version "$LATEST_VERSION" \
   --project luckperms \
-  >./purpur/luckperms.nix
+  >./paper/luckperms.nix
 
 nix run github:BatteredBunny/nix-minecraft-plugin-upgrade -- \
   --loader paper \
