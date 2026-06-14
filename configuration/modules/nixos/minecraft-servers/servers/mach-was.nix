@@ -1,10 +1,14 @@
-{pkgs, ...}: {
-  sops.secrets."minecraft/onedrive" = {
-    path = "/var/minecraft-servers/mach-was/plugins/DriveBackupV2/OneDriveCredential.json";
-    mode = "0600";
-    owner = "minecraft";
-    group = "minecraft";
-  };
+{
+  pkgs,
+  config,
+  ...
+}: {
+  # sops.secrets."minecraft/onedrive" = {
+  #   path = "/var/minecraft-servers/mach-was/plugins/DriveBackupV2/OneDriveCredential.json";
+  #   mode = "0600";
+  #   owner = "minecraft";
+  #   group = "minecraft";
+  # };
   services.minecraft-servers.servers.mach-was = {
     enable = true;
     autoStart = true;
@@ -32,6 +36,7 @@
           name = "config.yml";
           text = builtins.readFile ../plugins/purpur/config/drivebackupv2.yml;
         };
+        configFile = config.sops.secrets."minecraft/onedrive".path;
       }
       // (import ../plugins/purpur/teaks-tweaks.nix {inherit pkgs;})
       // (import ../plugins/paper/chunky.nix {inherit pkgs;})
