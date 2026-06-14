@@ -16,4 +16,4 @@ update-mods:
     sh ~/dotfiles/configuration/modules/nixos/minecraft-servers/helper.sh > ~/dotfiles/configuration/modules/nixos/minecraft-servers/plugins.nix
 
 deploy:
-    colmena -- apply
+    colmena apply
