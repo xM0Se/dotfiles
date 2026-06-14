@@ -1,0 +1,13 @@
+name = "ServerPerformance"
+author = "xM0Se"
+version = "1.0.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "80a90604a140b543a84f26bc9059f95ebc4d45efbfbadd3b34975d4dbf2960b0"
+
+[versions]
+fabric = "0.19.2"
+minecraft = "26.1.2"
