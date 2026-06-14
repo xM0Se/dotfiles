@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   "config/paper-world-defaults.yml" = pkgs.writeTextFile {
     name = "paper-world-defaults.yml";
     text = builtins.readFile ../config/purpur/paper/paper-world-defaults.yml;
