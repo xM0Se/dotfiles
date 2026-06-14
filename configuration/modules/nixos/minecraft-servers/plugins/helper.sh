@@ -5,10 +5,16 @@ nix run github:BatteredBunny/nix-minecraft-plugin-upgrade -- \
   --loader purpur \
   --game-version "$LATEST_VERSION" \
   --project teaks-tweaks \
-  >./purpur/plugins.nix
+  >./purpur/teaks-tweaks.nix
+
+nix run github:BatteredBunny/nix-minecraft-plugin-upgrade -- \
+  --loader paper \
+  --game-version "$LATEST_VERSION" \
+  --project luckperms \
+  >./purpur/luckperms.nix
 
 nix run github:BatteredBunny/nix-minecraft-plugin-upgrade -- \
   --loader paper \
   --game-version "$LATEST_VERSION" \
   --project chunky \
-  >./paper/plugins.nix
+  >./paper/chunky.nix
