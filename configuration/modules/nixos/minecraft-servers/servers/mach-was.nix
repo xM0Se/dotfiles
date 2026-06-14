@@ -35,6 +35,10 @@
           name = "config.yml";
           text = builtins.readFile ../plugins/purpur/config/drivebackupv2.yml;
         };
+        "plugins/LuckPerms/config.yml" = pkgs.writeTextFile {
+          name = "config.yml";
+          text = builtins.readFile ../plugins/paper/config/luckyperms.yml;
+        };
         configFile = config.sops.secrets."minecraft/onedrive".path;
       }
       // (import ../plugins/purpur/teaks-tweaks.nix {inherit pkgs;})
