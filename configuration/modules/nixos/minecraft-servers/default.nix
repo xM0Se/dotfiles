@@ -65,6 +65,10 @@
             name = "paper-global.yml";
             text = builtins.readFile ./paper-global.yml;
           };
+          "config/paper-world-defaults.yml" = pkgs.writeTextFile {
+            name = "paper-world-defaults.yml";
+            text = builtins.readFile ./paper-world-defaults.yml;
+          };
         }
         // (import ./plugins.nix {inherit pkgs;});
     };
