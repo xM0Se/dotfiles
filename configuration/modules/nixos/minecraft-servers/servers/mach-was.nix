@@ -4,22 +4,16 @@
     autoStart = true;
     enableReload = true;
     package = pkgs.purpurServers.purpur-26_1_2;
-    serverProperties = {
-      sync-chunk-writes = false;
-      white-list = true;
-      gamemode = "survival";
-      difficulty = "hard";
-      simulation-distance = 6;
-      spawn-protection = 0;
-      hide-online-players = false;
-      log-ips = true;
-      force-gamemode = false;
-      motd = "Mach was !";
-      level-seed = 3791842102387187656;
-      server-port = 25565;
-      view-distance = 15;
-    };
+    serverProperties =
+      {
+        motd = "Mach was !";
+        level-seed = 3791842102387187656;
+        server-port = 25565;
+      }
+      // (import ../modules/serverproperties.nix);
+
     whitelist = import ../modules/whitelist.nix;
+
     symlinks =
       {
         "plugins/TeaksTweaks/config.yml" = pkgs.writeTextFile {
