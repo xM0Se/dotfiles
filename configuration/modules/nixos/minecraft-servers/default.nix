@@ -53,6 +53,10 @@
             name = "config.yml";
             text = builtins.readFile ./teaks-tweaks.yml;
           };
+          "purpur.yml" = pkgs.writeTextFile {
+            name = "purpur.yml";
+            text = builtins.readFile ./purpur.yml;
+          };
         }
         // (import ./plugins.nix {inherit pkgs;});
     };
