@@ -3,12 +3,11 @@
   config,
   ...
 }: {
-  # sops.secrets."minecraft/onedrive" = {
-  #   path = "/var/minecraft-servers/mach-was/plugins/DriveBackupV2/OneDriveCredential.json";
-  #   mode = "0600";
-  #   owner = "minecraft";
-  #   group = "minecraft";
-  # };
+  sops.secrets."minecraft/onedrive" = {
+    owner = "minecraft";
+    group = "minecraft";
+    mode = "0400";
+  };
   services.minecraft-servers.servers.mach-was = {
     enable = true;
     autoStart = true;
