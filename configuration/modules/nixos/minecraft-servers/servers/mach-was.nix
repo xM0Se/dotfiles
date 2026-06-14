@@ -14,6 +14,8 @@
 
     whitelist = import ../modules/whitelist.nix;
 
+    operators = import ../modules/operators.nix;
+
     symlinks =
       {
         "plugins/TeaksTweaks/config.yml" = pkgs.writeTextFile {
