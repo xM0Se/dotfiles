@@ -24,7 +24,7 @@
         };
       }
       // (import ../plugins/purpur/teaks-tweaks.nix {inherit pkgs;})
-      // (import ../plugins/paper/chunky.nix.nix {inherit pkgs;})
+      // (import ../plugins/paper/chunky.nix {inherit pkgs;})
       // (import ../plugins/paper/luckperms.nix {inherit pkgs;});
 
     files = import ../modules/purpur/config.nix;
