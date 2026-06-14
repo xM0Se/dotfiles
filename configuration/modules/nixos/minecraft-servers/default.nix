@@ -69,6 +69,10 @@
             name = "paper-world-defaults.yml";
             text = builtins.readFile ./paper-world-defaults.yml;
           };
+          "spigot.yml" = pkgs.writeTextFile {
+            name = "spigot.yml";
+            text = builtins.readFile ./spigot.yml;
+          };
         }
         // (import ./plugins.nix {inherit pkgs;});
     };
