@@ -14,7 +14,7 @@
 
     whitelist = import ../modules/common/whitelist.nix;
 
-    operators = import ../modules/common/operators.nix;
+    # operators = import ../modules/common/operators.nix;
 
     symlinks =
       {

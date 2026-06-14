@@ -7,7 +7,6 @@
   spawn-protection = 0;
   hide-online-players = false;
   log-ips = true;
-  force-gamemode = false;
-  server-port = 25565;
+  force-gamemode = true;
   view-distance = 15;
 }
