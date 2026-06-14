@@ -57,6 +57,10 @@
             name = "purpur.yml";
             text = builtins.readFile ./purpur.yml;
           };
+          "bukkit.yml" = pkgs.writeTextFile {
+            name = "bukkit.yml";
+            text = builtins.readFile ./bukkit.yml;
+          };
         }
         // (import ./plugins.nix {inherit pkgs;});
     };
