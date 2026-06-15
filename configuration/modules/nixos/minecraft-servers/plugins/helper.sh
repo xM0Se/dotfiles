@@ -11,6 +11,12 @@ nix run github:BatteredBunny/nix-minecraft-plugin-upgrade -- \
 nix run github:BatteredBunny/nix-minecraft-plugin-upgrade -- \
   --loader purpur \
   --game-version "$LATEST_VERSION" \
+  --project url-custom-discs \
+  >./purpur/url-custom-discs.nix
+
+nix run github:BatteredBunny/nix-minecraft-plugin-upgrade -- \
+  --loader purpur \
+  --game-version "$LATEST_VERSION" \
   --project drivebackupv2 \
   >./purpur/drivebackupv2.nix
 
