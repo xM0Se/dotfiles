@@ -1,13 +1,4 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
-  sops.secrets."minecraft/onedrive" = {
-    owner = "minecraft";
-    group = "minecraft";
-    mode = "0400";
-  };
+{pkgs, ...}: {
   services.minecraft-servers.servers.mach-was = {
     enable = true;
     autoStart = true;
@@ -39,7 +30,6 @@
           name = "config.yml";
           text = builtins.readFile ../plugins/paper/config/luckyperms.yml;
         };
-        configFile = config.sops.secrets."minecraft/onedrive".path;
       }
       // (import ../plugins/purpur/teaks-tweaks.nix {inherit pkgs;})
       // (import ../plugins/paper/chunky.nix {inherit pkgs;})
