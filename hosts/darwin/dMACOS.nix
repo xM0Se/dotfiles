@@ -46,6 +46,7 @@
     pkgs.ripgrep
     pkgs.tldr
     pkgs.raycast
+    pkgs.tree
     pkgs.anki-bin
     # pkgs.bitwarden-desktop
     pkgs.obsidian
