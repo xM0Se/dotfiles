@@ -1,0 +1,39 @@
+{pkgs, ...}: {
+  services.minecraft-servers.servers.purpur = {
+    enable = true;
+    autoStart = true;
+    enableReload = true;
+    package = pkgs.purpurServers.purpur-26_1_2;
+    serverProperties =
+      {
+        motd = "purpur template server";
+        # level-seed = <seed>;
+        server-port = 25565;
+      }
+      // (import ../modules/common/serverproperties.nix);
+
+    whitelist = import ../modules/common/whitelist.nix;
+
+    symlinks =
+      {
+        "plugins/TeaksTweaks/config.yml" = pkgs.writeTextFile {
+          name = "config.yml";
+          text = builtins.readFile ../plugins/purpur/config/teaks-tweaks.yml;
+        };
+        "plugins/DriveBackupV2/config.yml" = pkgs.writeTextFile {
+          name = "config.yml";
+          text = builtins.readFile ../plugins/purpur/config/drivebackupv2.yml;
+        };
+        "plugins/LuckPerms/config.yml" = pkgs.writeTextFile {
+          name = "config.yml";
+          text = builtins.readFile ../plugins/paper/config/luckyperms.yml;
+        };
+      }
+      // (import ../plugins/purpur/teaks-tweaks.nix {inherit pkgs;})
+      // (import ../plugins/paper/chunky.nix {inherit pkgs;})
+      // (import ../plugins/purpur/drivebackupv2.nix {inherit pkgs;})
+      // (import ../plugins/paper/luckperms.nix {inherit pkgs;});
+
+    files = import ../modules/purpur/config.nix {inherit pkgs;};
+  };
+}
