@@ -29,6 +29,7 @@
           text = builtins.readFile ../plugins/paper/config/luckyperms.yml;
         };
       }
+      // (import ../plugins/purpur/url-custom-discs.nix {inherit pkgs;})
       // (import ../plugins/purpur/teaks-tweaks.nix {inherit pkgs;})
       // (import ../plugins/paper/chunky.nix {inherit pkgs;})
       // (import ../plugins/purpur/drivebackupv2.nix {inherit pkgs;})
