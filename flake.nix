@@ -65,15 +65,11 @@
         "x86_64-linux"
       ];
       perSystem = {pkgs, ...}: {
-        config = {
-          packages.nvimconf =
-            (nvf.lib.neovimConfiguration {
-              inherit pkgs;
-              modules = [
-                ./pkgs/custom/nvim/testy.nix
-              ];
-            }).neovim;
-        };
+        packages.nvimconf =
+          (nvf.lib.neovimConfiguration {
+            inherit pkgs;
+            modules = [./pkgs/custom/nvim/testy.nix];
+          }).neovim;
       };
 
       flake = {
