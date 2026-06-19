@@ -29,7 +29,7 @@
   users.users.xm0se.home = "/Users/xm0se";
 
   environment.systemPackages = [
-    inputs.colmena.packages.${pkgs.system}.colmena
+    inputs.colmena.packages.${pkgs.stdenv.hostPlatform.system}.colmena
     #--
     pkgs.mas
     pkgs.age
