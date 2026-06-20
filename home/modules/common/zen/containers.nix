@@ -4,10 +4,10 @@
   ...
 }: {
   options = {
-    zen-containers.enable =
+    zen.containers.enable =
       lib.mkEnableOption "containers";
   };
-  config = lib.mkIf config.zen-containers.enable {
+  config = lib.mkIf config.zen.containers.enable {
     programs.zen-browser.profiles."${config.zen.profile}" = {
       containersForce = true;
       containers = {

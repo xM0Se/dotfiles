@@ -4,10 +4,10 @@
   ...
 }: {
   options = {
-    zen-policy-templates.enable =
-      lib.mkEnableOption "zen-policy-templates";
+    zen.policyTemplate.enable =
+      lib.mkEnableOption "zen-policy-template";
   };
-  config = lib.mkIf config.zen-policy-templates.enable {
+  config = lib.mkIf config.zen.policyTemplate.enable {
     programs.zen-browser.policies = {
       AutofillAddressEnabled = false;
       AutofillCreditCardEnabled = false;

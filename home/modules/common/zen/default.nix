@@ -8,7 +8,7 @@
     ./mods.nix
     ./user-chrome-css.nix
     ./bookmarks.nix
-    ./policy-templates.nix
+    ./policyTemplate.nix
     ./policies.nix
     ./settings.nix
     ./profile.nix
@@ -18,16 +18,15 @@
     profile = "default";
     extensions.enable = true;
     userChromeCSS.enable = true;
+    containers.enable = true;
+    spaces.enable = true;
+    search.enable = false;
+    mods.enable = true;
+    bookmarks.enable = true;
+    policyTemplate.enable = true;
+    policies.enable = true;
+    settings.enable = true;
   };
-  zen-containers.enable = true;
-  zen-spaces.enable = true;
-  zen-search.enable = true;
-  zen-mods.enable = true;
-  zen-bookmarks.enable = true;
-  zen-policy-templates.enable = true;
-  zen-policies.enable = true;
-  zen-settings.enable = true;
-
   programs.firefox.darwinDefaultsId = "app.zen-browser.zen";
 
   programs.zen-browser = {

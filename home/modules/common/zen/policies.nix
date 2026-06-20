@@ -4,10 +4,10 @@
   ...
 }: {
   options = {
-    zen-policies.enable =
+    zen.policies.enable =
       lib.mkEnableOption "zen-policies";
   };
-  config = lib.mkIf config.zen-policies.enable {
+  config = lib.mkIf config.zen.policies.enable {
     programs.zen-browser.policies.Preferences = {
       "privacy.resistFingerprinting" = {
         Value = true;
