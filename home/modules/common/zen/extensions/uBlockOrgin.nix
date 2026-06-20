@@ -1,10 +1,9 @@
 {
   lib,
   config,
-  programs,
   ...
 }: let
-  ext = import ./lib.nix {inherit lib config programs;};
+  ext = import ./lib.nix {inherit lib config;};
 in {
   options.zen.extensions.uBlockOrigin.enable = lib.mkEnableOption "installs uBlockOrigin";
 

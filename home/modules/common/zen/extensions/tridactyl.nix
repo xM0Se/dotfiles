@@ -1,11 +1,10 @@
 {
   lib,
   config,
-  programs,
   pkgs,
   ...
 }: let
-  ext = import ./lib.nix {inherit lib config programs;};
+  ext = import ./lib.nix {inherit lib config;};
 in {
   options.zen.extensions.tridactyl.enable = lib.mkEnableOption "installs tridactyl";
 
@@ -13,7 +12,9 @@ in {
     ${ext.extensions} = ext.mkExtensionSettings {
       "tridactyl.vim@cmcaine.co.uk" = "tridactyl-vim"; #Tridactyl
     };
+
     programs.zen-browser.nativeMessagingHosts = [pkgs.tridactyl-native];
+
     home.file.".tridactylrc".text = ''
       set searchurls.g https://www.google.com/search?q=%s
       set searchurls.ddg https://duckduckgo.com/?q=%s

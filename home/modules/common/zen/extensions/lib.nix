@@ -1,8 +1,5 @@
-{
-  programs,
-  config,
-  ...
-}: let
+{config, ...}: let
+  inherit (config) programs;
   cfg = config.zen.extensions;
   extensions = programs.zen-browser.policies.ExtensionSettings;
 

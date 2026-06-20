@@ -1,10 +1,9 @@
 {
   lib,
   config,
-  programs,
   ...
 }: let
-  ext = import ./lib.nix {inherit lib config programs;};
+  ext = import ./lib.nix {inherit lib config;};
 in {
   options.zen.extensions.multiAccountContainers.enable = lib.mkEnableOption "installs multiAccountContainers";
 
