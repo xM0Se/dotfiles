@@ -7,9 +7,7 @@
   imports = [
   ];
 
-  options = {
-    tmuxconf.enable = lib.mkEnableOption "tmuxconf";
-  };
+  options.tmuxconf.enable = lib.mkEnableOption "tmuxconf";
 
   config = lib.mkIf config.tmuxconf.enable {
     programs.zsh.prezto.tmux.autoStartRemote = true;
@@ -47,6 +45,9 @@
         bind-key -T copy-mode-vi 'C-k' select-pane -U
         bind-key -T copy-mode-vi 'C-l' select-pane -R
         bind-key -T copy-mode-vi 'C-\' select-pane -l
+
+        bind-key -T copy-mode-vi v send-keys -X begin-selection
+        bind-key -T copy-mode-vi y send-keys -X copy-selection-pipe "pbcopy" # Use xclip for Linux
 
         bind r source-file ~/.config/tmux/tmux.conf \; display-message "Config reloaded"
 
