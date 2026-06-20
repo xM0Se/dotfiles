@@ -9,6 +9,10 @@
   };
   config = lib.mkIf config.zen-policies.enable {
     programs.zen-browser.policies.Preferences = {
+      "privacy.resistFingerprinting" = {
+        Value = true;
+        Status = "locked";
+      };
       "browser.aboutConfig.showWarning" = {
         Value = false;
         Status = "locked";

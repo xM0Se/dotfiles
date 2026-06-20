@@ -9,7 +9,7 @@
     ./../modules/common/vesktop/default.nix
     ./../modules/common/zsh/zsh.nix
     ./../modules/common/git.nix
-    ./../modules/common/zen/zenconf.nix
+    ./../modules/common/zen/default.nix.nix
     ./../modules/darwin/sketchybar/default.nix
     ./../modules/darwin/aerospace/default.nix
     ./../modules/darwin/borders/default.nix
