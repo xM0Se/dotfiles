@@ -1,6 +1,7 @@
 {
   programs,
   config,
+  ...
 }: let
   cfg = config.zen.extensions;
   extensions = programs.zen-browser.policies.ExtensionSettings;

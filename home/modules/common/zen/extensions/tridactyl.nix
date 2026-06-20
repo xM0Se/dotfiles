@@ -3,6 +3,7 @@
   config,
   programs,
   pkgs,
+  ...
 }: let
   ext = import ./lib.nix {inherit lib config programs;};
 in {

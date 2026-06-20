@@ -2,6 +2,7 @@
   lib,
   config,
   programs,
+  ...
 }: let
   ext = import ./lib.nix {inherit lib config programs;};
 in {
