@@ -4,10 +4,9 @@
   config,
   ...
 }: {
-  options = {
-    zen.search.enable =
-      lib.mkEnableOption "search";
-  };
+  options.zen.search.enable =
+    lib.mkEnableOption "search";
+
   config = lib.mkIf config.zen.search.enable {
     programs.zen-browser.profiles."${config.zen.profile}".search = {
       force = true;

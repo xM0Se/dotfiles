@@ -3,10 +3,9 @@
   config,
   ...
 }: {
-  options = {
-    zen.userChromeCSS.enable =
-      lib.mkEnableOption "user-chrome-css";
-  };
+  options.zen.userChromeCSS.enable =
+    lib.mkEnableOption "user-chrome-css";
+
   config = lib.mkIf config.zen.userChromeCSS.enable {
     programs.zen-browser.profiles."${config.zen.profile}" = {
       settings = {

@@ -3,10 +3,9 @@
   config,
   ...
 }: {
-  options = {
-    zen.spaces.enable =
-      lib.mkEnableOption "spaces";
-  };
+  options.zen.spaces.enable =
+    lib.mkEnableOption "spaces";
+
   config = lib.mkIf config.zen.spaces.enable {
     programs.zen-browser.profiles."${config.zen.profile}" = {
       spacesForce = true;

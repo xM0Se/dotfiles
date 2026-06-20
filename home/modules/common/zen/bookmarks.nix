@@ -3,13 +3,12 @@
   config,
   ...
 }: {
-  options = {
-    zen.bookmarks.enable =
-      lib.mkEnableOption "bookmarks";
-  };
+  options.zen.bookmarks.enable =
+    lib.mkEnableOption "bookmarks";
+
   config = lib.mkIf config.zen.bookmarks.enable {
     programs.zen-browser.profiles."${config.zen.profile}".bookmarks = {
-      force = true; # Rewrite bookmarks on each rebuild (overwrite browser changes)
+      force = true;
       settings = [
         {
           name = "Nix Sites";

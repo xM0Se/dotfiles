@@ -3,10 +3,9 @@
   config,
   ...
 }: {
-  options = {
-    zen.mods.enable =
-      lib.mkEnableOption "zen-mods";
-  };
+  options.zen.mods.enable =
+    lib.mkEnableOption "zen-mods";
+
   config = lib.mkIf config.zen.mods.enable {
     programs.zen-browser.profiles."${config.zen.profile}".mods = [
       "cb5efa80-f1e1-43ce-8c0b-fece8462d225" # Container Halo

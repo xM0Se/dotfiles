@@ -3,10 +3,9 @@
   config,
   ...
 }: {
-  options = {
-    zen.policyTemplate.enable =
-      lib.mkEnableOption "zen-policy-template";
-  };
+  options.zen.policyTemplate.enable =
+    lib.mkEnableOption "zen-policy-template";
+
   config = lib.mkIf config.zen.policyTemplate.enable {
     programs.zen-browser.policies = {
       AutofillAddressEnabled = false;
