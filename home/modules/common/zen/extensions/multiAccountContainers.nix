@@ -7,8 +7,8 @@
 in {
   options.zen.extensions.multiAccountContainers.enable = lib.mkEnableOption "installs multiAccountContainers";
 
-  config = lib.mkIf ext.cfg.multiAccountContainers.enable {
-    ${ext.extensions} = ext.mkExtensionSettings {
+  config = lib.mkIf config.zen.extensions.multiAccountContainers.enable {
+    programs.zen-browser.policies.ExtensionSettings = ext.mkExtensionSettings {
       "@testpilot-containers" = "multi-account-containers"; #Firefox Multi-Account Containers
     };
   };

@@ -7,8 +7,8 @@
 in {
   options.zen.extensions.keepa.enable = lib.mkEnableOption "installs keepa";
 
-  config = lib.mkIf ext.cfg.keepa.enable {
-    ${ext.extensions} = ext.mkExtensionSettings {
+  config = lib.mkIf config.zen.extensions.keepa.enable {
+    programs.zen-browser.policies.ExtensionSettings = ext.mkExtensionSettings {
       "amptra@keepa.com" = "keepa"; #Keepa - Amazon Price Tracker
     };
   };

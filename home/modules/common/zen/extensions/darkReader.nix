@@ -7,8 +7,8 @@
 in {
   options.zen.extensions.darkReader.enable = lib.mkEnableOption "installs darkReader";
 
-  config = lib.mkIf ext.cfg.darkReader.enable {
-    ${ext.extensions} = ext.mkExtensionSettings {
+  config = lib.mkIf config.zen.extensions.darkReader.enable {
+    programs.zen-browser.policies.ExtensionSettings = ext.mkExtensionSettings {
       "addon@darkreader.org" = "darkreader"; #Dark Reader
     };
   };

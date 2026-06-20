@@ -8,8 +8,8 @@
 in {
   options.zen.extensions.tridactyl.enable = lib.mkEnableOption "installs tridactyl";
 
-  config = lib.mkIf ext.cfg.tridactyl.enable {
-    ${ext.extensions} = ext.mkExtensionSettings {
+  config = lib.mkIf config.zen.extensions.tridactyl.enable {
+    programs.zen-browser.policies.ExtensionSettings = ext.mkExtensionSettings {
       "tridactyl.vim@cmcaine.co.uk" = "tridactyl-vim"; #Tridactyl
     };
 

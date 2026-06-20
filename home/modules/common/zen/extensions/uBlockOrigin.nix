@@ -7,8 +7,8 @@
 in {
   options.zen.extensions.uBlockOrigin.enable = lib.mkEnableOption "installs uBlockOrigin";
 
-  config = lib.mkIf ext.cfg.uBlockOrigin.enable {
-    ${ext.extensions} = ext.mkExtensionSettings {
+  config = lib.mkIf config.zen.extensions.uBlockOrigin.enable {
+    programs.zen-browser.policies.ExtensionSettings = ext.mkExtensionSettings {
       "uBlock0@raymondhill.net" = "ublock-origin";
     };
   };

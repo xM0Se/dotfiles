@@ -7,8 +7,8 @@
 in {
   options.zen.extensions.tampermonkey.enable = lib.mkEnableOption "installs tampermonkey";
 
-  config = lib.mkIf ext.cfg.tampermonkey.enable {
-    ${ext.extensions} = ext.mkExtensionSettings {
+  config = lib.mkIf config.zen.extensions.tampermonkey.enable {
+    programs.zen-browser.policies.ExtensionSettings = ext.mkExtensionSettings {
       "firefox@tampermonkey.net" = "Tampermonkey"; #Tampermonkey
     };
   };

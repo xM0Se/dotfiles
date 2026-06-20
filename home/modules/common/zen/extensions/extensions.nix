@@ -8,7 +8,7 @@ in {
   imports = [
     ./bitwarden.nix
     ./archivePage.nix
-    ./uBlockOrgin.nix
+    ./uBlockOrigin.nix
     ./darkReader.nix
     ./youtubeAddons.nix
     ./keepa.nix
@@ -27,7 +27,7 @@ in {
         lib.mkDefault true;
       archivePage.enable =
         lib.mkDefault true;
-      uBlockOrgin.enable =
+      uBlockOrigin.enable =
         lib.mkDefault true;
       darkReader.enable =
         lib.mkDefault true;
