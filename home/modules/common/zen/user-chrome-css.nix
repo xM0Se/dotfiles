@@ -4,11 +4,11 @@
   ...
 }: {
   options = {
-    zen-user-chrome-css.enable =
+    zen.userChromeCSS.enable =
       lib.mkEnableOption "user-chrome-css";
   };
-  config = lib.mkIf config.zen-user-chrome-css.enable {
-    programs.zen-browser.profiles."default" = {
+  config = lib.mkIf config.zen.userChromeCSS.enable {
+    programs.zen-browser.profiles."${config.zen.profile}" = {
       settings = {
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "zen.themes.disable-all" = false;

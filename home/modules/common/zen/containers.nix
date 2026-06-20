@@ -8,7 +8,7 @@
       lib.mkEnableOption "containers";
   };
   config = lib.mkIf config.zen-containers.enable {
-    programs.zen-browser.profiles."default" = {
+    programs.zen-browser.profiles."${config.zen.profile}" = {
       containersForce = true;
       containers = {
         programming = {

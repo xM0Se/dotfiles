@@ -8,7 +8,7 @@
       lib.mkEnableOption "spaces";
   };
   config = lib.mkIf config.zen-spaces.enable {
-    programs.zen-browser.profiles."default" = {
+    programs.zen-browser.profiles."${config.zen.profile}" = {
       spacesForce = true;
       spaces = {
         "programming" = {

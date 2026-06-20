@@ -9,7 +9,7 @@
       lib.mkEnableOption "search";
   };
   config = lib.mkIf config.zen-search.enable {
-    programs.zen-browser.profiles."default".search = {
+    programs.zen-browser.profiles."${config.zen.profile}".search = {
       force = true;
       engines = {
         github = {

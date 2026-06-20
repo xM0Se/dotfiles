@@ -11,14 +11,18 @@
     ./policy-templates.nix
     ./policies.nix
     ./settings.nix
+    ./profile.nix
   ];
 
-  zen.extensions.enable = true;
+  zen = {
+    profile = "default";
+    extensions.enable = true;
+    userChromeCSS.enable = true;
+  };
   zen-containers.enable = true;
   zen-spaces.enable = true;
   zen-search.enable = true;
   zen-mods.enable = true;
-  zen-user-chrome-css.enable = true;
   zen-bookmarks.enable = true;
   zen-policy-templates.enable = true;
   zen-policies.enable = true;
