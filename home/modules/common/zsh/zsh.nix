@@ -39,7 +39,7 @@
       shellAliases = {
         j = "just";
         c = "clear";
-        lt = "eza --color=always --git --no-time --icons=always --all --tree --ignore-glob  '.DS_Store'";
+        lt = "eza --color=always --group-directories-first --git --no-time --icons=always --all --tree --ignore-glob  '.DS_Store'";
         ls = "eza --color=always --grid --long --no-time --git --icons=always --total-size --no-user --no-permissions --color-scale-mode=gradient --all --group-directories-first --ignore-glob  '.DS_Store'";
         ll = "eza --color=always --long --git --icons=always --color-scale-mode=gradient --total-size --show-symlinks --all --group-directories-first --ignore-glob  '.DS_Store'";
         nzf = "fzf --preview 'bat --style=numbers,changes --color=always --theme=RosePineMoon {}' --preview-window=right:60% | xargs -r nvim";
