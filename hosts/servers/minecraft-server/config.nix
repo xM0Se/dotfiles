@@ -38,24 +38,26 @@
     "userPasswords/nixServer/moritz".neededForUsers = true;
     "userPasswords/nixServer/root".neededForUsers = true;
   };
-  users.mutableUsers = false;
-  users.users = {
-    moritz = {
-      isNormalUser = true;
-      extraGroups = ["wheel"];
-      home = "/moritz";
-      hashedPasswordFile = config.sops.secrets."userPasswords/nixServer/moritz".path;
-      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJBl1kqPOoIsYob5yTncLgTFqB5MgLl+2lnAe4hEoYpL nix-server"];
-    };
-    deploy = {
-      isNormalUser = true;
-      extraGroups = ["wheel"];
-      hashedPassword = "!";
-      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIALKJQ+LNa7PhF38vRiBFXU6YHEiHyb9h3EnBfneUTel nix-server-deploy"];
-    };
-    root = {
-      home = "/root";
-      hashedPasswordFile = config.sops.secrets."userPasswords/nixServer/root".path;
+  users = {
+    mutableUsers = false;
+    users = {
+      moritz = {
+        isNormalUser = true;
+        extraGroups = ["wheel"];
+        home = "/moritz";
+        hashedPasswordFile = config.sops.secrets."userPasswords/nixServer/moritz".path;
+        openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJBl1kqPOoIsYob5yTncLgTFqB5MgLl+2lnAe4hEoYpL nix-server"];
+      };
+      deploy = {
+        isNormalUser = true;
+        extraGroups = ["wheel"];
+        hashedPassword = "!";
+        openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIALKJQ+LNa7PhF38vRiBFXU6YHEiHyb9h3EnBfneUTel nix-server-deploy"];
+      };
+      root = {
+        home = "/root";
+        hashedPasswordFile = config.sops.secrets."userPasswords/nixServer/root".path;
+      };
     };
   };
 
