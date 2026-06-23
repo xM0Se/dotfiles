@@ -4,6 +4,11 @@
   ];
 
   vim = {
+    notes = {
+      obsidian.enable = true;
+      obsidian.setupOpts = {};
+    };
+
     viAlias = true;
     vimAlias = true;
 
@@ -12,13 +17,10 @@
       softtabstop = 2;
       expandtab = true;
       smartindent = true;
-
       hlsearch = false;
       incsearch = true;
-
       timeout = true;
       timeoutlen = 100;
-
       mouse = "";
     };
 
@@ -43,7 +45,12 @@
             mode = "n";
             key = "<leader>z";
             silent = true;
-            action = "function() require('zen-mode').toggle({window = {width = 1 }}) end";
+            action = ''
+              function()
+                require("zen-mode").toggle({ window = { width = 1 } })
+                vim.cmd("silent !tmux resize-pane -Z")
+              end
+            '';
             lua = true;
             desc = "start zen-mode";
           }
@@ -71,11 +78,9 @@
     utility = {
       snacks-nvim = {
         enable = true;
-        setupOpts = {
-          picker = {
-            enabled = true;
-            ui_select = true;
-          };
+        setupOpts.picker = {
+          enabled = true;
+          ui_select = true;
         };
       };
 
@@ -83,7 +88,9 @@
         enable = true;
         setupOpts.ring.storage = "sqlite";
       };
+
       undotree.enable = true;
+
       motion.flash-nvim = {
         enable = true;
         mappings.jump = "s";
@@ -104,9 +111,11 @@
     };
 
     autocomplete.blink-cmp.enable = true;
+
     statusline.lualine = {
       enable = true;
     };
+
     lsp = {
       enable = true;
       formatOnSave = true;
@@ -117,13 +126,13 @@
 
     diagnostics = {
       enable = true;
-      config = {
-        virtual_lines = true;
-      };
+      config.virtual_lines = true;
     };
 
     debugger.nvim-dap.enable = true;
+
     treesitter.enable = true;
+
     languages = {
       enableTreesitter = true;
 
