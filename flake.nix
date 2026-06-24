@@ -68,7 +68,7 @@
         packages.nvimconf =
           (nvf.lib.neovimConfiguration {
             inherit pkgs;
-            modules = [./pkgs/custom/nvim/testy.nix];
+            modules = [./pkgs/custom/nvim/default.nix];
           }).neovim;
       };
 
