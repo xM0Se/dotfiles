@@ -5,8 +5,18 @@
 
   vim = {
     notes = {
-      obsidian.enable = true;
-      obsidian.setupOpts = {};
+      obsidian = {
+        enable = true;
+        setupOpts = {
+          legacy_commands = false;
+          workspaces = [
+            {
+              name = "personal";
+              path = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Mother-Vault";
+            }
+          ];
+        };
+      };
     };
 
     viAlias = true;
