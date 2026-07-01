@@ -18,14 +18,18 @@
   essential-cli-tools.enable = true;
   essential-gui-apps.enable = true;
   u-pkg-qmk.enable = true;
-  b-mas-essentials.enable = true;
-  b-font-essentials.enable = true;
-  b-cask-essentials.enable = true;
+
+  brew = {
+    mas.common.enable = true;
+    font.common.enable = true;
+    casks.common.enable = true;
+  };
 
   home-manager.users.xm0se.imports = [
     (self + "/home/configurations/darwin.nix")
     (self + "/home/users/xm0se.nix")
   ];
+
   users.users.xm0se.home = "/Users/xm0se";
 
   environment.systemPackages = [

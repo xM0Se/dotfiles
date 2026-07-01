@@ -1,4 +1,4 @@
-{...}: {
+_: {
   vim.keymaps = [
     {
       key = "<leader>ca";
