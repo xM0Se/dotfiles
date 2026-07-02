@@ -1,9 +1,8 @@
-- automate background picture macos
 - try determinate system installer instructions with the -y flag
 - try to automate macos application permissions
 - automate raycast setup
 - do on startup applications (probably with aerospace)
 - fix installation of mas apps
-- fix RpPi5 installation
+- fix RpPi5 installation1
 - test backups and nixos anywhere on minecraft-server
 - make templates for nix-servers and darwin system configurations
