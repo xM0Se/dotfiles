@@ -15,9 +15,8 @@ Package manager = Nix, homebrew
 
 ## installation instructions macos
 
-```zsh
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
-```
+> [!WARNING]
+> You have to give Terminal full disk access before executing.
 
 ```zsh
 git clone https://github.com/xM0Se/dotfiles.git
@@ -28,5 +27,10 @@ cd dotfiles
 ```
 
 ```zsh
-sudo darwin-rebuild switch --flake ~/dotfiles#dMACOS
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 ```
+
+```zsh
+sudo nix run nix-darwin#darwin-rebuild -- switch --flake ~/dotfiles#dMACOS
+```
+afterwards you can use ```j build ``` when in the dotfiles directory
