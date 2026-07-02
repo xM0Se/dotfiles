@@ -6,3 +6,4 @@
 - fix installation of mas apps
 - fix RpPi5 installation
 - test backups and nixos anywhere on minecraft-server
+- make templates for nix-servers and darwin system configurations
