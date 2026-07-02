@@ -5,6 +5,7 @@
   ...
 }: {
   imports = [
+    inputs.determinate.darwinModules.default
     (self + "/pkgs/nixpkgs-unstable/cli/u-pkg-essential-cli-tools.nix")
     (self + "/pkgs/nixpkgs-unstable/cli/u-pkg-all-cli-tools.nix")
     (self + "/pkgs/nixpkgs-unstable/gui/essential-gui-apps.nix")
@@ -14,7 +15,7 @@
     (self + "/pkgs/homebrew/casks/common.nix")
     (self + "/configuration/configurations/darwin.nix")
   ];
-
+  determinateNix.enable = true;
   essential-cli-tools.enable = true;
   essential-gui-apps.enable = true;
   u-pkg-qmk.enable = true;
