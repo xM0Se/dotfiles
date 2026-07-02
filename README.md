@@ -12,3 +12,21 @@ Terminal = Ghossty
 Package manager = Nix, homebrew
 
 <img width="3440" height="1440" alt="macOS-setup" src="https://github.com/user-attachments/assets/3bb381b9-9277-40ed-9bd6-c8bc85f28e53" />
+
+## installation instructions macos
+
+```zsh
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+```
+
+```zsh
+git clone https://github.com/xM0Se/dotfiles.git
+```
+
+```zsh
+cd dotfiles
+```
+
+```zsh
+sudo darwin-rebuild switch --flake ~/dotfiles#dMACOS
+```
