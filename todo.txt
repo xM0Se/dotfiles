@@ -1,0 +1,3 @@
+- automate background picture macos
+- try determinate system installer instructions with the -y flag
+- try to automate macos application permissions
