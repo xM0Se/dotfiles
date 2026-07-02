@@ -6,7 +6,7 @@
   imports = [
     ./../modules/common/sops.nix
     ./../modules/common/vscode/vscodeconf.nix
-    ./../modules/common/vesktop/default.nix
+    # ./../modules/common/vesktop/default.nix
     ./../modules/common/zsh/zsh.nix
     ./../modules/common/git.nix
     ./../modules/common/zen/default.nix

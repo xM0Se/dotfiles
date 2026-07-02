@@ -1,11 +1,4 @@
 {pkgs, ...}: {
-  nixpkgs.overlays = [
-    (final: prev: {
-      vesktop = prev.vesktop.override {
-        pnpm = final.pnpm_10;
-      };
-    })
-  ];
   programs.vesktop = {
     enable = true;
     package = pkgs.vesktop;
