@@ -4,6 +4,7 @@
   ...
 }: {
   imports = [
+    ./../modules/wallpaper.nix
     ./../modules/common/sops.nix
     ./../modules/common/vscode/vscodeconf.nix
     # ./../modules/common/vesktop/default.nix
