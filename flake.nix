@@ -57,6 +57,7 @@
     nix-darwin,
     flake-parts,
     colmena,
+    nixos-raspberrypi,
     ...
   }:
     flake-parts.lib.mkFlake {inherit inputs self;} {
@@ -89,6 +90,14 @@
             ./hosts/darwin/dMACOS.nix
           ];
         };
+
+        nixosConfigurations.rpi5 = nixos-raspberrypi.lib.nixosSystem {
+          specialArgs = {inherit inputs self;};
+          modules = [
+            ./hosts/RbPi5/test.nix
+          ];
+        };
+
         nixosConfigurations.minecraft-server = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs self;};
           modules = [
