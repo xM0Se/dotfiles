@@ -9,9 +9,9 @@
     (self + "/pkgs/nixpkgs-unstable/cli/u-pkg-all-cli-tools.nix")
     (self + "/pkgs/nixpkgs-unstable/gui/essential-gui-apps.nix")
     (self + "/pkgs/homebrew/brew.nix")
-    (self + "/pkgs/homebrew/mas/b-mas-essentials.nix")
-    (self + "/pkgs/homebrew/fonts/b-font-essentials.nix")
-    (self + "/pkgs/homebrew/casks/b-cask-essentials.nix")
+    (self + "/pkgs/homebrew/mas/common.nix")
+    (self + "/pkgs/homebrew/fonts/common.nix")
+    (self + "/pkgs/homebrew/casks/common.nix")
     (self + "/configuration/configurations/darwin.nix")
   ];
 
@@ -20,9 +20,9 @@
   u-pkg-qmk.enable = true;
 
   brew = {
-    mas.common.enable = true;
+    mas.common.enable = false;
     font.common.enable = true;
-    casks.common.enable = true;
+    cask.common.enable = true;
   };
 
   home-manager.users.xm0se.imports = [
