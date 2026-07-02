@@ -48,6 +48,8 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+
+    determinate.url = "github:DeterminateSystems/determinate";
   };
 
   outputs = inputs @ {
